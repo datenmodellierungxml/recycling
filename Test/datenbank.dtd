@@ -1,0 +1,40 @@
+<!ELEMENT datenbank (produktListe*, herstellerListe*, kundenListe*, recyclinghofListe*)>
+
+<!ELEMENT produktListe (produkt*)>
+<!ELEMENT produkt (hersteller , recyclinghof* , kunde , bestandteile+)>
+<!-- produktID: Es Kann auch die Seriennummer des Produkts sein deswegen NMTOKEN. --><!-- zustand: Es sind keine neuen Zustände vorgesehen. -->
+<!-- produktkategorie: Produktkategorie soll erweiterbar sein. -->
+<!ATTLIST produkt produktID NMTOKEN #REQUIRED>
+<!ATTLIST produkt produktBezeichnung CDATA #REQUIRED>
+<!ATTLIST produkt zustand (neuwertig | gut | defekt) "defekt">
+<!ATTLIST produkt verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED>
+<!ATTLIST produkt produktkategorie CDATA #REQUIRED>
+
+<!-- Hersteller muss mindenstens eine Adresse besitzen, kann aber auch mehrere haben. -->
+<!ELEMENT herstellerListe (hersteller*)>
+<!ELEMENT hersteller (adresse+)>
+<!ATTLIST hersteller herstellerID CDATA #REQUIRED>
+
+<!ELEMENT recyclinghofListe (recyclinghof*)>
+<!ELEMENT recyclinghof (adresse , oeffnungszeiten+)>
+<!ATTLIST recyclinghof recyclinghofID CDATA #REQUIRED>
+<!ELEMENT oeffnungszeiten (#PCDATA)>
+
+<!-- Angabe der Kundenadresse ist optional, kundenID jedoch Pflicht. -->
+<!ELEMENT kundenListe (kunde*)>
+<!ELEMENT kunde (adresse?)>
+<!ATTLIST kunde kundenID CDATA #REQUIRED>
+<!-- Adresse kann mehrere Telefonnummern beinhalten, muss aber mindestens eine besitzen. --><!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT strasse (#PCDATA)>
+<!ELEMENT plz (#PCDATA)>
+<!ELEMENT ort (#PCDATA)>
+<!ELEMENT telefon (#PCDATA)>
+
+<!-- Liste der Bestandteile -->
+<!ELEMENT bestandteile (bestandteil)+>
+<!-- Ein konkretes Bestandteil -->
+<!ELEMENT bestandteil (#PCDATA)>
+<!-- Bestanteilname nicht festgelegt, um Möglichkeiten flexibel zu gestalten -->
+<!ATTLIST bestandteil name PCDATA #REQUIRED>
+<!ATTLIST bestandteil recyclinggrad PCDATA #REQUIRED>

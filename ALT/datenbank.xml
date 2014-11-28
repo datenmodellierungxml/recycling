@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE datenbank [
+<!ELEMENT datenbank (herstellerListe, kundenListe, recyclinhofListe)>
+<!ENTITY hersteller SYSTEM "hersteller_20141120.xml" >
+<!ENTITY recyclinghoefe SYSTEM "recyclinghoefe_20141120.xml" >
+<!ENTITY kunde SYSTEM "kunde_20141120.xml" >
+]>
+
+<datenbank>
+ 	
+ 	&hersteller;
+ 	&kunde;
+ 	&recyclinghoefe;
+
+</datenbank>
