@@ -1,0 +1,43 @@
+<kundenListe>
+	<kunde kundenID="11112014_01">
+		   <adresse>    
+				 <name>Björn Tim Meßthaler</name>
+				 <telefon>09156556</telefon>
+				 <telefon>+494164684</telefon>
+		   </adresse>
+	</kunde>
+	<kunde kundenID="MM125355">
+		<adresse>
+			<name>Max Mustermann</name>
+			<strasse>Musterstr. 1</strasse>
+			<plz>12345 MusterstraÃe</plz>
+			<ort>Musterstadt</ort>
+			<telefon>0911 / 12 53 55</telefon>
+		</adresse>
+	</kunde>
+	<kunde kundenID="4641653">
+		<adresse>
+			<name>Robin Scherbatsky</name>
+			<strasse>Klappenweg 45</strasse>
+			<plz>25345</plz>
+			<ort>Klappenort</ort>
+			<telefon>0911 / 12 53 55</telefon>
+			<telefon>016046848647</telefon>
+		</adresse>
+	</kunde>
+	<kunde kundenID="546586">
+		<adresse>
+			<name>Lily Aldrin</name>
+			<telefon>+49 911 54365415</telefon>
+		</adresse>
+	</kunde>
+	<kunde kundenID="23654">
+		<adresse>
+			<name>Ted Mosby</name>
+			<strasse>Mosbacherstraße 45</strasse>
+			<plz>45364></plz>
+			<ort>Mosbach</ort>
+			<telefon>09911-46463541</telefon>
+		</adresse>
+	</kunde>
+</kundenListe>
