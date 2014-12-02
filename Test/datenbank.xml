@@ -53,10 +53,58 @@
 			<adresse>
 				<name>Max Mustermann</name>
 				<strasse>Musterstr. 1</strasse>
-				<plz>12345 Musterstraße</plz>
+				<plz>12345 </plz>
 				<ort>Musterstadt</ort>
 				<telefon>0911 / 12 53 55</telefon>
 			</adresse>
+		</kunde>
+		<bestandteile>
+			<bestandteil name="Glas" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" recyclinggrad="100" />
+			<bestandteil name="Metall" recyclinggrad="100"/>
+		</bestandteile>
+	</produkt>
+		<produkt produktID="JS1" produktBezeichnung="IPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" produktkategorie="Smartphone">
+		<hersteller herstellerID="IPhone">
+			<adresse>
+				<name>Apple Store</name>
+				<strasse>Roßenstraße 1</strasse>
+				<plz>80331</plz>
+				<ort>München</ort>
+				<telefon>0180 6 67267864</telefon>
+			</adresse>
+		</hersteller>
+		<recyclinghof recyclinghofID="HofMitte">
+			<adresse>
+				<name>Recyclinghof Mitte</name>
+				<strasse>Am Pferdemarkt 23</strasse>
+				<plz>90439</plz>
+				<ort>Nuernberg</ort>
+				<telefon>0911 / 80 138 04</telefon>
+				<telefon>+49 911 648486</telefon>
+			</adresse>
+			<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
+		</recyclinghof>
+		<recyclinghof recyclinghofID="HofNord">
+			<adresse>
+				<name>Recyclinghof Nord</name>
+				<strasse>HaeberleinstraÃYe 7</strasse>
+				<plz>90411</plz>
+				<ort>Nuernberg</ort>
+				<telefon>0911 / 36 76 05</telefon>
+			</adresse>
+			<oeffnungszeiten>Dienstag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Sonntag, Montag und Feiertag geschlossen</oeffnungszeiten>
+		</recyclinghof>
+		<kunde kundenID="11112014_01">
+			   <adresse>    
+					 <name>Björn Tim Meßthaler</name>
+					 <telefon>09156556</telefon>
+					 <telefon>+494164684</telefon>
+			   </adresse>
 		</kunde>
 		<bestandteile>
 			<bestandteil name="Glas" recyclinggrad="100"/>

@@ -10,7 +10,7 @@
 		<adresse>
 			<name>Max Mustermann</name>
 			<strasse>Musterstr. 1</strasse>
-			<plz>12345 MusterstraÃe</plz>
+			<plz>12345</plz>
 			<ort>Musterstadt</ort>
 			<telefon>0911 / 12 53 55</telefon>
 		</adresse>
@@ -35,7 +35,7 @@
 		<adresse>
 			<name>Ted Mosby</name>
 			<strasse>Mosbacherstraße 45</strasse>
-			<plz>45364></plz>
+			<plz>45364</plz>
 			<ort>Mosbach</ort>
 			<telefon>09911-46463541</telefon>
 		</adresse>
