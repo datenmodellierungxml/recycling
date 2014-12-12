@@ -105,7 +105,7 @@
 
 <!--Liste der Geräte-->
 <geraeteListe>
-<!-- Gerät iPhone-->
+<!-- Gerät iPhone aktzeptabel-->
 <geraet geraetID="JS1" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
 <bestandteile>
 			<bestandteil name="Glas" recyclinggrad="100"/>
@@ -113,6 +113,16 @@
 			<bestandteil name="Metall" recyclinggrad="100"/>
 		</bestandteile>
 </geraet>
+
+<!-- Gerät iPhone nicht akzeptabel-->
+<geraet geraetID="JS1" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
+<bestandteile>
+			<bestandteil name="Glas" recyclinggrad="10"/>
+			<bestandteil name="Kunststoff" recyclinggrad="50" />
+			<bestandteil name="Metall" recyclinggrad="30"/>
+		</bestandteile>
+</geraet>
+
 <!-- Geräte Samsung Galaxy S3-->
 <geraet geraetID="BD1DB19JS2B" geraetBezeichnung="Samsung Galaxy S3" zustand="defekt" verschmutzungsgrad="akzeptabel" geraetkategorie="Smartphone">
 <bestandteile>
@@ -171,9 +181,10 @@
 		</adresse>
 	</hersteller>
 </herstellerListe>
+
 <!--Liste der Kunden-->
 <kundenListe>
-	<kunde kundenID="11112014_01">
+	<kunde kundenID="11112014_01" geraet="iPhone" geraetekategorie="Smartphone">
 		   <adresse>    
 				 <name>Björn Tim Meßthaler</name>
 				 <telefon>09156556</telefon>
