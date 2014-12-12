@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="responsive.xsl"?>
+<!--<!DOCTYPE datenbank SYSTEM "datenbank.dtd">-->
+
+<datenbank>
+<produktListe>
+	<produkt produktID="BD1DB19JS2B" produktBezeichnung="Samsung Galaxy S3" zustand="defekt" verschmutzungsgrad="akzeptabel" produktkategorie="Smartphone">
+		<hersteller herstellerID="Samsung">
+			<adresse>
+				<name>Samsung Electrics GmbH</name>
+				<strasse>Am Kronberger Hang 6</strasse>
+				<plz>65824</plz>
+				<ort>Schwalbach am Taunus</ort>
+				<telefon>0180 6 67267864</telefon>
+			</adresse>
+		</hersteller>
+		<recyclinghof recyclinghofID="HofMitte">
+			<adresse>
+				<name>Recyclinghof Mitte</name>
+				<strasse>Am Pferdemarkt 23</strasse>
+				<plz>90439</plz>
+				<ort>Nürnberg</ort>
+				<telefon>0911 / 80 138 04</telefon>
+			</adresse>
+			<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
+		</recyclinghof>
+		<recyclinghof recyclinghofID="HofNord">
+			<adresse>
+				<name>Recyclinghof Nord</name>
+				<strasse>Haeberleinstraße 7</strasse>
+				<plz>90411</plz>
+				<ort>Nürnberg</ort>
+				<telefon>0911 / 36 76 05</telefon>
+			</adresse>
+			<oeffnungszeiten>Dienstag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Sonntag, Montag und Feiertag geschlossen</oeffnungszeiten>
+		</recyclinghof>
+		<kunde kundenID="MM125355">
+			<adresse>
+				<name>Max Mustermann</name>
+				<strasse>Musterstr. 1</strasse>
+				<plz>12345 </plz>
+				<ort>Musterstadt</ort>
+				<telefon>0911 / 12 53 55</telefon>
+			</adresse>
+		</kunde>
+		<bestandteile>
+			<bestandteil name="Glas" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" recyclinggrad="100" />
+			<bestandteil name="Metall" recyclinggrad="100"/>
+		</bestandteile>
+	</produkt>
+		<produkt produktID="JS1" produktBezeichnung="IPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" produktkategorie="Smartphone">
+		<hersteller herstellerID="IPhone">
+			<adresse>
+				<name>Apple Store</name>
+				<strasse>Roßenstraße 1</strasse>
+				<plz>80331</plz>
+				<ort>München</ort>
+				<telefon>0180 6 67267864</telefon>
+			</adresse>
+		</hersteller>
+		<recyclinghof recyclinghofID="HofMitte">
+			<adresse>
+				<name>Recyclinghof Mitte</name>
+				<strasse>Am Pferdemarkt 23</strasse>
+				<plz>90439</plz>
+				<ort>Nuernberg</ort>
+				<telefon>0911 / 80 138 04</telefon>
+				<telefon>+49 911 648486</telefon>
+			</adresse>
+			<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
+		</recyclinghof>
+		<recyclinghof recyclinghofID="HofNord">
+			<adresse>
+				<name>Recyclinghof Nord</name>
+				<strasse>HaeberleinstraÃYe 7</strasse>
+				<plz>90411</plz>
+				<ort>Nuernberg</ort>
+				<telefon>0911 / 36 76 05</telefon>
+			</adresse>
+			<oeffnungszeiten>Dienstag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+			<oeffnungszeiten>Sonntag, Montag und Feiertag geschlossen</oeffnungszeiten>
+		</recyclinghof>
+		<kunde kundenID="11112014_01">
+			   <adresse>    
+					 <name>Björn Tim Meßthaler</name>
+					 <telefon>09156556</telefon>
+					 <telefon>+494164684</telefon>
+			   </adresse>
+		</kunde>
+		<bestandteile>
+			<bestandteil name="Glas" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" recyclinggrad="100" />
+			<bestandteil name="Metall" recyclinggrad="100"/>
+		</bestandteile>
+	</produkt>
+</produktListe>
+
+<!--Liste der Geräte-->
+<geraeteListe>
+<!-- Gerät iPhone-->
+<geraet geraetID="JS1" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
+<bestandteile>
+			<bestandteil name="Glas" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" recyclinggrad="50" />
+			<bestandteil name="Metall" recyclinggrad="100"/>
+		</bestandteile>
+</geraet>
+<!-- Geräte Samsung Galaxy S3-->
+<geraet geraetID="BD1DB19JS2B" geraetBezeichnung="Samsung Galaxy S3" zustand="defekt" verschmutzungsgrad="akzeptabel" geraetkategorie="Smartphone">
+<bestandteile>
+			<bestandteil name="Glas" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" recyclinggrad="50" />
+			<bestandteil name="Metall" recyclinggrad="100"/>
+		</bestandteile>
+		</geraet>
+</geraeteListe>
+
+<!--Liste der Hersteller-->
+<herstellerListe>
+	<hersteller herstellerID="Samsung">
+		<adresse>
+			<name>Samsung Electrics GmbH</name>
+			<strasse>Am Kronberger Hang 6</strasse>
+			<plz>65824</plz>
+			<ort>Schwalbach am Taunus</ort>
+			<telefon>0180 6 67267864</telefon>
+		</adresse>
+	</hersteller>
+	<hersteller herstellerID="Apple">
+		<adresse>
+			<name>Apple Computer Inc</name>
+			<strasse>Infinity Loop 1</strasse>
+			<plz>65824</plz>
+			<ort>Cupertino</ort>
+			<telefon>1-800-275-2273</telefon>
+		</adresse>
+	</hersteller>
+	<hersteller herstellerID="Nokia">
+		<adresse>
+			<name>Nokia GmbH</name>
+			<strasse>Balcke-Dürr-Allee 2</strasse>
+			<plz>65824</plz>
+			<ort>Ratingen</ort>
+			<telefon>+49 (0) 2102 8928-0</telefon>
+		</adresse>
+	</hersteller>
+	<hersteller herstellerID="LG">
+		<adresse>
+			<name>LG Electronics Deutschland GmbH</name>
+			<strasse>Berliner Straße 93</strasse>
+			<plz>65824</plz>
+			<ort>Ratingen</ort>
+			<telefon>+49(0)2102 / 7008777</telefon>
+		</adresse>
+	</hersteller>
+	<hersteller herstellerID="Sony">
+		<adresse>
+			<name>LG Electronics Deutschland GmbH</name>
+			<strasse>Kemperplatz 1</strasse>
+			<plz>65824</plz>
+			<ort>Berlin</ort>
+			<telefon> +49 (0)211 993 342020</telefon>
+		</adresse>
+	</hersteller>
+</herstellerListe>
+<!--Liste der Kunden-->
+<kundenListe>
+	<kunde kundenID="11112014_01">
+		   <adresse>    
+				 <name>Björn Tim Meßthaler</name>
+				 <telefon>09156556</telefon>
+				 <telefon>+494164684</telefon>
+		   </adresse>
+	</kunde>
+	<kunde kundenID="MM125355">
+		<adresse>
+			<name>Max Mustermann</name>
+			<strasse>Musterstr. 1</strasse>
+			<plz>12345 MusterstraÃ?e</plz>
+			<ort>Musterstadt</ort>
+			<telefon>0911 / 12 53 55</telefon>
+		</adresse>
+	</kunde>
+	<kunde kundenID="4641653">
+		<adresse>
+			<name>Robin Scherbatsky</name>
+			<strasse>Klappenweg 45</strasse>
+			<plz>25345</plz>
+			<ort>Klappenort</ort>
+			<telefon>0911 / 12 53 55</telefon>
+			<telefon>016046848647</telefon>
+		</adresse>
+	</kunde>
+	<kunde kundenID="546586">
+		<adresse>
+			<name>Lily Aldrin</name>
+			<telefon>+49 911 54365415</telefon>
+		</adresse>
+	</kunde>
+	<kunde kundenID="23654">
+		<adresse>
+			<name>Ted Mosby</name>
+			<strasse>Mosbacherstraße 45</strasse>
+			<plz>45364></plz>
+			<ort>Mosbach</ort>
+			<telefon>09911-46463541</telefon>
+		</adresse>
+	</kunde>
+</kundenListe>
+
+<!--Liste der Recyclinghöfe-->
+<recyclinghofListe>
+	<recyclinghof recyclinghofID="HofNord">
+		<adresse>
+			<name>Recyclinghof Nord</name>
+			<strasse>Haeberleinstraße 7</strasse>
+			<plz>90411</plz>
+			<ort>Nürnberg</ort>
+			<telefon>0911 / 36 76 05</telefon>
+		</adresse>
+		<oeffnungszeiten>Dienstag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Sonntag, Montag und Feiertag geschlossen</oeffnungszeiten>
+	</recyclinghof>
+	<recyclinghof recyclinghofID="HofMitte">
+		<adresse>
+			<name>Recyclinghof Mitte</name>
+			<strasse>Am Pferdemarkt 23</strasse>
+			<plz>90439</plz>
+			<ort>Nürnberg</ort>
+			<telefon>0911 / 80 138 04</telefon>
+			</adresse>
+		<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
+	</recyclinghof>
+</recyclinghofListe>
+</datenbank>
