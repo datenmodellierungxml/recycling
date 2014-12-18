@@ -29,7 +29,11 @@
     <h3><xsl:value-of select="@produktBezeichnung" /></h3>
     <p><xsl:value-of select="hersteller"/></p>
     <p><xsl:value-of select="kunde"/></p>
-    <p><xsl:value-of select="bestandteile/bestandteil/@name"/></p>
+    
+    <xsl:for-each select="bestandteile/bestandteil">
+    <p><xsl:value-of select="@name"/></p>
+    </xsl:for-each>
+    
     </p>
     </xsl:for-each>
 </div>

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<<<<<<< HEAD
 
 <?xml-stylesheet type="text/xsl" href="responsive.xsl"?>
 <!--<!DOCTYPE datenbank SYSTEM "datenbank.dtd">-->
 
+=======
+<?xml-stylesheet type="text/xsl" href="responsive.xsl"?>
+<!--<!DOCTYPE datenbank SYSTEM "datenbank.dtd">-->
+>>>>>>> FETCH_HEAD
 
 <datenbank>
 <produktListe>
