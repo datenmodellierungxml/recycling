@@ -41,7 +41,7 @@
 		</bestandteile>
 </geraet>
 
-<geraet geraetID="LYoga2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="aktzeptabel" geraetkategorie="Handy">
+<geraet geraetID="LenovoYogaPad2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="aktzeptabel" geraetkategorie="Handy">
 <bestandteile>
 			<bestandteil name="Glas" anteil="30" recyclinggrad="100"/>
 			<bestandteil name="Kunststoff" anteil="50" recyclinggrad="80" />
