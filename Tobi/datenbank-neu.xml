@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="responsive.xsl"?>
-<!--<!DOCTYPE datenbank SYSTEM "datenbank.dtd">-->
+<?xml-stylesheet type="text/xsl" href="responsive-neu.xsl"?>
+<!DOCTYPE datenbank SYSTEM "datenbank.dtd">
 
 <datenbank>
 <!--Liste der Geräte-->
@@ -8,8 +8,8 @@
 <!-- Gerät iPhone aktzeptabel-->
 <geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
 <bestandteile>
-			<bestandteil name="Glas" anteil="60"recyclinggrad="100"/>
-			<bestandteil name="Kunststoff" anteil="10"recyclinggrad="50" />
+			<bestandteil name="Glas" anteil="60" recyclinggrad="100" />
+			<bestandteil name="Kunststoff" anteil="10" recyclinggrad="50" />
 			<bestandteil name="Metall" anteil="30" recyclinggrad="100"/>
 		</bestandteile>
 </geraet>
@@ -17,8 +17,8 @@
 <!-- Gerät iPhone nicht verschmutzt-->
 <geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="defekt" verschmutzungsgrad="verschmutzt" geraetekategorie="Smartphone">
 <bestandteile>
-			<bestandteil name="Glas" anteil="60"recyclinggrad="100"/>
-			<bestandteil name="Kunststoff" anteil="10"recyclinggrad="50" />
+			<bestandteil name="Glas" anteil="60" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" anteil="10" recyclinggrad="50" />
 			<bestandteil name="Metall" anteil="30" recyclinggrad="100"/>
 		</bestandteile>
 </geraet>
@@ -186,7 +186,7 @@
 		<adresse>
 			<name>Recyclinghof Sued"</name>
 			<strasse>Am Südring 23</strasse>
-			<plz>90820/plz>
+			<plz>90820</plz>
 			<ort>Nürnberg</ort>
 			<telefon>0911 / 50 70 103</telefon>
 			</adresse>
@@ -203,7 +203,7 @@
 		<adresse>
 			<name>Recyclinghof Ost"</name>
 			<strasse>Am Ostring 23</strasse>
-			<plz>90120/plz>
+			<plz>90120</plz>
 			<ort>Nürnberg</ort>
 			<telefon>0911 / 10 20 03</telefon>
 			</adresse>

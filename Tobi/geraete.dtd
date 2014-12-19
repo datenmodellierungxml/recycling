@@ -1,0 +1,8 @@
+<!-- Geräte Liste -->
+<!ELEMENT geraeteListe (geraet*)>
+<!ELEMENT geraet (bestandteile+)>
+<!ATTLIST geraet geraetID NMTOKEN #REQUIRED>
+<!ATTLIST geraet gereatBezeichnung CDATA #REQUIRED>
+<!ATTLIST geraet zustand (neuwertig | gut | defekt) #REQUIRED>
+<!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED>
+<!ATTLIST geraet geraetekategorie CDATA #REQUIRED>
