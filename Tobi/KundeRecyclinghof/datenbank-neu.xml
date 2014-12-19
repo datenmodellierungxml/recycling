@@ -105,6 +105,7 @@
 	<kunde kundenID="11112014_01" geraet="iPhone" geraetekategorie="Smartphone">
 		   <adresse>    
 				 <name>Björn Tim Meßthaler</name>
+				 <strasse></strasse>
 				 <telefon>09156556</telefon>
 				 <telefon>+494164684</telefon>
 		   </adresse>

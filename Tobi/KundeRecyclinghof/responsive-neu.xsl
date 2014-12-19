@@ -14,30 +14,24 @@
 <body>
 <div id="container">
 	<div id="head"></div>
-    <nav>
-		<ul>
-			<li><a href="home.html">Ger&auml;te</a></li>
-			<li><a href="products.html">Recyclinghöfe</a></li>
-			<li><a href="about.html">Hersteller</a></li>
-			<li><a href="help.html">Kunden</a></li>
-		</ul>
-	</nav>
+   
 <div id="content">
 
-<div id="hersteller">
-	<h1>Produkte</h1>
-    <xsl:for-each select="$geraete/geraet">
-	<p>
-    <h3><xsl:value-of select="@geraetBezeichnung" /></h3>
-    <p><xsl:value-of select="@zustand"/></p>
-    <p><xsl:value-of select="@geraetkategorie"/></p>
-    <p><xsl:value-of select="@verschmutzungsgrad"/></p>
-    
-    <xsl:for-each select="bestandteile/bestandteil">
-    <p><xsl:value-of select="@name"/></p>
+<div id="geraete">
+	<h1>Geräte</h1>
+    <xsl:for-each select="$kunden/kunde">
+    <h3><xsl:value-of select="adresse/name" /></h3>
+     <xsl:when test="adresse/strasse/ != ''">
+        <p>Strasse: <xsl:value-of select="adresse/strasse"/></p></xsl:when>
+     <xsl:otherwise></xsl:otherwise>
+    <p>PLZ: <xsl:value-of select="adresse/plz"/></p>
+    <p>Ort: <xsl:value-of select="adresse/ort"/></p>
+    <strong>Telefon:</strong>
+    <ul>
+    <xsl:for-each select="adresse">
+    <li><xsl:value-of select="telefon"/></li>
     </xsl:for-each>
-    
-    </p>
+    </ul>
     </xsl:for-each>
 </div>
 	
