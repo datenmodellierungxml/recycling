@@ -7,7 +7,7 @@
 <!ATTLIST geraet gereatBezeichnung CDATA #RQUIRED>
 <!ATTLIST geraet zustand (neuwertig | gut | defekt)>
 <!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED>
-<!ATTLIST geraet produktkategorie CDATA #REQUIRED>
+<!ATTLIST geraet geraetekategorie CDATA #REQUIRED>
 
 <!-- Hersteller muss mindenstens eine Adresse besitzen, kann aber auch mehrere haben. -->
 <!ELEMENT herstellerListe (hersteller*)>
