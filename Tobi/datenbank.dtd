@@ -6,7 +6,7 @@
 <!-- produktkategorie: Produktkategorie soll erweiterbar sein. -->
 <!ATTLIST produkt produktID NMTOKEN #REQUIRED>
 <!ATTLIST produkt produktBezeichnung CDATA #REQUIRED>
-<!ATTLIST produkt zustand (neuwertig | gut | defekt) "defekt">
+<!ATTLIST produkt zustand (neuwertig | gut | defekt)>
 <!ATTLIST produkt verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED>
 <!ATTLIST produkt produktkategorie CDATA #REQUIRED>
 

@@ -3,134 +3,52 @@
 <!--<!DOCTYPE datenbank SYSTEM "datenbank.dtd">-->
 
 <datenbank>
-<produktListe>
-	<produkt produktID="BD1DB19JS2B" produktBezeichnung="Samsung Galaxy S3" zustand="defekt" verschmutzungsgrad="akzeptabel" produktkategorie="Smartphone">
-		<hersteller herstellerID="Samsung">
-			<adresse>
-				<name>Samsung Electrics GmbH</name>
-				<strasse>Am Kronberger Hang 6</strasse>
-				<plz>65824</plz>
-				<ort>Schwalbach am Taunus</ort>
-				<telefon>0180 6 67267864</telefon>
-			</adresse>
-		</hersteller>
-		<recyclinghof recyclinghofID="HofMitte">
-			<adresse>
-				<name>Recyclinghof Mitte</name>
-				<strasse>Am Pferdemarkt 23</strasse>
-				<plz>90439</plz>
-				<ort>Nürnberg</ort>
-				<telefon>0911 / 80 138 04</telefon>
-			</adresse>
-			<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
-			<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
-		</recyclinghof>
-		<recyclinghof recyclinghofID="HofNord">
-			<adresse>
-				<name>Recyclinghof Nord</name>
-				<strasse>Haeberleinstraße 7</strasse>
-				<plz>90411</plz>
-				<ort>Nürnberg</ort>
-				<telefon>0911 / 36 76 05</telefon>
-			</adresse>
-			<oeffnungszeiten>Dienstag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
-			<oeffnungszeiten>Sonntag, Montag und Feiertag geschlossen</oeffnungszeiten>
-		</recyclinghof>
-		<kunde kundenID="MM125355">
-			<adresse>
-				<name>Max Mustermann</name>
-				<strasse>Musterstr. 1</strasse>
-				<plz>12345 </plz>
-				<ort>Musterstadt</ort>
-				<telefon>0911 / 12 53 55</telefon>
-			</adresse>
-		</kunde>
-		<bestandteile>
-			<bestandteil name="Glas" recyclinggrad="100"/>
-			<bestandteil name="Kunststoff" recyclinggrad="100" />
-			<bestandteil name="Metall" recyclinggrad="100"/>
-		</bestandteile>
-	</produkt>
-		<produkt produktID="JS1" produktBezeichnung="IPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" produktkategorie="Smartphone">
-		<hersteller herstellerID="IPhone">
-			<adresse>
-				<name>Apple Store</name>
-				<strasse>Roßenstraße 1</strasse>
-				<plz>80331</plz>
-				<ort>München</ort>
-				<telefon>0180 6 67267864</telefon>
-			</adresse>
-		</hersteller>
-		<recyclinghof recyclinghofID="HofMitte">
-			<adresse>
-				<name>Recyclinghof Mitte</name>
-				<strasse>Am Pferdemarkt 23</strasse>
-				<plz>90439</plz>
-				<ort>Nuernberg</ort>
-				<telefon>0911 / 80 138 04</telefon>
-				<telefon>+49 911 648486</telefon>
-			</adresse>
-			<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
-			<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
-		</recyclinghof>
-		<recyclinghof recyclinghofID="HofNord">
-			<adresse>
-				<name>Recyclinghof Nord</name>
-				<strasse>HaeberleinstraÃYe 7</strasse>
-				<plz>90411</plz>
-				<ort>Nuernberg</ort>
-				<telefon>0911 / 36 76 05</telefon>
-			</adresse>
-			<oeffnungszeiten>Dienstag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-			<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
-			<oeffnungszeiten>Sonntag, Montag und Feiertag geschlossen</oeffnungszeiten>
-		</recyclinghof>
-		<kunde kundenID="11112014_01">
-			   <adresse>    
-					 <name>Björn Tim Meßthaler</name>
-					 <telefon>09156556</telefon>
-					 <telefon>+494164684</telefon>
-			   </adresse>
-		</kunde>
-		<bestandteile>
-			<bestandteil name="Glas" recyclinggrad="100"/>
-			<bestandteil name="Kunststoff" recyclinggrad="100" />
-			<bestandteil name="Metall" recyclinggrad="100"/>
-		</bestandteile>
-	</produkt>
-</produktListe>
-
 <!--Liste der Geräte-->
 <geraeteListe>
 <!-- Gerät iPhone aktzeptabel-->
-<geraet geraetID="JS1" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
+<geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
 <bestandteile>
-			<bestandteil name="Glas" recyclinggrad="100"/>
-			<bestandteil name="Kunststoff" recyclinggrad="50" />
-			<bestandteil name="Metall" recyclinggrad="100"/>
+			<bestandteil name="Glas" anteil="60"recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" anteil="10"recyclinggrad="50" />
+			<bestandteil name="Metall" anteil="30" recyclinggrad="100"/>
 		</bestandteile>
 </geraet>
 
-<!-- Gerät iPhone nicht akzeptabel-->
-<geraet geraetID="JS1" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
+<!-- Gerät iPhone nicht verschmutzt-->
+<geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="defekt" verschmutzungsgrad="verschmutzt" geraetekategorie="Smartphone">
 <bestandteile>
-			<bestandteil name="Glas" recyclinggrad="10"/>
-			<bestandteil name="Kunststoff" recyclinggrad="50" />
-			<bestandteil name="Metall" recyclinggrad="30"/>
+			<bestandteil name="Glas" anteil="60"recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" anteil="10"recyclinggrad="50" />
+			<bestandteil name="Metall" anteil="30" recyclinggrad="100"/>
 		</bestandteile>
 </geraet>
 
 <!-- Geräte Samsung Galaxy S3-->
-<geraet geraetID="BD1DB19JS2B" geraetBezeichnung="Samsung Galaxy S3" zustand="defekt" verschmutzungsgrad="akzeptabel" geraetkategorie="Smartphone">
+<geraet geraetID="SGS3" geraetBezeichnung="Samsung Galaxy S3" zustand="gut" verschmutzungsgrad="akzeptabel" geraetkategorie="Smartphone">
 <bestandteile>
-			<bestandteil name="Glas" recyclinggrad="100"/>
-			<bestandteil name="Kunststoff" recyclinggrad="50" />
-			<bestandteil name="Metall" recyclinggrad="100"/>
+			<bestandteil name="Glas" anteil="50" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" anteil="30" recyclinggrad="80" />
+			<bestandteil name="Metall" anteil="20" recyclinggrad="10"/>
 		</bestandteile>
 		</geraet>
+		
+<!-- Nokia 3110-->
+<geraet geraetID="N3110" geraetBezeichnung="Nokia 3110" zustand="defekt" verschmutzungsgrad="gereinigt" geraetkategorie="Handy">
+<bestandteile>
+			<bestandteil name="Glas" anteil="10" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" anteil="80" recyclinggrad="80" />
+			<bestandteil name="Metall" anteil="10" recyclinggrad="10"/>
+		</bestandteile>
+</geraet>
+
+<geraet geraetID="LYoga2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="aktzeptabel" geraetkategorie="Handy">
+<bestandteile>
+			<bestandteil name="Glas" anteil="30" recyclinggrad="100"/>
+			<bestandteil name="Kunststoff" anteil="50" recyclinggrad="80" />
+			<bestandteil name="Metall" anteil="20" recyclinggrad="10"/>
+		</bestandteile>
+</geraet>
+
 </geraeteListe>
 
 <!--Liste der Hersteller-->
@@ -237,11 +155,16 @@
 			<ort>Nürnberg</ort>
 			<telefon>0911 / 36 76 05</telefon>
 		</adresse>
-		<oeffnungszeiten>Dienstag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-		<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
-		<oeffnungszeiten>Sonntag, Montag und Feiertag geschlossen</oeffnungszeiten>
+			</adresse>
+		<oeffnungszeiten>Montag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Dienstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Mittwch 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Donnerstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Freitag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Samstag 9.30 Uhr - 15 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
 		<spezialgebiet>smartphone</spezialgebiet>
-		<spezialgebiet>handy</spezialgebiet>
+		<spezialgebiet>Tablet</spezialgebiet>
 	</recyclinghof>
 	<recyclinghof recyclinghofID="HofMitte">
 		<adresse>
@@ -251,8 +174,12 @@
 			<ort>Nürnberg</ort>
 			<telefon>0911 / 80 138 04</telefon>
 			</adresse>
-		<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-		<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Montag 12 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Dienstag 12 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Mittwch 9 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Donnerstag 9 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Freitag 12 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Samstag 8.00 Uhr - 12 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
 		<spezialgebiet>smartphone</spezialgebiet>
 	</recyclinghof>
@@ -264,8 +191,12 @@
 			<ort>Nürnberg</ort>
 			<telefon>0911 / 50 70 103</telefon>
 			</adresse>
-		<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-		<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Montag 12 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Dienstag 12 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Mittwch 9 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Donnerstag 9 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Freitag 12 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Samstag 8.00 Uhr - 12 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
 		<spezialgebiet>handy</spezialgebiet>
 	</recyclinghof>
@@ -277,11 +208,16 @@
 			<ort>Nürnberg</ort>
 			<telefon>0911 / 10 20 03</telefon>
 			</adresse>
-		<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-		<oeffnungszeiten>Samstag 9.30 Uhr bis 15 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Montag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Dienstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Mittwch 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Donnerstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Freitag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Samstag 9.30 Uhr - 15 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Sonntag und Feiertag geschlossen</oeffnungszeiten>
 		<spezialgebiet>Smartphones</spezialgebiet>
 		<spezialgebiet>handy</spezialgebiet>
+		<spezialgebiet>tablet</spezialgebiet>
 	</recyclinghof>
 </recyclinghofListe>
 </datenbank>
