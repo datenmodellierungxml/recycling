@@ -135,23 +135,18 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 </div>
 <div class="toc">
 <h2><a name="table_of_contents" id="table_of_contents"></a>Inhaltsverzeichnis</h2>
-<div class="toc">1 <a href="#intro">Einleitung</a><br>
+<div class="toc">
+1 <a href="#intro">Einleitung</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;1.1 <a href="#origin-goals">Problemstellung und Ziel</a><br>
 2 <a href="#concepts">Geschäftsprozessmodell</a><br>
-3 <a href="#conformance">Richtlinien</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;3.1 <a href="#procdep">Namenskonventionen für Elemente und Attribute</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;3.2 <a href="#markup-reqs">Kommentare</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;3.3 <a href="#app-reqs">Struktur des XML-Dokuments</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.1 <a href="#app-reqs-full">Full Conformance</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.3.2 <a href="#app-reqs-simple">Simple Conformance</a><br>
-4 <a href="#att-method">Datenmodell</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;4.1 <a href="#xlinkattusagepat">XLink Attribute Usage Patterns</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;4.2 <a href="#elementtyperel">XLink Element Type Relationships</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;4.3 <a href="#defaulting">Attribute Value Defaulting</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;4.4 <a href="#integrating">Integrating XLink Usage with Other Markup</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;4.5 <a href="#legacy">Using XLink with Legacy Markup</a><br>
-5 <a href="#linking-elements">XLink Elements and Attributes</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;5.1 <a href="#extended-link">Extended Links (extended-Type Element)</a><br>
+3 <a href="#att-method">Datenmodell</a><br>
+4 <a href="#conformance">Die XML-Syntaxregeln</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.1 <a href="#procdep">Elemente und Attribute</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.2 <a href="#markup-reqs">Kommentare</a><br>
+5 <a href="#app-reqs">Document Type Definition </a><br>
+6 <a href="#linking-elements">Entwicklung XML-Schemata</a><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;5.1<a href="#extended-link">Extended Links (extended-Type Element)</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.1 <a href="#local-resource">Local Resources for an Extended Link (resource-Type Element)</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.2 <a href="#remote-resource">Remote Resources for an Extended Link (locator-Type Element)</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.3 <a href="#xlink-arcs">Traversal Rules for an Extended Link (arc-Type Element)</a><br>
@@ -186,314 +181,156 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 
 <div class="div1">
 <h2><a name="concepts" id="concepts"></a>2 Geschäftsprozessmodell</h2>
-<p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts. 
-Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird folgend der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
+<p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts.</p> 
+<p>Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird folgend der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
+<p><img src="img/epkhandyrecyclingde.png" style="width:100%"/></p>
 </div>
 <div class="div1">
-<h2><a name="conformance" id="conformance"></a>3 Richtlinien</h2>
+<h2><a name="att-method" id="att-method"></a>3 Datenmodell</h2>
+<p>This section describes the design of XLink's markup vocabulary.</p>
+<p><img src="img/recycling.png" style="width:100%"/></p>
+</div>
+<div class="div1">
+<h2><a name="conformance" id="conformance"></a>4 Die XML-Syntax-Regeln</h2>
 <p>Da  gemeinsam an einem Projekt gearbeitet wird, macht es durchaus Sinn gewisse Konventionen für die Gestaltung des XML Codes und allgemeine Regeln festzulegen. Diese Regeln sollten auch bei Änderungen oder Erweiterungen eingehalten werden um die Konsistenz der Datenstruktur zu gewährleisten.</p>
 <div class="div2">
-<h3><a name="procdep" id="procdep"></a>3.1 Namenskonventionen für Elemente und Attribute</h3>
+<h3><a name="procdep" id="procdep"></a>4.1 Elemente und Attribute</h3>
 <p>Die allgemeine Zeichenkodierung wurde über alle XML-Files hinweg wie folgt festgelegt:</p>
-
-<code>&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</code>
-
-<p>Da unsere Anwendung nur in Deutschland verwendet werden soll und die Inhalte auf Deutsch sind, sollen die Elementnamen und Attribute auf Deutsch sein. Elementnamen und Attribute sind in der Regel klein zu schreiben.Bei allen XML-Dokumenten wurde ein genaues Wurzelelement ausgewählt. Das Informationssystem hat die Wurzel datenbank, in der alle vier Listen eingepflegt werden: produktListe, herstellerListe, kundenListe und recyclinghofListe. An diesem Beispiel werden zum Einen die Vorgabe, dass das Element mit einem kleinen Buchstaben beginnt und zum Anderen auf Deutsch gehalten wird, eingehalten. Jedes drauffolgende Wort in demselben Element beginnt mit einem großen Buchstaben: produktListe. Es wurden hier also folgende Regeln beachtet:</p>
+<pre>
+	&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+</pre>
+<p>Da unsere Anwendung nur in Deutschland verwendet werden soll und die Inhalte auf Deutsch sind, sollen die Elementnamen und Attribute auf Deutsch sein. Elementnamen und Attribute sind in der Regel klein zu schreiben.Bei allen XML-Dokumenten wurde ein genaues Wurzelelement ausgewählt. Das Informationssystem hat die Wurzel datenbank, in der alle vier Listen eingepflegt werden: geraeteListe, herstellerListe, kundenListe und recyclinghofListe. An diesem Beispiel werden zum Einen die Vorgabe, dass das Element mit einem kleinen Buchstaben beginnt und zum Anderen auf Deutsch gehalten wird, eingehalten. Jedes drauffolgende Wort in demselben Element beginnt mit einem großen Buchstaben: geraeteListe. Es wurden hier also folgende Regeln beachtet:</p>
 <ul>
   <li>Namen dürfen Buchstaben, Ziffern und andere Zeichen enthalten</li>
   <li>Namen dürfen Groß- und Kleinschreibung beinhalten</li>
   <li>Namen sollten ausdrucksstark und kurz sein</li>
 </ul>
 <p>
-  Es wird als Beispiel weiterhin die produktListe betrachtet. Parsed Character Data (PCDATA) wurde bei Elementen angewendet, die einen unstrukturierten Inhalt haben. PCDATA sind Dokumentenabschnitte, die der XML-Parser gemäß den XML-Syntax-Regeln verarbeitet. Ein Beispiel für einen Inhalt des Elements oeffnungszeiten ist: 
-<oeffnungszeiten>Montag bis Freitag 9.30 Uhr bis 18 Uhr</oeffnungszeiten>
-Unparsed Character Data (CDATA) wurde in Attrubuten verwendet. Der Term CDATA markiert Texte, die ein XML-Parser nicht verarbeiten soll. Ein Beispiel eines Attributs, das mit CDATA deklariert worden ist, ist das Attribut recyclinghof:
-<recyclinghof recyclinghofID="HofMitte">
-</recyclinghof>
-Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausgeschlossen. Attribute beschreiben ein Element. Das Element recyclinghof wird hier also mit dem Attributnamen recyclinghofID und dem Attributwert HofMitte beschrieben. Ein Element kann auch beliebig viele Attribute tragen, somit ist die Entscheidung ziemlich schnell getroffen worden, dass beispielsweise das Element produkt mehrere Attribute hat, da ein Produkt mehrere Eigenschaften hat:
-<produkt produktID="BD1DB19JS2B" produktBezeichnung="Samsung Galaxy S3" zustand="defekt" verschmutzungsgrad="akzeptabel" produktkategorie="Smartphone"> 
-</produkt>
-Das Produktbeispiel hat also eine genaue ID, eine Bezeichnung, einen Zustand, einen Verschmutzungsgrad sowie eine dazugehöroge Produktkategorie. Die Richtlinie ,dass Attribute unterschiedliche Namen tragen müssen, wurde strengst beachtet. 
-Durch das zusätzliche Einfügen von Elementen und Attributen können XML Dokumente leicht erweitert werden. Die Erweiterbarkeit von XML kann Missverständnisse in der Kommunikation unter den Projektmitgliedern auslösen, deswegen einigten sich die Teammitglieder darauf, dass falls ein Name eines Attributs oder Elements schon einmal vergeben worden ist, war dieser reserviert und durfte keinesfalls für eine andere Bedeutung verwendet werden. </p>
-</div>
-<div class="div2">
-<h3><a name="markup-reqs" id="markup-reqs"></a>3.2 Kommentare</h3>
-<p>Da Kommentare nicht innerhalb von XML-Tags verwendet werden dürfen, werden diese nach Möglichkeit über den betreffenden XML-Tag verfasst. Im Allgemeinen sollten die Kommentare beschreibend und aussagekräftig sein. Fehlgeschlagene Versuche wurden in den XML Dokumenten beibehalten aber mit Hilfe der Kommentagfunktion auskommentiert, damit sie keinen Einfluss auf die Validierung des XML Dokuments hat. Um die Document Type Definition zu beschreiben wurde auch innerhalb der DTD einige Kommentare erfasst.</p>
-</div>
-<div class="div2">
-<h3><a name="app-reqs" id="app-reqs"></a>3.3 Struktur des XML-Dokuments</h3>
-<p>Document Type Definitions (DTDs) werden in einem seperaten Dokument ausgelagert um die Dateigröße der einzelnen XML-Dokumenten möglichst gering zu halten. Die DTD-Datei(en) werden in das XML Dokument ganz eingebunden. Eine Menge formal überprüfbarer Regeln zur Beschreibung der gemeinsamen strukturellen Merkmale einer Menge von Dokumenten ist ein Dokumententyp. Dementsprechend ist eine DTD eine Grammatik. Das Validieren der Document Typ Definition und der zugehörigen XML Dokumente erfolgte durch das Online-Tool von W3C http://validator.w3.org. Da mit verschiedenen Editoren wie Notepad++, TextEdit gearbeitet worden ist, wurde entschlossen, dass nach jeder Änderung das File mit dem W3C Validator validiert wird. Die DTD wurde extern lokal im System deklariert:
-<!DOCTYPE datenbank SYSTEM "datenbank.dtd">
-Elemente werden in der DTD wie folgt definiert: 
-  XML       DTD
-  <produkt> <!ELEMENT produkt>
-Die Reihenfolge von Elementen in einem Dokument ist in der DTD fest deklariert:
-<!ELEMENT produkt (hersteller , recyclinghof* , kunde , bestandteile+)>
-Diese Ausdrücke über das Element produkt zeigt folgendes: Jedes Produkt hat genau einen Hersteller. Das Produkt kann bei mehreren oder bei keinem Recyclinghof recycelt werden. Jedes Produkt gehört zu genau einem Kunden, Das Produkt besteht aus mindestens einem Bestandteil. Ein Attribut wurd in der DTD wie folgt deklariert:
-<!ATTLIST produkt produktID NMTOKEN #REQUIRED>
-Hier haben wir ein Attribut, das durch NMTOKEN beschrieben wird. Das heißt es sind bei einem NMTOKEN Namen mit führenden Ziffern und Satzzeichen am Anfang erlaubt. Der Default-Wert #REQUIRED besagt, dass das XML-Dokument an dieser Stelle einen Wert spezifizieren muss. </p>
+  Um den Inhalt mancher Elemente zu beschreiben wurden einerseits PCDATA und andererseits CDATA verwendet. Als Beispiel wird die herstellerListe betrachtet. Parsed Character Data (PCDATA) wurde bei Elementen angewendet, die einen unstrukturierten Inhalt haben. PCDATA sind Dokumentenabschnitte, die der XML-Parser gemäß den XML-Syntax-Regeln verarbeitet. Ein Beispiel für einen Inhalt des Elements oeffnungszeiten ist: 
+</p><pre> 
+	&lt;oeffnungszeiten&gt;Montag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+	&lt;oeffnungszeiten&gt;Dienstag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+	&lt;oeffnungszeiten&gt;Mittwch 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+	&lt;oeffnungszeiten&gt;Donnerstag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+	&lt;oeffnungszeiten&gt;Freitag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+	&lt;oeffnungszeiten&gt;Samstag 9.30 Uhr - 15 Uhr&lt;/oeffnungszeiten&gt;
+	&lt;oeffnungszeiten&gt;Sonntag und Feiertag geschlossen&lt;/oeffnungszeiten&gt;
+</pre>
 <p>
-  In der XML-Datei selbst werden die Kindelemente des übergeordneten Elements um einen Tab eingerückt um die Lesbarkeit der XML-Dokumente zu erhöhen. 
-  </p>
-</div>
-</div>
-<div class="div1">
-<h2><a name="att-method" id="att-method"></a>4 Datenmodell</h2>
-<p>This section describes the design of XLink's markup vocabulary.</p>
-<p><img src="img/recycling.png" style="width:100%"/></p>
-<div class="exampleInner">
-<pre>http://www.w3.org/1999/xlink
-</pre></div>
-<p>As dictated by <a href="http://www.w3.org/TR/xlink11/#xname">[XML Names]</a>, the use of XLink elements and attributes requires declaration of the XLink namespace. For example, the following declaration would make the prefix <code>xlink</code> available within the <code>myElement</code> element to represent the XLink namespace:</p>
-<div class="exampleInner">
-<pre>&lt;myElement
-  xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
-  ...
-&lt;/myElement&gt;
-</pre></div>
-<div class="note">
-<p class="prefix"><b>Note:</b></p>
-<p>Most code examples in this specification do not show an XLink namespace declaration. The <code>xlink</code> prefix is used throughout to stand for the declaration of the XLink namespace on elements in whose scope the so-marked attribute appears (on the same element that bears the attribute or on some ancestor element), whether or not an XLink namespace declaration is present in the example.</p>
-</div>
-<p>XLink's namespace provides <b>global attributes</b> for use on elements that are in any arbitrary namespace. The global attributes are <code>type</code>, <code>href</code>, <code>role</code>, <code>arcrole</code>, <code>title</code>, <code>show</code>, <code>actuate</code>, <code>label</code>, <code>from</code>, and <code>to</code>. All other attributes, and all elements, in the XLink namespace are reserved. Document creators use the XLink global attributes to make the elements in their own namespace,
-or even in a namespace they do not control, recognizable as XLink elements. The <code>type</code> attribute indicates the XLink element type (simple, extended, locator, arc, resource, or title); the element type dictates the XLink-imposed constraints that such an element <a title="Must, May, etc." href="http://www.w3.org/TR/xlink11/#dt-must">must</a> follow and the behavior of XLink applications on encountering the element.</p>
-<p>Following is an example of a <code>crossReference</code> element from a non-XLink namespace that has XLink global attributes:</p>
-<div class="exampleInner">
-<pre>&lt;my:crossReference
-  xmlns:my="http://example.com/"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  xlink:type="simple"
-  xlink:href="students.xml"
-  xlink:role="http://www.example.com/linkprops/studentlist"
-  xlink:title="Student List"
-  xlink:show="new"
-  xlink:actuate="onRequest"&gt;
-Current List of Students
-&lt;/my:crossReference&gt;
-</pre></div>
-<p>Using global attributes always requires the use of namespace prefixes on the individual attributes.</p>
-<p>In <a href="http://www.w3.org/TR/xlink11/#xlink10">[XML Linking Language (XLink) Version 1.0]</a>, XLink elements are identified by the presence of an <code>xlink:type</code> attribute. In XLink 1.1, XLink elements are identified by the presence of either an <code>xlink:type</code> attribute or an <code>xlink:href</code> attribute:</p>
+Unparsed Character Data (CDATA) wurde in Attributen verwendet. Der Term CDATA markiert Texte, die ein XML-Parser nicht verarbeiten soll. Ein Beispiel eines Attributs, das mit CDATA deklariert worden ist, ist das Attribut recyclinghof:</p>
+<pre>
+	&lt;recyclinghof recyclinghofID="HofMitte"&gt;
+	&lt;/recyclinghof&gt;
+</pre>
+<p>
+Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausgeschlossen. Attribute beschreiben ein Element. Das Element recyclinghof wird hier also mit dem Attributnamen recyclinghofID und dem Attributwert HofMitte beschrieben. Ein Element kann auch beliebig viele Attribute tragen, somit ist die Entscheidung ziemlich schnell getroffen worden, dass beispielsweise das Element geraet mehrere Attribute hat, da ein Gerät mehrere Eigenschaften hat:</p>
+<pre>
+	&lt;geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone"&gt;
+	&lt;/geraet&gt;
+</pre>
+<p>Das Gerätebeispiel hat also eine genaue ID, eine Bezeichnung, einen Zustand, einen Verschmutzungsgrad sowie eine dazugehörige Produktkategorie. Die Richtlinie, dass Attribute unterschiedliche Namen tragen müssen, wurde strengst beachtet. Die Reihenfolge zwischen den einzelnen Eigenschaften sind in einem Attribut völlig gleichgültig.</p>
+<p> Durch das zusätzliche Einfügen von Elementen und Attributen können XML Dokumente leicht erweitert werden. Die Erweiterbarkeit von XML kann Missverständnisse in der Kommunikation unter den Projektmitgliedern auslösen, deswegen einigten sich die Teammitglieder darauf, dass falls ein Name eines Attributs oder Elements schon einmal vergeben worden ist, war dieser reserviert und durfte keinesfalls für eine andere Bedeutung verwendet werden.</p>
+<p> Es wurden also folgende Punkt des Well-formed XML eingehalten:
 <ul>
 <li>
-<p>If an element has an <code>xlink:type</code> attribute, then that attribute must have one of the following values: “simple”, “extended”, “locator”, “arc”, “resource”, or “title” and the element must adhere to the conformance constraints imposed by that XLink element type.</p>
+<p>Jedes Anfangs-Tag muss ein zugehöriges Ende-Tag haben</p>
 </li>
 <li>
-<p>If an element has an <code>xlink:href</code> attribute but <em>does not</em> have an <code>xlink:type</code> attribute, then it is treated exactly as if it had an <code>xlink:type</code> attribute with the value “simple”.</p>
+<p>Elemente dürfen sich nicht überlappen</p>
+</li>
+<li>
+<p>XML-Dokumente haben genau ein Wurzel-Element</p>
+</li>
+<li>
+<p>Element-Namen müssen bestimmten Namenskonventionen entsprechen</p>
+</li>
+<li>
+<p>XML beachtet grundsätzlich Groß- und Kleinschreibung</p>
+</li>
+<li>
+<p>XML beläst Whitespace im Text.</p>
+</li>
+<li>
+<p>Ein Element darf niemals zwei Attribute mit dem selben Namen haben</p>
 </li>
 </ul>
+</div>
 <div class="div2">
-<h3><a name="xlinkattusagepat" id="xlinkattusagepat"></a>4.1 XLink Attribute Usage Patterns</h3>
-<p>While the XLink attributes are considered global by virtue of their use of the namespace mechanism, their allowed combinations on any one XLink element type depend greatly on the value of the special <code>type</code> attribute (see <a href="http://www.w3.org/TR/xlink11/#link-types"><b>5.3 XLink Element Type Attribute (type)</b></a> for more information) for the element on which they appear. The conformance constraint notes in this specification detail their allowed usage patterns. Following is a summary of the element types
-(columns) on which the global attributes (rows) are allowed, with an indication of whether a value is required (R) or optional (O):</p>
+<h3><a name="markup-reqs" id="markup-reqs"></a>4.2 Kommentare</h3>
+<p>Da Kommentare nicht innerhalb von XML-Tags verwendet werden dürfen, werden diese nach Möglichkeit über den betreffenden XML-Tag verfasst. Die Klammerung der Kommentare erfolgte durch standardgemäßter Form: <!--Kommentar-->. Außerdem wurde vorallem die Angabe befolgt, dass "--" Zeichen in keinem Kommentar verwendet wurden. Im Allgemeinen sollten die Kommentare beschreibend und aussagekräftig sein. Fehlgeschlagene Versuche wurden in den XML Dokumenten beibehalten aber mit Hilfe der Kommentagfunktion auskommentiert, damit sie keinen Einfluss auf die Validierung des XML Dokuments hat. Um die Document Type Definition zu beschreiben wurde auch innerhalb der DTD einige Kommentare erfasst.</p>
+</div>
+
+<div class="div2">
+<h2><a name="app-reqs" id="app-reqs"></a>5 Document Type Definition</h2>
+<p>Document Type Definitions (DTDs) werden in einem seperaten Dokument ausgelagert um die Dateigröße der einzelnen XML-Dokumenten möglichst gering zu halten. Die DTD-Datei(en) werden in das XML Dokument ganz eingebunden. Eine Menge formal überprüfbarer Regeln zur Beschreibung der gemeinsamen strukturellen Merkmale einer Menge von Dokumenten ist ein Dokumententyp. Dementsprechend ist eine DTD eine Grammatik. Das Validieren der Document Typ Definition und der zugehörigen XML Dokumente erfolgte durch das Online-Tool von W3C http://validator.w3.org. Da mit verschiedenen Editoren wie Notepad++, TextEdit gearbeitet worden ist, wurde entschlossen, dass nach jeder Änderung das File mit dem W3C Validator validiert wird. Die DTD wurde extern lokal im System deklariert:</p>
+<pre>
+	&lt;!DOCTYPE datenbank SYSTEM "datenbank.dtd"&gt;
+</pre>
+<p>Elemente werden in der DTD wie folgt definiert: </p>
 <table border="1" frame="border" summary="Link Usage Patterns">
 <thead>
 <tr>
-<th>&nbsp;</th>
-<th><code>simple</code></th>
-<th><code>extended</code></th>
-<th><code>locator</code></th>
-<th><code>arc</code></th>
-<th><code>resource</code></th>
-<th><code>title</code></th>
+<th>XML</th>
+<th>DTD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>type</code></td>
-<td>O<sup>*</sup></td>
-<td>R</td>
-<td>R</td>
-<td>R</td>
-<td>R</td>
-<td>R</td>
-</tr>
-<tr>
-<td><code>href</code></td>
-<td>O<sup>*</sup></td>
-<td>&nbsp;</td>
-<td>R</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>role</code></td>
-<td>O</td>
-<td>O</td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>O</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>arcrole</code></td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td>O</td>
-<td>O</td>
-<td>O</td>
-<td>O</td>
-<td>O</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>show</code></td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>actuate</code></td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>label</code></td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>O</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>from</code></td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>to</code></td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>O</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td colspan="7"><sup>*</sup> At least one of <code>type</code> or <code>href</code> must be specified.</td>
+<td>&lt;geraet&gt;</td>
+<td>&lt;!ELEMENT geraet&gt;</td>
 </tr>
 </tbody>
 </table>
-<p>(See also <a href="http://www.w3.org/TR/xlink11/#sample-dtd-appx"><b>B Sample DTD</b></a>, <a href="http://www.w3.org/TR/xlink11/#sample-xsd-appx"><b>C Sample XML Schema</b></a>, and <a href="http://www.w3.org/TR/xlink11/#sample-rng-appx"><b>D Sample RELAX NG Grammar</b></a> for examples of non-normative schemas that illustrate the allowed patterns of attributes.)</p>
-<p>This specification uses the convention "<var>xxx</var>-type element" to refer to elements that <a title="Must, May, etc." href="http://www.w3.org/TR/xlink11/#dt-must">must</a> adhere to a named set of constraints associated with an XLink element type, no matter what name the element actually has. For example, "<code>locator</code>-type element" would refer to all of the following elements:</p>
-<div class="exampleInner">
-<pre>&lt;locator xlink:type="locator" ... /&gt;
-&lt;loc xlink:type="locator" ... /&gt;
-&lt;my:pointer xlink:type="locator" ... /&gt;
-</pre></div>
-</div>
-<div class="div2">
-<h3><a name="elementtyperel" id="elementtyperel"></a>4.2 XLink Element Type Relationships</h3>
-<p>Various XLink element types have special meanings dictated by this specification when they appear as direct children of other XLink element types. Following is a summary of the child element types that play a significant role in particular parent element types. (Other combinations are not conformant.)</p>
-<table border="1" summary="Element Type Relationships">
-<thead>
-<tr>
-<th>Parent type</th>
-<th>Significant child types</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>simple</code></td>
-<td>none</td>
-</tr>
-<tr>
-<td><code>extended</code></td>
-<td><code>locator</code>, <code>arc</code>, <code>resource</code>, <code>title</code></td>
-</tr>
-<tr>
-<td><code>locator</code></td>
-<td><code>title</code></td>
-</tr>
-<tr>
-<td><code>arc</code></td>
-<td><code>title</code></td>
-</tr>
-<tr>
-<td><code>resource</code></td>
-<td>none</td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="div2">
-<h3><a name="defaulting" id="defaulting"></a>4.3 Attribute Value Defaulting</h3>
-<p>Using XLink potentially involves using a large number of attributes for supplying important link information. In cases where the values of the desired XLink attributes are unchanging across individual instances in all the documents of a certain type, attribute value defaults (fixed or not) <a title="Must, May, etc." href="http://www.w3.org/TR/xlink11/#dt-must">may</a> be added to a DTD or schema so that the attributes do not have to appear physically on element start-tags. For example, if attribute defaults were provided for the
-<code>xmlns:xlink</code>, <code>xmlns:my</code>, <code>type</code>, <code>show</code>, and <code>actuate</code> attributes in the example in the introduction to <a href="http://www.w3.org/TR/xlink11/#att-method"><b>4 XLink Markup Design</b></a>, the example would look as follows:</p>
-<div class="exampleInner">
-<pre>&lt;my:crossReference
-  xlink:href="students.xml"
-  xlink:role="http://www.example.com/linkprops/studentlist"
-  xlink:title="Student List"&gt;
-Current List of Students
-&lt;/my:crossReference&gt;
-</pre></div>
-<p>Information sets that have been created under the control of a DTD have all attribute values filled in. Note, however, that parsers are not required to process the <a href="http://www.w3.org/TR/REC-xml/#dt-doctype">external subset</a>. Applications, such as web browsers, that do not process the external subset will not be aware of any default values identified therein.</p>
-<p>Note also that using the attribute value default technique to specify the XLink namespace declaration has no equivalent in <a href="http://www.w3.org/TR/xlink11/#relax-ng">[RELAX NG]</a>, <a href="http://www.w3.org/TR/xlink11/#xmlschema-1">[XML Schema Part 1: Structures]</a>, or other modern schema languages. While it can be used when DTD-informed parsing is performed, it poses an interoperability risk and should be used with care.</p>
-</div>
-<div class="div2">
-<h3><a name="integrating" id="integrating"></a>4.4 Integrating XLink Usage with Other Markup</h3>
-<p>This specification defines only attributes and attribute values in the XLink namespace. There is no restriction on using non-XLink attributes alongside XLink attributes. In addition, most XLink attributes are optional and the choice of simple or extended link is up to the markup designer or document creator, so a DTD or other schema that uses XLink features need not use or declare the entire set of XLink's attributes. Finally, while this specification identifies the minimum constraints on XLink markup,
-schemas that use XLink are free to tighten these constraints. The use of XLink does not absolve a valid document from conforming to the constraints expressed in its governing schema.</p>
-<p>Following is an example of a <code>crossReference</code> element with both XLink and non-XLink attributes:</p>
-<div class="exampleInner">
-<pre>&lt;my:crossReference
-  xmlns:my="http://example.com/"
-  my:lastEdited="2000-06-10"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  xlink:type="simple"
-  xlink:href="students.xml"&gt;
-Current List of Students
-&lt;/my:crossReference&gt;
-</pre></div>
-</div>
-<div class="div2">
-<h3><a name="legacy" id="legacy"></a>4.5 Using XLink with Legacy Markup</h3>
-<p>Because XLink's global attributes require the use of namespace prefixes, non-XLink-based links in legacy documents generally do not serve as conforming XLink constructs as they stand, even if attribute value defaulting is used. For example, XHTML 1.0 has an <code>a</code> element with an <code>href</code> attribute, but because the attribute is a local one attached to the <code>a</code> element in the XHTML namespace, it is not the same as an <code>xlink:href</code> global attribute in the XLink
-namespace.</p>
-<p>This specification defines XLink markup, that is, what combinations XLink attributes and what arrangements of elements with XLink attributes are conformant. It also defines the XLink semantics of such conformant markup. When XLink is used on elements that have other attributes or related elements with linking semantics, XLink can not and does not attempt to define the semantics of such combinations.</p>
-<p>If an element allows such possibly conflicting markup to occur, it <a title="Must, May, etc." href="http://www.w3.org/TR/xlink11/#dt-must">should</a> specify the semantics of the result.</p>
+<p>Die Reihenfolge von Elementen in einem Dokument ist in der DTD fest deklariert:</p>
+<pre> 
+	&lt;!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)&gt;
+</pre>
+<P>Diese Ausdrücke über das Element adresse zeigt folgendes: Jede Adresse hat mindestens einen Namen. Die Straße, Postleitzahl sowie der Ort sind optional anzugeben. Jedoch muss mindestens eine Telefonnummer des Kundens angegeben werden. Der Kunde sollte bei Rückfragen oder Notfällen unter einer Telefonnummer erreichbar sein. </p>
+<p> Ein Attribut wurd in der DTD wie folgt deklariert:</p>
+<pre>
+	&lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
+</pre>
+<p>Die DTD beschreibt hier, welche Attribute und Attributwerte in einem XML-Dokument in welchen Elementen vorkommen dürfen. Das Attribut geraetID wurde außerhalb des betroffenen Elements (hier:geraet) durch ATTLIST deklariert. </p>
+<p>Hier haben wir ein Attribut, das durch NMTOKEN beschrieben wird. Das heißt es sind bei einem NMTOKEN Namen mit führenden Ziffern und Satzzeichen am Anfang erlaubt. Der Default-Wert #REQUIRED besagt, dass das XML-Dokument an dieser Stelle einen Wert spezifizieren muss. </p>
+<p>
+  In der XML-Datei selbst werden die Kindelemente des übergeordneten Elements um einen Tab eingerückt um die Lesbarkeit der XML-Dokumente zu erhöhen. 
+</p>
+<p>Verknüpfungen zwischen Elementen durch Attribute mit den Attributstypen wie ID, IDREF, IDREFS wurden in dem Projekt Eiter, Steinbinder und Linke nicht verwendet.</p>.
+<p>Im Rahmen dieses Projekts wurden keine Entitties (Abkürzungen für Zeichenfolgen) verwendet.</p>
 </div>
 </div>
+<!-- Ende-->
 <div class="div1">
-<h2><a name="linking-elements" id="linking-elements"></a>5 XLink Elements and Attributes</h2>
-<p>XLink offers two kinds of links:</p>
-<dl>
-<dt class="label">Extended links</dt>
-<dd>
-<p>Extended links offer full XLink functionality, such as inbound and third-party arcs, as well as links that have arbitrary numbers of participating resources. As a result, their structure can be fairly complex, including elements for pointing to remote resources, elements for containing local resources, elements for specifying arc traversal rules, and elements for specifying human-readable resource and arc titles.</p>
-<p>XLink defines a way to give an extended link special semantics for finding linkbases; used in this fashion, an extended link helps an XLink application process other links.</p>
-</dd>
-<dt class="label">Simple links</dt>
-<dd>
-<p>Simple links offer shorthand syntax for a common kind of link, an outbound link with exactly two participating resources (into which category HTML-style <code>A</code> and <code>IMG</code> links fall). Because simple links offer less functionality than extended links, they have no special internal structure.</p>
-<p>While simple links are conceptually a subset of extended links, they are syntactically different. For example, to convert a simple link into an extended link, several structural changes would be needed.</p>
-</dd>
-</dl>
-<p>The following sections define the XLink elements and attributes.</p>
+<h2><a name="linking-elements" id="linking-elements"></a>6 Entwicklung XML-Schemata</h2>
+<p>Bei der Entwicklung des XML-Schematas wurden folgende Anforderungen bearbeitet und erfüllt:</p>
+<ul>
+<li>
+<p>Flexibilität: Unser Schema wird für eine Klasse von Dokumenten entworfen</p>
+</li>
+<li>
+<p>Zukunftssicherheit: Unser Schema sollte durch seine Struktur zukünftige Ergänzungen und Erweiterungen leicht machen </p>
+</li>
+<li>
+<p>Komplexität: Gekoppelt mit Pflegeaufwand und Akzeptanz durch Benutzer</p>
+</ul>
+<p>Folgende Phasen der Document-Type-Defintion-Entwicklung wurden abgeschlossen:<p>
+<ul>
+<li>
+<p>Die Vorbereitung: Unser Schema wurde vorerst auf Nutzbarkeit, Validierbarkeit und Komplexität geprüft.</p>
+</li>
+<li>
+<p>Das Konzeptionelle Schema: Es wurde analysiert welche Daten benötigt werden. Um das perfekte Ergebnis zu erreichen, hat sich das Team erst einmal den zu bearbeiteten Geschäftsprozess genauestens betrachtet. Welche Fakten werden benötigt? Können diese gruppiert werden? Gibt es bereits Modelle, auf die man zurückgreifen kann? Das Team hat sich stark an den üblichen Recyclingprozess von alltäglichen Geräten orientiert.</p>
+</li>
+<li>
+<p>Das Logische Schema: Mit Hilfe eines Datenmodells wurden Anforderungen an das Schema entwickelt. Aus dem Datenmodell konnte nun beispielsweise gelesen werden: welche Datenstrukturen werden nun benötigt? Haben wir obligatorische beziehungsweise fakultative Daten? Welche Strukturen müssen in einer festen Reihenfolge auftreten? Welche Daten gehören in den Inhalt der Elemente und welche zu den Eigenschaften? </p>
+</li>
+<li>
+<p>Das Physische Schema: Nun erfolgte die reine Implementierung. Welche Daten werden als Elemente, Attribute,... deklariert?</p>
+</li>
+<li>
+<p>Die Nachbereitung und das Testen: Prüfung des Schemas auf Basis bereits vorliegender Dokumente. Enige Aspekte mussten geändert werden. Fehler oder Unklarheiten mussten bereinigt werden. Das Zurückspringen zu einer vorherigen Phasen war durchaus auch Teil des Projekts.</p>
+</li>
+</ul>
 <div class="div2">
 <h3><a name="extended-link" id="extended-link"></a>5.1 Extended Links (<code>extended</code>-Type Element)</h3>
 <p>[<a name="dt-extendedlink" id="dt-extendedlink" title="Extended link">Definition</a>: An <b>extended link</b> is a link that associates an arbitrary number of resources. The participating resources <a title="Must, May, etc." href="http://www.w3.org/TR/xlink11/#dt-must">may</a> be any combination of remote and local.]</p>
