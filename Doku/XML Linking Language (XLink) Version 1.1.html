@@ -38,7 +38,7 @@ div.exampleHeader { font-weight: bold;
                     margin: 4px}
 /*]]>*/
 </style>
-<link rel="stylesheet" type="text/css" href="./XML Linking Language (XLink) Version 1.1_files/W3C-REC.css">
+<link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/W3C-REC.css">
 <link rel="home" href="http://www.w3.org/" title="W3C">
 <link rel="up" href="http://www.w3.org/TR/" title="TR Page">
 <link rel="contents" title="Table of Contents" href="http://www.w3.org/TR/xlink11/#table_of_contents">
@@ -140,10 +140,17 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 &nbsp;&nbsp;&nbsp;&nbsp;1.1 <a href="#origin-goals">Problemstellung und Ziel</a><br>
 2 <a href="#concepts">Geschäftsprozessmodell</a><br>
 3 <a href="#att-method">Datenmodell</a><br>
-4 <a href="#conformance">Die XML-Syntaxregeln</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.1 <a href="#dminitial">Initiales Datenmodell</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.2 <a href="#dmneu">Neues Datenmodell</a><br>
+4 <a href="#conformance">Richtlininen zur Gestaltung der XML Dateien</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;4.1 <a href="#procdep">Elemente und Attribute</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;4.2 <a href="#markup-reqs">Kommentare</a><br>
-5 <a href="#app-reqs">Document Type Definition </a><br>
+5 <a href="#app-reqs">Document Type Definition (DTD)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.1 <a href="#procdep">Gerät</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.2 <a href="#markup-reqs">Hersteller</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.3 <a href="#procdep">Kunde</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.4 <a href="#markup-reqs">Recyclinghof</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.1 <a href="#procdep">Weitere Definitionen</a><br>
 6 <a href="#linking-elements">Entwicklung XML-Schemata</a><br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;5.1<a href="#extended-link">Extended Links (extended-Type Element)</a><br>
@@ -183,16 +190,35 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 <h2><a name="concepts" id="concepts"></a>2 Geschäftsprozessmodell</h2>
 <p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts.</p> 
 <p>Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird folgend der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
-<p><img src="img/epkhandyrecyclingde.png" style="width:100%"/></p>
+<p>
+<figure>
+  <img src="img/epkhandyrecyclingde.png" style="width:50%"/>
+  <figcaption><span>Abbildung 1: <abbr title="EPK Modell Geschäftsprozess">EPK Modell Geschäftsprozess</abbr></span></figcaption>
+</figure>
+</p>
 </div>
 <div class="div1">
 <h2><a name="att-method" id="att-method"></a>3 Datenmodell</h2>
 <p>This section describes the design of XLink's markup vocabulary.</p>
-<p><img src="img/recycling.png" style="width:100%"/></p>
+<h3><a name="dminitial" id="dminitial"></a>3.1 Initiales Datenmodell</h3>
+<p></p>
+<p>
+<figure>
+  <img src="img/recycling_alt.png" style="width:50%"/>
+ <figcaption><span>Abbildung 2: <abbr title="Initiales Datenmodell">Initiales Datenmodell</abbr></span></figcaption>
+</figure>
+</p>
+<h3><a name="dmneu" id="dmneu"></a>3.2 Neues Datenmodell</h3>
+<p>
+<figure>
+  <img src="img/recycling.png" style="width:50%"/>
+ <figcaption><span>Abbildung 3: <abbr title="Initiales Datenmodell">Neues Datenmodell</abbr></span></figcaption>
+</figure>
+</p>
 </div>
 <div class="div1">
-<h2><a name="conformance" id="conformance"></a>4 Die XML-Syntax-Regeln</h2>
-<p>Da  gemeinsam an einem Projekt gearbeitet wird, macht es durchaus Sinn gewisse Konventionen für die Gestaltung des XML Codes und allgemeine Regeln festzulegen. Diese Regeln sollten auch bei Änderungen oder Erweiterungen eingehalten werden um die Konsistenz der Datenstruktur zu gewährleisten.</p>
+<h2><a name="conformance" id="conformance"></a>4 Richtlininen zur Gestaltung der XML Dateien</h2>
+<p>Da gemeinsam an einem Projekt gearbeitet wird, macht es durchaus Sinn gewisse Konventionen für die Gestaltung des XML Codes und allgemeine Regeln festzulegen. Diese Regeln sollten auch bei Änderungen oder Erweiterungen eingehalten werden um die Konsistenz der Datenstruktur zu gewährleisten.</p>
 <div class="div2">
 <h3><a name="procdep" id="procdep"></a>4.1 Elemente und Attribute</h3>
 <p>Die allgemeine Zeichenkodierung wurde über alle XML-Files hinweg wie folgt festgelegt:</p>
@@ -261,7 +287,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 </div>
 
 <div class="div2">
-<h2><a name="app-reqs" id="app-reqs"></a>5 Document Type Definition</h2>
+<h2><a name="app-reqs" id="app-reqs"></a>5 Document Type Definition (DTD)</h2>
 <p>Document Type Definitions (DTDs) werden in einem seperaten Dokument ausgelagert um die Dateigröße der einzelnen XML-Dokumenten möglichst gering zu halten. Die DTD-Datei(en) werden in das XML Dokument ganz eingebunden. Eine Menge formal überprüfbarer Regeln zur Beschreibung der gemeinsamen strukturellen Merkmale einer Menge von Dokumenten ist ein Dokumententyp. Dementsprechend ist eine DTD eine Grammatik. Das Validieren der Document Typ Definition und der zugehörigen XML Dokumente erfolgte durch das Online-Tool von W3C http://validator.w3.org. Da mit verschiedenen Editoren wie Notepad++, TextEdit gearbeitet worden ist, wurde entschlossen, dass nach jeder Änderung das File mit dem W3C Validator validiert wird. Die DTD wurde extern lokal im System deklariert:</p>
 <pre>
 	&lt;!DOCTYPE datenbank SYSTEM "datenbank.dtd"&gt;
@@ -291,12 +317,20 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 	&lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
 </pre>
 <p>Die DTD beschreibt hier, welche Attribute und Attributwerte in einem XML-Dokument in welchen Elementen vorkommen dürfen. Das Attribut geraetID wurde außerhalb des betroffenen Elements (hier:geraet) durch ATTLIST deklariert. </p>
-<p>Hier haben wir ein Attribut, das durch NMTOKEN beschrieben wird. Das heißt es sind bei einem NMTOKEN Namen mit führenden Ziffern und Satzzeichen am Anfang erlaubt. Der Default-Wert #REQUIRED besagt, dass das XML-Dokument an dieser Stelle einen Wert spezifizieren muss. </p>
+<p>Hier haben wir ein Attribut, das durch NMTOKEN beschrieben wird. Das heißt es sind bei einem NMTOKEN Namen mit führenden Ziffern und Satzzeichen am Anfang erlaubt. Der Default-Wert #REQUIRED besagt, dass das XML-Dokument an dieser Stelle einen Wert spezifizieren muss.</p>
 <p>
   In der XML-Datei selbst werden die Kindelemente des übergeordneten Elements um einen Tab eingerückt um die Lesbarkeit der XML-Dokumente zu erhöhen. 
 </p>
-<p>Verknüpfungen zwischen Elementen durch Attribute mit den Attributstypen wie ID, IDREF, IDREFS wurden in dem Projekt Eiter, Steinbinder und Linke nicht verwendet.</p>.
+<p>Verknüpfungen zwischen Elementen durch Attribute mit den Attributstypen wie ID, IDREF, IDREFS wurden in dem Projekt Eiter, Steinbinder und Linke nicht verwendet.</p>
 <p>Im Rahmen dieses Projekts wurden keine Entitties (Abkürzungen für Zeichenfolgen) verwendet.</p>
+
+<h3><a name="markup-reqs" id="markup-reqs"></a>5.1 Kommentare</h3>
+<h3><a name="markup-reqs" id="markup-reqs"></a>5.2 Kommentare</h3>
+<h3><a name="markup-reqs" id="markup-reqs"></a>5.3 Kommentare</h3>
+<h3><a name="markup-reqs" id="markup-reqs"></a>5.4 Kommentare</h3>
+<h3><a name="markup-reqs" id="markup-reqs"></a>5.5 Weitere Definitionen</h3>
+
+
 </div>
 </div>
 <!-- Ende-->
