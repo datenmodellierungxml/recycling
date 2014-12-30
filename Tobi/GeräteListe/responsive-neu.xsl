@@ -22,10 +22,10 @@
     <xsl:for-each select="$geraete/geraet">
 	<p>
     <h3><xsl:value-of select="@geraetBezeichnung" /></h3>
-    <p>Kategorie: <xsl:value-of select="@geraetekategorie"/></p>
-    <p>Zustand: <xsl:value-of select="@zustand"/></p>
-    <p>Verschmutzungsgrad: <xsl:value-of select="@verschmutzungsgrad"/></p>
-    <strong>Bestandteile</strong>
+    <p><strong>Kategorie: </strong> <xsl:value-of select="@geraetekategorie"/></p>
+    <p><strong>Zustand: </strong> <xsl:value-of select="@zustand"/></p>
+    <p><strong>Verschmutzungsgrad: </strong> <xsl:value-of select="@verschmutzungsgrad"/></p>
+    <strong>Bestandteile:</strong>
     <ul>
     <xsl:for-each select="bestandteile/bestandteil">
     <li><xsl:value-of select="@name"/> (<xsl:value-of select="@anteil"/>%)</li>
@@ -36,7 +36,7 @@
     </xsl:for-each>
 </div>
 	
-<div id="recyclinghof">
+<!--<div id="recyclinghof">
 	<h1>Vorgeschlagener Recyclinghöfe</h1>
 	<xsl:for-each select="$recyclinghof">
     <p>
@@ -45,7 +45,7 @@
     </p>
 	</xsl:for-each>
 </div>
-
+-->
 </div>
 
 <div id="footer"></div>
