@@ -18,25 +18,25 @@
 <div id="content">
 
 <div id="geraete">
-	<h1>Geräte</h1>
-    <xsl:for-each select="$geraete/geraet">
+	<h1>Kunden</h1>
+    <xsl:for-each select="$hersteller/hersteller">
+    <xsl:sort select="@herstellerID"/>
 	<p>
-    <h3><xsl:value-of select="@geraetBezeichnung" /></h3>
-    <p>Kategorie: <xsl:value-of select="@geraetekategorie"/></p>
-    <p>Zustand: <xsl:value-of select="@zustand"/></p>
-    <p>Verschmutzungsgrad: <xsl:value-of select="@verschmutzungsgrad"/></p>
-    <strong>Bestandteile</strong>
+    <h3><xsl:value-of select="position()" />. Hersteller</h3>
+    <p><strong>Name: </strong><xsl:value-of select="adresse/name"/></p>
+    <p><strong>Straße: </strong><xsl:value-of select="adresse/strasse"/></p>
+    <p><strong>PLZ: <xsl:value-of select="adresse/plz"/>&#160;</strong><strong>Ort: </strong><xsl:value-of select="adresse/ort"/></p>
+    <strong>Telefonnummern:</strong>
     <ul>
-    <xsl:for-each select="bestandteile/bestandteil">
-    <li><xsl:value-of select="@name"/> (<xsl:value-of select="@anteil"/>%)</li>
+    <xsl:for-each select="adresse">
+    <li><xsl:value-of select="telefon"/></li>
     </xsl:for-each>
     </ul>
     </p>
-    	<p><strong>Recyclinggrad: <xsl:value-of select="format-number(sum(bestandteile/bestandteil/@recyclinggrad) div count(bestandteile/bestandteil), '###,###,##0.00')"/> %</strong></p>
     </xsl:for-each>
 </div>
 	
-<div id="recyclinghof">
+<!--<div id="recyclinghof">
 	<h1>Vorgeschlagener Recyclinghöfe</h1>
 	<xsl:for-each select="$recyclinghof">
     <p>
@@ -44,7 +44,7 @@
     <xsl:value-of select="recyclinghof/adresse"/>
     </p>
 	</xsl:for-each>
-</div>
+</div>-->
 
 </div>
 
