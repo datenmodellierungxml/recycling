@@ -324,7 +324,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   In der XML-Datei selbst werden die Kindelemente des übergeordneten Elements um einen Tab eingerückt um die Lesbarkeit der XML-Dokumente zu erhöhen. 
 </p>
 <p>Verknüpfungen zwischen Elementen durch Attribute mit den Attributstypen wie ID, IDREF, IDREFS wurden in dem Projekt Eiter, Steinbinder und Linke nicht verwendet.</p>
-<p>Im Rahmen dieses Projekts wurden keine Entitties (Abkürzungen für Zeichenfolgen) verwendet.</p>
+<p>Im Rahmen dieses Projekts wurden keine Entities (Abkürzungen für Zeichenfolgen) verwendet.</p>
 
 <h3><a name="dtd-geraet" id="dtd-geraet"></a>5.1 Gerät</h3>
 <h3><a name="dtd-hersteller" id="dtd-hersteller"></a>5.2 Hersteller</h3>
@@ -369,7 +369,64 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <div class="div2">
 <h3><a name="extended-link" id="extended-link"></a>6.1 Aufbau und Struktur der XML Dateien</h3>
 <h3><a name="extended-link" id="extended-link"></a>6.2 Validierung</h3>
+<p>Für die Validierung der XML-Struktur wurde das Commandline-Tool <code>xmllint</code> verwendet. Der Aufbau der entsprechenden XML Datei wird mit ihrer Document Type Definition abgeglichen und so überprüft ob die Inhalte der Grammatik entsprechen. Dies ist wichtig, um die Datenstuktur zu testen und etwaige Fehler und Schwächen des Datenmodells zu erkennen und auszuschließen. 
+
+<p>Das Commandline-Tool xmllint wird wie folgt verwendet:</p>
+<pre>xmllint -valid &lt;Pfad zur XML Datei&gt;</pre>  
+
+<p>Wenn Fehler auftreten gibt das Programm diese aus. Bei einer erfolgreichen Validierung wird die XML Datei ohne Formatierung ausgegeben. Falls es Warnungen gibt, gibt das Programm diese vor dem Inhalt der zu prüfenden XML Datei aus.</p> 
+
+<p>Beispiel für einen "parser error":</p>  
+
+<pre>
+datenbank.xml:11: parser error : internal error: xmlParseInternalSubset: error detected in Markup declaration
+&produktListe;
+^
+datenbank.xml:11: parser error : DOCTYPE improperly terminated
+&produktListe;
+^
+datenbank.xml:11: parser error : Start tag expected, '<' not found
+&produktListe; 
+ ^
+</pre>
+
 <h3><a name="extended-link" id="extended-link"></a>6.3 Testfälle</h3>
+<p>Um die XML Struktur auf Fehler und Schwachstellen zu Testen wurden Testfälle entworfen. Für die Tests wurden XML-Dateien mit fiktiven aber theoretisch möglichen Testdaten erstellt. Diese Test-Dateien wurden validiert und das Ergebnis ausgewertet.</p>
+<p>Kriterien für die Tests waren:</p>
+<ul>
+<li>Testdaten werden so entworfen, wie sie auch in einer realen Anwendung vorkommen können.</li>
+<li>Die Ergebnisse der Tests müssen gründlich Dokumentiert werden.</li>
+<li>Es muss die Ursache der Fehler sowie die Lösung dieser Dokumentiert werden.</li>
+<li>Fehler, die sich aufgrund von Schwächen von XML nicht beheben lassen müssen detailliert beschrieben werden und es muss ein Workaround dazu gefunden werden.</li>
+</ul>
+
+<p>Folgende Testfälle wurden durchgeführt:</p>
+
+<p>1. <p>
+<p><b>Beschreibung</b></p>
+
+<p><b>Ergebnis</b></p>
+
+<p>2. <p>
+<p><b>Beschreibung</b></p>
+
+<p><b>Ergebnis</b></p>
+
+<p>3. <p>
+<p><b>Beschreibung</b></p>
+
+<p><b>Ergebnis</b></p>
+
+<p>4. <p>
+<p><b>Beschreibung</b></p>
+
+<p><b>Ergebnis</b></p>
+
+<p>5. <p>
+<p><b>Beschreibung</b></p>
+
+<p><b>Ergebnis</b></p>
+
 </div>
 
 <div class="div1">
@@ -909,7 +966,7 @@ simple = element * {
                 (anyElement | text)*
                 }
 </pre></div>
-<p><code>xlink11.rnc</code>:</p>
+<p>nk<code>xli11.rnc</code>:</p>
 <div class="exampleInner">
 <pre>namespace xlink = "http://www.w3.org/1999/xlink"
 
