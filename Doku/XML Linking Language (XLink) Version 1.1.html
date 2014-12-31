@@ -166,6 +166,7 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 &nbsp;&nbsp;&nbsp;&nbsp;7.2 <a href="#xslt-herstelleruebersicht">Herstellerübersicht</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;7.3 <a href="#xslt-kundenliste">Kundenliste</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;7.4 <a href="#xslt-kundenrecyclinghof">Übersicht Kunden-Recyclinghof</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.5 <a href="#xslt-probleme">Probleme und Herausforderungen bei der Entwicklung der Views</a><br>
 8 <a href="#erweiterungen">Mögliche Erweiterungen und Einsatzbereiche</a><br>
 9 <a href="#fazit">Fazit</a><br>
 </div>
@@ -327,9 +328,227 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <p>Im Rahmen dieses Projekts wurden keine Entities (Abkürzungen für Zeichenfolgen) verwendet.</p>
 
 <h3><a name="dtd-geraet" id="dtd-geraet"></a>5.1 Gerät</h3>
+
+<p>Für unseren Anwendungsfall müssen zu den Geräten verschiedene Informationen gespeichert werden.</p>
+<p>Die DTD für Geräte sieht wie folgt aus:</P> 
+<pre>
+&lt;!ELEMENT geraeteListe (geraet*)&gt;
+&lt;!ELEMENT geraet (bestandteile+)&gt;
+&lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
+&lt;!ATTLIST geraet gereatBezeichnung CDATA #REQUIRED&gt;
+&lt;!ATTLIST geraet zustand (neuwertig | gut | defekt) #REQUIRED&gt;
+&lt;!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED&gt;
+&lt;!ATTLIST geraet geraetekategorie CDATA #REQUIRED&gt;
+</pre>
+
+<p><b>Elemente:</b></p>
+<table border="1">
+  <tr>
+    <th>Element</th>
+    <th>Beschreibung</th>
+  </th>
+  <tr>
+    <td>geraeteListe</td>
+    <td>Ist ein Container für alle Geräte die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste der Geräte auszugeben.</td>
+  </tr>
+  <tr>
+    <td>geraet</td>
+    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+  </tr>
+</table>
+
+<p><b>Attribute <code>geraet</code>:</b><p>
+<table border="1">
+  <tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+  </th>
+    <tr>
+    <td>bestandteile+</td>
+    <td>Ein Gerät besteht aus mehreren Bestandteilen (mindestens einem Bestandteil). Bestandteile können zum Beispiel Glas, Kunstoff oder Kupfer sein. Diese Information ist für den Recyclingvorgang relevant.</td>
+  </tr>
+  <tr>
+    <td>geraetID</td>
+    <td>Ist ein eindeutiger Bezeichner für ein Gerät.</td>
+  </tr>
+  <tr>
+    <td>gereatBezeichnung</td>
+    <td>Bezeichnung ein bestimmtes Geräts. Beispiel: Samsung Galaxy S3</td>
+  </tr>
+    <tr>
+    <td>zustand</td>
+    <td>Beschreibt den Zustand eines Geräts. Der Zustand kann neuwertig, gut oder defekt sein.</td>
+  </tr>
+    <tr>
+    <td>verschmutzungsgrad</td>
+    <td>Beschreibt den Verschmutzungsgrad eines vom Kunden gebrachtem Geräts. Ist das Gerät sehr stark verschmutzt wird es ggf. nicht angenommen. Es können gereinigt, akzeptabel oder verschmutzt angegben werden.</td>
+  </tr>
+   <tr>
+    <td>geraetekategorie</td>
+    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+  </tr>
+</table>
+
 <h3><a name="dtd-hersteller" id="dtd-hersteller"></a>5.2 Hersteller</h3>
+
+<p>Alle Geräte besitzen einen Hersteller. Die Hersteller werden in der Datenbank mit Adresse gespeichert, da es sein kann, dass ein Gerät beim Hersteller recycelt werden kann.</p>
+<p>Die DTD für Hersteller sieht wie folgt aus:</P> 
+<pre>
+&lt;!ELEMENT herstellerListe (hersteller*)&gt;
+&lt;!ELEMENT hersteller (adresse+)&gt;
+&lt;!ATTLIST hersteller herstellerID CDATA #REQUIRED&gt;
+</pre>
+
+<p><b>Elemente:</b></p>
+<table border="1">
+  <tr>
+    <th>Element</th>
+    <th>Beschreibung</th>
+  </th>
+  <tr>
+    <td>herstellerListe</td>
+    <td>Ist ein Container für alle Hersteller die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste der Hersteller auszugeben.</td>
+  </tr>
+  <tr>
+    <td>hersteller</td>
+    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+  </tr>
+</table>
+
+<p><b>Attribute <code>hersteller</code>:</b><p>
+<table border="1">
+  <tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+    <tr>
+    <td>adresse+</td>
+    <td>Adresse des Herstellers. Er kann mehere Adressen haben. Es muss aber mindestens eine Adresse angegeben werden.</td>
+  </tr>
+  <tr>
+    <td>herstellerID</td>
+    <td>Ist ein eindeutiger Bezeichner für einen Hersteller.</td>
+  </tr>
+</table>
+
 <h3><a name="dtd-kunde" id="dtd-kunde"></a>5.3 Kunde</h3>
+
+<p>Für unseren Anwendungsfall müssen zu den Geräten verschiedene Informationen gespeichert werden.</p>
+<p>Die DTD für Kunde sieht wie folgt aus:</P> 
+<pre>
+&lt;!ELEMENT kundenListe (kunde*)&gt;
+&lt;!ELEMENT kunde (adresse?)&gt;
+&lt;!ATTLIST kunde kundenID CDATA #REQUIRED&gt;
+</pre>
+
+<p><b>Elemente:</b></p>
+<table border="1">
+  <tr>
+    <th>Element</th>
+    <th>Beschreibung</th>
+  </th>
+  <tr>
+    <td>geraeteliste</td>
+    <td>Ist ein Container für alle Geräte die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste der Geräte auszugeben.</td>
+  </tr>
+  <tr>
+    <td>geraet</td>
+    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+  </tr>
+</table>
+
+<p><b>Attribute <code>kunde</code>:</b><p>
+<table border="1">
+  <tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+  </th>
+    <tr>
+    <td>bestandteile+</td>
+    <td>Ein Gerät besteht aus mehreren Bestandteilen (mindestens einem Bestandteil). Bestandteile können zum Beispiel Glas, Kunstoff oder Kupfer sein. Diese Information ist für den Recyclingvorgang relevant.</td>
+  </tr>
+  <tr>
+    <td>geraetID</td>
+    <td>Ist ein eindeutiger Bezeichner für ein Gerät.</td>
+  </tr>
+  <tr>
+    <td>gereatBezeichnung</td>
+    <td>Bezeichnung ein bestimmtes Geräts. Beispiel: Samsung Galaxy S3</td>
+  </tr>
+    <tr>
+    <td>zustand</td>
+    <td>Beschreibt den Zustand eines Geräts. Der Zustand kann neuwertig, gut oder defekt sein.</td>
+  </tr>
+    <tr>
+    <td>verschmutzungsgrad</td>
+    <td>Beschreibt den Verschmutzungsgrad eines vom Kunden gebrachtem Geräts. Ist das Gerät sehr stark verschmutzt wird es ggf. nicht angenommen. Es können gereinigt, akzeptabel oder verschmutzt angegben werden.</td>
+  </tr>
+   <tr>
+    <td>geraetekategorie</td>
+    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+  </tr>
+</table>
 <h3><a name="dtd-recyclinghof" id="dtd-recyclinghof"></a>5.4 Recyclinghof</h3>
+
+<p>Für unseren Anwendungsfall müssen zu den Geräten verschiedene Informationen gespeichert werden.</p>
+<p>Die DTD für Recyclinghöfe sieht wie folgt aus:</P> 
+<pre>
+&lt;!ELEMENT geraeteListe (geraet*)&gt;
+&lt;!ELEMENT geraet (bestandteile+)&gt;
+&lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
+&lt;!ATTLIST geraet gereatBezeichnung CDATA #REQUIRED&gt;
+&lt;!ATTLIST geraet zustand (neuwertig | gut | defekt) #REQUIRED&gt;
+&lt;!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED&gt;
+&lt;!ATTLIST geraet geraetekategorie CDATA #REQUIRED&gt;
+</pre>
+
+<p><b>Elemente:</b></p>
+<table border="1">
+  <tr>
+    <th>Element</th>
+    <th>Beschreibung</th>
+  </th>
+  <tr>
+    <td>geraeteliste</td>
+    <td>Ist ein Container für alle Geräte die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste der Geräte auszugeben.</td>
+  </tr>
+  <tr>
+    <td>geraet</td>
+    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+  </tr>
+</table>
+
+<p><b>Attribute <code>recyclinghof</code>:</b><p>
+<table border="1">
+  <tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+  </th>
+    <tr>
+    <td>bestandteile+</td>
+    <td>Ein Gerät besteht aus mehreren Bestandteilen (mindestens einem Bestandteil). Bestandteile können zum Beispiel Glas, Kunstoff oder Kupfer sein. Diese Information ist für den Recyclingvorgang relevant.</td>
+  </tr>
+  <tr>
+    <td>geraetID</td>
+    <td>Ist ein eindeutiger Bezeichner für ein Gerät.</td>
+  </tr>
+  <tr>
+    <td>gereatBezeichnung</td>
+    <td>Bezeichnung ein bestimmtes Geräts. Beispiel: Samsung Galaxy S3</td>
+  </tr>
+    <tr>
+    <td>zustand</td>
+    <td>Beschreibt den Zustand eines Geräts. Der Zustand kann neuwertig, gut oder defekt sein.</td>
+  </tr>
+    <tr>
+    <td>verschmutzungsgrad</td>
+    <td>Beschreibt den Verschmutzungsgrad eines vom Kunden gebrachtem Geräts. Ist das Gerät sehr stark verschmutzt wird es ggf. nicht angenommen. Es können gereinigt, akzeptabel oder verschmutzt angegben werden.</td>
+  </tr>
+   <tr>
+    <td>geraetekategorie</td>
+    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+  </tr>
+</table>
+
 <h3><a name="dtd-weitere" id="dtd-weitere"></a>5.5 Weitere Definitionen</h3>
 
 </div>
@@ -431,6 +650,9 @@ datenbank.xml:11: parser error : Start tag expected, '<' not found
 
 <div class="div1">
 <h2><a name="xslt" id="xslt"/>7 Entwicklung der Views mit XSLT</h2>
+<p>Um die Daten aus unserer XML-Datenstruktur benutzerfreundlich zu repräsentieren wurden Ansichten (Views) mit XSLT (Extensible Stylesheet Language Transformations) entwickelt. Mit XSLT ist es möglich mit einfachen Mitteln Daten aus einer oder mehreren XML-Dateien in einem Browser formatiert darzustellen.</p> 
+<p>Bei der Entwicklung wurde darauf geachtet, dass die Darstellung auf mobilen Geräten sowie Desktop PCs gut leserlich und passend ist.</p> 
+<p>Im Rahmen unseres Projekts wurden mehrere verschiedene Views erstellt, die unsere Daten darstellen. Diese Ansichten werden in den folgenden Abschnitten beschrieben.</p>
 <h3><a name="xslt-geraeteliste" id="xslt-geraeteliste"></a>7.1 Geräteliste</h3>
 <p>Anzeige aller Geräte im Bestand mit Angabe von Verschmutzungsgrad, Bestandteilen und dem Recyclinggrad. Der Recyclinggrad wird für jedes Geräte berechnet.</p>
 <pre>&lt;xsl:value-of 
@@ -464,6 +686,14 @@ count(bestandteile/bestandteil), '###,###,##0.00')"
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
     <figcaption><span>Abbildung 7: <abbr title="KundeRecyclinghof">Recyclinghof für Kunde</abbr></span></figcaption>
+  </figure> 
+</p>
+
+<h3><a name="xslt-probleme" id="xslt-probleme"></a>7.5 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
+<p>
+  <figure> 
+    <img src="img/ChromeError.png" alt="Fehler Chrome Browser" />
+    <figcaption><span>Abbildung 8: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
   </figure> 
 </p>
 </div> 
