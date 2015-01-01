@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="responsive-neu.xsl"?>
+<?xml-stylesheet type="text/xsl" href="kunderecyclinghof.xsl"?>
 <!DOCTYPE datenbank SYSTEM "datenbank.dtd">
 
 <datenbank>
@@ -105,7 +105,7 @@
 	<kunde kundenID="11112014_01" geraet="iPhone" geraetekategorie="Smartphone">
 		   <adresse>    
 				 <name>Björn Tim Meßthaler</name>
-				 <strasse></strasse>
+				 <plz>90498</plz>
 				 <telefon>09156556</telefon>
 				 <telefon>+494164684</telefon>
 		   </adresse>
@@ -114,7 +114,7 @@
 		<adresse>
 			<name>Max Mustermann</name>
 			<strasse>Musterstr. 1</strasse>
-			<plz>12345 MusterstraÃ?e</plz>
+			<plz>12345</plz>
 			<ort>Musterstadt</ort>
 			<telefon>0911 / 12 53 55</telefon>
 		</adresse>
@@ -133,13 +133,14 @@
 		<adresse>
 			<name>Lily Aldrin</name>
 			<telefon>+49 911 54365415</telefon>
+			<telefon>+49 175 129323</telefon>
 		</adresse>
 	</kunde>
 	<kunde kundenID="23654" geraet="iPhone 6Plus" geraetekategorie="Smartphone">
 		<adresse>
 			<name>Ted Mosby</name>
 			<strasse>Mosbacherstraße 45</strasse>
-			<plz>45364></plz>
+			<plz>45364</plz>
 			<ort>Mosbach</ort>
 			<telefon>09911-46463541</telefon>
 		</adresse>

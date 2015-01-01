@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="responsive-neu.xsl"?>
+<?xml-stylesheet type="text/xsl" href="kundenliste.xsl"?>
 <!DOCTYPE datenbank SYSTEM "datenbank.dtd">
 
 <datenbank>
@@ -138,9 +138,9 @@
 		<adresse>
 			<name>Ted Mosby</name>
 			<strasse>Mosbacherstraße 45</strasse>
-			<plz>45364></plz>
+			<plz>45364</plz>
 			<ort>Mosbach</ort>
-			<telefon>09911-46463541</telefon>
+			<telefon>0911-46463541</telefon>
 		</adresse>
 	</kunde>
 </kundenListe>

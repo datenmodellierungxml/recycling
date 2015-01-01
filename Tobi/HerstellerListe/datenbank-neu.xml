@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="responsive-neu.xsl"?>
+<?xml-stylesheet type="text/xsl" href="herstellerliste.xsl"?>
 <!DOCTYPE datenbank SYSTEM "datenbank.dtd">
 
 <datenbank>
@@ -87,6 +87,7 @@
 			<plz>65824</plz>
 			<ort>Ratingen</ort>
 			<telefon>+49(0)2102 / 7008777</telefon>
+			<telefon>+49(0)2102 / 7008743</telefon>
 		</adresse>
 	</hersteller>
 	<hersteller herstellerID="Sony">
