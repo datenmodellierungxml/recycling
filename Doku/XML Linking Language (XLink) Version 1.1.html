@@ -136,39 +136,35 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 <div class="toc">
 <h2><a name="table_of_contents" id="table_of_contents"></a>Inhaltsverzeichnis</h2>
 <div class="toc">
-1 <a href="#intro">Einleitung</a><br>
+1  <a href="#intro">Einleitung</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;1.1 <a href="#origin-goals">Problemstellung und Ziel</a><br>
-2 <a href="#concepts">Geschäftsprozessmodell</a><br>
-3 <a href="#att-method">Datenmodell</a><br>
+2  <a href="#concepts">Geschäftsprozessmodell</a><br>
+3  <a href="#att-method">Datenmodell</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;3.1 <a href="#dminitial">Initiales Datenmodell</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;3.2 <a href="#dmneu">Neues Datenmodell</a><br>
-4 <a href="#conformance">Richtlininen zur Gestaltung der XML Dateien</a><br>
+4  <a href="#conformance">Richtlininen zur Gestaltung der XML Dateien</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;4.1 <a href="#procdep">Elemente und Attribute</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;4.2 <a href="#markup-reqs">Kommentare</a><br>
-5 <a href="#app-reqs">Document Type Definition (DTD)</a><br>
+5  <a href="#app-reqs">Document Type Definition (DTD)</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;5.1 <a href="#dtd-geraet">Gerät</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;5.2 <a href="#dtd-hersteller">Hersteller</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;5.3 <a href="#dtd-kunde">Kunde</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;5.4 <a href="#dtd-recyclinghof">Recyclinghof</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;5.5 <a href="#dtd-weitere">Weitere Definitionen</a><br>
-6 <a href="#linking-elements">Entwicklung XML-Schemata</a><br>
-
+6  <a href="#linking-elements">Entwicklung XML-Schemata</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;6.1<a href="#extended-link">Aufbau und Struktur der XML Dateien</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.1 <a href="#local-resource">Local Resources for an Extended Link (resource-Type Element)</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.2 <a href="#remote-resource">Remote Resources for an Extended Link (locator-Type Element)</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.3 <a href="#xlink-arcs">Traversal Rules for an Extended Link (arc-Type Element)</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.4 <a href="#title-element">Titles for Extended Links, Locators, and Arcs (title-Type Element)</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.5 <a href="#xlg">Locating Linkbases (Special Arc Role)</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;6.2 <a href="#simple-links">Validierung</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;6.3 <a href="#link-types">Testfälle</a><br>
-7 <a href="#linking-elements">Entwicklung der Views mit XSLT</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="#xslt-geraeteliste">Geräteliste</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7.2 <a href="#xslt-herstelleruebersicht">Herstellerübersicht</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7.3 <a href="#xslt-kundenliste">Kundenliste</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7.4 <a href="#xslt-kundenrecyclinghof">Übersicht Kunden-Recyclinghof</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7.5 <a href="#xslt-probleme">Probleme und Herausforderungen bei der Entwicklung der Views</a><br>
-8 <a href="#erweiterungen">Mögliche Erweiterungen und Einsatzbereiche</a><br>
-9 <a href="#fazit">Fazit</a><br>
+7  <a href="#xpath">XML Path Language</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="xpath-einarbeitung">Einarbeitung</a><br>
+8  <a href="#xslt">Entwicklung der Views mit XSLT</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.1 <a href="#xslt-geraeteliste">Geräteliste</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.2 <a href="#xslt-herstelleruebersicht">Herstellerübersicht</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.3 <a href="#xslt-kundenliste">Kundenliste</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.4 <a href="#xslt-kundenrecyclinghof">Übersicht Kunden-Recyclinghof</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.5 <a href="#xslt-probleme">Probleme und Herausforderungen bei der Entwicklung der Views</a><br>
+9  <a href="#erweiterungen">Mögliche Erweiterungen und Einsatzbereiche</a><br>
+10 <a href="#fazit">Fazit</a><br>
 </div>
 <h3><a name="appendices" id="appendices"></a>Appendices</h3>
 <div class="toc">A <a href="http://www.w3.org/TR/xlink11/#references">References</a><br>
@@ -202,7 +198,7 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 </div>
 <div class="div1">
 <h2><a name="att-method" id="att-method"></a>3 Datenmodell</h2>
-<p>This section describes the design of XLink's markup vocabulary.</p>
+<p>Während der Entwicklung unseres Projekts wurde das Startdatenmodell aufgrund von Unstimmigkeiten und Unklarheiten erweitert und verändert.</p> 
 <h3><a name="dminitial" id="dminitial"></a>3.1 Initiales Datenmodell</h3>
 <p></p>
 <p>
@@ -447,12 +443,12 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <th>Beschreibung</th>
   </th>
   <tr>
-    <td>geraeteliste</td>
-    <td>Ist ein Container für alle Geräte die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste der Geräte auszugeben.</td>
+    <td>kundenListe</td>
+    <td>Ist ein Container für alle Kunden die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste der empfangenen Kunden auszugeben.</td>
   </tr>
   <tr>
-    <td>geraet</td>
-    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+    <td>kunde</td>
+    <td>Beschreibt einen bestimmten Kunden. Es beinhaltet alle relevanten Information zu diesem Kunden.</td>
   </tr>
 </table>
 
@@ -463,24 +459,12 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <th>Beschreibung</th>
   </th>
     <tr>
-    <td>bestandteile+</td>
-    <td>Ein Gerät besteht aus mehreren Bestandteilen (mindestens einem Bestandteil). Bestandteile können zum Beispiel Glas, Kunstoff oder Kupfer sein. Diese Information ist für den Recyclingvorgang relevant.</td>
+    <td>kundenID</td>
+    <td>Jeder Kunde hat eine eindeutige ID, mit der er identifiziert werden kann.</td>
   </tr>
   <tr>
-    <td>geraetID</td>
-    <td>Ist ein eindeutiger Bezeichner für ein Gerät.</td>
-  </tr>
-  <tr>
-    <td>gereatBezeichnung</td>
-    <td>Bezeichnung ein bestimmtes Geräts. Beispiel: Samsung Galaxy S3</td>
-  </tr>
-    <tr>
-    <td>zustand</td>
-    <td>Beschreibt den Zustand eines Geräts. Der Zustand kann neuwertig, gut oder defekt sein.</td>
-  </tr>
-    <tr>
-    <td>verschmutzungsgrad</td>
-    <td>Beschreibt den Verschmutzungsgrad eines vom Kunden gebrachtem Geräts. Ist das Gerät sehr stark verschmutzt wird es ggf. nicht angenommen. Es können gereinigt, akzeptabel oder verschmutzt angegben werden.</td>
+    <td>geraet</td>
+    <td>Ist ein bestimmtes Gerät zu dem zugehörigen Kunden. Es bestimmt den Gerätetyp.</td></td>
   </tr>
    <tr>
     <td>geraetekategorie</td>
@@ -621,11 +605,88 @@ datenbank.xml:11: parser error : Start tag expected, '<' not found
 
 <p>Folgende Testfälle wurden durchgeführt:</p>
 
-<p>1. <p>
-<p><b>Beschreibung</b></p>
-
+<p><b>1. KundenListe</b><p>
+<p><b>Beschreibung:</b></p>
+<p>Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 <p><b>Ergebnis</b></p>
+<p><pre> 
+	&lt;kunde kundenID ="11112014_01"&gt;&lt;/kunde&gt;
 
+</pre>
+	Validierer hatte nichts zu meckern.</p>
+<p><b>Beschreibung:</b></p>
+<p>Verschiedenste Arten von Namen wurde in dem Adressblock ausprobiert. Doppelnamen, sowie Namen mit Sonderzeichen wie ö,ä und ü. Folgende Kunden wurden angelegt:</p> 
+<p><b>Ergebnis</b></p>
+<p><pre>
+	&lt;name&gt;Björn Tim Meßthaler&lt;/name&gt;
+	&lt;name&gt;Max Muster-Mann&lt;/name&gt;
+	&lt;name&gt;Robin Scherbatsky&lt;/name&gt;
+	&lt;name&gt;Lily Aldrin&lt;/name&gt;
+	&lt;name&gt;Ted Mosby&lt;/name&gt;
+	</pre>
+	Validierer hatte nichts zu meckern.</p>
+<p><b>Beschreibung:</b></p>
+<p>Elemente wie Telefon wurden mehr als einmal angelegt und der Inhalt des Elements Telefon wurde in unterschiedlichen Formationen implementiert, da es doch im alltäglichen Leben üblich ist, dass ein Kunde mehr als eine Telefonnummer besitzt (meist ist dies eine Festnetznummer und eine zusätzliche Mobiltelefonnummer).</p>
+<p><b>Ergebnis</b></p>
+<p><pre>
+	&lt;telefon&gt;0911 / 12 53 55&lt;/telefon&gt;
+	&lt;telefon&gt;016046848647&lt;/telefon&gt;
+	</pre>
+	Validierer hatte nichts zu meckern.
+</p>
+<p><b>Beschreibung:</b></p>
+<p>Das Element Adresse wurde beim Testen der KundenListe etwas geändert. Da es durchaus möglich sein könnte, dass ein Kunde uns seine Wohnadresse nicht angeben möchte, muss es hier möglich sein dies zu unterstützen. Zusätzlich aber muss beachtet werden, dass mindestens ein Name, sowie eine Telefonnummer anzugeben ist, da bei Rückfragen es möglich sein muss den Kunden zu kontaktieren.</p>
+<p><b>Ergebnis</b></p>
+ <table border="1" frame="border" summary="Link Usage Patterns">
+<thead>
+<tr>
+<th>Vorher</th>
+<th>Nachher</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>&lt;!ELEMENT adresse (name , strasse , plz , ort , telefon)&gt;</p>
+	<p>&lt;!ELEMENT name (#PCDATA)&gt;</p>
+	<p>&lt;!ELEMENT strasse (#PCDATA)&gt;</p>
+	<p>&lt;!ELEMENT plz (#PCDATA)&gt;</p>
+	<p>&lt;!ELEMENT ort (#PCDATA)&gt;</p>
+	<p>&lt;!ELEMENT telefon (#PCDATA)&gt;</p></td>
+<td><p>&lt;!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)&gt;</p>
+	<p>&lt;!ELEMENT name (#PCDATA)&gt;</p>
+	<p>&lt;!ELEMENT strasse (#PCDATA)&gt;</p>
+	<p>&lt;!ELEMENT plz (#PCDATA)&gt;</p>
+	<p>&lt;!ELEMENT ort (#PCDATA)&gt;</p>
+	<p>&lt;!ELEMENT telefon (#PCDATA)&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<p><b>2. Öffnungszeiten</b><p>
+<p><b>Beschreibung</b></p>
+<p>Das Element Öffnungszeiten wurde ebenfalls noch einmal überarbeitet und geändert, um XPath Abfragen beziehungsweise der Umgang mit den Views für einzelne Öffnungszeiten an einem bestimmten Tag zu vereinfachen.</p>
+<p><b>Ergebnis</b></p>
+ <table border="1" frame="border" summary="Link Usage Patterns">
+<thead>
+<tr>
+<th>Vorher</th>
+<th>Nachher</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>&lt;oeffnungszeiten&gt;Mo, Di, Mi, Do, Fr und Sa 9.30 Uhr - 18 Uhr
+	   &lt;/oeffnungszeiten&gt;</p>
+	<p>&lt;oeffnungszeiten&gt;Sonntag und an Feiertagen geschlossen&lt;/oeffnungszeiten&gt;</p>
+<td><p>&lt;oeffnungszeiten&gt;Montag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;</p>
+	<p>&lt;oeffnungszeiten&gt;Dienstag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;</p>
+	<p>&lt;oeffnungszeiten&gt;Mittwoch 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;</p>
+	<p>	&lt;oeffnungszeiten&gt;Donnerstag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;</p>
+	<p>&lt;oeffnungszeiten&gt;Freitag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;</p>
+	<p>&lt;oeffnungszeiten&gt;Samstag 9.30 Uhr - 15 Uhr&lt;/oeffnungszeiten&gt;</p>
+	<p>&lt;oeffnungszeiten&gt;Sonntag und Feiertag geschlossen&lt;/oeffnungszeiten&gt;</p></td>
+</tr>
+</tbody>
+</table>
 <p>2. <p>
 <p><b>Beschreibung</b></p>
 
@@ -647,13 +708,39 @@ datenbank.xml:11: parser error : Start tag expected, '<' not found
 <p><b>Ergebnis</b></p>
 
 </div>
-
 <div class="div1">
-<h2><a name="xslt" id="xslt"/>7 Entwicklung der Views mit XSLT</h2>
+<h2><a name="xpath" id="xpath"/>7 XML Path Language</h2>
+<p>XPath ist eine vom W3C-Konsortium entwickelte Anfragesprache um Teile von XML-Dokumenten zu adressieren und auszuwerten (Angelehnt an Wikipedia, abgerufen am 01.01.2015). Sie arbeitet auf dem DOM eines Xml-Dokuments und ermöglicht eine Navigation,eine Wahl von Knotenmengen und Auswertungsoperationen.</p>
+<h3><a name="xpath-einarbeitung" id="xpath-einarbeitung"></a>7.1 Einarbeitung</h3>
+<p>Mit Hilfe von XPath-Ausrücken können Teilmengen eines XML-Dokuments bestimmt werden. Dadurch werden Asdrücke evaluiert und das Ergebnis der Evaluierung ist ein Wert mit Typ node-set, string, boolean oder number. Um eine Knotenmenge zu spezifizieren, gibt man einen Weg von einem anderen Knoten aus an( meistens der Wurzel). Sie sind untergliedert in mit "/" getrennte Schritte. Ein Schritt setzt sich zusammen aus:</p>
+<p>Achse: :Knotentest[Prädikat]</p>
+<p>Um sich etwas in die XML Path Language einzuarbeiten, wurde mit Hilfe des Notepade++ XML Tool "XPath Expression Evaluation" einige Abfragen durchgeführt.</p>
+<p><b>Bespiele:</b></p>
+<p>Mit Hilfe des XPath-Ausdrucks: /datenbank/geraeteListe/child::* konnten alle bisher abgegeben Geräte angezeigt werden.
+  <figure> 
+    <img src="img/anzahlgeraete.png" alt="AnzahlderGeräte" />
+    <figcaption><span>Abbildung 4: <abbr title="AnzahlderGeräte">Liste der bisher abgegebenen Geräte</abbr></span></figcaption>
+  </figure> 
+</p>
+<p></p>
+<p>Mit Hilfe des XPath-Ausdrucks: /kundenListe/child::*/adresse/plz konnten alle Postleitzahlen unserer Kunden angegeben werden.
+  <figure> 
+    <img src="img/plzverstreuungunsererkunden.png" alt="plzverstreuungunsererkunden" />
+    <figcaption><span>Abbildung 5: <abbr title="plzverstreuungunsererkunden">Liste der Postleitzahlen unserer Kunden</abbr></span></figcaption>
+  </figure> 
+</p>
+<p>Mit Hilfe des XPath-Ausdrucks: /datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden.
+  <figure> 
+    <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:100%" />
+    <figcaption><span>Abbildung 6: <abbr title="oeffnungszeitendesrecyclinghofsnord">Anzeige der Öffnungszeiten des Recyclinghofs Nord</abbr></span></figcaption>
+  </figure> 
+</p>
+<div class="div1">
+<h2><a name="xslt" id="xslt"/>8 Entwicklung der Views mit XSLT</h2>
 <p>Um die Daten aus unserer XML-Datenstruktur benutzerfreundlich zu repräsentieren wurden Ansichten (Views) mit XSLT (Extensible Stylesheet Language Transformations) entwickelt. Mit XSLT ist es möglich mit einfachen Mitteln Daten aus einer oder mehreren XML-Dateien in einem Browser formatiert darzustellen.</p> 
 <p>Bei der Entwicklung wurde darauf geachtet, dass die Darstellung auf mobilen Geräten sowie Desktop PCs gut leserlich und passend ist.</p> 
 <p>Im Rahmen unseres Projekts wurden mehrere verschiedene Views erstellt, die unsere Daten darstellen. Diese Ansichten werden in den folgenden Abschnitten beschrieben.</p>
-<h3><a name="xslt-geraeteliste" id="xslt-geraeteliste"></a>7.1 Geräteliste</h3>
+<h3><a name="xslt-geraeteliste" id="xslt-geraeteliste"></a>8.1 Geräteliste</h3>
 <p>Anzeige aller Geräte im Bestand mit Angabe von Verschmutzungsgrad, Bestandteilen und dem Recyclinggrad. Der Recyclinggrad wird für jedes Geräte berechnet.</p>
 <pre>&lt;xsl:value-of 
 select="format-number(sum(bestandteile/bestandteil/@recyclinggrad) 
@@ -663,37 +750,37 @@ count(bestandteile/bestandteil), '###,###,##0.00')"
 <p>
   <figure> 
     <img src="img/geraeteliste.png" alt="Geräteliste" />
-    <figcaption><span>Abbildung 4: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 7: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
   </figure> 
 </p>
 
-<h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>7.2 Herstellerübersicht</h3>
+<h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>8.2 Herstellerübersicht</h3>
 <p>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
-    <figcaption><span>Abbildung 5: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 8: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
   </figure> 
 </p>
-<h3><a name="xslt-kundenliste" id="xslt-kundenliste"></a>7.3 Kundenliste</h3>
+<h3><a name="xslt-kundenliste" id="xslt-kundenliste"></a>8.3 Kundenliste</h3>
 <p>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
-    <figcaption><span>Abbildung 6: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 9: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
   </figure> 
 </p>
-<h3><a name="xslt-kundenrecyclinghof" id="xslt-kundenrecyclinghof"></a>7.4 Übersicht Kunden-Recyclinghof</h3>
+<h3><a name="xslt-kundenrecyclinghof" id="xslt-kundenrecyclinghof"></a>8.4 Übersicht Kunden-Recyclinghof</h3>
 <p>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
-    <figcaption><span>Abbildung 7: <abbr title="KundeRecyclinghof">Recyclinghof für Kunde</abbr></span></figcaption>
+    <figcaption><span>Abbildung 10: <abbr title="KundeRecyclinghof">Recyclinghof für Kunde</abbr></span></figcaption>
   </figure> 
 </p>
 
-<h3><a name="xslt-probleme" id="xslt-probleme"></a>7.5 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
+<h3><a name="xslt-probleme" id="xslt-probleme"></a>8.5 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
 <p>
   <figure> 
     <img src="img/ChromeError.png" alt="Fehler Chrome Browser" />
-    <figcaption><span>Abbildung 8: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
+    <figcaption><span>Abbildung 11: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
   </figure> 
 </p>
 </div> 

@@ -111,7 +111,7 @@
 	</kunde>
 	<kunde kundenID="11112014_05" geraet="Samsung" geraetekategorie="Smartphone">
 		<adresse>
-			<name>Max Mustermann</name>
+			<name>Max Muster-Mann</name>
 			<strasse>Musterstr. 1</strasse>
 			<plz>12345</plz>
 			<ort>Musterstadt</ort>
@@ -157,7 +157,7 @@
 		</adresse>
 		<oeffnungszeiten>Montag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
-		<oeffnungszeiten>Mittwch 9.30 Uhr - 18 Uhr</oeffnungszeiten>
+		<oeffnungszeiten>Mittwoch 9.30 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Donnerstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Freitag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Samstag 9.30 Uhr - 15 Uhr</oeffnungszeiten>
