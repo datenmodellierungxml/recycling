@@ -31,7 +31,7 @@
      <xsl:choose>
      <xsl:when test="adresse/plz">
      <p>PLZ: <xsl:value-of select="adresse/plz" /></p></xsl:when>
-     <xsl:otherwise><p>PLZ: nicht angegeben</p></xsl:otherwise>
+     <xsl:otherwise><p>PLZ: <strong style="color:red;">nicht angegeben</strong></p></xsl:otherwise>
      </xsl:choose>
      
      <!-- Check ob eine PLZ eingebeben wurde -->

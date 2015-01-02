@@ -110,16 +110,16 @@
 				 <telefon>494164684</telefon>
 		   </adresse>
 	</kunde>
-	<kunde kundenID="MM125355" geraet="Samsung" geraetekategorie="Smartphone">
+	<kunde kundenID="11112014_05" geraet="Samsung" geraetekategorie="Smartphone">Lil
 		<adresse>
 			<name>Max Mustermann</name>
 			<strasse>Musterstr. 1</strasse>
 			<plz>12345</plz>
 			<ort>Musterstadt</ort>
-			<telefon>091112 53 55</telefon>
+			<telefon>0911 12 53 55</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="4641653" geraet="Nokia" geraetekategorie="Handy">
+	<kunde kundenID="11112014_10" geraet="Nokia" geraetekategorie="Handy">
 		<adresse>
 			<name>Robin Scherbatsky</name>
 			<strasse>Klappenweg 45</strasse>
@@ -129,14 +129,14 @@
 			<telefon>0160 46848647</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="546586" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet">
+	<kunde kundenID="11112014_35" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet">
 		<adresse>
 			<name>Lily Aldrin</name>
 			<telefon>049 911 54365415</telefon>
 			<telefon>049 175 129323</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="23654" geraet="iPhone 6Plus" geraetekategorie="Smartphone">
+	<kunde kundenID="11112014_70" geraet="iPhone 6Plus" geraetekategorie="Smartphone">
 		<adresse>
 			<name>Ted Mosby</name>
 			<strasse>Mosbacherstraße 45</strasse>

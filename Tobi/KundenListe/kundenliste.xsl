@@ -39,16 +39,6 @@
     </xsl:for-each>
 </div>
 	
-<!--<div id="recyclinghof">
-	<h1>Vorgeschlagener Recyclinghöfe</h1>
-	<xsl:for-each select="$recyclinghof">
-    <p>
-    <h3><xsl:value-of select="$recyclinghof/recyclinghof" /></h3>
-    <xsl:value-of select="recyclinghof/adresse"/>
-    </p>
-	</xsl:for-each>
-</div>-->
-
 </div>
 
 <div id="footer"></div>
