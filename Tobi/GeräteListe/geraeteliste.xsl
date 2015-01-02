@@ -13,8 +13,7 @@
 </head>
 <body>
 <div id="container">
-	<div id="head"></div>
-   
+ 
 <div id="content">
 
 <div id="geraete">
