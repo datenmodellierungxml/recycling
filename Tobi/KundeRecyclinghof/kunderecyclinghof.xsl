@@ -43,7 +43,7 @@
     
      <strong>Telefon:</strong>
      <ul>
-     <xsl:for-each select="adresse/telefon">
+     <xsl:for-each select="adresse">
      <li><xsl:value-of select="telefon"/></li>
      </xsl:for-each>
      </ul>
