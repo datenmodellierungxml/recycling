@@ -31,9 +31,9 @@
     <p><strong>Gerätekategorie: </strong><xsl:value-of select="@geraetekategorie"/></p>
     <strong>Telefonnummern:</strong>
     <ul>
-    <xsl:for-each select="adresse">
-    <li><xsl:value-of select="telefon"/></li>
-    </xsl:for-each>
+        <xsl:for-each select="adresse/telefon">
+        <li><xsl:value-of select="text()"/></li>
+     </xsl:for-each>
     </ul>
     </p>
     </xsl:for-each>

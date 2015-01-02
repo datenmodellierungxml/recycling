@@ -43,8 +43,8 @@
     
      <strong>Telefon:</strong>
      <ul>
-     <xsl:for-each select="adresse">
-     <li><xsl:value-of select="telefon"/></li>
+     <xsl:for-each select="adresse/telefon">
+        <li><xsl:value-of select="text()"/></li>
      </xsl:for-each>
      </ul>
      <p>Möchte sein Geräte <strong><xsl:value-of select="@geraet"/></strong> zurückgeben.</p>

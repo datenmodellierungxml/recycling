@@ -107,7 +107,7 @@
 				 <name>Björn Tim Meßthaler</name>
 				 <plz>90498</plz>
 				 <telefon>09156556</telefon>
-				 <telefon>+494164684</telefon>
+				 <telefon>494164684</telefon>
 		   </adresse>
 	</kunde>
 	<kunde kundenID="MM125355" geraet="Samsung" geraetekategorie="Smartphone">
@@ -116,7 +116,7 @@
 			<strasse>Musterstr. 1</strasse>
 			<plz>12345</plz>
 			<ort>Musterstadt</ort>
-			<telefon>0911 / 12 53 55</telefon>
+			<telefon>091112 53 55</telefon>
 		</adresse>
 	</kunde>
 	<kunde kundenID="4641653" geraet="Nokia" geraetekategorie="Handy">
@@ -125,15 +125,15 @@
 			<strasse>Klappenweg 45</strasse>
 			<plz>25345</plz>
 			<ort>Klappenort</ort>
-			<telefon>0911 / 12 53 55</telefon>
-			<telefon>016046848647</telefon>
+			<telefon>0911 12 53 55</telefon>
+			<telefon>0160 46848647</telefon>
 		</adresse>
 	</kunde>
 	<kunde kundenID="546586" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet">
 		<adresse>
 			<name>Lily Aldrin</name>
-			<telefon>+49 911 54365415</telefon>
-			<telefon>+49 175 129323</telefon>
+			<telefon>049 911 54365415</telefon>
+			<telefon>049 175 129323</telefon>
 		</adresse>
 	</kunde>
 	<kunde kundenID="23654" geraet="iPhone 6Plus" geraetekategorie="Smartphone">
@@ -142,7 +142,7 @@
 			<strasse>Mosbacherstraße 45</strasse>
 			<plz>45364</plz>
 			<ort>Mosbach</ort>
-			<telefon>09911-46463541</telefon>
+			<telefon>0911 46463541</telefon>
 		</adresse>
 	</kunde>
 </kundenListe>
@@ -155,7 +155,7 @@
 			<strasse>Haeberleinstraße 7</strasse>
 			<plz>90411</plz>
 			<ort>Nürnberg</ort>
-			<telefon>0911 / 36 76 05</telefon>
+			<telefon>0911 36 76 05</telefon>
 		</adresse>
 		<oeffnungszeiten>Montag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
@@ -173,7 +173,7 @@
 			<strasse>Am Pferdemarkt 23</strasse>
 			<plz>90439</plz>
 			<ort>Nürnberg</ort>
-			<telefon>0911 / 80 138 04</telefon>
+			<telefon>0911 80 138 04</telefon>
 			</adresse>
 		<oeffnungszeiten>Montag 12 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 12 Uhr - 18 Uhr</oeffnungszeiten>
@@ -190,7 +190,7 @@
 			<strasse>Am Südring 23</strasse>
 			<plz>90820</plz>
 			<ort>Nürnberg</ort>
-			<telefon>0911 / 50 70 103</telefon>
+			<telefon>0911 50 70 103</telefon>
 			</adresse>
 		<oeffnungszeiten>Montag 12 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 12 Uhr - 18 Uhr</oeffnungszeiten>
@@ -207,7 +207,7 @@
 			<strasse>Am Ostring 23</strasse>
 			<plz>90120</plz>
 			<ort>Nürnberg</ort>
-			<telefon>0911 / 10 20 03</telefon>
+			<telefon>0911 10 20 03</telefon>
 			</adresse>
 		<oeffnungszeiten>Montag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
