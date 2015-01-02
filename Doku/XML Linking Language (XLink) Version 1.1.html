@@ -964,15 +964,40 @@ count(bestandteile/bestandteil), '###,###,##0.00')"
     <figcaption><span>Abbildung 9: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
   </figure> 
 </p>
-<h3><a name="xslt-kundenrecyclinghof" id="xslt-kundenrecyclinghof"></a>8.5 Übersicht Kunden-Recyclinghof</h3>
+<h3><a name="xslt-kundenrecyclinghofplzfehlt" id="xslt-kundenrecyclinghofplzfehlt"></a>8.5 Übersicht Kunden-Recyclinghof fehlende Postleitzahl</h3>
+<h4>Anwendungsfall: Kunde kommt und möchte sein Gerät zurückgeben</h4>
+<p>Der Kunde kommt zu uns und möchte sein Gerät recycling lassen. Er möchte gerne wissen welcher Recyclinghof in seiner Nähe sein Gerät zurücknimmt</p>
+<p>Leider hat er bei seiner Registrierung seine Postleitzahl vergessen einzugeben, um jedoch einen Recyclinghof in seiner näheren Umgebung zu finden is die Postleitzahl zwingend notwendig.</p>
+<p>Unser System liefert einen Fehler und bittet die Postleitzahl nachzuliefern.</p>
+<h4>Anlegen einer neuen Variablen</h4>
+<p>Unser imaginäre Kunde Lily wird in der Variable "lily" gespeichert um eine leichtere Verarbeitung zu gewährleisten.</p>
+<pre>
+&lt;xsl:variable name="lily" select="$kunden/kunde[@kundenID='11112014_35']" /&gt;
+</pre>
+<h4>Code der die fehlende Postleitzahl erkennt</h4>
+<pre>
+&lt;xsl:choose&gt;
+     &lt;xsl:when test="adresse/plz"&gt;
+     &lt;p&gt;PLZ: &lt;xsl:value-of select="text()" /&gt;&lt;/p>&lt;/xsl:when&gt;
+     &lt;xsl:otherwise&gt;&lt;p&gt;PLZ: &lt;strong style="color:red;"&gt;nicht angegeben&lt;/strong&gt;&lt;/p&gt;&lt;/xsl:otherwise&gt;
+&lt;/xsl:choose&gt;
+</pre>
 <p>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
-    <figcaption><span>Abbildung 10: <abbr title="KundeRecyclinghof">Recyclinghof für Kunde</abbr></span></figcaption>
+    <figcaption><span>Abbildung 10: <abbr title="KundeRecyclinghof">Fehler bei fehledem Recyclinghof</abbr></span></figcaption>
   </figure> 
 </p>
 
-<h3><a name="xslt-probleme" id="xslt-probleme"></a>8.6 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
+<h3><a name="xslt-kundenrecyclinghof" id="xslt-kundenrecyclinghof"></a>8.6 Übersicht Kunden-Recyclinghof</h3>
+<p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
+<h4>Probleme</h4>
+<p>Leider lassen sich in XSLT 1.0 nicht ohne Aufwand zwei Zahlen vergleichen</p>
+<h4>Work-Around</h4>
+<pre>
+</pre>
+
+<h3><a name="xslt-probleme" id="xslt-probleme"></a>8.7 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
 <p>
   <figure> 
     <img src="img/ChromeError.png" alt="Fehler Chrome Browser" />
