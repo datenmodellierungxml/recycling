@@ -982,11 +982,19 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
   bleiben manche Felder unausgefüllt diese werden über bestimmte Anweisungen und Abfragen nicht in dem View angezeigt.</p>
 <h4>8.4.2 Filtern mit dem if-Befehl</h4>
 <pre>
+&lt;xsl:if test="adresse/strasse"&gt;
+   &lt;p&gt;Straße: &lt;xsl:value-of select="adresse/strasse" /&gt;&lt;/p&gt;
+&lt;/xsl:if&gt;
 </pre>
 <h4>8.4.2 Filtern mit dem choose-Befehl</h4>
+<p>Wegen dem höheren Schreibaufwand und der Mehrzeilen Code ist der if-Befehl vorzuziehen.</p>
 <pre>
+&lt;xsl:choose&gt;
+   &lt;xsl:when test="adresse/ort"&gt;
+   	&lt;p&gt;Ort: &lt;xsl:value-of select="adresse/ort"/&gt;&lt;/p&gt;&lt;/xsl:when&gt;
+   &lt;xsl:otherwise&gt;&lt;/xsl:otherwise&gt;
+&lt;/xsl:choose&gt;
 </pre>
-
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
     <figcaption><span>Abbildung 9: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
@@ -1010,12 +1018,10 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
      &lt;xsl:otherwise&gt;&lt;p&gt;PLZ: &lt;strong style="color:red;"&gt;nicht angegeben&lt;/strong&gt;&lt;/p&gt;&lt;/xsl:otherwise&gt;
 &lt;/xsl:choose&gt;
 </pre>
-<p>
-  <figure> 
-    <img src="img/kundenliste.png" alt="Kundenliste" />
-    <figcaption><span>Abbildung 10: <abbr title="KundeRecyclinghof">Fehler bei fehledem Recyclinghof</abbr></span></figcaption>
-  </figure> 
-</p>
+<figure> 
+    <img src="img/plz-fehlt.png" alt="PLZ fehlt" />
+    <figcaption><span>Abbildung 10: <abbr title="KundeRecyclinghof">Fehler bei fehlender PLZ</abbr></span></figcaption>
+</figure> 
 
 <h3><a name="xslt-kundenrecyclinghof" id="xslt-kundenrecyclinghof"></a>8.6 Übersicht Kunden-Recyclinghof</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
@@ -1026,12 +1032,10 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre>
 
 <h3><a name="xslt-probleme" id="xslt-probleme"></a>8.7 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
-<p>
-  <figure> 
+<figure> 
     <img src="img/ChromeError.png" alt="Fehler Chrome Browser" />
     <figcaption><span>Abbildung 11: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
-  </figure> 
-</p>
+</figure> 
 </div> 
 
 <div class="div1">
