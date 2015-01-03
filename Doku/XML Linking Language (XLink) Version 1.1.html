@@ -661,8 +661,8 @@ datenbank.xml:11: parser error : Start tag expected, '<' not found
 </tr>
 </tbody>
 </table>
-<p><b>2. Öffnungszeiten</b><p>
-<p><b>Beschreibung</b></p>
+<p><strong>2. Öffnungszeiten</strong></p>
+<p><strong>Beschreibung</strong></p>
 <p>Das Element Öffnungszeiten wurde ebenfalls noch einmal überarbeitet und geändert, um XPath Abfragen beziehungsweise der Umgang mit den Views für einzelne Öffnungszeiten an einem bestimmten Tag zu vereinfachen.</p>
 <p><b>Ergebnis</b></p>
  <table border="1" frame="border" summary="Link Usage Patterns">
@@ -931,39 +931,67 @@ padding: 0px;
 }
 </pre>
 <h4>8.1.2 Anlegen von Variablen</h4>
-<p>Zur leichteren Verarbeitung der Datenbank haben wir die Variablen für einzelnen Listen angelegt. Im späteren Verlauf wurden weitere Variablen angelegt</p>
-<pre>&lt;xsl:variable name="geraete" select="/datenbank/geraeteListe" /&gt;
+<p>Zur leichteren Verarbeitung der Datenbank haben wir Variablen für einzelnen Listen in der XSL-Datei angelegt. <br />Im späteren Verlauf werden weitere Variablen angelegt</p>
+<pre>
+&lt;xsl:variable name="geraete" select="/datenbank/geraeteListe" /&gt;
 &lt;xsl:variable name="hersteller" select="/datenbank/herstellerListe" /&gt;
 &lt;xsl:variable name="kunden" select="/datenbank/kundenListe" /&gt;
-&lt;xsl:variable name="recyclinghof" select="/datenbank/recyclinghofListe" /&gt;</pre>
+&lt;xsl:variable name="recyclinghof" select="/datenbank/recyclinghofListe" /&gt;
+</pre>
+
+<h4>8.1.3 Verweis auf die die XSL-Datei in der XML-Datei</h4>
+<p>Damit der Webbrowser aus der XML-Datei eine HTML-Seite erzeugt muss im ein Verweis auf die XSL-Datei im XML-Dokument angelegt werden.</p>
+<pre>
+&lt;?xml-stylesheet type="text/xsl" href="geraeteliste.xsl"?&gt;
+</pre>
+
 <h3><a name="xslt-geraeteliste" id="xslt-geraeteliste"></a>8.2 Geräteliste</h3>
-<p>Anzeige aller Geräte im Bestand mit Angabe von Verschmutzungsgrad, Bestandteilen und dem Recyclinggrad. Der Recyclinggrad wird für jedes Geräte berechnet.</p>
-<pre>&lt;xsl:value-of 
-select="format-number(sum(bestandteile/bestandteil/@recyclinggrad) 
-div 
-count(bestandteile/bestandteil), '###,###,##0.00')"
-/&gt;</pre>
-<p>
+<h4>8.2.1 Berechnung des Recyclinggrades</h4>
+<p>Anzeige aller Geräte im Bestand mit Angabe von Anteil und dem Recyclinggrad.<br />
+Der Recyclinggrad wird für jedes Geräte berechnet.</p>
+<h4>8.2.2 Angaben in der Variable "geraete"</h4>
+<pre>
+&lt;bestandteile&gt;
+	&lt;bestandteil name="Glas" anteil="60" recyclinggrad="100"/&gt;
+	&lt;bestandteil name="Kunststoff" anteil="10" recyclinggrad="50" /&gt;
+	&lt;bestandteil name="Metall" anteil="30" recyclinggrad="100"/&gt;
+&lt;/bestandteile&gt;
+</pre>
+
+<h4>8.2.3 Codefragment zur Berechnung in der XML-Datei</h4>
+<pre>
+&lt;p&gt;
+&lt;strong>Recyclinggrad: &lt;xsl:value-of select="format-number(sum(bestandteile/bestandteil/@recyclinggrad) 
+div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
+&lt;/p&gt;
+</pre>
   <figure> 
     <img src="img/geraeteliste.png" alt="Geräteliste" />
     <figcaption><span>Abbildung 7: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
   </figure> 
-</p>
 
 <h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>8.3 Herstellerübersicht</h3>
-<p>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
     <figcaption><span>Abbildung 8: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
   </figure> 
-</p>
+
 <h3><a name="xslt-kundenliste" id="xslt-kundenliste"></a>8.4 Kundenliste</h3>
-<p>
+<h4>8.4.1 Herausfiltern von nicht vorhandenen Daten</h4>
+<p>Dadurch das wir in unserer XML-Datei für Kunden nur eine Telefonnummer und den Namen voraussetzen, <br />
+  bleiben manche Felder unausgefüllt diese werden über bestimmte Anweisungen und Abfragen nicht in dem View angezeigt.</p>
+<h4>8.4.2 Filtern mit dem if-Befehl</h4>
+<pre>
+</pre>
+<h4>8.4.2 Filtern mit dem choose-Befehl</h4>
+<pre>
+</pre>
+
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
     <figcaption><span>Abbildung 9: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
   </figure> 
-</p>
+
 <h3><a name="xslt-kundenrecyclinghofplzfehlt" id="xslt-kundenrecyclinghofplzfehlt"></a>8.5 Übersicht Kunden-Recyclinghof fehlende Postleitzahl</h3>
 <h4>Anwendungsfall: Kunde kommt und möchte sein Gerät zurückgeben</h4>
 <p>Der Kunde kommt zu uns und möchte sein Gerät recycling lassen. Er möchte gerne wissen welcher Recyclinghof in seiner Nähe sein Gerät zurücknimmt</p>
