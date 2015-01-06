@@ -156,7 +156,8 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 &nbsp;&nbsp;&nbsp;&nbsp;6.2 <a href="#simple-links">Validierung</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;6.3 <a href="#link-types">Testfälle</a><br>
 7  <a href="#xpath">XML Path Language</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="xpath-einarbeitung">Einarbeitung</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="xpatheinarbeitung">Einarbeitung</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.2 <a href="xpathdocumentorder">Document Order<a><br>
 8  <a href="#xslt">Entwicklung der Views mit XSLT</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;8.1 <a href="#xslt-geraeteliste">Geräteliste</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;8.2 <a href="#xslt-herstelleruebersicht">Herstellerübersicht</a><br>
@@ -735,6 +736,28 @@ datenbank.xml:11: parser error : Start tag expected, '<' not found
     <figcaption><span>Abbildung 6: <abbr title="oeffnungszeitendesrecyclinghofsnord">Anzeige der Öffnungszeiten des Recyclinghofs Nord</abbr></span></figcaption>
   </figure> 
 </p>
+<h3><a name="xpathdocumentorder" id="xpathdocumentorder"></a>7.2 Document Order</h3>
+<p>Die Document Order beschreibt eine Ordnung über alle Knoten eines DOM-Dokuments. Die Wurzelelement ist das erste Element der Ordnung. Die Elementknoten kommen vor ihren Kindern. Kinder werden nach der Folge der XML-Quelle geordnet. Attributordnungen sind implementierungsabhängig. Eine Document Order ist immer dann sehr vom Vorteil, wenn ein XML Dokument immer mehr an Größe erreicht. Momentan ist unsere Datenbank noch recht übersichtlich nur im Laufe der Zeit und auch durch Erweiterungen kann es hilfreich sein eine Übersicht aller Knoten in diesem Dokument zu erhalten. Auf der Website: http://xmlgrid.net/ wurde aus unserer Datenbank eine Baumstruktur aller Knoten erstellt. Diese Baumstruktur kann jederzeit erweitert werden. </p>
+<p>Es folgt eine Baumstruktur, die die erste Ebene unserer Datenbank beschreibt. Zu Sehen ist das Rootelement "datenbank" und ihre darauffolgenden Kinder: geraeteListe, herstellerListe, kundenliste und recyclinghofListe. Auch der Validierer dieser Website erkannte hier ein well-formed XML.</p>
+  <figure> 
+    <img src="img/document-order1.png" alt="Documentorder1" />
+    <figcaption><span>Abbildung 7: <abbr title="document-order1">Wurzelelement und die erste Ebene ihrer Kinder</abbr></span></figcaption>
+  </figure> 
+ <p>In der nächsten Abbildung sind die weiteren Kinder der geraeteliste zu erkennen. Die eingetragenen Geräte werden hier in einer übersichtlichen Ansicht dargestellt. Zusätzlich sind auch kleine Angaben wie die Summe der Geräte(5) angegeben. Hier sind alle Attribute und Elemente eines Geräts in Spaltenansicht angezeigt. Auch die einzelnen Bestandteile sind aufgelistet.</p>
+  <figure> 
+    <img src="img/document-order2.png" alt="Documentorder2" />
+    <figcaption><span>Abbildung 8: <abbr title="document-order2">Kinder der Geräteliste</abbr></span></figcaption>
+  </figure> 
+<p>In der folgenden Abbildung sind nun die Kundenliste und die Herstellerliste als Baumstruktur abgebildet. Die Kinderelemente der Adresse werden ebenfalls in der Baumstruktur abgebildet.</p>
+  <figure> 
+    <img src="img/document-order3.png" alt="Documentorder3" />
+    <figcaption><span>Abbildung 9: <abbr title="document-order3">Kinder der Kunden- und Herstellerliste</abbr></span></figcaption>
+  </figure> 
+<p> Die letzte Abbildung zeigt die Übersicht der Recyclingofsliste. Die Kinderelemente Adresse, Öffnungszeiten und Spezialgebiete werden mitabgebildet.</p>
+  <figure> 
+    <img src="img/document-order4.png" alt="Documentorder4" />
+    <figcaption><span>Abbildung 10: <abbr title="document-order4">Kinder der Recyclinghofsliste</abbr></span></figcaption>
+  </figure> 
 <div class="div1">
 <h2><a name="xslt" id="xslt"/>8 Entwicklung der Views mit XSLT</h2>
 <p>Um die Daten aus unserer XML-Datenstruktur benutzerfreundlich zu repräsentieren wurden Ansichten (Views) mit XSLT (Extensible Stylesheet Language Transformations) entwickelt. Mit XSLT ist es möglich mit einfachen Mitteln Daten aus einer oder mehreren XML-Dateien in einem Browser formatiert darzustellen.</p> 
@@ -967,13 +990,13 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre>
   <figure> 
     <img src="img/geraeteliste.png" alt="Geräteliste" />
-    <figcaption><span>Abbildung 7: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 11: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
   </figure> 
 
 <h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>8.3 Herstellerübersicht</h3>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
-    <figcaption><span>Abbildung 8: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 12: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
   </figure> 
 
 <h3><a name="xslt-kundenliste" id="xslt-kundenliste"></a>8.4 Kundenliste</h3>
@@ -997,7 +1020,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
-    <figcaption><span>Abbildung 9: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 13: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
   </figure> 
 
 <h3><a name="xslt-kundenrecyclinghofplzfehlt" id="xslt-kundenrecyclinghofplzfehlt"></a>8.5 Übersicht Kunden-Recyclinghof fehlende Postleitzahl</h3>
@@ -1020,7 +1043,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre>
 <figure> 
     <img src="img/plz-fehlt.png" alt="PLZ fehlt" />
-    <figcaption><span>Abbildung 10: <abbr title="KundeRecyclinghof">Fehler bei fehlender PLZ</abbr></span></figcaption>
+    <figcaption><span>Abbildung 14: <abbr title="KundeRecyclinghof">Fehler bei fehlender PLZ</abbr></span></figcaption>
 </figure> 
 
 <h3><a name="xslt-kundenrecyclinghof" id="xslt-kundenrecyclinghof"></a>8.6 Übersicht Kunden-Recyclinghof</h3>
@@ -1034,7 +1057,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h3><a name="xslt-probleme" id="xslt-probleme"></a>8.7 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
 <figure> 
     <img src="img/ChromeError.png" alt="Fehler Chrome Browser" />
-    <figcaption><span>Abbildung 11: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
+    <figcaption><span>Abbildung 15: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
 </figure> 
 </div> 
 
