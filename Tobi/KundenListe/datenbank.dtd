@@ -39,11 +39,9 @@
 <!-- Liste der Bestandteile -->
 <!-- Bestanteilname nicht festgelegt, um Möglichkeiten flexibel zu gestalten -->
 <!ELEMENT bestandteile (bestandteil+)>
-<!ATTLIST bestandteil name CDATA #REQUIRED>
-<!ATTLIST bestandteil anteil CDATA #REQUIRED>
-<!ATTLIST bestandteil recyclinggrad CDATA #REQUIRED>
-
 
 <!-- Ein konkretes Bestandteil -->
 <!ELEMENT bestandteil (#PCDATA)>
-
+<!ATTLIST bestandteil name CDATA #REQUIRED>
+<!ATTLIST bestandteil anteil CDATA #REQUIRED>
+<!ATTLIST bestandteil recyclinggrad CDATA #REQUIRED>

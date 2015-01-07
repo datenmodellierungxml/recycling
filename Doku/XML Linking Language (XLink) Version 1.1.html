@@ -530,7 +530,48 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 </table>
 
 <h3><a name="dtd-weitere" id="dtd-weitere"></a>5.5 Weitere Definitionen</h3>
-
+<p>Neben den Elementen Gerät, Recyclinghof, Hersteller und Kunde gibt es noch Elemente die relevante Informationen wie zum Beispiel Adresse etc. enthalten.</p> 
+<p>Diese Elemente sind:</p> 
+<ul>
+  <li>
+    <b>adresse</b> 
+    <p>Das Element adresse wird von den Elementen Recyclinghof, Hersteller und Kunde verwendet. Das Element enthält für eine Adresse typische Unterelemente wie zum Beispiel Straße, PLZ, Ort usw.</p>
+    <p>Die DTD für das Element ist wie folgt aufgebaut:</p>  
+    <p>
+      <pre>
+        &lt;!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)&gt;
+        &lt;!ELEMENT name (#PCDATA)&gt;
+        &lt;!ELEMENT strasse (#PCDATA)&gt;
+        &lt;!ELEMENT plz (#PCDATA)&gt;
+        &lt;!ELEMENT ort (#PCDATA)&gt;
+        &lt;!ELEMENT telefon (#PCDATA)&gt; 
+      </pre>
+    </p>
+  </li>
+  <li>
+    <b>bestandteile</b> 
+    <p>Die Bestandteile eines bestimmten Geräts werden in dem Element bestandteile gespeichert. Dieses Element ist sozusagen ein Container für Elemente vom Typ bestandteil.</p>
+    <p>Die DTD für das Element ist wie folgt aufgebaut:</p>  
+    <p>
+      <pre>
+       &lt;!ELEMENT bestandteile (bestandteil+)&gt;
+      </pre>
+    </p>
+  </li> 
+  <li> 
+    <b>bestandteil</b> 
+    <p>Die Informationen zu den Bestandteilen werden im Element bestandteil abgelegt. Das Element behinhaltet wichtige Attribute zu einem Bestandteil wie name, anteil und recyclinggrad.</p>
+    <p>Die DTD für das Element ist wie folgt aufgebaut:</p>  
+    <p>
+      <pre>
+        &lt;!ELEMENT bestandteil (#PCDATA)&gt;
+        &lt;!ATTLIST bestandteil name CDATA #REQUIRED&gt;
+        &lt;!ATTLIST bestandteil anteil CDATA #REQUIRED&gt;
+        &lt;!ATTLIST bestandteil recyclinggrad CDATA #REQUIRED&gt;
+      </pre>
+    </p>
+  </li> 
+</ul>
 </div>
 </div>
 <!-- Ende-->
@@ -567,6 +608,110 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 </ul>
 <div class="div2">
 <h3><a name="extended-link" id="extended-link"></a>6.1 Aufbau und Struktur der XML Dateien</h3>
+<p>Für den Aufbau der XML Dateien wurde Anfangs eine große Datei mit dem Element datenbank als Container für alle Listen angelegt. Diese Sammlung dient als Grundlage für die Views mit XSLT.</p>
+<p>Diese Datei ist wie folgt aufgebaut:</p>
+<pre> 
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;!DOCTYPE datenbank SYSTEM "datenbank.dtd"&gt;
+
+&lt;datenbank&gt;
+&lt;!--Liste der Geräte--&gt;
+&lt;geraeteListe&gt;
+&lt;!-- Geräte Samsung Galaxy S3--&gt;
+&lt;geraet geraetID="SGS3" geraetBezeichnung="Samsung Galaxy S3" zustand="gut" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone"&gt;
+&lt;bestandteile&gt;
+      &lt;bestandteil name="Glas" anteil="50" recyclinggrad="100"/&gt;
+      &lt;bestandteil name="Kunststoff" anteil="30" recyclinggrad="80" /&gt;
+      &lt;bestandteil name="Metall" anteil="20" recyclinggrad="10"/&gt;
+    &lt;/bestandteile&gt;
+    &lt;/geraet&gt;
+&lt;/geraeteListe&gt;
+
+&lt;!--Liste der Hersteller--&gt;
+&lt;herstellerListe&gt;
+  &lt;hersteller herstellerID="Samsung"&gt;
+    &lt;adresse&gt;
+      &lt;name&gt;Samsung Electrics GmbH&lt;/name&gt;
+      &lt;strasse&gt;Am Kronberger Hang 6&lt;/strasse&gt;
+      &lt;plz&gt;65824&lt;/plz&gt;
+      &lt;ort&gt;Schwalbach am Taunus&lt;/ort&gt;
+      &lt;telefon&gt;0180 6 67267864&lt;/telefon&gt;
+    &lt;/adresse&gt;
+  &lt;/hersteller&gt;
+&lt;/herstellerListe&gt;
+
+&lt;!--Liste der Kunden--&gt;
+&lt;kundenListe&gt;
+  &lt;kunde kundenID="11112014_01" geraet="iPhone" geraetekategorie="Smartphone"&gt;
+       &lt;adresse&gt;    
+         &lt;name&gt;Björn Tim Meßthaler&lt;/name&gt;
+         &lt;plz&gt;90498&lt;/plz&gt;
+         &lt;telefon&gt;09156556&lt;/telefon&gt;
+         &lt;telefon&gt;494164684&lt;/telefon&gt;
+       &lt;/adresse&gt;
+  &lt;/kunde&gt;
+  &lt;kunde kundenID="11112014_05" geraet="Samsung" geraetekategorie="Smartphone"&gt;
+    &lt;adresse&gt;
+      &lt;name&gt;Max Muster-Mann&lt;/name&gt;
+      &lt;strasse&gt;Musterstr. 1&lt;/strasse&gt;
+      &lt;plz&gt;12345&lt;/plz&gt;
+      &lt;ort&gt;Musterstadt&lt;/ort&gt;
+      &lt;telefon&gt;0911 12 53 55&lt;/telefon&gt;
+    &lt;/adresse&gt;
+  &lt;/kunde&gt;
+  &lt;kunde kundenID="11112014_10" geraet="Nokia" geraetekategorie="Handy"&gt;
+    &lt;adresse&gt;
+      &lt;name&gt;Robin Scherbatsky&lt;/name&gt;
+      &lt;strasse&gt;Klappenweg 45&lt;/strasse&gt;
+      &lt;plz&gt;25345&lt;/plz&gt;
+      &lt;ort&gt;Klappenort&lt;/ort&gt;
+      &lt;telefon&gt;0911 12 53 55&lt;/telefon&gt;
+      &lt;telefon&gt;0160 46848647&lt;/telefon&gt;
+    &lt;/adresse&gt;
+  &lt;/kunde&gt;
+&lt;/kundenListe&gt;
+
+&lt;!--Liste der Recyclinghöfe--&gt;
+&lt;recyclinghofListe&gt;
+  &lt;recyclinghof recyclinghofID="HofNord"&gt;
+    &lt;adresse&gt;
+      &lt;name&gt;Recyclinghof Nord&lt;/name&gt;
+      &lt;strasse&gt;Haeberleinstraße 7&lt;/strasse&gt;
+      &lt;plz&gt;90411&lt;/plz&gt;
+      &lt;ort&gt;Nürnberg&lt;/ort&gt;
+      &lt;telefon&gt;0911 / 36 76 05&lt;/telefon&gt;
+    &lt;/adresse&gt;
+    &lt;oeffnungszeiten&gt;Montag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Dienstag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Mittwoch 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Donnerstag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Freitag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Samstag 9.30 Uhr - 15 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Sonntag und Feiertag geschlossen&lt;/oeffnungszeiten&gt;
+    &lt;spezialgebiet&gt;smartphone&lt;/spezialgebiet&gt;
+    &lt;spezialgebiet&gt;Tablet&lt;/spezialgebiet&gt;
+  &lt;/recyclinghof&gt;
+  &lt;recyclinghof recyclinghofID="HofMitte"&gt;
+    &lt;adresse&gt;
+      &lt;name&gt;Recyclinghof Mitte&lt;/name&gt;
+      &lt;strasse&gt;Am Pferdemarkt 23&lt;/strasse&gt;
+      &lt;plz&gt;90439&lt;/plz&gt;
+      &lt;ort&gt;Nürnberg&lt;/ort&gt;
+      &lt;telefon&gt;0911 / 80 138 04&lt;/telefon&gt;
+      &lt;/adresse&gt;
+    &lt;oeffnungszeiten&gt;Montag 12 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Dienstag 12 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Mittwch 9 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Donnerstag 9 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Freitag 12 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Samstag 8.00 Uhr - 12 Uhr&lt;/oeffnungszeiten&gt;
+    &lt;oeffnungszeiten&gt;Sonntag und Feiertag geschlossen&lt;/oeffnungszeiten&gt;
+    &lt;spezialgebiet&gt;smartphone&lt;/spezialgebiet&gt;
+  &lt;/recyclinghof&gt;
+&lt;/recyclinghofListe&gt;
+&lt;/datenbank&gt;
+
+</pre>  
 <h3><a name="extended-link" id="extended-link"></a>6.2 Validierung</h3>
 <p>Für die Validierung der XML-Struktur wurde das Commandline-Tool <code>xmllint</code> verwendet. Der Aufbau der entsprechenden XML Datei wird mit ihrer Document Type Definition abgeglichen und so überprüft ob die Inhalte der Grammatik entsprechen. Dies ist wichtig, um die Datenstuktur zu testen und etwaige Fehler und Schwächen des Datenmodells zu erkennen und auszuschließen. 
 
@@ -584,7 +729,7 @@ datenbank.xml:11: parser error : internal error: xmlParseInternalSubset: error d
 datenbank.xml:11: parser error : DOCTYPE improperly terminated
 &produktListe;
 ^
-datenbank.xml:11: parser error : Start tag expected, '<' not found
+datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 &produktListe; 
  ^
 </pre>
@@ -712,22 +857,22 @@ datenbank.xml:11: parser error : Start tag expected, '<' not found
 <p>Achse: :Knotentest[Prädikat]</p>
 <p>Um sich etwas in die XML Path Language einzuarbeiten, wurde mit Hilfe des Notepade++ XML Tool "XPath Expression Evaluation" einige Abfragen durchgeführt.</p>
 <p><b>Bespiele:</b></p>
-<p>Mit Hilfe des XPath-Ausdrucks: /datenbank/geraeteListe/child::* konnten alle bisher abgegeben Geräte angezeigt werden.
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/geraeteListe/child::*</i> konnten alle bisher abgegeben Geräte angezeigt werden.
   <figure> 
     <img src="img/anzahlgeraete.png" alt="AnzahlderGeräte" />
     <figcaption><span>Abbildung 4: <abbr title="AnzahlderGeräte">Liste der bisher abgegebenen Geräte</abbr></span></figcaption>
   </figure> 
 </p>
 <p></p>
-<p>Mit Hilfe des XPath-Ausdrucks: /kundenListe/child::*/adresse/plz konnten alle Postleitzahlen unserer Kunden angegeben werden.
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/kundenListe/child::*/adresse/plz</i> konnten alle Postleitzahlen unserer Kunden angegeben werden.
   <figure> 
     <img src="img/plzverstreuungunsererkunden.png" alt="plzverstreuungunsererkunden" />
     <figcaption><span>Abbildung 5: <abbr title="plzverstreuungunsererkunden">Liste der Postleitzahlen unserer Kunden</abbr></span></figcaption>
   </figure> 
 </p>
-<p>Mit Hilfe des XPath-Ausdrucks: /datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden.
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten</i> konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden.
   <figure> 
-    <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:100%" />
+    <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:75%" />
     <figcaption><span>Abbildung 6: <abbr title="oeffnungszeitendesrecyclinghofsnord">Anzeige der Öffnungszeiten des Recyclinghofs Nord</abbr></span></figcaption>
   </figure> 
 </p>
