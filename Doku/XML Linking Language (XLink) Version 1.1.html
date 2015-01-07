@@ -201,7 +201,8 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 <h2><a name="att-method" id="att-method"></a>3 Datenmodell</h2>
 <p>Während der Entwicklung unseres Projekts wurde das Startdatenmodell aufgrund von Unstimmigkeiten und Unklarheiten erweitert und verändert.</p> 
 <h3><a name="dminitial" id="dminitial"></a>3.1 Initiales Datenmodell</h3>
-<p></p>
+<p>Der erste Entwurf (siehe Abbildung 2) hatte ein konkretes Produkt fokussiert, das von einem Kunden zurückgegeben wird. Nach den ersten Tests und Abbildung unserer Anwendungsfälle wurde jedoch klar, dass dieses Datenmodell nicht genau das leistet war unsere Applikation benötigt. Zudem hatte dieses Modell die Schwachstelle, dass die Geräte immer eindeutig pro Kunde vorhanden sind d. h. es gibt keine Bibliothek von Geräten, die zum Beispiel als Auswahl für die Neuerfassung von Kunden genutzt werden kann.</p>
+<p>Das Datenmodell wurde komplett überarbeitet und es wurde mit einigen Elementen erweitert (siehe Abschnitt <a href="#dmneu">3.2 Neues Datenmodell</a>).</p> 
 <p>
 <figure>
   <img src="img/recycling_alt.png" style="width:50%"/>
@@ -209,6 +210,12 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 </figure>
 </p>
 <h3><a name="dmneu" id="dmneu"></a>3.2 Neues Datenmodell</h3>
+<p>Da unser initiales Datenmodell einige Schwachstellen hatte und nicht genau unseren Anwendungsfällen entsprach musste dieses nochmal überarbeitet werden. Es wurden einige Element hinzugefügt. Irrelevante Informationen wurden weggelassen umd das Datenmodell so schlank wie möglich zu halten.</p>
+<p>
+Das Datemodell in Abbildung 3 enthält nun Elemente die unsere Geräte, Hersteller, Kunden und Recyclinghöfe als Liste speichern. Durch diese kleine aber wichtige Änderung können in unserer Anwednungen alle zum Beispiel alle Geräte oder Kunden ausgegeben werden.  
+</p>
+<p>Weitere Anpassungen wie zum Beispiel das hinzufügen des Elements Spezialgebiet, das die Spezialisierung eines Recyclinghofs angiebt, ist es nun möglich passend auf das Gerät des Kunden zu filtern und einen passenden Recyclinghof zu finden.</p>
+<p>Das Erweitern des Elements Bestandteile um die Attribute Anteil und Recyclinggrad ermöglicht es zu einem bestimmten Gerät die Zusammensetzung von Bestandteile anzugeben. Der Recyclinggrad gibt an zu wie viel Prozent das jeweilige Bestandteil recyclebar ist.</p> 
 <p>
 <figure>
   <img src="img/recycling.png" style="width:50%"/>
@@ -474,16 +481,16 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 </table>
 <h3><a name="dtd-recyclinghof" id="dtd-recyclinghof"></a>5.4 Recyclinghof</h3>
 
-<p>Für unseren Anwendungsfall müssen zu den Geräten verschiedene Informationen gespeichert werden.</p>
+<p>Damit die passenden Recyclinghöfe gespeichert und für unsere Anwendung passend angezeight werden können werden diese ebenfalls in unsere XML Datenbank mitaufgenommen.</p>
 <p>Die DTD für Recyclinghöfe sieht wie folgt aus:</P> 
 <pre>
-&lt;!ELEMENT geraeteListe (geraet*)&gt;
-&lt;!ELEMENT geraet (bestandteile+)&gt;
-&lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
-&lt;!ATTLIST geraet gereatBezeichnung CDATA #REQUIRED&gt;
-&lt;!ATTLIST geraet zustand (neuwertig | gut | defekt) #REQUIRED&gt;
-&lt;!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED&gt;
-&lt;!ATTLIST geraet geraetekategorie CDATA #REQUIRED&gt;
+<!-- Recyclinghof -->
+&lt;!ELEMENT recyclinghofListe (recyclinghof*)&gt;
+&lt;!ELEMENT recyclinghof (adresse , oeffnungszeiten+)&gt;
+&lt;!ELEMENT oeffnungszeiten (#PCDATA)&gt;
+&lt;!ELEMENT spezialgebiet (#PCDATA)&gt;
+&lt;!ATTLIST recyclinghof recyclinghofID CDATA #REQUIRED&gt;
+
 </pre>
 
 <p><b>Elemente:</b></p>
@@ -493,12 +500,20 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <th>Beschreibung</th>
   </th>
   <tr>
-    <td>geraeteliste</td>
-    <td>Ist ein Container für alle Geräte die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste der Geräte auszugeben.</td>
+    <td>recyclinghofListe</td>
+    <td>Ist ein Container für alle Recyclinghöfe die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste von Recyclinghöfen auszugeben.</td>
   </tr>
   <tr>
-    <td>geraet</td>
-    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+    <td>recyclinghof</td>
+    <td>Ist der konkrete Recyclinghof. Es beinhaltet alle relevanten Information zu eineme Recyclinghof wie zum Beispiel Adresse und Öffnungnszeiten.</td>
+  </tr>
+  <tr>
+    <td>oeffnungszeiten</td>
+    <td>Hier werden die Öffnungszeiten eines Recyclinghofs angegeben.</td>
+  </tr>
+  <tr>
+    <td>spezialgebiet</td>
+    <td>Manche Recyclinghöfe haben sich auf eine bestimmte Geräteart spezialisiert, die sie zurücknehmen. Das Element spezialgebiet beinhaltet diese Information.</td>
   </tr>
 </table>
 
@@ -508,29 +523,9 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <th>Attribut</th>
     <th>Beschreibung</th>
   </th>
-    <tr>
-    <td>bestandteile+</td>
-    <td>Ein Gerät besteht aus mehreren Bestandteilen (mindestens einem Bestandteil). Bestandteile können zum Beispiel Glas, Kunstoff oder Kupfer sein. Diese Information ist für den Recyclingvorgang relevant.</td>
-  </tr>
   <tr>
-    <td>geraetID</td>
-    <td>Ist ein eindeutiger Bezeichner für ein Gerät.</td>
-  </tr>
-  <tr>
-    <td>gereatBezeichnung</td>
-    <td>Bezeichnung ein bestimmtes Geräts. Beispiel: Samsung Galaxy S3</td>
-  </tr>
-    <tr>
-    <td>zustand</td>
-    <td>Beschreibt den Zustand eines Geräts. Der Zustand kann neuwertig, gut oder defekt sein.</td>
-  </tr>
-    <tr>
-    <td>verschmutzungsgrad</td>
-    <td>Beschreibt den Verschmutzungsgrad eines vom Kunden gebrachtem Geräts. Ist das Gerät sehr stark verschmutzt wird es ggf. nicht angenommen. Es können gereinigt, akzeptabel oder verschmutzt angegben werden.</td>
-  </tr>
-   <tr>
-    <td>geraetekategorie</td>
-    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+    <td>recyclinghofID</td>
+    <td>Ist ein eindeutiger Bezeichner für einen Recyclinghof.</td>
   </tr>
 </table>
 

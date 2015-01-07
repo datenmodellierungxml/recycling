@@ -14,7 +14,7 @@
 <!ELEMENT hersteller (adresse+)>
 <!ATTLIST hersteller herstellerID CDATA #REQUIRED>
 
-<!-- Hersteller -->
+<!-- Recyclinghof -->
 <!ELEMENT recyclinghofListe (recyclinghof*)>
 <!ELEMENT recyclinghof (adresse , oeffnungszeiten+)>
 <!ELEMENT oeffnungszeiten (#PCDATA)>
