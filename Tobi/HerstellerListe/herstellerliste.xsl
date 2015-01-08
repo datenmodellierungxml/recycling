@@ -18,7 +18,7 @@
 <div id="content">
 
 <div id="geraete">
-	<h1>Kunden</h1>
+	<h1>Hersteller</h1>
     <xsl:for-each select="$hersteller/hersteller">
     <xsl:sort select="@herstellerID"/>
 	<p>

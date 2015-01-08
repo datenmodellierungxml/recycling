@@ -159,11 +159,14 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 &nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="xpatheinarbeitung">Einarbeitung</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;7.2 <a href="xpathdocumentorder">Document Order<a><br>
 8  <a href="#xslt">Entwicklung der Views mit XSLT</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;8.1 <a href="#xslt-geraeteliste">Geräteliste</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;8.2 <a href="#xslt-herstelleruebersicht">Herstellerübersicht</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;8.3 <a href="#xslt-kundenliste">Kundenliste</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;8.4 <a href="#xslt-kundenrecyclinghof">Übersicht Kunden-Recyclinghof</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;8.5 <a href="#xslt-probleme">Probleme und Herausforderungen bei der Entwicklung der Views</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.1 <a href="#xslt-vorbereitung">Vorbereitung</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.2 <a href="#xslt-geraeteliste">Geräteliste</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.3 <a href="#xslt-herstelleruebersicht">Herstellerübersicht</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.4 <a href="#xslt-kundenliste">Kundenliste</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.5 <a href="#xslt-kundenrecyclinghoffehlend">Übersicht Kunden-Recyclinghof fehlende Postleitzahl</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.6 <a href="#xslt-kundenrecyclinghofeinfach">Anzeige welcher Recyclinghof passt genau zur Postleitzahl des Kunden</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.7 <a href="#xslt-kundenrecyclinghofnahe">Anzeige welcher Recyclinghof ist in der Nähe des Kunden</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.8 <a href="#xslt-probleme">Probleme</a><br>
 9  <a href="#erweiterungen">Mögliche Erweiterungen und Einsatzbereiche</a><br>
 10 <a href="#fazit">Fazit</a><br>
 </div>
@@ -1134,8 +1137,43 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
   </figure> 
 
 <h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>8.3 Herstellerübersicht</h3>
+<p>Ein Liste aller in der Datenbank vorhandene Hersteller</p>
+<h4>8.3.1. XML-Fragment</h4>
+<pre>
+&lt;hersteller herstellerID="Samsung"&gt;
+		&lt;adresse&gt;
+			&lt;name&gt;Samsung Electrics GmbH&lt;/name&gt;
+			&lt;strasse&gt;Am Kronberger Hang 6&lt;/strasse&gt;
+			&lt;plz&gt;65824&lt;/plz&gt;
+			&lt;ort&gt;Schwalbach am Taunus&lt;/ort&gt;
+			&lt;telefon&gt;0180 6 67267864&lt;/telefon&gt;
+		&lt;/adresse&gt;
+	&lt;/hersteller&gt;
+</pre>
+<h4>8.3.2 XSLT-Fragment</h4>
+<pre>
+&lt;div id="geraete"&gt;
+	&lt;h1&gt;Hersteller&lt;/h1&gt;
+    &lt;xsl:for-each select="$hersteller/hersteller"&gt;
+    &lt;xsl:sort select="@herstellerID"/&gt;
+	&lt;p&gt;
+    &lt;h3&gt;&lt;xsl:value-of select="position()" /&gt;. Hersteller&lt;/h3&gt;
+    &lt;p&gt;&lt;strong&gt;Name: &lt;/strong&gt;&lt;xsl:value-of select="adresse/name"/&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Straße: &lt;/strong&gt;&lt;xsl:value-of select="adresse/strasse"/&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;PLZ: &lt;xsl:value-of select="adresse/plz"/&gt;&#160;&lt;/strong&gt;&lt;strong&gt;Ort: &lt;/strong&gt;&lt;xsl:value-of select="adresse/ort"/&gt;&lt;/p&gt;
+    &lt;strong&gt;Telefonnummern:&lt;/strong&gt;
+    &lt;ul&gt;
+    &lt;xsl:for-each select="adresse"&gt;
+    &lt;li&gt;&lt;xsl:value-of select="telefon"/&gt;&lt;/li&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;/ul&gt;
+    &lt;/p&gt;
+    &lt;/xsl:for-each&gt;
+&lt;/div&gt;
+</pre>
+<h4>8.3.3 Screenshot</h4>
   <figure> 
-    <img src="img/kundenliste.png" alt="Kundenliste" />
+    <img src="img/herstellerliste.png" alt="Herstellerliste" />
     <figcaption><span>Abbildung 12: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
   </figure> 
 
@@ -1158,22 +1196,34 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
    &lt;xsl:otherwise&gt;&lt;/xsl:otherwise&gt;
 &lt;/xsl:choose&gt;
 </pre>
+<h4>Screenshot</h4>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
     <figcaption><span>Abbildung 13: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
   </figure> 
 
-<h3><a name="xslt-kundenrecyclinghofplzfehlt" id="xslt-kundenrecyclinghofplzfehlt"></a>8.5 Übersicht Kunden-Recyclinghof fehlende Postleitzahl</h3>
-<h4>Anwendungsfall: Kunde kommt und möchte sein Gerät zurückgeben</h4>
+<h3><a name="xslt-kundenrecyclinghoffehlend" id="xslt-kundenrecyclinghofplzfehlt"></a>8.5 Übersicht Kunden-Recyclinghof fehlende Postleitzahl</h3>
+<h4>8.5.1 Anwendungsfall: Kunde kommt und möchte sein Gerät zurückgeben</h4>
 <p>Der Kunde kommt zu uns und möchte sein Gerät recycling lassen. Er möchte gerne wissen welcher Recyclinghof in seiner Nähe sein Gerät zurücknimmt</p>
 <p>Leider hat er bei seiner Registrierung seine Postleitzahl vergessen einzugeben, um jedoch einen Recyclinghof in seiner näheren Umgebung zu finden is die Postleitzahl zwingend notwendig.</p>
 <p>Unser System liefert einen Fehler und bittet die Postleitzahl nachzuliefern.</p>
-<h4>Anlegen einer neuen Variablen</h4>
+<h4>8.5.2 XML Kunde "Lily"</h4>
+<pre>
+&lt;kunde kundenID="11112014_35" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet"&gt;
+		&lt;adresse&gt;
+			&lt;name&gt;Lily Aldrin&lt;/name&gt;
+			&lt;plz&gt;90411&lt;/plz&gt;
+			&lt;telefon&gt;049 911 54365415&lt;/telefon&gt;
+			&lt;telefon&gt;049 175 129323&lt;/telefon&gt;
+		&lt;/adresse&gt;
+&lt;/kunde&gt;
+</pre>
+<h4>8.5.3 Anlegen einer neuen Variablen</h4>
 <p>Unser imaginäre Kunde Lily wird in der Variable "lily" gespeichert um eine leichtere Verarbeitung zu gewährleisten.</p>
 <pre>
 &lt;xsl:variable name="lily" select="$kunden/kunde[@kundenID='11112014_35']" /&gt;
 </pre>
-<h4>Code der die fehlende Postleitzahl erkennt</h4>
+<h4>8.5.4 XSLT-Code der die fehlende Postleitzahl erkennt</h4>
 <pre>
 &lt;xsl:choose&gt;
      &lt;xsl:when test="adresse/plz"&gt;
@@ -1186,18 +1236,74 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     <figcaption><span>Abbildung 14: <abbr title="KundeRecyclinghof">Fehler bei fehlender PLZ</abbr></span></figcaption>
 </figure> 
 
-<h3><a name="xslt-kundenrecyclinghof" id="xslt-kundenrecyclinghof"></a>8.6 Übersicht Kunden-Recyclinghof</h3>
-<p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
-<h4>Probleme</h4>
-<p>Leider lassen sich in XSLT 1.0 nicht ohne Aufwand zwei Zahlen vergleichen</p>
-<h4>Work-Around</h4>
+<h3><a name="xslt-kundenrecyclinghofeinfach" id="xslt-kundenrecyclinghofexakt"></a>8.6 Anzeige welcher Recyclinghof passt genau zur PLZ des Kunden</h3>
+<p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet. </p>
+<p>In diesem Fall suchen wir nach genau dem Recyclinghof der zur Adresse von der Kundin passt. Nicht schön aber für den Anfang okay.</p>
+<h4>XSLT</h4>
 <pre>
+&lt;div id="recyclinghof"&gt;
+	&lt;h1&gt;Vorgeschlagene Recyclinghoefe&lt;/h1&gt;
+	&lt;xsl:for-each select="$recyclinghof/recyclinghof"&gt;
+    &lt;xsl:variable name="aktuellplz" select="adresse/plz" /&gt;
+    &lt;xsl:choose&gt; 
+    &lt;xsl:when test="$lily/adresse/plz = $aktuellplz"&gt;
+    &lt;h3&gt;&lt;xsl:value-of select="adresse/name" /&gt;&lt;/h3&gt;
+    &lt;p&gt;Straße: &lt;xsl:value-of select="adresse/strasse" /&gt;&lt;/p&gt;
+    &lt;p&gt;Ort: &lt;xsl:value-of select="adresse/plz" /&gt;&#160;&lt;xsl:value-of select="adresse/ort" /&gt;&lt;/p&gt;
+    &lt;p&gt;Öffnungszeiten:&lt;/p&gt;
+    &lt;ul&gt;
+    &lt;xsl:for-each select="oeffnungszeiten"&gt;
+    &lt;li&gt;&lt;xsl:value-of select="text()" /&gt;&lt;/li&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;/p&gt;&lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;&lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+    &lt;/xsl:for-each&gt;
+&lt;/div&gt;
 </pre>
+<h4>Screenshot</h4>
+<figure> 
+    <img src="img/reycling-einfach.png" alt="PLZ fehlt" />
+    <figcaption><span>Abbildung 15: <abbr title="KundeRecyclinghof">Einfache Ausgabe des passenden Recyclinghofs</abbr></span></figcaption>
+</figure>
 
-<h3><a name="xslt-probleme" id="xslt-probleme"></a>8.7 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
+<h3><a name="xslt-kundenrecyclinghofnahe" id="xslt-kundenrecyclinghofnahe"></a>8.7 Anzeige welcher Recyclinghof ist in der Nähe des Kunden</h3>
+<p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
+<h4>XSLT-Code </h4>
+<pre>
+&lt;div id="recyclinghof"&gt;
+	&lt;h1&gt;Vorgeschlagene Recyclinghoefe&lt;/h1&gt;
+	&lt;xsl:for-each select="$recyclinghof/recyclinghof"&gt;
+    &lt;xsl:variable name="aktuellplz" select="adresse/plz" /&gt;
+    &lt;xsl:variable name="aktuellplz1" select="substring($aktuellplz, 1,3)" /&gt;
+    &lt;xsl:choose&gt; 
+    &lt;xsl:when test="starts-with($lily/adresse/plz,$aktuellplz1)"&gt;
+    &lt;h3&gt;&lt;xsl:value-of select="adresse/name" /&gt;&lt;/h3&gt;
+    &lt;p&gt;Straße: &lt;xsl:value-of select="adresse/strasse" /&gt;&lt;/p&gt;
+    &lt;p&gt;Ort: &lt;xsl:value-of select="adresse/plz" /&gt;&#160;&lt;xsl:value-of select="adresse/ort" /&gt;&lt;/p&gt;
+    &lt;p&gt;Öffnungszeiten:&lt;/p&gt;
+    &lt;ul&gt;
+    &lt;xsl:for-each select="oeffnungszeiten"&gt;
+    &lt;li&gt;&lt;xsl:value-of select="text()" /&gt;&lt;/li&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;/p&gt;&lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;&lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+    &lt;/xsl:for-each&gt;
+&lt;/div&gt;
+</pre>
+<h4>Screenshot</h4>
+<figure> 
+    <img src="img/recyclinghof-substring.png" alt="Filtern mit Substring" />
+    <figcaption><span>Abbildung 16: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
+</figure> 
+
+<h3><a name="xslt-probleme" id="xslt-probleme"></a>8.8 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
 <figure> 
     <img src="img/ChromeError.png" alt="Fehler Chrome Browser" />
-    <figcaption><span>Abbildung 15: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
+    <figcaption><span>Abbildung 17: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
 </figure> 
 </div> 
 
@@ -1207,7 +1313,18 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 
 <div class="div1">
 <h2><a name="fazit" id="fazit"/>9 Fazit</h2>
+<p>Nach anfänglichen Startschwierigkeiten mit der Materie "Datenmodellierung in XML" konnten wir uns schnell für das Thema begeistern und einarbeiten. Durch die Projektarbeit haben wir viel zum Thema XML gelernt, wenn wir auch nur an der Oberfläche kratzen konnten.</p>
+<p>
+Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine vernünftgen Views entwickeln lassen und so musste wir zu einem sehr späten Zeitpunkt im Projekt nochmals unser Datenmodell überdenken und ändern.
+</p>
+<p>Leider musste wir auch feststellen, dass XSLT 1.0 sehr eingeschränkt arbeitet, so hätten wir gerne eine komplexere Webseite mit mehreren Menüpunkten aus unserer XML-Datenbank erzeugt und komplexere Abfragen entwickelt.</p>
 </div> 
+
+<div class="div1">
+<h2><a name="aufgabenverteilung" id="aufgabenverteilung"/>10 Aufgabenverteilung</h2>
+<p>Grundsätzlich hat im Projekt "Recycling" jeder von allem etwas gemacht.
+Jedoch haben sich im späteren Verlauf Schwerpunkte herauskristallisiert. Josef Eiter war zum größtenteil mit der Datenmodellierung in XML und XSLT beschäftigt. Jennifer Steinbinder mit Dokumentation, Geschäftsprozessmodell und Validierung verantwortlich. Tobias Linke mit XSLT, Views und XML-Datenmodellierung.</p>
+</div>
 
 <div class="back">
 <div class="div1">

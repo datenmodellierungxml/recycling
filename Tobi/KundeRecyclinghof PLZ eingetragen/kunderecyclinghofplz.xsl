@@ -46,17 +46,25 @@
         <li><xsl:value-of select="text()"/></li>
      </xsl:for-each>
      </ul>
-     <p>Möchte sein Geräte <strong><xsl:value-of select="$lily/@geraet"/></strong> zurückgeben.</p>
+     <p>Möchte sein Gerät <strong><xsl:value-of select="$lily/@geraet"/></strong> zurückgeben.</p>
      <p>Es handelt sich hierbei um ein <strong><xsl:value-of select="$lily/@geraetekategorie"/></strong>.</p>
 </div>
 	
 <div id="recyclinghof">
 	<h1>Vorgeschlagene Recyclinghoefe</h1>
-	<xsl:for-each select="$recyclinghof/recyclinghof/adresse/plz">
-    <xsl:variable name="aktuellplz" select="text()" />
+	<xsl:for-each select="$recyclinghof/recyclinghof">
+    <xsl:variable name="aktuellplz" select="adresse/plz" />
     <xsl:choose> 
     <xsl:when test="$lily/adresse/plz = $aktuellplz">
-    <p>Recyclinghof: <xsl:value-of select="$recyclinghof/recyclinghof/adresse/name" /></p>
+    <h3><xsl:value-of select="adresse/name" /></h3>
+    <p>Straße: <xsl:value-of select="adresse/strasse" /></p>
+    <p>Ort: <xsl:value-of select="adresse/plz" />&#160;<xsl:value-of select="adresse/ort" /></p>
+    <p>Öffnungszeiten:</p>
+    <ul>
+    <xsl:for-each select="oeffnungszeiten">
+    <li><xsl:value-of select="text()" /></li>
+    </xsl:for-each>
+    </ul>
     <p></p></xsl:when>
     <xsl:otherwise></xsl:otherwise>
     </xsl:choose>
