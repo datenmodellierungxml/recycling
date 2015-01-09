@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="responsive-neu.xsl"?>
+<?xml-stylesheet type="text/xsl" href="geraeteliste.xsl"?>
 <!DOCTYPE datenbank SYSTEM "datenbank.dtd">
 
 <datenbank>
@@ -41,7 +41,7 @@
 		</bestandteile>
 </geraet>
 
-<geraet geraetID="LenovoYogaPad2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="akzeptabel" geraetekategorie="Tablet">
+<geraet geraetID="LenovoYogaPad2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="aktzeptabel" geraetekategorie="Tablet">
 <bestandteile>
 			<bestandteil name="Glas" anteil="30" recyclinggrad="100"/>
 			<bestandteil name="Kunststoff" anteil="50" recyclinggrad="80" />

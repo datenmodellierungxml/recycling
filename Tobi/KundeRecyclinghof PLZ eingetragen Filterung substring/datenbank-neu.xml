@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="responsive-neu.xsl"?>
+<?xml-stylesheet type="text/xsl" href="kunderecyclinghofplz.xsl"?>
 <!DOCTYPE datenbank SYSTEM "datenbank.dtd">
 
 <datenbank>
@@ -41,7 +41,7 @@
 		</bestandteile>
 </geraet>
 
-<geraet geraetID="LenovoYogaPad2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="akzeptabel" geraetekategorie="Tablet">
+<geraet geraetID="LenovoYogaPad2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="aktzeptabel" geraetekategorie="Tablet">
 <bestandteile>
 			<bestandteil name="Glas" anteil="30" recyclinggrad="100"/>
 			<bestandteil name="Kunststoff" anteil="50" recyclinggrad="80" />
@@ -105,42 +105,45 @@
 	<kunde kundenID="11112014_01" geraet="iPhone" geraetekategorie="Smartphone">
 		   <adresse>    
 				 <name>Björn Tim Meßthaler</name>
+				 <plz>90498</plz>
 				 <telefon>09156556</telefon>
-				 <telefon>+494164684</telefon>
+				 <telefon>494164684</telefon>
 		   </adresse>
 	</kunde>
-	<kunde kundenID="MM125355" geraet="Samsung" geraetekategorie="Smartphone">
+	<kunde kundenID="11112014_05" geraet="Samsung" geraetekategorie="Smartphone">Lil
 		<adresse>
 			<name>Max Mustermann</name>
 			<strasse>Musterstr. 1</strasse>
-			<plz>12345 MusterstraÃ?e</plz>
+			<plz>12345</plz>
 			<ort>Musterstadt</ort>
-			<telefon>0911 / 12 53 55</telefon>
+			<telefon>0911 12 53 55</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="4641653" geraet="Nokia" geraetekategorie="Handy">
+	<kunde kundenID="11112014_10" geraet="Nokia" geraetekategorie="Handy">
 		<adresse>
 			<name>Robin Scherbatsky</name>
 			<strasse>Klappenweg 45</strasse>
 			<plz>25345</plz>
 			<ort>Klappenort</ort>
-			<telefon>0911 / 12 53 55</telefon>
-			<telefon>016046848647</telefon>
+			<telefon>0911 12 53 55</telefon>
+			<telefon>0160 46848647</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="546586" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet">
+	<kunde kundenID="11112014_35" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet">
 		<adresse>
 			<name>Lily Aldrin</name>
-			<telefon>+49 911 54365415</telefon>
+			<plz>90411</plz>
+			<telefon>049 911 54365415</telefon>
+			<telefon>049 175 129323</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="23654" geraet="iPhone 6Plus" geraetekategorie="Smartphone">
+	<kunde kundenID="11112014_70" geraet="iPhone 6Plus" geraetekategorie="Smartphone">
 		<adresse>
 			<name>Ted Mosby</name>
 			<strasse>Mosbacherstraße 45</strasse>
-			<plz>45364></plz>
+			<plz>45364</plz>
 			<ort>Mosbach</ort>
-			<telefon>09911-46463541</telefon>
+			<telefon>0911 46463541</telefon>
 		</adresse>
 	</kunde>
 </kundenListe>
@@ -153,7 +156,7 @@
 			<strasse>Haeberleinstraße 7</strasse>
 			<plz>90411</plz>
 			<ort>Nürnberg</ort>
-			<telefon>0911 / 36 76 05</telefon>
+			<telefon>0911 36 76 05</telefon>
 		</adresse>
 		<oeffnungszeiten>Montag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
@@ -171,7 +174,7 @@
 			<strasse>Am Pferdemarkt 23</strasse>
 			<plz>90439</plz>
 			<ort>Nürnberg</ort>
-			<telefon>0911 / 80 138 04</telefon>
+			<telefon>0911 80 138 04</telefon>
 			</adresse>
 		<oeffnungszeiten>Montag 12 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 12 Uhr - 18 Uhr</oeffnungszeiten>
@@ -188,7 +191,7 @@
 			<strasse>Am Südring 23</strasse>
 			<plz>90820</plz>
 			<ort>Nürnberg</ort>
-			<telefon>0911 / 50 70 103</telefon>
+			<telefon>0911 50 70 103</telefon>
 			</adresse>
 		<oeffnungszeiten>Montag 12 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 12 Uhr - 18 Uhr</oeffnungszeiten>
@@ -205,7 +208,7 @@
 			<strasse>Am Ostring 23</strasse>
 			<plz>90120</plz>
 			<ort>Nürnberg</ort>
-			<telefon>0911 / 10 20 03</telefon>
+			<telefon>0911 10 20 03</telefon>
 			</adresse>
 		<oeffnungszeiten>Montag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
 		<oeffnungszeiten>Dienstag 9.30 Uhr - 18 Uhr</oeffnungszeiten>
