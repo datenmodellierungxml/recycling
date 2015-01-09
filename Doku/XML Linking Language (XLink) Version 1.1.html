@@ -195,7 +195,7 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 <p>Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird folgend der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
 <p>
 <figure>
-  <img src="img/epkhandyrecyclingde.png" style="width:50%"/>
+  <img src="img/epkhandyrecyclingde.png" style="width:70%"/>
   <figcaption><span>Abbildung 1: <abbr title="EPK Modell Geschäftsprozess">EPK Modell Geschäftsprozess</abbr></span></figcaption>
 </figure>
 </p>
@@ -208,7 +208,7 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 <p>Das Datenmodell wurde komplett überarbeitet und es wurde mit einigen Elementen erweitert (siehe Abschnitt <a href="#dmneu">3.2 Neues Datenmodell</a>).</p> 
 <p>
 <figure>
-  <img src="img/recycling_alt.png" style="width:50%"/>
+  <img src="img/recycling_alt.png" style="width:70%"/>
  <figcaption><span>Abbildung 2: <abbr title="Initiales Datenmodell">Initiales Datenmodell</abbr></span></figcaption>
 </figure>
 </p>
@@ -221,7 +221,7 @@ Das Datemodell in Abbildung 3 enthält nun Elemente die unsere Geräte, Herstell
 <p>Das Erweitern des Elements Bestandteile um die Attribute Anteil und Recyclinggrad ermöglicht es zu einem bestimmten Gerät die Zusammensetzung von Bestandteile anzugeben. Der Recyclinggrad gibt an zu wie viel Prozent das jeweilige Bestandteil recyclebar ist.</p> 
 <p>
 <figure>
-  <img src="img/recycling.png" style="width:50%"/>
+  <img src="img/recycling.png" style="width:70%"/>
  <figcaption><span>Abbildung 3: <abbr title="Initiales Datenmodell">Neues Datenmodell</abbr></span></figcaption>
 </figure>
 </p>
@@ -232,9 +232,10 @@ Das Datemodell in Abbildung 3 enthält nun Elemente die unsere Geräte, Herstell
 <div class="div2">
 <h3><a name="procdep" id="procdep"></a>4.1 Elemente und Attribute</h3>
 <p>Die allgemeine Zeichenkodierung wurde über alle XML-Files hinweg wie folgt festgelegt:</p>
-<pre>
+<div class="exampleInner"><pre>
 	&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 </pre>
+</div>
 <p>Da unsere Anwendung nur in Deutschland verwendet werden soll und die Inhalte auf Deutsch sind, sollen die Elementnamen und Attribute auf Deutsch sein. Elementnamen und Attribute sind in der Regel klein zu schreiben.Bei allen XML-Dokumenten wurde ein genaues Wurzelelement ausgewählt. Das Informationssystem hat die Wurzel datenbank, in der alle vier Listen eingepflegt werden: geraeteListe, herstellerListe, kundenListe und recyclinghofListe. An diesem Beispiel werden zum Einen die Vorgabe, dass das Element mit einem kleinen Buchstaben beginnt und zum Anderen auf Deutsch gehalten wird, eingehalten. Jedes drauffolgende Wort in demselben Element beginnt mit einem großen Buchstaben: geraeteListe. Es wurden hier also folgende Regeln beachtet:</p>
 <ul>
   <li>Namen dürfen Buchstaben, Ziffern und andere Zeichen enthalten</li>
@@ -243,7 +244,7 @@ Das Datemodell in Abbildung 3 enthält nun Elemente die unsere Geräte, Herstell
 </ul>
 <p>
   Um den Inhalt mancher Elemente zu beschreiben wurden einerseits PCDATA und andererseits CDATA verwendet. Als Beispiel wird die herstellerListe betrachtet. Parsed Character Data (PCDATA) wurde bei Elementen angewendet, die einen unstrukturierten Inhalt haben. PCDATA sind Dokumentenabschnitte, die der XML-Parser gemäß den XML-Syntax-Regeln verarbeitet. Ein Beispiel für einen Inhalt des Elements oeffnungszeiten ist: 
-</p><pre> 
+</p><div class="exampleInner"><pre>
 	&lt;oeffnungszeiten&gt;Montag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
 	&lt;oeffnungszeiten&gt;Dienstag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
 	&lt;oeffnungszeiten&gt;Mittwch 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
@@ -251,19 +252,19 @@ Das Datemodell in Abbildung 3 enthält nun Elemente die unsere Geräte, Herstell
 	&lt;oeffnungszeiten&gt;Freitag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
 	&lt;oeffnungszeiten&gt;Samstag 9.30 Uhr - 15 Uhr&lt;/oeffnungszeiten&gt;
 	&lt;oeffnungszeiten&gt;Sonntag und Feiertag geschlossen&lt;/oeffnungszeiten&gt;
-</pre>
+</pre></div>
 <p>
 Unparsed Character Data (CDATA) wurde in Attributen verwendet. Der Term CDATA markiert Texte, die ein XML-Parser nicht verarbeiten soll. Ein Beispiel eines Attributs, das mit CDATA deklariert worden ist, ist das Attribut recyclinghof:</p>
-<pre>
+<div class="exampleInner"><pre>
 	&lt;recyclinghof recyclinghofID="HofMitte"&gt;
 	&lt;/recyclinghof&gt;
-</pre>
+</pre></div>
 <p>
 Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausgeschlossen. Attribute beschreiben ein Element. Das Element recyclinghof wird hier also mit dem Attributnamen recyclinghofID und dem Attributwert HofMitte beschrieben. Ein Element kann auch beliebig viele Attribute tragen, somit ist die Entscheidung ziemlich schnell getroffen worden, dass beispielsweise das Element geraet mehrere Attribute hat, da ein Gerät mehrere Eigenschaften hat:</p>
-<pre>
+<div class="exampleInner"><pre>
 	&lt;geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone"&gt;
 	&lt;/geraet&gt;
-</pre>
+</pre></div>
 <p>Das Gerätebeispiel hat also eine genaue ID, eine Bezeichnung, einen Zustand, einen Verschmutzungsgrad sowie eine dazugehörige Produktkategorie. Die Richtlinie, dass Attribute unterschiedliche Namen tragen müssen, wurde strengst beachtet. Die Reihenfolge zwischen den einzelnen Eigenschaften sind in einem Attribut völlig gleichgültig.</p>
 <p> Durch das zusätzliche Einfügen von Elementen und Attributen können XML Dokumente leicht erweitert werden. Die Erweiterbarkeit von XML kann Missverständnisse in der Kommunikation unter den Projektmitgliedern auslösen, deswegen einigten sich die Teammitglieder darauf, dass falls ein Name eines Attributs oder Elements schon einmal vergeben worden ist, war dieser reserviert und durfte keinesfalls für eine andere Bedeutung verwendet werden.</p>
 <p> Es wurden also folgende Punkt des Well-formed XML eingehalten:
@@ -318,14 +319,14 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 </tbody>
 </table>
 <p>Die Reihenfolge von Elementen in einem Dokument ist in der DTD fest deklariert:</p>
-<pre> 
+<div class="exampleInner"><pre>
 	&lt;!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)&gt;
-</pre>
+</pre></div>
 <P>Diese Ausdrücke über das Element adresse zeigt folgendes: Jede Adresse hat mindestens einen Namen. Die Straße, Postleitzahl sowie der Ort sind optional anzugeben. Jedoch muss mindestens eine Telefonnummer des Kundens angegeben werden. Der Kunde sollte bei Rückfragen oder Notfällen unter einer Telefonnummer erreichbar sein. </p>
 <p> Ein Attribut wurd in der DTD wie folgt deklariert:</p>
-<pre>
+<div class="exampleInner"><pre>
 	&lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
-</pre>
+</pre></div>
 <p>Die DTD beschreibt hier, welche Attribute und Attributwerte in einem XML-Dokument in welchen Elementen vorkommen dürfen. Das Attribut geraetID wurde außerhalb des betroffenen Elements (hier:geraet) durch ATTLIST deklariert. </p>
 <p>Hier haben wir ein Attribut, das durch NMTOKEN beschrieben wird. Das heißt es sind bei einem NMTOKEN Namen mit führenden Ziffern und Satzzeichen am Anfang erlaubt. Der Default-Wert #REQUIRED besagt, dass das XML-Dokument an dieser Stelle einen Wert spezifizieren muss.</p>
 <p>
@@ -338,7 +339,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 
 <p>Für unseren Anwendungsfall müssen zu den Geräten verschiedene Informationen gespeichert werden.</p>
 <p>Die DTD für Geräte sieht wie folgt aus:</P> 
-<pre>
+<div class="exampleInner"><pre>
 &lt;!ELEMENT geraeteListe (geraet*)&gt;
 &lt;!ELEMENT geraet (bestandteile+)&gt;
 &lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
@@ -346,7 +347,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 &lt;!ATTLIST geraet zustand (neuwertig | gut | defekt) #REQUIRED&gt;
 &lt;!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED&gt;
 &lt;!ATTLIST geraet geraetekategorie CDATA #REQUIRED&gt;
-</pre>
+</pre></div>
 
 <p><b>Elemente:</b></p>
 <table border="1">
@@ -400,11 +401,11 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 
 <p>Alle Geräte besitzen einen Hersteller. Die Hersteller werden in der Datenbank mit Adresse gespeichert, da es sein kann, dass ein Gerät beim Hersteller recycelt werden kann.</p>
 <p>Die DTD für Hersteller sieht wie folgt aus:</P> 
-<pre>
+<div class="exampleInner"><pre>
 &lt;!ELEMENT herstellerListe (hersteller*)&gt;
 &lt;!ELEMENT hersteller (adresse+)&gt;
 &lt;!ATTLIST hersteller herstellerID CDATA #REQUIRED&gt;
-</pre>
+</pre></div>
 
 <p><b>Elemente:</b></p>
 <table border="1">
@@ -422,7 +423,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </tr>
 </table>
 
-<p><b>Attribute <code>hersteller</code>:</b><p>
+<p><b>Attribute <code>hersteller</code>:</b>
 <table border="1">
   <tr>
     <th>Attribut</th>
@@ -441,11 +442,11 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 
 <p>Für unseren Anwendungsfall müssen zu den Geräten verschiedene Informationen gespeichert werden.</p>
 <p>Die DTD für Kunde sieht wie folgt aus:</P> 
-<pre>
+<div class="exampleInner"><pre>
 &lt;!ELEMENT kundenListe (kunde*)&gt;
 &lt;!ELEMENT kunde (adresse?)&gt;
 &lt;!ATTLIST kunde kundenID CDATA #REQUIRED&gt;
-</pre>
+</pre></div>
 
 <p><b>Elemente:</b></p>
 <table border="1">
@@ -463,7 +464,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </tr>
 </table>
 
-<p><b>Attribute <code>kunde</code>:</b><p>
+<p><b>Attribute <code>kunde</code>:</b>
 <table border="1">
   <tr>
     <th>Attribut</th>
@@ -486,15 +487,15 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 
 <p>Damit die passenden Recyclinghöfe gespeichert und für unsere Anwendung passend angezeight werden können werden diese ebenfalls in unsere XML Datenbank mitaufgenommen.</p>
 <p>Die DTD für Recyclinghöfe sieht wie folgt aus:</P> 
-<pre>
-<!-- Recyclinghof -->
+<div class="exampleInner">
+  <pre>
+&lt;!-- Recyclinghof --&gt;
 &lt;!ELEMENT recyclinghofListe (recyclinghof*)&gt;
 &lt;!ELEMENT recyclinghof (adresse , oeffnungszeiten+)&gt;
 &lt;!ELEMENT oeffnungszeiten (#PCDATA)&gt;
 &lt;!ELEMENT spezialgebiet (#PCDATA)&gt;
 &lt;!ATTLIST recyclinghof recyclinghofID CDATA #REQUIRED&gt;
-
-</pre>
+</pre></div>
 
 <p><b>Elemente:</b></p>
 <table border="1">
@@ -520,7 +521,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </tr>
 </table>
 
-<p><b>Attribute <code>recyclinghof</code>:</b><p>
+<p><b>Attribute <code>recyclinghof</code>:</b>
 <table border="1">
   <tr>
     <th>Attribut</th>
@@ -539,46 +540,42 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   <li>
     <b>adresse</b> 
     <p>Das Element adresse wird von den Elementen Recyclinghof, Hersteller und Kunde verwendet. Das Element enthält für eine Adresse typische Unterelemente wie zum Beispiel Straße, PLZ, Ort usw.</p>
-    <p>Die DTD für das Element ist wie folgt aufgebaut:</p>  
-    <p>
-      <pre>
+    <p>Die DTD für das Element ist wie folgt aufgebaut:      </p>
+    <div class="exampleInner">
+        <pre>
         &lt;!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)&gt;
         &lt;!ELEMENT name (#PCDATA)&gt;
         &lt;!ELEMENT strasse (#PCDATA)&gt;
         &lt;!ELEMENT plz (#PCDATA)&gt;
         &lt;!ELEMENT ort (#PCDATA)&gt;
-        &lt;!ELEMENT telefon (#PCDATA)&gt; 
-      </pre>
+        &lt;!ELEMENT telefon (#PCDATA)&gt;</pre></div>
     </p>
   </li>
   <li>
     <b>bestandteile</b> 
     <p>Die Bestandteile eines bestimmten Geräts werden in dem Element bestandteile gespeichert. Dieses Element ist sozusagen ein Container für Elemente vom Typ bestandteil.</p>
-    <p>Die DTD für das Element ist wie folgt aufgebaut:</p>  
-    <p>
-      <pre>
-       &lt;!ELEMENT bestandteile (bestandteil+)&gt;
-      </pre>
+    <p>Die DTD für das Element ist wie folgt aufgebaut:      </p>
+    <div class="exampleInner">
+        <pre>
+       &lt;!ELEMENT bestandteile (bestandteil+)&gt;</pre></div>
     </p>
   </li> 
   <li> 
     <b>bestandteil</b> 
     <p>Die Informationen zu den Bestandteilen werden im Element bestandteil abgelegt. Das Element behinhaltet wichtige Attribute zu einem Bestandteil wie name, anteil und recyclinggrad.</p>
-    <p>Die DTD für das Element ist wie folgt aufgebaut:</p>  
-    <p>
-      <pre>
+    <p>Die DTD für das Element ist wie folgt aufgebaut:      </p>
+    <div class="exampleInner">
+        <pre>
         &lt;!ELEMENT bestandteil (#PCDATA)&gt;
         &lt;!ATTLIST bestandteil name CDATA #REQUIRED&gt;
         &lt;!ATTLIST bestandteil anteil CDATA #REQUIRED&gt;
-        &lt;!ATTLIST bestandteil recyclinggrad CDATA #REQUIRED&gt;
-      </pre>
+        &lt;!ATTLIST bestandteil recyclinggrad CDATA #REQUIRED&gt;</pre></div>
     </p>
   </li> 
 </ul>
 </div>
 </div>
 <!-- Ende-->
-<div class="div1">
 <h2><a name="linking-elements" id="linking-elements"></a>6 Entwicklung XML-Schemata</h2>
 <p>Bei der Entwicklung des XML-Schematas wurden folgende Anforderungen bearbeitet und erfüllt:</p>
 <ul>
@@ -612,8 +609,8 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <div class="div2">
 <h3><a name="extended-link" id="extended-link"></a>6.1 Aufbau und Struktur der XML Dateien</h3>
 <p>Für den Aufbau der XML Dateien wurde Anfangs eine große Datei mit dem Element datenbank als Container für alle Listen angelegt. Diese Sammlung dient als Grundlage für die Views mit XSLT.</p>
-<p>Diese Datei ist wie folgt aufgebaut:</p>
-<pre> 
+<h4>Diese Datei ist wie folgt aufgebaut:</h4>
+<div class="exampleInner"><pre> 
 &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;!DOCTYPE datenbank SYSTEM "datenbank.dtd"&gt;
 
@@ -713,19 +710,18 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   &lt;/recyclinghof&gt;
 &lt;/recyclinghofListe&gt;
 &lt;/datenbank&gt;
-
-</pre>  
+</pre> </div> 
 <h3><a name="extended-link" id="extended-link"></a>6.2 Validierung</h3>
 <p>Für die Validierung der XML-Struktur wurde das Commandline-Tool <code>xmllint</code> verwendet. Der Aufbau der entsprechenden XML Datei wird mit ihrer Document Type Definition abgeglichen und so überprüft ob die Inhalte der Grammatik entsprechen. Dies ist wichtig, um die Datenstuktur zu testen und etwaige Fehler und Schwächen des Datenmodells zu erkennen und auszuschließen. 
 
 <p>Das Commandline-Tool xmllint wird wie folgt verwendet:</p>
-<pre>xmllint -valid &lt;Pfad zur XML Datei&gt;</pre>  
+<div class="exampleInner"><pre>xmllint -valid &lt;Pfad zur XML Datei&gt;</pre> </div> 
 
 <p>Wenn Fehler auftreten gibt das Programm diese aus. Bei einer erfolgreichen Validierung wird die XML Datei ohne Formatierung ausgegeben. Falls es Warnungen gibt, gibt das Programm diese vor dem Inhalt der zu prüfenden XML Datei aus.</p> 
 
 <p>Beispiel für einen "parser error":</p>  
 
-<pre>
+<div class="exampleInner"><pre>
 datenbank.xml:11: parser error : internal error: xmlParseInternalSubset: error detected in Markup declaration
 &produktListe;
 ^
@@ -735,7 +731,7 @@ datenbank.xml:11: parser error : DOCTYPE improperly terminated
 datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 &produktListe; 
  ^
-</pre>
+</pre></div>
 
 <h3><a name="extended-link" id="extended-link"></a>6.3 Testfälle</h3>
 <p>Um die XML Struktur auf Fehler und Schwachstellen zu Testen wurden Testfälle entworfen. Für die Tests wurden XML-Dateien mit fiktiven aber theoretisch möglichen Testdaten erstellt. Diese Test-Dateien wurden validiert und das Ergebnis ausgewertet.</p>
@@ -909,7 +905,7 @@ datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 <h3><a name="xslt-geraeteliste" id="xslt-vorbereitung"></a>8.1 Vorbereitung</h3>
 <h4>8.1.1 CSS</h4>
 <p>Um ein möglichst übersichtliches XSL-Dokument zu erhalten haben wir so gut wie alle Styles in ein externes CSS-Dokument ausgelagert</p>
-<pre>
+<div class="exampleInner"><pre>
 @charset "UTF-8";
 /* CSS Document */
 /* Cool */
@@ -1095,43 +1091,44 @@ li {
 margin:0px;
 padding: 0px;
 }
-</pre>
+</pre></div>
 <h4>8.1.2 Anlegen von Variablen</h4>
 <p>Zur leichteren Verarbeitung der Datenbank haben wir Variablen für einzelnen Listen in der XSL-Datei angelegt. <br />Im späteren Verlauf werden weitere Variablen angelegt</p>
-<pre>
+<div class="exampleInner"><pre>
 &lt;xsl:variable name="geraete" select="/datenbank/geraeteListe" /&gt;
 &lt;xsl:variable name="hersteller" select="/datenbank/herstellerListe" /&gt;
 &lt;xsl:variable name="kunden" select="/datenbank/kundenListe" /&gt;
 &lt;xsl:variable name="recyclinghof" select="/datenbank/recyclinghofListe" /&gt;
-</pre>
+</pre></div>
 
 <h4>8.1.3 Verweis auf die die XSL-Datei in der XML-Datei</h4>
 <p>Damit der Webbrowser aus der XML-Datei eine HTML-Seite erzeugt muss im ein Verweis auf die XSL-Datei im XML-Dokument angelegt werden.</p>
-<pre>
+<div class="exampleInner"><pre>
 &lt;?xml-stylesheet type="text/xsl" href="geraeteliste.xsl"?&gt;
-</pre>
+</pre></div>
 
 <h3><a name="xslt-geraeteliste" id="xslt-geraeteliste"></a>8.2 Geräteliste</h3>
 <h4>8.2.1 Berechnung des Recyclinggrades</h4>
 <p>Anzeige aller Geräte im Bestand mit Angabe von Anteil und dem Recyclinggrad.<br />
 Der Recyclinggrad wird für jedes Geräte berechnet.</p>
 <h4>8.2.2 Angaben in der Variable "geraete"</h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;bestandteile&gt;
 	&lt;bestandteil name="Glas" anteil="60" recyclinggrad="100"/&gt;
 	&lt;bestandteil name="Kunststoff" anteil="10" recyclinggrad="50" /&gt;
 	&lt;bestandteil name="Metall" anteil="30" recyclinggrad="100"/&gt;
 &lt;/bestandteile&gt;
-</pre>
+</pre></div>
 
 <h4>8.2.3 Codefragment zur Berechnung in der XML-Datei</h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;p&gt;
 &lt;strong>Recyclinggrad: &lt;xsl:value-of select="format-number(sum(bestandteile/bestandteil/@recyclinggrad) 
 div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 &lt;/p&gt;
-</pre>
-  <figure> 
+</pre></div>
+<h4>8.2.4 Screenshot</h4> 
+ <figure> 
     <img src="img/geraeteliste.png" alt="Geräteliste" />
     <figcaption><span>Abbildung 11: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
   </figure> 
@@ -1139,7 +1136,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>8.3 Herstellerübersicht</h3>
 <p>Ein Liste aller in der Datenbank vorhandene Hersteller</p>
 <h4>8.3.1. XML-Fragment</h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;hersteller herstellerID="Samsung"&gt;
 		&lt;adresse&gt;
 			&lt;name&gt;Samsung Electrics GmbH&lt;/name&gt;
@@ -1149,9 +1146,9 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 			&lt;telefon&gt;0180 6 67267864&lt;/telefon&gt;
 		&lt;/adresse&gt;
 	&lt;/hersteller&gt;
-</pre>
+</pre></div>
 <h4>8.3.2 XSLT-Fragment</h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;div id="geraete"&gt;
 	&lt;h1&gt;Hersteller&lt;/h1&gt;
     &lt;xsl:for-each select="$hersteller/hersteller"&gt;
@@ -1170,7 +1167,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     &lt;/p&gt;
     &lt;/xsl:for-each&gt;
 &lt;/div&gt;
-</pre>
+</pre></div>
 <h4>8.3.3 Screenshot</h4>
   <figure> 
     <img src="img/herstellerliste.png" alt="Herstellerliste" />
@@ -1182,20 +1179,20 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <p>Dadurch das wir in unserer XML-Datei für Kunden nur eine Telefonnummer und den Namen voraussetzen, <br />
   bleiben manche Felder unausgefüllt diese werden über bestimmte Anweisungen und Abfragen nicht in dem View angezeigt.</p>
 <h4>8.4.2 Filtern mit dem if-Befehl</h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;xsl:if test="adresse/strasse"&gt;
    &lt;p&gt;Straße: &lt;xsl:value-of select="adresse/strasse" /&gt;&lt;/p&gt;
 &lt;/xsl:if&gt;
 </pre>
-<h4>8.4.2 Filtern mit dem choose-Befehl</h4>
+</div><h4>8.4.2 Filtern mit dem choose-Befehl</h4>
 <p>Wegen dem höheren Schreibaufwand und der Mehrzeilen Code ist der if-Befehl vorzuziehen.</p>
-<pre>
+<div class="exampleInner"><pre>
 &lt;xsl:choose&gt;
    &lt;xsl:when test="adresse/ort"&gt;
    	&lt;p&gt;Ort: &lt;xsl:value-of select="adresse/ort"/&gt;&lt;/p&gt;&lt;/xsl:when&gt;
    &lt;xsl:otherwise&gt;&lt;/xsl:otherwise&gt;
 &lt;/xsl:choose&gt;
-</pre>
+</pre></div>
 <h4>Screenshot</h4>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" />
@@ -1208,29 +1205,29 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <p>Leider hat er bei seiner Registrierung seine Postleitzahl vergessen einzugeben, um jedoch einen Recyclinghof in seiner näheren Umgebung zu finden is die Postleitzahl zwingend notwendig.</p>
 <p>Unser System liefert einen Fehler und bittet die Postleitzahl nachzuliefern.</p>
 <h4>8.5.2 XML Kunde "Lily"</h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;kunde kundenID="11112014_35" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet"&gt;
 		&lt;adresse&gt;
 			&lt;name&gt;Lily Aldrin&lt;/name&gt;
-			&lt;plz&gt;90411&lt;/plz&gt;
 			&lt;telefon&gt;049 911 54365415&lt;/telefon&gt;
 			&lt;telefon&gt;049 175 129323&lt;/telefon&gt;
 		&lt;/adresse&gt;
 &lt;/kunde&gt;
-</pre>
+</pre></div>
 <h4>8.5.3 Anlegen einer neuen Variablen</h4>
 <p>Unser imaginäre Kunde Lily wird in der Variable "lily" gespeichert um eine leichtere Verarbeitung zu gewährleisten.</p>
 <pre>
 &lt;xsl:variable name="lily" select="$kunden/kunde[@kundenID='11112014_35']" /&gt;
 </pre>
 <h4>8.5.4 XSLT-Code der die fehlende Postleitzahl erkennt</h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;xsl:choose&gt;
      &lt;xsl:when test="adresse/plz"&gt;
      &lt;p&gt;PLZ: &lt;xsl:value-of select="text()" /&gt;&lt;/p>&lt;/xsl:when&gt;
      &lt;xsl:otherwise&gt;&lt;p&gt;PLZ: &lt;strong style="color:red;"&gt;nicht angegeben&lt;/strong&gt;&lt;/p&gt;&lt;/xsl:otherwise&gt;
 &lt;/xsl:choose&gt;
-</pre>
+</pre></div>
+<h4>8.5.5 Screenshot</h4>
 <figure> 
     <img src="img/plz-fehlt.png" alt="PLZ fehlt" />
     <figcaption><span>Abbildung 14: <abbr title="KundeRecyclinghof">Fehler bei fehlender PLZ</abbr></span></figcaption>
@@ -1240,7 +1237,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet. </p>
 <p>In diesem Fall suchen wir nach genau dem Recyclinghof der zur Adresse von der Kundin passt. Nicht schön aber für den Anfang okay.</p>
 <h4>XSLT</h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;div id="recyclinghof"&gt;
 	&lt;h1&gt;Vorgeschlagene Recyclinghoefe&lt;/h1&gt;
 	&lt;xsl:for-each select="$recyclinghof/recyclinghof"&gt;
@@ -1261,7 +1258,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     &lt;/xsl:choose&gt;
     &lt;/xsl:for-each&gt;
 &lt;/div&gt;
-</pre>
+</pre></div>
 <h4>Screenshot</h4>
 <figure> 
     <img src="img/reycling-einfach.png" alt="PLZ fehlt" />
@@ -1271,7 +1268,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h3><a name="xslt-kundenrecyclinghofnahe" id="xslt-kundenrecyclinghofnahe"></a>8.7 Anzeige welcher Recyclinghof ist in der Nähe des Kunden</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
 <h4>XSLT-Code </h4>
-<pre>
+<div class="exampleInner"><pre>
 &lt;div id="recyclinghof"&gt;
 	&lt;h1&gt;Vorgeschlagene Recyclinghoefe&lt;/h1&gt;
 	&lt;xsl:for-each select="$recyclinghof/recyclinghof"&gt;
@@ -1293,7 +1290,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     &lt;/xsl:choose&gt;
     &lt;/xsl:for-each&gt;
 &lt;/div&gt;
-</pre>
+</pre></div>
 <h4>Screenshot</h4>
 <figure> 
     <img src="img/recyclinghof-substring.png" alt="Filtern mit Substring" />
@@ -1318,6 +1315,9 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine vernünftgen Views entwickeln lassen und so musste wir zu einem sehr späten Zeitpunkt im Projekt nochmals unser Datenmodell überdenken und ändern.
 </p>
 <p>Leider musste wir auch feststellen, dass XSLT 1.0 sehr eingeschränkt arbeitet, so hätten wir gerne eine komplexere Webseite mit mehreren Menüpunkten aus unserer XML-Datenbank erzeugt und komplexere Abfragen entwickelt.</p>
+<p>
+Außerdem konnten wir auf Grund unserer Gruppengröße das Thema JSON nicht mehr bearbeiten. Allerdings fanden wir eine Gruppengröße von drei Personen sehr angenehm, da wir keinen großen Reibungsverlust bei der Kommunikation hatten. 
+</p>
 </div> 
 
 <div class="div1">
@@ -1326,9 +1326,9 @@ Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine
 Jedoch haben sich im späteren Verlauf Schwerpunkte herauskristallisiert. Josef Eiter war zum größtenteil mit der Datenmodellierung in XML und XSLT beschäftigt. Jennifer Steinbinder mit Dokumentation, Geschäftsprozessmodell und Validierung verantwortlich. Tobias Linke mit XSLT, Views und XML-Datenmodellierung.</p>
 </div>
 
-<div class="back">
-<div class="div1">
-<h2><a name="references" id="references"></a>A References</h2>
+
+<!--<div class="div1">
+<h2><a name="references" id="references"></a>A Reference</h2>
 <div class="div2">
 <h3><a name="refnorm" id="refnorm"></a>A.1 Normative References</h3>
 <dl>
@@ -1400,8 +1400,8 @@ http://www.y12.doe.gov/sgml/wg8/document/1920.htm.)</dd>
 <dd><a href="http://www.w3.org/TR/ruby/"><cite>Ruby Annotation</cite></a>. Michel Suignard, Tex Texin, Marcin Sawicki, <em>et. al.</em>, Editors. World Wide Web Consortium, 2001. (See http://www.w3.org/TR/ruby/.)</dd>
 </dl>
 </div>
-</div>
-<div class="div1">
+</div>-->
+<!--<div class="div1">
 <h2><a name="sample-dtd-appx" id="sample-dtd-appx"></a>B Sample DTD (Non-Normative)</h2>
 <p>The following DTD makes invalid (for purposes of argument) all XLink constructs for which this specification does not specify behavior. It is provided only as a convenience for application developers; it has no normative status.</p>
 <p>The following assumptions hold for this DTD:</p>
@@ -1890,7 +1890,7 @@ arc = element * {
 </li>
 </ol>
 </div>
-</div>
+</div>-->
 
 
 <div id="window-resizer-tooltip" style="display: block;"><a href="http://www.w3.org/TR/xlink11/#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1920</span> x <span class="tooltipHeight" id="winHeight">1080</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1920</span> x <span class="tooltipHeight" id="vpHeight">964</span></div></body></html>
