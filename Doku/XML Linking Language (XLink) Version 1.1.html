@@ -22,7 +22,7 @@ ol.enumur      { list-style-type: upper-roman; }
 
 
 div.exampleInner pre { margin-left: 1em;
-                       margin-top: 0em; margin-bottom: 0em}
+                       margin-top: 1em; margin-bottom: 1em}
 div.exampleOuter {border: 4px double gray;
                   margin: 0em; padding: 0em}
 div.exampleInner { background-color: #d5dee3;
@@ -133,7 +133,6 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 <h2><a name="status" id="status"></a>Status des Dokuments</h2>
 <p>Dieses Dokument ist momentan noch in Bearbeitung.</p>
 </div>
-<div class="toc">
 <h2><a name="table_of_contents" id="table_of_contents"></a>Inhaltsverzeichnis</h2>
 <div class="toc">
 1  <a href="#intro">Einleitung</a><br>
@@ -168,27 +167,18 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 &nbsp;&nbsp;&nbsp;&nbsp;8.7 <a href="#xslt-kundenrecyclinghofnahe">Anzeige welcher Recyclinghof ist in der Nähe des Kunden</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;8.8 <a href="#xslt-probleme">Probleme</a><br>
 9  <a href="#erweiterungen">Mögliche Erweiterungen und Einsatzbereiche</a><br>
-10 <a href="#fazit">Fazit</a><br>
-</div>
-<h3><a name="appendices" id="appendices"></a>Appendices</h3>
-<div class="toc">A <a href="http://www.w3.org/TR/xlink11/#references">References</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;A.1 <a href="http://www.w3.org/TR/xlink11/#refnorm">Normative References</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;A.2 <a href="http://www.w3.org/TR/xlink11/#refinform">Non-Normative References</a><br>
-B <a href="http://www.w3.org/TR/xlink11/#sample-dtd-appx">Sample DTD</a> (Non-Normative)<br>
-C <a href="http://www.w3.org/TR/xlink11/#sample-xsd-appx">Sample XML Schema</a> (Non-Normative)<br>
-D <a href="http://www.w3.org/TR/xlink11/#sample-rng-appx">Sample RELAX NG Grammar</a> (Non-Normative)<br>
-E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (Non-Normative)<br></div>
+10  <a href="#tools">Verwendetet Tools</a><br>
+11 <a href="#fazit">Fazit</a><br>
+12 <a href="#aufgabenverteilung">Aufgabenverteilung</a><br>
 </div>
 <hr>
-<div class="body">
-<div class="div1">
 <h2><a name="intro" id="intro"></a>1 Einleitung</h2>
-
 <div class="div2">
 <h3><a name="origin-goals" id="origin-goals"></a>1.1 Problemstellung und Ziel</h3>
 <p>Die Zuweisung der Projekte führte dazu, dass Josef Eiter, Tobias Linke und Jennifer Steinbinder das Thema "Recycling" zu bearbeiten hatten. Da aktuelle Diskussionen rund um das unnötige Aufbewahren alter Handys geführt werden, hat sich das Projekteam genau auf diese Situation spezialisiert. Das Handyrecycling wird mit Hilfe der Datenmodellierung mit XML zu einem ausführlichen Informationssystem abgebildet. Ziel ist es, einen Überblick über die Datensicht des Informationssystems "Handyrecycling" zu verschaffen.</p>
 <p>Das Projektteam ist wie folgt strukturiert vorgegangen. Die Phasen der Datenmodellierung wurden gemeinsam erarbeitet. Mit Hilfe eines Geschäftsprozessmodells wurde ein konzeptuelles Schema entworfen. Das konzeptuelles Schema wurde in die logische bzw. relationale Strukturen des Modellierungswerkzeugs überführt. Analog zu den relationalen Strukturen wurden die dazugehörigen XML-Dokumente erstellt. Parallel wurden die Document Type Definitions zu jeder XML-Datei deklariert. Anschließend wurde der Umgang mit XPath-Ausdrücke sich angeeignet. Durch das nun verschaffte Know-How der XML Path Language und der Sprache XSLT Views erzeugt.</p>
-
+</div>
+<hr />
 <div class="div1">
 <h2><a name="concepts" id="concepts"></a>2 Geschäftsprozessmodell</h2>
 <p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts.</p> 
@@ -200,6 +190,7 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 </figure>
 </p>
 </div>
+<hr />
 <div class="div1">
 <h2><a name="att-method" id="att-method"></a>3 Datenmodell</h2>
 <p>Während der Entwicklung unseres Projekts wurde das Startdatenmodell aufgrund von Unstimmigkeiten und Unklarheiten erweitert und verändert.</p> 
@@ -208,7 +199,7 @@ E <a href="http://www.w3.org/TR/xlink11/#changes">Changes from XLink 1.0</a> (No
 <p>Das Datenmodell wurde komplett überarbeitet und es wurde mit einigen Elementen erweitert (siehe Abschnitt <a href="#dmneu">3.2 Neues Datenmodell</a>).</p> 
 <p>
 <figure>
-  <img src="img/recycling_alt.png" style="width:70%"/>
+  <img src="img/recycling_alt.png" style="width:80%"/>
  <figcaption><span>Abbildung 2: <abbr title="Initiales Datenmodell">Initiales Datenmodell</abbr></span></figcaption>
 </figure>
 </p>
@@ -221,11 +212,12 @@ Das Datemodell in Abbildung 3 enthält nun Elemente die unsere Geräte, Herstell
 <p>Das Erweitern des Elements Bestandteile um die Attribute Anteil und Recyclinggrad ermöglicht es zu einem bestimmten Gerät die Zusammensetzung von Bestandteile anzugeben. Der Recyclinggrad gibt an zu wie viel Prozent das jeweilige Bestandteil recyclebar ist.</p> 
 <p>
 <figure>
-  <img src="img/recycling.png" style="width:70%"/>
+  <img src="img/recycling.png" style="width:80%"/>
  <figcaption><span>Abbildung 3: <abbr title="Initiales Datenmodell">Neues Datenmodell</abbr></span></figcaption>
 </figure>
 </p>
 </div>
+<hr />
 <div class="div1">
 <h2><a name="conformance" id="conformance"></a>4 Richtlininen zur Gestaltung der XML Dateien</h2>
 <p>Da gemeinsam an einem Projekt gearbeitet wird, macht es durchaus Sinn gewisse Konventionen für die Gestaltung des XML Codes und allgemeine Regeln festzulegen. Diese Regeln sollten auch bei Änderungen oder Erweiterungen eingehalten werden um die Konsistenz der Datenstruktur zu gewährleisten.</p>
@@ -296,13 +288,13 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <h3><a name="markup-reqs" id="markup-reqs"></a>4.2 Kommentare</h3>
 <p>Da Kommentare nicht innerhalb von XML-Tags verwendet werden dürfen, werden diese nach Möglichkeit über den betreffenden XML-Tag verfasst. Die Klammerung der Kommentare erfolgte durch standardgemäßter Form: <!--Kommentar-->. Außerdem wurde vorallem die Angabe befolgt, dass "--" Zeichen in keinem Kommentar verwendet wurden. Im Allgemeinen sollten die Kommentare beschreibend und aussagekräftig sein. Fehlgeschlagene Versuche wurden in den XML Dokumenten beibehalten aber mit Hilfe der Kommentagfunktion auskommentiert, damit sie keinen Einfluss auf die Validierung des XML Dokuments hat. Um die Document Type Definition zu beschreiben wurde auch innerhalb der DTD einige Kommentare erfasst.</p>
 </div>
-
+<hr />
 <div class="div2">
 <h2><a name="app-reqs" id="app-reqs"></a>5 Document Type Definition (DTD)</h2>
 <p>Document Type Definitions (DTDs) werden in einem seperaten Dokument ausgelagert um die Dateigröße der einzelnen XML-Dokumenten möglichst gering zu halten. Die DTD-Datei(en) werden in das XML Dokument ganz eingebunden. Eine Menge formal überprüfbarer Regeln zur Beschreibung der gemeinsamen strukturellen Merkmale einer Menge von Dokumenten ist ein Dokumententyp. Dementsprechend ist eine DTD eine Grammatik. Das Validieren der Document Typ Definition und der zugehörigen XML Dokumente erfolgte durch das Online-Tool von W3C http://validator.w3.org. Da mit verschiedenen Editoren wie Notepad++, TextEdit gearbeitet worden ist, wurde entschlossen, dass nach jeder Änderung das File mit dem W3C Validator validiert wird. Die DTD wurde extern lokal im System deklariert:</p>
-<pre>
+<div class="exampleInner"><pre>
 	&lt;!DOCTYPE datenbank SYSTEM "datenbank.dtd"&gt;
-</pre>
+</pre></div>
 <p>Elemente werden in der DTD wie folgt definiert: </p>
 <table border="1" frame="border" summary="Link Usage Patterns">
 <thead>
@@ -365,7 +357,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </tr>
 </table>
 
-<p><b>Attribute <code>geraet</code>:</b><p>
+<p><b>Attribute <code>geraet</code>:</b>
 <table border="1">
   <tr>
     <th>Attribut</th>
@@ -528,7 +520,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <th>Beschreibung</th>
   </th>
   <tr>
-    <td>recyclinghofID</td>
+    <td height="36">recyclinghofID</td>
     <td>Ist ein eindeutiger Bezeichner für einen Recyclinghof.</td>
   </tr>
 </table>
@@ -575,7 +567,8 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 </ul>
 </div>
 </div>
-<!-- Ende-->
+<hr />
+<div class="div2">
 <h2><a name="linking-elements" id="linking-elements"></a>6 Entwicklung XML-Schemata</h2>
 <p>Bei der Entwicklung des XML-Schematas wurden folgende Anforderungen bearbeitet und erfüllt:</p>
 <ul>
@@ -588,7 +581,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <li>
 <p>Komplexität: Gekoppelt mit Pflegeaufwand und Akzeptanz durch Benutzer</p>
 </ul>
-<p>Folgende Phasen der Document-Type-Defintion-Entwicklung wurden abgeschlossen:<p>
+<p>Folgende Phasen der Document-Type-Defintion-Entwicklung wurden abgeschlossen:
 <ul>
 <li>
 <p>Die Vorbereitung: Unser Schema wurde vorerst auf Nutzbarkeit, Validierbarkeit und Komplexität geprüft.</p>
@@ -606,6 +599,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <p>Die Nachbereitung und das Testen: Prüfung des Schemas auf Basis bereits vorliegender Dokumente. Enige Aspekte mussten geändert werden. Fehler oder Unklarheiten mussten bereinigt werden. Das Zurückspringen zu einer vorherigen Phasen war durchaus auch Teil des Projekts.</p>
 </li>
 </ul>
+</div>
 <div class="div2">
 <h3><a name="extended-link" id="extended-link"></a>6.1 Aufbau und Struktur der XML Dateien</h3>
 <p>Für den Aufbau der XML Dateien wurde Anfangs eine große Datei mit dem Element datenbank als Container für alle Listen angelegt. Diese Sammlung dient als Grundlage für die Views mit XSLT.</p>
@@ -721,7 +715,8 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 
 <p>Beispiel für einen "parser error":</p>  
 
-<div class="exampleInner"><pre>
+<div class="exampleInner">
+  <pre>
 datenbank.xml:11: parser error : internal error: xmlParseInternalSubset: error detected in Markup declaration
 &produktListe;
 ^
@@ -730,8 +725,7 @@ datenbank.xml:11: parser error : DOCTYPE improperly terminated
 ^
 datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 &produktListe; 
- ^
-</pre></div>
+ ^</pre></div>
 
 <h3><a name="extended-link" id="extended-link"></a>6.3 Testfälle</h3>
 <p>Um die XML Struktur auf Fehler und Schwachstellen zu Testen wurden Testfälle entworfen. Für die Tests wurden XML-Dateien mit fiktiven aber theoretisch möglichen Testdaten erstellt. Diese Test-Dateien wurden validiert und das Ergebnis ausgewertet.</p>
@@ -745,38 +739,37 @@ datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 
 <p>Folgende Testfälle wurden durchgeführt:</p>
 
-<p><b>1. KundenListe</b><p>
-<p><b>Beschreibung:</b></p>
-<p>Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
-<p><b>Ergebnis</b></p>
-<p><pre> 
+<h4>6.3.1. KundenListe</h4>
+<p><b>Beschreibung:<br /></b>
+Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
+<h4>Ergebnis</h4>
+<div class="exampleInner"><pre>
 	&lt;kunde kundenID ="11112014_01"&gt;&lt;/kunde&gt;
-
-</pre>
-	Validierer hatte nichts zu meckern.</p>
+</pre></div>
+	Validierer hatte nichts zu meckern.
 <p><b>Beschreibung:</b></p>
 <p>Verschiedenste Arten von Namen wurde in dem Adressblock ausprobiert. Doppelnamen, sowie Namen mit Sonderzeichen wie ö,ä und ü. Folgende Kunden wurden angelegt:</p> 
-<p><b>Ergebnis</b></p>
-<p><pre>
+<h4>Ergebnis</h4>
+<div class="exampleInner">
+  <pre>
 	&lt;name&gt;Björn Tim Meßthaler&lt;/name&gt;
 	&lt;name&gt;Max Muster-Mann&lt;/name&gt;
 	&lt;name&gt;Robin Scherbatsky&lt;/name&gt;
 	&lt;name&gt;Lily Aldrin&lt;/name&gt;
 	&lt;name&gt;Ted Mosby&lt;/name&gt;
-	</pre>
-	Validierer hatte nichts zu meckern.</p>
-<p><b>Beschreibung:</b></p>
+</pre></div>
+	<p>Validierer hatte nichts zu meckern.</p>
+<h4>Beschreibung:</h4>
 <p>Elemente wie Telefon wurden mehr als einmal angelegt und der Inhalt des Elements Telefon wurde in unterschiedlichen Formationen implementiert, da es doch im alltäglichen Leben üblich ist, dass ein Kunde mehr als eine Telefonnummer besitzt (meist ist dies eine Festnetznummer und eine zusätzliche Mobiltelefonnummer).</p>
-<p><b>Ergebnis</b></p>
-<p><pre>
+<h4>Ergebnis</h4>
+<div class="exampleInner"><pre>
 	&lt;telefon&gt;0911 / 12 53 55&lt;/telefon&gt;
 	&lt;telefon&gt;016046848647&lt;/telefon&gt;
-	</pre>
-	Validierer hatte nichts zu meckern.
-</p>
+</pre></div>
+<p>Validierer hatte nichts zu meckern.</p>
 <p><b>Beschreibung:</b></p>
 <p>Das Element Adresse wurde beim Testen der KundenListe etwas geändert. Da es durchaus möglich sein könnte, dass ein Kunde uns seine Wohnadresse nicht angeben möchte, muss es hier möglich sein dies zu unterstützen. Zusätzlich aber muss beachtet werden, dass mindestens ein Name, sowie eine Telefonnummer anzugeben ist, da bei Rückfragen es möglich sein muss den Kunden zu kontaktieren.</p>
-<p><b>Ergebnis</b></p>
+<h4>Ergebnis</h4>
  <table border="1" frame="border" summary="Link Usage Patterns">
 <thead>
 <tr>
@@ -848,7 +841,8 @@ datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 <p><b>Ergebnis</b></p>
 
 </div>
-<div class="div1">
+<hr />
+<div class="div2">
 <h2><a name="xpath" id="xpath"/>7 XML Path Language</h2>
 <p>XPath ist eine vom W3C-Konsortium entwickelte Anfragesprache um Teile von XML-Dokumenten zu adressieren und auszuwerten (Angelehnt an Wikipedia, abgerufen am 01.01.2015). Sie arbeitet auf dem DOM eines Xml-Dokuments und ermöglicht eine Navigation,eine Wahl von Knotenmengen und Auswertungsoperationen.</p>
 <h3><a name="xpath-einarbeitung" id="xpath-einarbeitung"></a>7.1 Einarbeitung</h3>
@@ -897,6 +891,8 @@ datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
     <img src="img/document-order4.png" alt="Documentorder4" />
     <figcaption><span>Abbildung 10: <abbr title="document-order4">Kinder der Recyclinghofsliste</abbr></span></figcaption>
   </figure> 
+</div>
+<hr />
 <div class="div1">
 <h2><a name="xslt" id="xslt"/>8 Entwicklung der Views mit XSLT</h2>
 <p>Um die Daten aus unserer XML-Datenstruktur benutzerfreundlich zu repräsentieren wurden Ansichten (Views) mit XSLT (Extensible Stylesheet Language Transformations) entwickelt. Mit XSLT ist es möglich mit einfachen Mitteln Daten aus einer oder mehreren XML-Dateien in einem Browser formatiert darzustellen.</p> 
@@ -905,7 +901,8 @@ datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 <h3><a name="xslt-geraeteliste" id="xslt-vorbereitung"></a>8.1 Vorbereitung</h3>
 <h4>8.1.1 CSS</h4>
 <p>Um ein möglichst übersichtliches XSL-Dokument zu erhalten haben wir so gut wie alle Styles in ein externes CSS-Dokument ausgelagert</p>
-<div class="exampleInner"><pre>
+<div class="exampleInner">
+  <pre>
 @charset "UTF-8";
 /* CSS Document */
 /* Cool */
@@ -996,7 +993,7 @@ nav {
 	height:100px;
 }
 
-#geraete {
+#links {
 	position:relative;
 	float:left;
 	padding-left:5px;
@@ -1008,7 +1005,7 @@ nav {
 	margin-bottom: 10px;
 }
 
-#recyclinghof {
+#rechts {
 	position:relative;
 	float:left;
 	padding-left:5px;
@@ -1054,7 +1051,7 @@ nav {
 	height:100px;
 }
 
-#geraete {
+#links {
 	position:relative;
 	float:left;
 	padding:5px;
@@ -1065,7 +1062,7 @@ nav {
 	margin:5px;
 }
 
-#recyclinghof {
+#rechts {
 	position:relative;
 	float:left;
 	padding:5px;
@@ -1092,7 +1089,11 @@ margin:0px;
 padding: 0px;
 }
 </pre></div>
-<h4>8.1.2 Anlegen von Variablen</h4>
+<h4>8.1.2 Encoding</h4>
+<div class="exampleInner"><pre>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+</pre></div>
+<h4>8.1.3 Anlegen von Variablen</h4>
 <p>Zur leichteren Verarbeitung der Datenbank haben wir Variablen für einzelnen Listen in der XSL-Datei angelegt. <br />Im späteren Verlauf werden weitere Variablen angelegt</p>
 <div class="exampleInner"><pre>
 &lt;xsl:variable name="geraete" select="/datenbank/geraeteListe" /&gt;
@@ -1101,7 +1102,7 @@ padding: 0px;
 &lt;xsl:variable name="recyclinghof" select="/datenbank/recyclinghofListe" /&gt;
 </pre></div>
 
-<h4>8.1.3 Verweis auf die die XSL-Datei in der XML-Datei</h4>
+<h4>8.1.4 Verweis auf die die XSL-Datei in der XML-Datei</h4>
 <p>Damit der Webbrowser aus der XML-Datei eine HTML-Seite erzeugt muss im ein Verweis auf die XSL-Datei im XML-Dokument angelegt werden.</p>
 <div class="exampleInner"><pre>
 &lt;?xml-stylesheet type="text/xsl" href="geraeteliste.xsl"?&gt;
@@ -1113,11 +1114,13 @@ padding: 0px;
 Der Recyclinggrad wird für jedes Geräte berechnet.</p>
 <h4>8.2.2 Angaben in der Variable "geraete"</h4>
 <div class="exampleInner"><pre>
+&lt;geraet geraetID="LenovoYogaPad2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="aktzeptabel" <br />	geraetekategorie="Tablet"&gt;
 &lt;bestandteile&gt;
-	&lt;bestandteil name="Glas" anteil="60" recyclinggrad="100"/&gt;
-	&lt;bestandteil name="Kunststoff" anteil="10" recyclinggrad="50" /&gt;
-	&lt;bestandteil name="Metall" anteil="30" recyclinggrad="100"/&gt;
-&lt;/bestandteile&gt;
+			&lt;bestandteil name="Glas" anteil="30" recyclinggrad="100"/&gt;
+			&lt;bestandteil name="Kunststoff" anteil="50" recyclinggrad="80" /&gt;
+			&lt;bestandteil name="Metall" anteil="20" recyclinggrad="10"/&gt;
+		&lt;/bestandteile&gt;
+&lt;/geraet&gt;
 </pre></div>
 
 <h4>8.2.3 Codefragment zur Berechnung in der XML-Datei</h4>
@@ -1157,7 +1160,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     &lt;h3&gt;&lt;xsl:value-of select="position()" /&gt;. Hersteller&lt;/h3&gt;
     &lt;p&gt;&lt;strong&gt;Name: &lt;/strong&gt;&lt;xsl:value-of select="adresse/name"/&gt;&lt;/p&gt;
     &lt;p&gt;&lt;strong&gt;Straße: &lt;/strong&gt;&lt;xsl:value-of select="adresse/strasse"/&gt;&lt;/p&gt;
-    &lt;p&gt;&lt;strong&gt;PLZ: &lt;xsl:value-of select="adresse/plz"/&gt;&#160;&lt;/strong&gt;&lt;strong&gt;Ort: &lt;/strong&gt;&lt;xsl:value-of select="adresse/ort"/&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;PLZ: &lt;xsl:value-of select="adresse/plz"/&gt;&amp;#160;&lt;/strong&gt;&lt;strong&gt;Ort: &lt;/strong&gt;&lt;xsl:value-of select="adresse/ort"/&gt;&lt;/p&gt;
     &lt;strong&gt;Telefonnummern:&lt;/strong&gt;
     &lt;ul&gt;
     &lt;xsl:for-each select="adresse"&gt;
@@ -1216,16 +1219,52 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre></div>
 <h4>8.5.3 Anlegen einer neuen Variablen</h4>
 <p>Unser imaginäre Kunde Lily wird in der Variable "lily" gespeichert um eine leichtere Verarbeitung zu gewährleisten.</p>
-<pre>
-&lt;xsl:variable name="lily" select="$kunden/kunde[@kundenID='11112014_35']" /&gt;
-</pre>
-<h4>8.5.4 XSLT-Code der die fehlende Postleitzahl erkennt</h4>
 <div class="exampleInner"><pre>
-&lt;xsl:choose&gt;
+&lt;xsl:variable name="lily" select="$kunden/kunde[@kundenID='11112014_35']" /&gt;
+</pre></div>
+<h4>8.5.4 XSLT-Code </h4>
+<div class="exampleInner"><pre>
+&lt;div id="content"&gt;
+&lt;div id="links"&gt;
+	&lt;h1&gt;Kunde&lt;/h1&gt;
+    &lt;h3&gt;&lt;xsl:value-of select="$lily/adresse/name" /&gt;&lt;/h3&gt;
+   	&lt;!-- Check ob eine Strasse eingegeben ist --&gt;
+     &lt;xsl:if test="adresse/strasse"&gt;
+        &lt;p&gt;Straße: &lt;xsl:value-of select="text()" /&gt;&lt;/p&gt;
+     &lt;/xsl:if&gt;
+     
+     &lt;!-- Check ob eine PLZ eingebeben wurde --&gt;
+     &lt;xsl:choose&gt;
      &lt;xsl:when test="adresse/plz"&gt;
-     &lt;p&gt;PLZ: &lt;xsl:value-of select="text()" /&gt;&lt;/p>&lt;/xsl:when&gt;
+     &lt;p&gt;PLZ: &lt;xsl:value-of select="text()" /&gt;&lt;/p&gt;&lt;/xsl:when&gt;
      &lt;xsl:otherwise&gt;&lt;p&gt;PLZ: &lt;strong style="color:red;"&gt;nicht angegeben&lt;/strong&gt;&lt;/p&gt;&lt;/xsl:otherwise&gt;
-&lt;/xsl:choose&gt;
+     &lt;/xsl:choose&gt;
+     
+     &lt;!-- Check ob eine PLZ eingebeben wurde --&gt;
+     &lt;xsl:choose&gt;
+     &lt;xsl:when test="adresse/ort"&gt;
+     &lt;p&gt;Ort: &lt;xsl:value-of select="adresse/ort"/&gt;&lt;/p&gt;&lt;/xsl:when&gt;
+     &lt;/xsl:choose&gt;
+    
+     &lt;strong&gt;Telefon:&lt;/strong&gt;
+     &lt;ul&gt;
+     &lt;xsl:for-each select="$lily/adresse/telefon"&gt;
+        &lt;li&gt;&lt;xsl:value-of select="text()"/&gt;&lt;/li&gt;
+     &lt;/xsl:for-each&gt;
+     &lt;/ul&gt;
+     &lt;p&gt;Möchte sein Gerät &lt;strong&gt;&lt;xsl:value-of select="$lily/@geraet"/&gt;&lt;/strong&gt; zurückgeben.&lt;/p&gt;
+     &lt;p&gt;Es handelt sich hierbei um ein &lt;strong&gt;&lt;xsl:value-of select="$lily/@geraetekategorie"/&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+	
+&lt;div id="rechts"&gt;
+	&lt;h1&gt;Vorgeschlagene Recyclinghoefe&lt;/h1&gt;
+	&lt;xsl:choose&gt;
+    &lt;xsl:when test="$lily/adresse/plz"&gt;
+    &lt;p&gt;PLZ: &lt;xsl:value-of select="text()" /&gt;&lt;/p&gt;&lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;&lt;p&gt;Um einen Recyclinghof in ihrer Nähe ermitteln zu können benötigen wir eine gültige Postleitzahl!&lt;/p&gt;<br />	&lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </pre></div>
 <h4>8.5.5 Screenshot</h4>
 <figure> 
@@ -1236,9 +1275,55 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h3><a name="xslt-kundenrecyclinghofeinfach" id="xslt-kundenrecyclinghofexakt"></a>8.6 Anzeige welcher Recyclinghof passt genau zur PLZ des Kunden</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet. </p>
 <p>In diesem Fall suchen wir nach genau dem Recyclinghof der zur Adresse von der Kundin passt. Nicht schön aber für den Anfang okay.</p>
-<h4>XSLT</h4>
-<div class="exampleInner"><pre>
-&lt;div id="recyclinghof"&gt;
+<h4>8.6.1 XML</h4>
+<div class="exampleInner">
+  <pre>
+&lt;kunde kundenID="11112014_35" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet"&gt;
+	&lt;adresse&gt;
+		&lt;name&gt;Lily Aldrin&lt;/name&gt;
+		&lt;plz&gt;90411&lt;/plz&gt;
+		&lt;telefon&gt;049 911 54365415&lt;/telefon&gt;
+		&lt;telefon&gt;049 175 129323&lt;/telefon&gt;
+		&lt;/adresse&gt;
+&lt;/kunde&gt;
+</pre></div>
+<h4>8.6.2 XSLT</h4>
+<div class="exampleInner" style="margin-bottom:20px;">
+<pre>
+&lt;div id="links"&gt;
+	&lt;h1&gt;Kunde&lt;/h1&gt;
+    &lt;h3&gt;&lt;xsl:value-of select="$lily/adresse/name" /&gt;&lt;/h3&gt;
+   &lt;!-- Check ob eine Strasse eingegeben ist --&gt;
+     &lt;xsl:if test="$lily/adresse/strasse"&gt;
+        &lt;p&gt;Straße: &lt;xsl:value-of select="$lily/adresse/strasse" /&gt;&lt;/p&gt;
+     &lt;/xsl:if&gt;
+     
+     &lt;!-- Check ob eine PLZ eingebeben wurde --&gt;
+     &lt;xsl:choose&gt;
+     &lt;xsl:when test="$lily/adresse/plz"&gt;
+     &lt;p&gt;PLZ: &lt;xsl:value-of select="$lily/adresse/plz" /&gt;&lt;/p&gt;&lt;/xsl:when&gt;
+     &lt;xsl:otherwise&gt;&lt;p&gt;PLZ: &lt;strong style="color:red;"&gt;nicht angegeben&lt;/strong&gt;&lt;/p&gt;&lt;/xsl:otherwise&gt;
+     &lt;/xsl:choose&gt;
+     
+     &lt;!-- Check ob eine PLZ eingebeben wurde --&gt;
+     &lt;xsl:choose&gt;
+     &lt;xsl:when test="$lily/adresse/ort"&gt;
+     &lt;p&gt;Ort: &lt;xsl:value-of select="$lily/adresse/ort"/&gt;&lt;/p&gt;&lt;/xsl:when&gt;
+     &lt;/xsl:choose&gt;
+    
+     &lt;strong&gt;Telefon:&lt;/strong&gt;
+     &lt;ul&gt;
+     &lt;xsl:for-each select="$lily/adresse/telefon"&gt;
+        &lt;li&gt;&lt;xsl:value-of select="text()"/&gt;&lt;/li&gt;
+     &lt;/xsl:for-each&gt;
+     &lt;/ul&gt;
+     &lt;p&gt;Möchte sein Gerät &lt;strong&gt;&lt;xsl:value-of select="$lily/@geraet"/&gt;&lt;/strong&gt; zurückgeben.&lt;/p&gt;
+     &lt;p&gt;Es handelt sich hierbei um ein &lt;strong&gt;&lt;xsl:value-of select="$lily/@geraetekategorie"/&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</pre></div>
+<div class="exampleInner">
+  <pre>
+&lt;div id="rechts"&gt;
 	&lt;h1&gt;Vorgeschlagene Recyclinghoefe&lt;/h1&gt;
 	&lt;xsl:for-each select="$recyclinghof/recyclinghof"&gt;
     &lt;xsl:variable name="aktuellplz" select="adresse/plz" /&gt;
@@ -1246,7 +1331,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     &lt;xsl:when test="$lily/adresse/plz = $aktuellplz"&gt;
     &lt;h3&gt;&lt;xsl:value-of select="adresse/name" /&gt;&lt;/h3&gt;
     &lt;p&gt;Straße: &lt;xsl:value-of select="adresse/strasse" /&gt;&lt;/p&gt;
-    &lt;p&gt;Ort: &lt;xsl:value-of select="adresse/plz" /&gt;&#160;&lt;xsl:value-of select="adresse/ort" /&gt;&lt;/p&gt;
+    &lt;p&gt;Ort: &lt;xsl:value-of select="adresse/plz" /&gt;&amp;#160;&lt;xsl:value-of select="adresse/ort" /&gt;&lt;/p&gt;
     &lt;p&gt;Öffnungszeiten:&lt;/p&gt;
     &lt;ul&gt;
     &lt;xsl:for-each select="oeffnungszeiten"&gt;
@@ -1259,7 +1344,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     &lt;/xsl:for-each&gt;
 &lt;/div&gt;
 </pre></div>
-<h4>Screenshot</h4>
+<h4>8.6.3 Screenshot</h4>
 <figure> 
     <img src="img/reycling-einfach.png" alt="PLZ fehlt" />
     <figcaption><span>Abbildung 15: <abbr title="KundeRecyclinghof">Einfache Ausgabe des passenden Recyclinghofs</abbr></span></figcaption>
@@ -1268,8 +1353,9 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h3><a name="xslt-kundenrecyclinghofnahe" id="xslt-kundenrecyclinghofnahe"></a>8.7 Anzeige welcher Recyclinghof ist in der Nähe des Kunden</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
 <h4>XSLT-Code </h4>
-<div class="exampleInner"><pre>
-&lt;div id="recyclinghof"&gt;
+<div class="exampleInner">
+  <pre>
+&lt;div id="rechts"&gt;
 	&lt;h1&gt;Vorgeschlagene Recyclinghoefe&lt;/h1&gt;
 	&lt;xsl:for-each select="$recyclinghof/recyclinghof"&gt;
     &lt;xsl:variable name="aktuellplz" select="adresse/plz" /&gt;
@@ -1278,7 +1364,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     &lt;xsl:when test="starts-with($lily/adresse/plz,$aktuellplz1)"&gt;
     &lt;h3&gt;&lt;xsl:value-of select="adresse/name" /&gt;&lt;/h3&gt;
     &lt;p&gt;Straße: &lt;xsl:value-of select="adresse/strasse" /&gt;&lt;/p&gt;
-    &lt;p&gt;Ort: &lt;xsl:value-of select="adresse/plz" /&gt;&#160;&lt;xsl:value-of select="adresse/ort" /&gt;&lt;/p&gt;
+    &lt;p&gt;Ort: &lt;xsl:value-of select="adresse/plz" /&gt;&amp;#160;&lt;xsl:value-of select="adresse/ort" /&gt;&lt;/p&gt;
     &lt;p&gt;Öffnungszeiten:&lt;/p&gt;
     &lt;ul&gt;
     &lt;xsl:for-each select="oeffnungszeiten"&gt;
@@ -1303,13 +1389,31 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
     <figcaption><span>Abbildung 17: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
 </figure> 
 </div> 
-
+<hr />
 <div class="div1">
-<h2><a name="erweiterungen" id="erweiterungen"/>8 Mögliche Erweiterungen und Einsatzgebiete</h2>
+<h2><a name="erweiterungen" id="erweiterungen"/>9 Mögliche Erweiterungen und Einsatzgebiete</h2>
 </div> 
-
+<hr />
 <div class="div1">
-<h2><a name="fazit" id="fazit"/>9 Fazit</h2>
+<h2><a name="tools" id="tools"/>10 Verwendetet Tools</h2>
+<p>Folgende Tools haben wir zur Umsetzung des Projekts verwendet:
+<ul>
+<li>Dreamweaver</li>
+<li>Sublime</li>
+<li>Firefox</li>
+<li>GitHub</li>
+</ul>
+</p>
+<p>Folgende Tools haben wir zur Dokumentation und Präsentation des Projekts verwendet:
+<ul>
+<li>Keynote</li>
+<li>Dreamweaver</li>
+</ul>
+</p>
+</div> 
+<hr />
+<div class="div1">
+<h2><a name="fazit" id="fazit"/>11 Fazit</h2>
 <p>Nach anfänglichen Startschwierigkeiten mit der Materie "Datenmodellierung in XML" konnten wir uns schnell für das Thema begeistern und einarbeiten. Durch die Projektarbeit haben wir viel zum Thema XML gelernt, wenn wir auch nur an der Oberfläche kratzen konnten.</p>
 <p>
 Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine vernünftgen Views entwickeln lassen und so musste wir zu einem sehr späten Zeitpunkt im Projekt nochmals unser Datenmodell überdenken und ändern.
@@ -1319,9 +1423,9 @@ Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine
 Außerdem konnten wir auf Grund unserer Gruppengröße das Thema JSON nicht mehr bearbeiten. Allerdings fanden wir eine Gruppengröße von drei Personen sehr angenehm, da wir keinen großen Reibungsverlust bei der Kommunikation hatten. 
 </p>
 </div> 
-
+<hr />
 <div class="div1">
-<h2><a name="aufgabenverteilung" id="aufgabenverteilung"/>10 Aufgabenverteilung</h2>
+<h2><a name="aufgabenverteilung" id="aufgabenverteilung"/>12 Aufgabenverteilung</h2>
 <p>Grundsätzlich hat im Projekt "Recycling" jeder von allem etwas gemacht.
 Jedoch haben sich im späteren Verlauf Schwerpunkte herauskristallisiert. Josef Eiter war zum größtenteil mit der Datenmodellierung in XML und XSLT beschäftigt. Jennifer Steinbinder mit Dokumentation, Geschäftsprozessmodell und Validierung verantwortlich. Tobias Linke mit XSLT, Views und XML-Datenmodellierung.</p>
 </div>

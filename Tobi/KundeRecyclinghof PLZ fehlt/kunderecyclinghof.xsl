@@ -15,14 +15,13 @@
 </head>
 <body>
 <div id="container">
-	<div id="head"></div>
-   
-<div id="content">
+<div id="head"></div>
 
-<div id="geraete">
+<div id="content">
+<div id="links">
 	<h1>Kunde</h1>
     <h3><xsl:value-of select="$lily/adresse/name" /></h3>
-   <!-- Check ob eine Strasse eingegeben ist -->
+   	<!-- Check ob eine Strasse eingegeben ist -->
      <xsl:if test="adresse/strasse">
         <p>Straße: <xsl:value-of select="text()" /></p>
      </xsl:if>
@@ -46,11 +45,11 @@
         <li><xsl:value-of select="text()"/></li>
      </xsl:for-each>
      </ul>
-     <p>Möchte sein Geräte <strong><xsl:value-of select="$lily/@geraet"/></strong> zurückgeben.</p>
+     <p>Möchte sein Gerät <strong><xsl:value-of select="$lily/@geraet"/></strong> zurückgeben.</p>
      <p>Es handelt sich hierbei um ein <strong><xsl:value-of select="$lily/@geraetekategorie"/></strong>.</p>
 </div>
 	
-<div id="recyclinghof">
+<div id="rechts">
 	<h1>Vorgeschlagene Recyclinghoefe</h1>
 	<xsl:choose>
     <xsl:when test="$lily/adresse/plz">
@@ -58,7 +57,6 @@
     <xsl:otherwise><p>Um einen Recyclinghof in ihrer Nähe ermitteln zu können benötigen wir eine gültige Postleitzahl!</p></xsl:otherwise>
     </xsl:choose>
 </div>
-
 </div>
 
 <div id="footer"></div>

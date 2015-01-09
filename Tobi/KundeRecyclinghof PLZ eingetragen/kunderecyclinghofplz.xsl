@@ -19,7 +19,7 @@
    
 <div id="content">
 
-<div id="geraete">
+<div id="links">
 	<h1>Kunde</h1>
     <h3><xsl:value-of select="$lily/adresse/name" /></h3>
    <!-- Check ob eine Strasse eingegeben ist -->
@@ -50,7 +50,7 @@
      <p>Es handelt sich hierbei um ein <strong><xsl:value-of select="$lily/@geraetekategorie"/></strong>.</p>
 </div>
 	
-<div id="recyclinghof">
+<div id="rechts">
 	<h1>Vorgeschlagene Recyclinghoefe</h1>
 	<xsl:for-each select="$recyclinghof/recyclinghof">
     <xsl:variable name="aktuellplz" select="adresse/plz" />
