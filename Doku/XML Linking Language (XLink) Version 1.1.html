@@ -1106,6 +1106,7 @@ Der Recyclinggrad wird für jedes Geräte berechnet.</p>
 </pre></div>
 
 <h4>8.2.3 Codefragment zur Berechnung in der XML-Datei</h4>
+<p>Der Recyclinggrad eines Geräts wird aus der Summe des Recyclinggrads der Bestandteile berechnet und durch die Anzahl der Bestandteile dividiert.</p>
 <div class="exampleInner"><pre>
 &lt;p&gt;
 &lt;strong>Recyclinggrad: &lt;xsl:value-of select="format-number(sum(bestandteile/bestandteil/@recyclinggrad) 
