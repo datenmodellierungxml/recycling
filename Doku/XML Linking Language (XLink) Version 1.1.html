@@ -1110,7 +1110,7 @@ padding: 0px;
 
 <h3><a name="xslt-geraeteliste" id="xslt-geraeteliste"></a>8.2 Geräteliste</h3>
 <h4>8.2.1 Berechnung des Recyclinggrades</h4>
-<p>Anzeige aller Geräte im Bestand mit Angabe von Anteil und dem Recyclinggrad.<br />
+<p>Anzeige aller Geräte (<a href="#geraeteliste">Abb. 11</a>) im Bestand mit Angabe von Anteil und dem Recyclinggrad.<br />
 Der Recyclinggrad wird für jedes Geräte berechnet.</p>
 <h4>8.2.2 Angaben in der Variable "geraete"</h4>
 <div class="exampleInner"><pre>
@@ -1132,12 +1132,12 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre></div>
 <h4>8.2.4 Screenshot</h4> 
  <figure> 
-    <img src="img/geraeteliste.png" alt="Geräteliste" />
+    <img src="img/geraeteliste.png" alt="Geräteliste" name="geraeteliste" id="geraeteliste"/>
     <figcaption><span>Abbildung 11: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
   </figure> 
 
 <h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>8.3 Herstellerübersicht</h3>
-<p>Ein Liste aller in der Datenbank vorhandene Hersteller</p>
+<p>Ein Liste (<a href="#herstellerliste">Abb. 12</a>) aller in der Datenbank vorhandene Hersteller.</p>
 <h4>8.3.1. XML-Fragment</h4>
 <div class="exampleInner"><pre>
 &lt;hersteller herstellerID="Samsung"&gt;
@@ -1173,12 +1173,13 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre></div>
 <h4>8.3.3 Screenshot</h4>
   <figure> 
-    <img src="img/herstellerliste.png" alt="Herstellerliste" />
+    <img src="img/herstellerliste.png" alt="Herstellerliste" name="herstellerliste" id="herstellerliste" />
     <figcaption><span>Abbildung 12: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
   </figure> 
 
 <h3><a name="xslt-kundenliste" id="xslt-kundenliste"></a>8.4 Kundenliste</h3>
 <h4>8.4.1 Herausfiltern von nicht vorhandenen Daten</h4>
+<p>Eine vollständige Kundliste (<a href="#kundenliste">Abb. 13</a>) aller im System gespeicherten Kunden.</p>
 <p>Dadurch das wir in unserer XML-Datei für Kunden nur eine Telefonnummer und den Namen voraussetzen, <br />
   bleiben manche Felder unausgefüllt diese werden über bestimmte Anweisungen und Abfragen nicht in dem View angezeigt.</p>
 <h4>8.4.2 Filtern mit dem if-Befehl</h4>
@@ -1198,7 +1199,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre></div>
 <h4>Screenshot</h4>
   <figure> 
-    <img src="img/kundenliste.png" alt="Kundenliste" />
+    <img src="img/kundenliste.png" alt="Kundenliste" name="kundenliste" id="kundenliste"/>
     <figcaption><span>Abbildung 13: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
   </figure> 
 
@@ -1206,6 +1207,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h4>8.5.1 Anwendungsfall: Kunde kommt und möchte sein Gerät zurückgeben</h4>
 <p>Der Kunde kommt zu uns und möchte sein Gerät recycling lassen. Er möchte gerne wissen welcher Recyclinghof in seiner Nähe sein Gerät zurücknimmt</p>
 <p>Leider hat er bei seiner Registrierung seine Postleitzahl vergessen einzugeben, um jedoch einen Recyclinghof in seiner näheren Umgebung zu finden is die Postleitzahl zwingend notwendig.</p>
+<p>Der Fehler wird mit durch einen rotmarkierten Text (<a href="#plzfehlt">Abb. 14</a>) ausgegeben.</p>
 <p>Unser System liefert einen Fehler und bittet die Postleitzahl nachzuliefern.</p>
 <h4>8.5.2 XML Kunde "Lily"</h4>
 <div class="exampleInner"><pre>
@@ -1268,13 +1270,13 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre></div>
 <h4>8.5.5 Screenshot</h4>
 <figure> 
-    <img src="img/plz-fehlt.png" alt="PLZ fehlt" />
+    <img src="img/plz-fehlt.png" alt="PLZ fehlt" name="plzfehlt" id="plzfehlt" />
     <figcaption><span>Abbildung 14: <abbr title="KundeRecyclinghof">Fehler bei fehlender PLZ</abbr></span></figcaption>
 </figure> 
 
 <h3><a name="xslt-kundenrecyclinghofeinfach" id="xslt-kundenrecyclinghofexakt"></a>8.6 Anzeige welcher Recyclinghof passt genau zur PLZ des Kunden</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet. </p>
-<p>In diesem Fall suchen wir nach genau dem Recyclinghof der zur Adresse von der Kundin passt. Nicht schön aber für den Anfang okay.</p>
+<p>In diesem Fall suchen wir nach genau dem Recyclinghof der zur Adresse von der Kundin passt (<a href="#plzexakt">Abb 15</a>). Nicht schön aber für den Anfang okay.</p>
 <h4>8.6.1 XML</h4>
 <div class="exampleInner">
   <pre>
@@ -1346,12 +1348,13 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre></div>
 <h4>8.6.3 Screenshot</h4>
 <figure> 
-    <img src="img/reycling-einfach.png" alt="PLZ fehlt" />
+    <img src="img/reycling-einfach.png" alt="PLZ fehlt" name="plzexakt" id="plzexakt"/>
     <figcaption><span>Abbildung 15: <abbr title="KundeRecyclinghof">Einfache Ausgabe des passenden Recyclinghofs</abbr></span></figcaption>
 </figure>
 
 <h3><a name="xslt-kundenrecyclinghofnahe" id="xslt-kundenrecyclinghofnahe"></a>8.7 Anzeige welcher Recyclinghof ist in der Nähe des Kunden</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
+<p>Das lösen wir in dem wir die ersten drei Zahlen der Recyclinhöfe-Postleitzahl mit der Kunden-Postleitzahl vergleichen (<a href="#plznahe">Abb. 16</a>).</p>
 <h4>XSLT-Code </h4>
 <div class="exampleInner">
   <pre>
@@ -1379,7 +1382,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </pre></div>
 <h4>Screenshot</h4>
 <figure> 
-    <img src="img/recyclinghof-substring.png" alt="Filtern mit Substring" />
+    <img src="img/recyclinghof-substring.png" alt="Filtern mit Substring" name="plznahe" id="plznahe"/>
     <figcaption><span>Abbildung 16: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
 </figure> 
 
@@ -1440,8 +1443,8 @@ Außerdem konnten wir auf Grund unserer Gruppengröße das Thema JSON nicht mehr
 <hr />
 <div class="div1">
 <h2><a name="aufgabenverteilung" id="aufgabenverteilung"/>12 Aufgabenverteilung</h2>
-<p>Grundsätzlich hat im Projekt "Recycling" jeder von allem etwas gemacht.
-Jedoch haben sich im späteren Verlauf Schwerpunkte herauskristallisiert. Josef Eiter war zum größtenteil mit der Datenmodellierung in XML und XSLT beschäftigt. Jennifer Steinbinder mit Dokumentation, Geschäftsprozessmodell und Validierung verantwortlich. Tobias Linke mit XSLT, Views und XML-Datenmodellierung.</p>
+<p>Grundsätzlich hat im Projekt "Recycling" jeder von allem etwas gemacht. Jeder war im Entstehungsprozess und der Entwicklung beteiligt. Bei einer Gruppengröße von 3 Personen ist uns eigentlich nichts anderes übrig geblieben um die Anforderungen des Projekts zu erfüllen. </p>
+<p>Jeder war auch umfassend an der Dokumentation beteiligt.</p>
 </div>
 
 
