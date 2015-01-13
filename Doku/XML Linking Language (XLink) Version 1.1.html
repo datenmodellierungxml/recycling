@@ -60,6 +60,7 @@ div.exampleHeader { font-weight: bold;
 <link rel="bookmark" title="must" href="http://www.w3.org/TR/xlink11/#dt-must">
 <link rel="bookmark" title="extended link" href="http://www.w3.org/TR/xlink11/#dt-extendedlink">
 <link rel="bookmark" title="simple link" href="http://www.w3.org/TR/xlink11/#dt-simplelink">
+<link rel="bookmark" title="link locator" href="http://www.w3.org/TR/xlink11/#dt-linklocator"
 <link rel="section" href="http://www.w3.org/TR/xlink11/#intro" title="1 Introduction">
 <link rel="section" href="http://www.w3.org/TR/xlink11/#origin-goals" title="1.1 Origin and Goals">
 <link rel="section" href="http://www.w3.org/TR/xlink11/#concepts" title="2 XLink Concepts">
@@ -83,8 +84,6 @@ div.exampleHeader { font-weight: bold;
 <link rel="section" href="http://www.w3.org/TR/xlink11/#local-resource" title="5.1.1 Local Resources for an Extended Link (resource-Type Element)">
 <link rel="section" href="http://www.w3.org/TR/xlink11/#remote-resource" title="5.1.2 Remote Resources for an Extended Link (locator-Type Element)">
 <link rel="section" href="http://www.w3.org/TR/xlink11/#xlink-arcs" title="5.1.3 Traversal Rules for an Extended Link (arc-Type Element)">
-<link rel="section" href="http://www.w3.org/TR/xlink11/#title-element" title="5.1.4 Titles for Extended Links, Locators, and Arcs (title-Type Element)">
-<link rel="section" href="http://www.w3.org/TR/xlink11/#xlg" title="5.1.5 Locating Linkbases (Special Arc Role)">
 <link rel="section" href="http://www.w3.org/TR/xlink11/#simple-links" title="5.2 Simple Links (simple-Type Element)">
 <link rel="section" href="http://www.w3.org/TR/xlink11/#link-types" title="5.3 XLink Element Type Attribute (type)">
 <link rel="section" href="http://www.w3.org/TR/xlink11/#link-locators" title="5.4 Locator Attribute (href)">
@@ -154,9 +153,9 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 &nbsp;&nbsp;&nbsp;&nbsp;6.1<a href="#extended-link">Aufbau und Struktur der XML Dateien</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;6.2 <a href="#simple-links">Validierung</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;6.3 <a href="#link-types">Testfälle</a><br>
-7  <a href="#xpath">XML Path Language</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="xpatheinarbeitung">Einarbeitung</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7.2 <a href="xpathdocumentorder">Document Order<a><br>
+7  <a href="#references">XML Path Language</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.1 <a href="#refnorm">Einarbeitung</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.2 <a href="#xpathdocumentorder">Document Order<a><br>
 8  <a href="#xslt">Entwicklung der Views mit XSLT</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;8.1 <a href="#xslt-vorbereitung">Vorbereitung</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;8.2 <a href="#xslt-geraeteliste">Geräteliste</a><br>
@@ -181,12 +180,12 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 <hr />
 <div class="div1">
 <h2><a name="concepts" id="concepts"></a>2 Geschäftsprozessmodell</h2>
-<p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts.</p> 
+<p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell (<a href="#epkhandyrecyclingde">siehe Abb. 1</a>) modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts.</p> 
 <p>Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird folgend der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
 <p>
 <figure>
-  <img src="img/epkhandyrecyclingde.png" style="width:70%"/>
-  <figcaption><span>Abbildung 1: <abbr title="EPK Modell Geschäftsprozess">EPK Modell Geschäftsprozess</abbr></span></figcaption>
+  <img src="img/epkhandyrecyclingde.png" style="width:70%" alt="Epkhandyrecyclingde" name ="epkhandyrecyclingde" id="epkhandyrecyclingde"/>
+  <figcaption><span>Abbildung 1: <abbr title="epkhandyrecyclingde">EPK Modell Geschäftsprozess</abbr></span></figcaption>
 </figure>
 </p>
 </div>
@@ -705,7 +704,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 &lt;/recyclinghofListe&gt;
 &lt;/datenbank&gt;
 </pre> </div> 
-<h3><a name="extended-link" id="extended-link"></a>6.2 Validierung</h3>
+<h3><a name="simple-links" id="simple-links"></a>6.2 Validierung</h3>
 <p>Für die Validierung der XML-Struktur wurde das Commandline-Tool <code>xmllint</code> verwendet. Der Aufbau der entsprechenden XML Datei wird mit ihrer Document Type Definition abgeglichen und so überprüft ob die Inhalte der Grammatik entsprechen. Dies ist wichtig, um die Datenstuktur zu testen und etwaige Fehler und Schwächen des Datenmodells zu erkennen und auszuschließen. 
 
 <p>Das Commandline-Tool xmllint wird wie folgt verwendet:</p>
@@ -727,7 +726,7 @@ datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 &produktListe; 
  ^</pre></div>
 
-<h3><a name="extended-link" id="extended-link"></a>6.3 Testfälle</h3>
+<h3><a name="link-types" id="link-types"></a>6.3 Testfälle</h3>
 <p>Um die XML Struktur auf Fehler und Schwachstellen zu Testen wurden Testfälle entworfen. Für die Tests wurden XML-Dateien mit fiktiven aber theoretisch möglichen Testdaten erstellt. Diese Test-Dateien wurden validiert und das Ergebnis ausgewertet.</p>
 <p>Kriterien für die Tests waren:</p>
 <ul>
@@ -739,15 +738,14 @@ datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 
 <p>Folgende Testfälle wurden durchgeführt:</p>
 
-<h4>6.3.1. KundenListe</h4>
-<p><b>Beschreibung:<br /></b>
+<p><b>1.Beschreibung:<br /></b>
 Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 <h4>Ergebnis</h4>
 <div class="exampleInner"><pre>
 	&lt;kunde kundenID ="11112014_01"&gt;&lt;/kunde&gt;
 </pre></div>
 	Validierer hatte nichts zu meckern.
-<p><b>Beschreibung:</b></p>
+<p><b>2.Beschreibung:</b></p>
 <p>Verschiedenste Arten von Namen wurde in dem Adressblock ausprobiert. Doppelnamen, sowie Namen mit Sonderzeichen wie ö,ä und ü. Folgende Kunden wurden angelegt:</p> 
 <h4>Ergebnis</h4>
 <div class="exampleInner">
@@ -759,7 +757,7 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 	&lt;name&gt;Ted Mosby&lt;/name&gt;
 </pre></div>
 	<p>Validierer hatte nichts zu meckern.</p>
-<h4>Beschreibung:</h4>
+<h4>3.Beschreibung:</h4>
 <p>Elemente wie Telefon wurden mehr als einmal angelegt und der Inhalt des Elements Telefon wurde in unterschiedlichen Formationen implementiert, da es doch im alltäglichen Leben üblich ist, dass ein Kunde mehr als eine Telefonnummer besitzt (meist ist dies eine Festnetznummer und eine zusätzliche Mobiltelefonnummer).</p>
 <h4>Ergebnis</h4>
 <div class="exampleInner"><pre>
@@ -767,7 +765,7 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 	&lt;telefon&gt;016046848647&lt;/telefon&gt;
 </pre></div>
 <p>Validierer hatte nichts zu meckern.</p>
-<p><b>Beschreibung:</b></p>
+<p><b>4.Beschreibung:</b></p>
 <p>Das Element Adresse wurde beim Testen der KundenListe etwas geändert. Da es durchaus möglich sein könnte, dass ein Kunde uns seine Wohnadresse nicht angeben möchte, muss es hier möglich sein dies zu unterstützen. Zusätzlich aber muss beachtet werden, dass mindestens ein Name, sowie eine Telefonnummer anzugeben ist, da bei Rückfragen es möglich sein muss den Kunden zu kontaktieren.</p>
 <h4>Ergebnis</h4>
  <table border="1" frame="border" summary="Link Usage Patterns">
@@ -794,8 +792,8 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>2. Öffnungszeiten</strong></p>
-<p><strong>Beschreibung</strong></p>
+<p><strong>5.Öffnungszeiten</strong></p>
+<p><strong>Beschreibung:</strong></p>
 <p>Das Element Öffnungszeiten wurde ebenfalls noch einmal überarbeitet und geändert, um XPath Abfragen beziehungsweise der Umgang mit den Views für einzelne Öffnungszeiten an einem bestimmten Tag zu vereinfachen.</p>
 <p><b>Ergebnis</b></p>
  <table border="1" frame="border" summary="Link Usage Patterns">
@@ -824,71 +822,55 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 <p><b>Beschreibung</b></p>
 
 <p><b>Ergebnis</b></p>
-
-<p>3. <p>
-<p><b>Beschreibung</b></p>
-
-<p><b>Ergebnis</b></p>
-
-<p>4. <p>
-<p><b>Beschreibung</b></p>
-
-<p><b>Ergebnis</b></p>
-
-<p>5. <p>
-<p><b>Beschreibung</b></p>
-
-<p><b>Ergebnis</b></p>
-
 </div>
 <hr />
 <div class="div2">
-<h2><a name="xpath" id="xpath"/>7 XML Path Language</h2>
+<h2><a name="references" id="references"/>7 XML Path Language</h2>
 <p>XPath ist eine vom W3C-Konsortium entwickelte Anfragesprache um Teile von XML-Dokumenten zu adressieren und auszuwerten (Angelehnt an Wikipedia, abgerufen am 01.01.2015). Sie arbeitet auf dem DOM eines Xml-Dokuments und ermöglicht eine Navigation,eine Wahl von Knotenmengen und Auswertungsoperationen.</p>
-<h3><a name="xpath-einarbeitung" id="xpath-einarbeitung"></a>7.1 Einarbeitung</h3>
+<h3><a name="refnorm" id="refnorm"/>7.1 Einarbeitung</h3>
 <p>Mit Hilfe von XPath-Ausrücken können Teilmengen eines XML-Dokuments bestimmt werden. Dadurch werden Asdrücke evaluiert und das Ergebnis der Evaluierung ist ein Wert mit Typ node-set, string, boolean oder number. Um eine Knotenmenge zu spezifizieren, gibt man einen Weg von einem anderen Knoten aus an( meistens der Wurzel). Sie sind untergliedert in mit "/" getrennte Schritte. Ein Schritt setzt sich zusammen aus:</p>
 <p>Achse: :Knotentest[Prädikat]</p>
-<p>Um sich etwas in die XML Path Language einzuarbeiten, wurde mit Hilfe des Notepade++ XML Tool "XPath Expression Evaluation" einige Abfragen durchgeführt.</p>
+<p>Um sich etwas in die XML Path Language einzuarbeiten, wurde mit Hilfe des Notepad++ XML Tool "XPath Expression Evaluation" einige Abfragen durchgeführt.</p>
 <p><b>Bespiele:</b></p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/geraeteListe/child::*</i> konnten alle bisher abgegeben Geräte angezeigt werden.
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/geraeteListe/child::*</i> konnten alle bisher abgegeben Geräte angezeigt werden (<a href="#anzahlgeraete">siehe Abb.4 </a>).</p>
   <figure> 
-    <img src="img/anzahlgeraete.png" alt="AnzahlderGeräte" />
+    <img src="img/anzahlgeraete.png" alt="AnzahlderGeräte" name="anzahlgeraete" id="anzahlgeraete"/>
     <figcaption><span>Abbildung 4: <abbr title="AnzahlderGeräte">Liste der bisher abgegebenen Geräte</abbr></span></figcaption>
   </figure> 
 </p>
 <p></p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/kundenListe/child::*/adresse/plz</i> konnten alle Postleitzahlen unserer Kunden angegeben werden.
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/kundenListe/child::*/adresse/plz</i> konnten alle Postleitzahlen unserer Kunden angegeben werden (<a href="#plzverstreuungunsererkunden">siehe Abb.5</a>).</p>
   <figure> 
-    <img src="img/plzverstreuungunsererkunden.png" alt="plzverstreuungunsererkunden" />
+    <img src="img/plzverstreuungunsererkunden.png" alt="plzverstreuungunsererkunden" name="plzverstreuungunsererkunden" id="plzverstreuungunsererkunden" />
     <figcaption><span>Abbildung 5: <abbr title="plzverstreuungunsererkunden">Liste der Postleitzahlen unserer Kunden</abbr></span></figcaption>
   </figure> 
 </p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten</i> konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden.
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten</i> konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden (<a href="#oeffnungszeitendesrecyclinghofsnord">siehe Abb.6</a>).</p>
   <figure> 
-    <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:75%" />
+    <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:75%" name="oeffnungszeitendesrecyclinghofsnord" id="oeffnungszeitendesrecyclinghofsnord" />
     <figcaption><span>Abbildung 6: <abbr title="oeffnungszeitendesrecyclinghofsnord">Anzeige der Öffnungszeiten des Recyclinghofs Nord</abbr></span></figcaption>
   </figure> 
 </p>
 <h3><a name="xpathdocumentorder" id="xpathdocumentorder"></a>7.2 Document Order</h3>
 <p>Die Document Order beschreibt eine Ordnung über alle Knoten eines DOM-Dokuments. Die Wurzelelement ist das erste Element der Ordnung. Die Elementknoten kommen vor ihren Kindern. Kinder werden nach der Folge der XML-Quelle geordnet. Attributordnungen sind implementierungsabhängig. Eine Document Order ist immer dann sehr vom Vorteil, wenn ein XML Dokument immer mehr an Größe erreicht. Momentan ist unsere Datenbank noch recht übersichtlich nur im Laufe der Zeit und auch durch Erweiterungen kann es hilfreich sein eine Übersicht aller Knoten in diesem Dokument zu erhalten. Auf der Website: http://xmlgrid.net/ wurde aus unserer Datenbank eine Baumstruktur aller Knoten erstellt. Diese Baumstruktur kann jederzeit erweitert werden. </p>
-<p>Es folgt eine Baumstruktur, die die erste Ebene unserer Datenbank beschreibt. Zu Sehen ist das Rootelement "datenbank" und ihre darauffolgenden Kinder: geraeteListe, herstellerListe, kundenliste und recyclinghofListe. Auch der Validierer dieser Website erkannte hier ein well-formed XML.</p>
+<p>Es folgt eine Baumstruktur, die die erste Ebene unserer Datenbank beschreibt. Zu Sehen ist das Rootelement "datenbank" und ihre darauffolgenden Kinder: geraeteListe, herstellerListe, kundenliste und recyclinghofListe. Auch der Validierer dieser Website erkannte hier ein well-formed XML (<a href="#document-order1">siehe Abb.7</a>).</p>
   <figure> 
-    <img src="img/document-order1.png" alt="Documentorder1" />
+    <img src="img/document-order1.png" alt="Documentorder1" name="document-order1" id="document-order1" />
     <figcaption><span>Abbildung 7: <abbr title="document-order1">Wurzelelement und die erste Ebene ihrer Kinder</abbr></span></figcaption>
   </figure> 
- <p>In der nächsten Abbildung sind die weiteren Kinder der geraeteliste zu erkennen. Die eingetragenen Geräte werden hier in einer übersichtlichen Ansicht dargestellt. Zusätzlich sind auch kleine Angaben wie die Summe der Geräte(5) angegeben. Hier sind alle Attribute und Elemente eines Geräts in Spaltenansicht angezeigt. Auch die einzelnen Bestandteile sind aufgelistet.</p>
+ <p>In der nächsten Abbildung (<a href="#document-order2">siehe Abb.8</a>) sind die weiteren Kinder der geraeteliste zu erkennen. Die eingetragenen Geräte werden hier in einer übersichtlichen Ansicht dargestellt. Zusätzlich sind auch kleine Angaben wie die Summe der Geräte(5) angegeben. Hier sind alle Attribute und Elemente eines Geräts in Spaltenansicht angezeigt. Auch die einzelnen Bestandteile sind aufgelistet.</p>
   <figure> 
-    <img src="img/document-order2.png" alt="Documentorder2" />
+    <img src="img/document-order2.png" alt="Documentorder2" name="document-order2" id="document-order2" />
     <figcaption><span>Abbildung 8: <abbr title="document-order2">Kinder der Geräteliste</abbr></span></figcaption>
   </figure> 
-<p>In der folgenden Abbildung sind nun die Kundenliste und die Herstellerliste als Baumstruktur abgebildet. Die Kinderelemente der Adresse werden ebenfalls in der Baumstruktur abgebildet.</p>
+<p>In der folgenden Abbildung (<a href="#document-order3">siehe Abb.9</a>) sind nun die Kundenliste und die Herstellerliste als Baumstruktur abgebildet. Die Kinderelemente der Adresse werden ebenfalls in der Baumstruktur abgebildet.</p>
   <figure> 
-    <img src="img/document-order3.png" alt="Documentorder3" />
+    <img src="img/document-order3.png" alt="Documentorder3" name="document-order3" id="document-order3"/>
     <figcaption><span>Abbildung 9: <abbr title="document-order3">Kinder der Kunden- und Herstellerliste</abbr></span></figcaption>
   </figure> 
-<p> Die letzte Abbildung zeigt die Übersicht der Recyclingofsliste. Die Kinderelemente Adresse, Öffnungszeiten und Spezialgebiete werden mitabgebildet.</p>
+<p> Die letzte Abbildung (<a href="#document-order4">siehe Abb.10</a>) zeigt die Übersicht der Recyclingofsliste. Die Kinderelemente Adresse, Öffnungszeiten und Spezialgebiete werden mitabgebildet.</p>
   <figure> 
-    <img src="img/document-order4.png" alt="Documentorder4" />
+    <img src="img/document-order4.png" alt="Documentorder4" name="document-order4" id="document-order4"/>
     <figcaption><span>Abbildung 10: <abbr title="document-order4">Kinder der Recyclinghofsliste</abbr></span></figcaption>
   </figure> 
 </div>
