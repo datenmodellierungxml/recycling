@@ -57,24 +57,6 @@ h3{
 	border-bottom: dotted 1px #CCC;
 }
 
-nav {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  height: 40px;
-}
-
- nav ul {
-    margin: 0;
-    padding: 5px;
-  }
-
-    nav ul li {
-      display: inline-block;
-      list-style-type: none;
-      margin-right: 10px;
-    }
-
 #container {
 	position: relative;
 	margin:0 auto;
@@ -85,8 +67,21 @@ nav {
 	position:relative;
 	float:left;
 	width: 100%;
-	height:100px;
+	height:25px;
+	display: block;
+    overflow: hidden;
 }
+
+#head ul {
+    margin: 0;
+    padding: 5px;
+  }
+
+#head ul li {
+      display: inline;
+      list-style-type: none;
+      margin-right: 10px;
+    }
 
 #links {
 	position:relative;
@@ -115,21 +110,24 @@ nav {
 
 @media only screen and (min-width: 768px) {
  
-nav {
-  display: block;
-  overflow: hidden;
-  width: 90%; 
+#head {
+	position:relative;
+	float:left;
+	width: 100%;
+	height:25px;
+	display: block;
+    overflow: hidden;
 }
 
- nav ul {
-    margin: 5px;
+#head ul {
+    margin: 0;
     padding: 5px;
   }
 
-    nav ul li {
-      display: inline-block;
+#head ul li {
+      display: inline;
       list-style-type: none;
-     padding-right: 10px;
+      margin-right: 10px;
     }
 
 
@@ -137,13 +135,6 @@ nav {
 	position: relative;
 	margin:0 auto;
 	width: 768px;
-}
-
-#head {
-	position:relative;
-	float:left;
-	width: 768px;
-	height:100px;
 }
 
 #links {
