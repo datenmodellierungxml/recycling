@@ -178,13 +178,14 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 <div class="div2">
 <h3><a name="origin-goals" id="origin-goals"></a>1.1 Problemstellung und Ziel</h3>
 <p>Die Zuweisung der Projekte führte dazu, dass Josef Eiter, Tobias Linke und Jennifer Steinbinder das Thema "Recycling" zu bearbeiten hatten. Da aktuelle Diskussionen rund um das unnötige Aufbewahren alter Handys geführt werden, hat sich das Projekteam genau auf diese Situation spezialisiert. Das Handyrecycling wird mit Hilfe der Datenmodellierung mit XML zu einem ausführlichen Informationssystem abgebildet. Ziel ist es, einen Überblick über die Datensicht des Informationssystems "Handyrecycling" zu verschaffen.</p>
-<p>Das Projektteam ist wie folgt strukturiert vorgegangen. Die Phasen der Datenmodellierung wurden gemeinsam erarbeitet. Mit Hilfe eines Geschäftsprozessmodells wurde ein konzeptuelles Schema entworfen. Das konzeptuelles Schema wurde in die logische bzw. relationale Strukturen des Modellierungswerkzeugs überführt. Analog zu den relationalen Strukturen wurden die dazugehörigen XML-Dokumente erstellt. Parallel wurden die Document Type Definitions zu jeder XML-Datei deklariert. Anschließend wurde der Umgang mit XPath-Ausdrücke sich angeeignet. Durch das nun verschaffte Know-How der XML Path Language und der Sprache XSLT Views erzeugt.</p>
+<p>Das Projektteam ist wie folgt strukturiert vorgegangen. Die Phasen der Datenmodellierung wurden gemeinsam erarbeitet. Mit Hilfe eines Geschäftsprozessmodells wurde ein konzeptuelles Schema entworfen. Das konzeptuelle Schema wurde in die logische bzw. relationale Strukturen des Modellierungswerkzeugs überführt. Analog zu den relationalen Strukturen wurden die dazugehörigen XML-Dokumente erstellt. Parallel wurde die Document Type Definition zu jeder XML-Datei deklariert. Anschließend wurde der Umgang mit XPath-Ausdrücke sich angeeignet. Durch das nun verschaffte Know-How der XML Path Language und der Sprache XSLT Views erzeugt.</p>
 </div>
 <hr />
 <div class="div1">
 <h2><a name="concepts" id="concepts"></a>2 Geschäftsprozessmodell</h2>
 <p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell (<a href="#epkhandyrecyclingde">siehe Abbildung  1</a>) modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts.</p> 
-<p>Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird folgend der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
+<p><strong>Gedanke:</strong></p>
+<p>Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird daraufhin der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder er selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
 <p>
 <figure>
   <img src="img/epkhandyrecyclingde.png" style="width:70%" alt="Epkhandyrecyclingde" name ="epkhandyrecyclingde" id="epkhandyrecyclingde"/>
@@ -230,14 +231,15 @@ Das Datemodell in Abbildung 3 enthält nun Elemente die unsere Geräte, Herstell
 	&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 </pre>
 </div>
-<p>Da unsere Anwendung nur in Deutschland verwendet werden soll und die Inhalte auf Deutsch sind, sollen die Elementnamen und Attribute auf Deutsch sein. Elementnamen und Attribute sind in der Regel klein zu schreiben.Bei allen XML-Dokumenten wurde ein genaues Wurzelelement ausgewählt. Das Informationssystem hat die Wurzel datenbank, in der alle vier Listen eingepflegt werden: geraeteListe, herstellerListe, kundenListe und recyclinghofListe. An diesem Beispiel werden zum Einen die Vorgabe, dass das Element mit einem kleinen Buchstaben beginnt und zum Anderen auf Deutsch gehalten wird, eingehalten. Jedes drauffolgende Wort in demselben Element beginnt mit einem großen Buchstaben: geraeteListe. Es wurden hier also folgende Regeln beachtet:</p>
+<p>Da unsere Anwendung nur in Deutschland verwendet werden soll und die Inhalte auf Deutsch sind, sollen die Elementnamen und Attribute auf Deutsch sein. Elementnamen und Attribute sind in der Regel klein zu schreiben.Bei allen XML-Dokumenten wurde ein genaues Wurzelelement ausgewählt. Das Informationssystem hat immmer die Wurzel "datenbank"", in der alle vier Listen eingepflegt werden: geraeteListe, herstellerListe, kundenListe und recyclinghofListe. An diesem Beispiel werden zum Einen die Vorgabe, dass das Element mit einem kleinen Buchstaben beginnt und zum Anderen auf Deutsch gehalten wird, eingehalten. Jedes darauffolgende Wort in demselben Element beginnt mit einem großen Buchstaben: geraeteListe. </p>
+<p>Es wurden hier also folgende Regeln beachtet:</p>
 <ul>
   <li>Namen dürfen Buchstaben, Ziffern und andere Zeichen enthalten</li>
   <li>Namen dürfen Groß- und Kleinschreibung beinhalten</li>
   <li>Namen sollten ausdrucksstark und kurz sein</li>
 </ul>
 <p>
-  Um den Inhalt mancher Elemente zu beschreiben wurden einerseits PCDATA und andererseits CDATA verwendet. Als Beispiel wird die herstellerListe betrachtet. Parsed Character Data (PCDATA) wurde bei Elementen angewendet, die einen unstrukturierten Inhalt haben. PCDATA sind Dokumentenabschnitte, die der XML-Parser gemäß den XML-Syntax-Regeln verarbeitet. Ein Beispiel für einen Inhalt des Elements oeffnungszeiten ist: 
+  Um den Inhalt mancher Elemente zu beschreiben wurden einerseits PCDATA und andererseits CDATA verwendet. Als Beispiel wird die herstellerListe betrachtet. Parsed Character Data (PCDATA) wurde bei Elementen angewendet, die einen unstrukturierten Inhalt haben. PCDATA sind Dokumentenabschnitte, die der XML-Parser gemäß den XML-Syntax-Regeln verarbeitet. Ein Beispiel für einen Inhalt des Elements "oeffnungszeiten" ist: 
 </p><div class="exampleInner"><pre>
 	&lt;oeffnungszeiten&gt;Montag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
 	&lt;oeffnungszeiten&gt;Dienstag 9.30 Uhr - 18 Uhr&lt;/oeffnungszeiten&gt;
@@ -254,14 +256,14 @@ Unparsed Character Data (CDATA) wurde in Attributen verwendet. Der Term CDATA ma
 	&lt;/recyclinghof&gt;
 </pre></div>
 <p>
-Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausgeschlossen. Attribute beschreiben ein Element. Das Element recyclinghof wird hier also mit dem Attributnamen recyclinghofID und dem Attributwert HofMitte beschrieben. Ein Element kann auch beliebig viele Attribute tragen, somit ist die Entscheidung ziemlich schnell getroffen worden, dass beispielsweise das Element geraet mehrere Attribute hat, da ein Gerät mehrere Eigenschaften hat:</p>
+Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausgeschlossen. Attribute beschreiben ein Element. Das Element "recyclinghof" wird hier also mit dem Attributnamen "recyclinghofID" und dem Attributwert "HofMitte"" beschrieben. Ein Element kann auch beliebig viele Attribute tragen, somit ist die Entscheidung ziemlich schnell getroffen worden, dass beispielsweise das Element "geraet"" mehrere Attribute hat, da ein Gerät mehrere Eigenschaften hat:</p>
 <div class="exampleInner"><pre>
 	&lt;geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone"&gt;
 	&lt;/geraet&gt;
 </pre></div>
-<p>Das Gerätebeispiel hat also eine genaue ID, eine Bezeichnung, einen Zustand, einen Verschmutzungsgrad sowie eine dazugehörige Produktkategorie. Die Richtlinie, dass Attribute unterschiedliche Namen tragen müssen, wurde strengst beachtet. Die Reihenfolge zwischen den einzelnen Eigenschaften sind in einem Attribut völlig gleichgültig.</p>
-<p> Durch das zusätzliche Einfügen von Elementen und Attributen können XML Dokumente leicht erweitert werden. Die Erweiterbarkeit von XML kann Missverständnisse in der Kommunikation unter den Projektmitgliedern auslösen, deswegen einigten sich die Teammitglieder darauf, dass falls ein Name eines Attributs oder Elements schon einmal vergeben worden ist, war dieser reserviert und durfte keinesfalls für eine andere Bedeutung verwendet werden.</p>
-<p> Es wurden also folgende Punkt des Well-formed XML eingehalten:
+<p>Das Gerätebeispiel hat also eine genaue ID, eine Bezeichnung, einen Zustand, einen Verschmutzungsgrad sowie eine dazugehörige Gerätekategorie. Die Richtlinie, dass Attribute unterschiedliche Namen tragen müssen, wurde strengst beachtet. Die Reihenfolge zwischen den einzelnen Eigenschaften sind in einem Attribut völlig gleichgültig.</p>
+<p> Durch das zusätzliche Einfügen von Elementen und Attributen können XML Dokumente leicht erweitert werden. Die Erweiterbarkeit von XML kann Missverständnisse in der Kommunikation unter den Projektmitgliedern auslösen, deswegen einigten sich die Teammitglieder darauf, dass falls ein Name eines Attributs oder Elements schon einmal vergeben worden ist, dieser nun reserviert ist und keinesfalls für eine andere Bedeutung verwendet werden durfte.</p>
+<p> Es wurden also folgende Punkte des Well-formed XML eingehalten:
 <ul>
 <li>
 <p>Jedes Anfangs-Tag muss ein zugehöriges Ende-Tag haben</p>
@@ -279,21 +281,21 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <p>XML beachtet grundsätzlich Groß- und Kleinschreibung</p>
 </li>
 <li>
-<p>XML beläst Whitespace im Text.</p>
+<p>XML belässt Whitespace im Text</p>
 </li>
 <li>
-<p>Ein Element darf niemals zwei Attribute mit dem selben Namen haben</p>
+<p>Ein Element darf niemals zwei Attribute mit dem selben Namen beinhalten</p>
 </li>
 </ul>
 </div>
 <div class="div2">
 <h3><a name="markup-reqs" id="markup-reqs"></a>4.2 Kommentare</h3>
-<p>Da Kommentare nicht innerhalb von XML-Tags verwendet werden dürfen, werden diese nach Möglichkeit über den betreffenden XML-Tag verfasst. Die Klammerung der Kommentare erfolgte durch standardgemäßter Form: <!--Kommentar-->. Außerdem wurde vorallem die Angabe befolgt, dass "--" Zeichen in keinem Kommentar verwendet wurden. Im Allgemeinen sollten die Kommentare beschreibend und aussagekräftig sein. Fehlgeschlagene Versuche wurden in den XML Dokumenten beibehalten aber mit Hilfe der Kommentagfunktion auskommentiert, damit sie keinen Einfluss auf die Validierung des XML Dokuments hat. Um die Document Type Definition zu beschreiben wurde auch innerhalb der DTD einige Kommentare erfasst.</p>
+<p>Da Kommentare nicht innerhalb von XML-Tags verwendet werden dürfen, werden diese nach Möglichkeit über den betreffenden XML-Tag verfasst. Die Klammerung der Kommentare erfolgte durch standardgemäßter Form: &lt;!--Kommentar--&gt;. Außerdem wurde vorallem die Angabe befolgt, dass "--" Zeichen in keinem Kommentar verwendet wurden. Im Allgemeinen sollten die Kommentare beschreibend und aussagekräftig sein. Fehlgeschlagene Versuche wurden in den XML Dokumenten beibehalten aber mit Hilfe der Kommentarfunktion auskommentiert, damit sie keinen Einfluss auf die Validierung des XML Dokuments hat. Um die Document Type Definition zu beschreiben wurde auch innerhalb der DTD einige Kommentare erfasst.</p>
 </div>
 <hr />
 <div class="div2">
 <h2><a name="app-reqs" id="app-reqs"></a>5 Document Type Definition (DTD)</h2>
-<p>Document Type Definitions (DTDs) werden in einem seperaten Dokument ausgelagert um die Dateigröße der einzelnen XML-Dokumenten möglichst gering zu halten. Die DTD-Datei(en) werden in das XML Dokument ganz eingebunden. Eine Menge formal überprüfbarer Regeln zur Beschreibung der gemeinsamen strukturellen Merkmale einer Menge von Dokumenten ist ein Dokumententyp. Dementsprechend ist eine DTD eine Grammatik. Das Validieren der Document Typ Definition und der zugehörigen XML Dokumente erfolgte durch das Online-Tool von W3C http://validator.w3.org. Da mit verschiedenen Editoren wie Notepad++, TextEdit gearbeitet worden ist, wurde entschlossen, dass nach jeder Änderung das File mit dem W3C Validator validiert wird. Die DTD wurde extern lokal im System deklariert:</p>
+<p>Document Type Definitions (DTDs) werden in einem seperaten Dokument ausgelagert um die Dateigröße der einzelnen XML-Dokumenten möglichst gering zu halten. Die DTD-Datei(en) werden in das XML Dokument ganz eingebunden. Eine Menge formal überprüfbarer Regeln zur Beschreibung der gemeinsamen strukturellen Merkmale einer Menge von Dokumenten ist ein Dokumententyp. Dementsprechend ist eine DTD eine Grammatik. Das Validieren der Document Typ Definition und der zugehörigen XML Dokumente erfolgte durch das Online-Tool von W3C <i> http://validator.w3.org</i>. Da mit verschiedenen Editoren wie Notepad++ und TextEdit gearbeitet worden ist, wurde entschlossen, dass nach jeder Änderung des Files mit dem W3C Validator validiert wird. Die DTD wurde extern lokal im System deklariert:</p>
 <div class="exampleInner"><pre>
 	&lt;!DOCTYPE datenbank SYSTEM "datenbank.dtd"&gt;
 </pre></div>
@@ -316,17 +318,23 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <div class="exampleInner"><pre>
 	&lt;!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)&gt;
 </pre></div>
-<P>Diese Ausdrücke über das Element adresse zeigt folgendes: Jede Adresse hat mindestens einen Namen. Die Straße, Postleitzahl sowie der Ort sind optional anzugeben. Jedoch muss mindestens eine Telefonnummer des Kundens angegeben werden. Der Kunde sollte bei Rückfragen oder Notfällen unter einer Telefonnummer erreichbar sein. </p>
-<p> Ein Attribut wurd in der DTD wie folgt deklariert:</p>
+<P>Diese Ausdrücke über das Element "adresse"" zeigt folgendes: Jede Adresse hat mindestens einen Namen. Die Straße, Postleitzahl sowie der Ort sind optional anzugeben. Jedoch muss mindestens eine Telefonnummer des Kundens angegeben werden. Der Kunde sollte bei Rückfragen oder Notfällen unter einer Telefonnummer erreichbar sein. </p>
+<p> Ein Attribut wurde in der DTD wie folgt deklariert:</p>
 <div class="exampleInner"><pre>
+	&lt;!ELEMENT geraet (bestandteile+)&gt;
 	&lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
+	&lt;!ATTLIST geraet geraetBezeichnung CDATA #REQUIRED&gt;
+	&lt;!ATTLIST geraet zustand (neuwertig | gut | defekt) #REQUIRED&gt;
+	&lt;!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED&gt;
+	&lt;!ATTLIST geraet geraetekategorie CDATA #REQUIRED&gt;
+	&lt;!ATTLIST geraet hersteller CDATA #REQUIRED&gt;
 </pre></div>
-<p>Die DTD beschreibt hier, welche Attribute und Attributwerte in einem XML-Dokument in welchen Elementen vorkommen dürfen. Das Attribut geraetID wurde außerhalb des betroffenen Elements (hier:geraet) durch ATTLIST deklariert. </p>
-<p>Hier haben wir ein Attribut, das durch NMTOKEN beschrieben wird. Das heißt es sind bei einem NMTOKEN Namen mit führenden Ziffern und Satzzeichen am Anfang erlaubt. Der Default-Wert #REQUIRED besagt, dass das XML-Dokument an dieser Stelle einen Wert spezifizieren muss.</p>
+<p>Die Grammtik für das Element Gerät beschreibt hier, welche Attribute und Attributwerte in einem XML-Dokument für das Element "geraet" vorkommen dürfen. Die Attribute geraetID, geraetBezeichnung, zustand, verschmutzungsgrad, geraetekategorie und hersteller wurden außerhalb des betroffenen Elements durch "!ATTLIST" deklariert.</p>
+<p>Hier haben wir mehrere Attribute, die durch NMTOKEN beschrieben worden sind. Das heißt es sind bei einem NMTOKEN Namen führende Ziffern und Satzzeichen am Anfang des Namens erlaubt. Der Default-Wert #REQUIRED besagt, dass das XML-Dokument an dieser Stelle einen Wert spezifizieren muss.</p>
 <p>
-  In der XML-Datei selbst werden die Kindelemente des übergeordneten Elements um einen Tab eingerückt um die Lesbarkeit der XML-Dokumente zu erhöhen. 
+  In der XML-Datei selbst werden die Kindelemente des übergeordneten Elements um einen Tab eingerückt, um die Lesbarkeit der XML-Dokumente zu erhöhen. 
 </p>
-<p>Verknüpfungen zwischen Elementen durch Attribute mit den Attributstypen wie ID, IDREF, IDREFS wurden in dem Projekt Eiter, Steinbinder und Linke nicht verwendet.</p>
+<p>Verknüpfungen zwischen Elementen durch Attribute mit den Attributstypen wie ID, IDREF, IDREFS wurden in dem Projekt von Josef Eiter, Jennifer Steinbinder und Tobias Linke nicht verwendet.</p>
 <p>Im Rahmen dieses Projekts wurden keine Entities (Abkürzungen für Zeichenfolgen) verwendet.</p>
 
 <h3><a name="dtd-geraet" id="dtd-geraet"></a>5.1 Gerät</h3>
@@ -335,12 +343,14 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <p>Die DTD für Geräte sieht wie folgt aus:</P> 
 <div class="exampleInner"><pre>
 &lt;!ELEMENT geraeteListe (geraet*)&gt;
+&lt;!ATTLIST geraeteListe geraeteListeID NMTOKEN #REQUIRED&gt;
 &lt;!ELEMENT geraet (bestandteile+)&gt;
 &lt;!ATTLIST geraet geraetID NMTOKEN #REQUIRED&gt;
 &lt;!ATTLIST geraet gereatBezeichnung CDATA #REQUIRED&gt;
 &lt;!ATTLIST geraet zustand (neuwertig | gut | defekt) #REQUIRED&gt;
 &lt;!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED&gt;
 &lt;!ATTLIST geraet geraetekategorie CDATA #REQUIRED&gt;
+&lt;!ATTLIST geraet hersteller CDATA #REQUIRED&gt;
 </pre></div>
 
 <p><b>Elemente:</b></p>
@@ -366,6 +376,10 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <th>Beschreibung</th>
   </th>
     <tr>
+    <td>geraeteListeID</td>
+    <td>Diese Nummer identifiziert genau eine Geräteliste eines bestimmten Kundens. Jeder Kunde hat seine eigene Liste, in der jedes abgegebene Gerät vermerkt wird und diese Liste ist mit einer ID beschrieben.</td>
+  </tr>
+    <tr>
     <td>bestandteile+</td>
     <td>Ein Gerät besteht aus mehreren Bestandteilen (mindestens einem Bestandteil). Bestandteile können zum Beispiel Glas, Kunstoff oder Kupfer sein. Diese Information ist für den Recyclingvorgang relevant.</td>
   </tr>
@@ -389,11 +403,15 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <td>geraetekategorie</td>
     <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
   </tr>
+    <tr>
+    <td>hersteller</td>
+    <td>Beschreibt den Hersteller des abgegebenen Geräts.</td>
+  </tr>
 </table>
 
 <h3><a name="dtd-hersteller" id="dtd-hersteller"></a>5.2 Hersteller</h3>
 
-<p>Alle Geräte besitzen einen Hersteller. Die Hersteller werden in der Datenbank mit Adresse gespeichert, da es sein kann, dass ein Gerät beim Hersteller recycelt werden kann.</p>
+<p>Alle Geräte besitzen einen Hersteller. Die Hersteller werden in der Datenbank mit einer Adresse gespeichert, da es sein kann, dass ein Gerät beim Hersteller selbst recycelt werden kann.</p>
 <p>Die DTD für Hersteller sieht wie folgt aus:</P> 
 <div class="exampleInner"><pre>
 &lt;!ELEMENT herstellerListe (hersteller*)&gt;
@@ -409,7 +427,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </th>
   <tr>
     <td>herstellerListe</td>
-    <td>Ist ein Container für alle Hersteller die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste der Hersteller auszugeben.</td>
+    <td>Ist ein Container für alle Hersteller, die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich, eine Liste der Hersteller auszugeben.</td>
   </tr>
   <tr>
     <td>hersteller</td>
@@ -424,7 +442,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <th>Beschreibung</th>
     <tr>
     <td>adresse+</td>
-    <td>Adresse des Herstellers. Er kann mehere Adressen haben. Es muss aber mindestens eine Adresse angegeben werden.</td>
+    <td>Adresse des Herstellers. Er kann mehrere Adressen haben. Es muss aber mindestens eine Adresse angegeben werden.</td>
   </tr>
   <tr>
     <td>herstellerID</td>
@@ -434,12 +452,13 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 
 <h3><a name="dtd-kunde" id="dtd-kunde"></a>5.3 Kunde</h3>
 
-<p>Für unseren Anwendungsfall müssen zu den Geräten verschiedene Informationen gespeichert werden.</p>
+<p>Für unseren Anwendungsfall müssen zu den Kunden verschiedene Informationen gespeichert werden.</p>
 <p>Die DTD für Kunde sieht wie folgt aus:</P> 
 <div class="exampleInner"><pre>
 &lt;!ELEMENT kundenListe (kunde*)&gt;
 &lt;!ELEMENT kunde (adresse?)&gt;
 &lt;!ATTLIST kunde kundenID CDATA #REQUIRED&gt;
+&lt;!ATTLIST kunde geraeteListe NMTOKEN #REQUIRED&gt;
 </pre></div>
 
 <p><b>Elemente:</b></p>
@@ -469,23 +488,19 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
     <td>Jeder Kunde hat eine eindeutige ID, mit der er identifiziert werden kann.</td>
   </tr>
   <tr>
-    <td>geraet</td>
-    <td>Ist ein bestimmtes Gerät zu dem zugehörigen Kunden. Es bestimmt den Gerätetyp.</td></td>
-  </tr>
-   <tr>
-    <td>geraetekategorie</td>
-    <td>Beschreibt ein bestimmtes Gerät. Es beinhaltet alle relevanten Information zu diesem Gerät.</td>
+    <td>geraeteListe</td>
+    <td>Ist die Liste der abgegebenen Geräte zu dem zugehörigen Kunden.</td></td>
   </tr>
 </table>
 <h3><a name="dtd-recyclinghof" id="dtd-recyclinghof"></a>5.4 Recyclinghof</h3>
 
-<p>Damit die passenden Recyclinghöfe gespeichert und für unsere Anwendung passend angezeight werden können werden diese ebenfalls in unsere XML Datenbank mitaufgenommen.</p>
+<p>Damit die passenden Recyclinghöfe gespeichert und für unsere Anwendung passend angezeigt werden können, werden diese ebenfalls in unsere XML Datenbank mitaufgenommen.</p>
 <p>Die DTD für Recyclinghöfe sieht wie folgt aus:</P> 
 <div class="exampleInner">
   <pre>
 &lt;!-- Recyclinghof --&gt;
 &lt;!ELEMENT recyclinghofListe (recyclinghof*)&gt;
-&lt;!ELEMENT recyclinghof (adresse , oeffnungszeiten+)&gt;
+&lt;!ELEMENT recyclinghof (adresse , oeffnungszeiten+, spezialgebiet+)&gt;
 &lt;!ELEMENT oeffnungszeiten (#PCDATA)&gt;
 &lt;!ELEMENT spezialgebiet (#PCDATA)&gt;
 &lt;!ATTLIST recyclinghof recyclinghofID CDATA #REQUIRED&gt;
@@ -499,7 +514,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </th>
   <tr>
     <td>recyclinghofListe</td>
-    <td>Ist ein Container für alle Recyclinghöfe die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste von Recyclinghöfen auszugeben.</td>
+    <td>Ist ein Container für alle Recyclinghöfe, die in unserer Datenbank vorhanden sind. Mit diesem Container ist es möglich eine Liste von Recyclinghöfen auszugeben.</td>
   </tr>
   <tr>
     <td>recyclinghof</td>
@@ -511,7 +526,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </tr>
   <tr>
     <td>spezialgebiet</td>
-    <td>Manche Recyclinghöfe haben sich auf eine bestimmte Geräteart spezialisiert, die sie zurücknehmen. Das Element spezialgebiet beinhaltet diese Information.</td>
+    <td>Manche Recyclinghöfe haben sich auf eine bestimmte Geräteart spezialisiert, die sie zurücknehmen. Das Element "spezialgebiet"" beinhaltet diese Information.</td>
   </tr>
 </table>
 
@@ -547,7 +562,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </li>
   <li>
     <b>bestandteile</b> 
-    <p>Die Bestandteile eines bestimmten Geräts werden in dem Element bestandteile gespeichert. Dieses Element ist sozusagen ein Container für Elemente vom Typ bestandteil.</p>
+    <p>Die Bestandteile eines bestimmten Geräts werden in dem Element "bestandteile"" gespeichert. Dieses Element ist sozusagen ein Container für Elemente vom Typ "bestandteil".</p>
     <p>Die DTD für das Element ist wie folgt aufgebaut:      </p>
     <div class="exampleInner">
         <pre>
@@ -556,7 +571,7 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
   </li> 
   <li> 
     <b>bestandteil</b> 
-    <p>Die Informationen zu den Bestandteilen werden im Element bestandteil abgelegt. Das Element behinhaltet wichtige Attribute zu einem Bestandteil wie name, anteil und recyclinggrad.</p>
+    <p>Die Informationen zu den Bestandteilen werden im Element "bestandteil" abgelegt. Das Element behinhaltet wichtige Attribute zu einem Bestandteil wie name, anteil und recyclinggrad.</p>
     <p>Die DTD für das Element ist wie folgt aufgebaut:      </p>
     <div class="exampleInner">
         <pre>
@@ -575,10 +590,10 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <p>Bei der Entwicklung des XML-Schematas wurden folgende Anforderungen bearbeitet und erfüllt:</p>
 <ul>
 <li>
-<p>Flexibilität: Unser Schema wird für eine Klasse von Dokumenten entworfen</p>
+<p>Flexibilität: Das Schema wird für eine Klasse von Dokumenten entworfen</p>
 </li>
 <li>
-<p>Zukunftssicherheit: Unser Schema sollte durch seine Struktur zukünftige Ergänzungen und Erweiterungen leicht machen </p>
+<p>Zukunftssicherheit: Das Schema sollte durch seine Struktur zukünftige Ergänzungen und Erweiterungen leicht machen </p>
 </li>
 <li>
 <p>Komplexität: Gekoppelt mit Pflegeaufwand und Akzeptanz durch Benutzer</p>
@@ -586,10 +601,10 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <p>Folgende Phasen der Document-Type-Defintion-Entwicklung wurden abgeschlossen:
 <ul>
 <li>
-<p>Die Vorbereitung: Unser Schema wurde vorerst auf Nutzbarkeit, Validierbarkeit und Komplexität geprüft.</p>
+<p>Die Vorbereitung: Das Schema wurde vorerst auf Nutzbarkeit, Validierbarkeit und Komplexität geprüft.</p>
 </li>
 <li>
-<p>Das Konzeptionelle Schema: Es wurde analysiert welche Daten benötigt werden. Um das perfekte Ergebnis zu erreichen, hat sich das Team erst einmal den zu bearbeiteten Geschäftsprozess genauestens betrachtet. Welche Fakten werden benötigt? Können diese gruppiert werden? Gibt es bereits Modelle, auf die man zurückgreifen kann? Das Team hat sich stark an den üblichen Recyclingprozess von alltäglichen Geräten orientiert.</p>
+<p>Das Konzeptionelle Schema: Es wurde analysiert, welche Daten benötigt werden. Um das perfekte Ergebnis zu erreichen, hat sich das Team erst einmal den zu bearbeiteten Geschäftsprozess genauestens betrachtet. Welche Fakten werden benötigt? Können diese gruppiert werden? Gibt es bereits Modelle, auf die man zurückgreifen kann? Das Team hat sich stark an den üblichen Recyclingprozess von alltäglichen Geräten orientiert.</p>
 </li>
 <li>
 <p>Das Logische Schema: Mit Hilfe eines Datenmodells wurden Anforderungen an das Schema entwickelt. Aus dem Datenmodell konnte nun beispielsweise gelesen werden: welche Datenstrukturen werden nun benötigt? Haben wir obligatorische beziehungsweise fakultative Daten? Welche Strukturen müssen in einer festen Reihenfolge auftreten? Welche Daten gehören in den Inhalt der Elemente und welche zu den Eigenschaften? </p>
@@ -598,13 +613,13 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 <p>Das Physische Schema: Nun erfolgte die reine Implementierung. Welche Daten werden als Elemente, Attribute,... deklariert?</p>
 </li>
 <li>
-<p>Die Nachbereitung und das Testen: Prüfung des Schemas auf Basis bereits vorliegender Dokumente. Enige Aspekte mussten geändert werden. Fehler oder Unklarheiten mussten bereinigt werden. Das Zurückspringen zu einer vorherigen Phasen war durchaus auch Teil des Projekts.</p>
+<p>Die Nachbereitung und das Testen: Prüfung des Schemas auf Basis bereits vorliegender Dokumente. Enige Aspekte mussten geändert werden. Fehler oder Unklarheiten mussten bereinigt werden. Das Zurückspringen zu einer vorherigen Phasen war vorallem auf Grund des neuen Datenmodells auch Teil des Projekts.</p>
 </li>
 </ul>
 </div>
 <div class="div2">
 <h3><a name="extended-link" id="extended-link"></a>6.1 Aufbau und Struktur der XML Dateien</h3>
-<p>Für den Aufbau der XML Dateien wurde Anfangs eine große Datei mit dem Element datenbank als Container für alle Listen angelegt. Diese Sammlung dient als Grundlage für die Views mit XSLT.</p>
+<p>Für den Aufbau der XML Dateien wurde Anfangs eine große Datei mit dem Element "datenbank"" als Container für alle Listen angelegt. Diese Sammlung dient als Grundlage für die Views mit XSLT.</p>
 <h4>Diese Datei ist wie folgt aufgebaut:</h4>
 <div class="exampleInner"><pre> 
 &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
@@ -708,12 +723,13 @@ Hier ist der Inhalt der recyclinghofID von der Verarbeitung des XML-Pasers ausge
 &lt;/datenbank&gt;
 </pre> </div> 
 <h3><a name="simple-links" id="simple-links"></a>6.2 Validierung</h3>
-<p>Für die Validierung der XML-Struktur wurde das Commandline-Tool <code>xmllint</code> verwendet. Der Aufbau der entsprechenden XML Datei wird mit ihrer Document Type Definition abgeglichen und so überprüft ob die Inhalte der Grammatik entsprechen. Dies ist wichtig, um die Datenstuktur zu testen und etwaige Fehler und Schwächen des Datenmodells zu erkennen und auszuschließen. 
+<p>Für die Validierung der XML-Struktur wurde das Commandline-Tool <code>xmllint</code> und der Standard Validator von W3C verwendet. Der Aufbau der entsprechenden XML Datei wird mit ihrer Document Type Definition abgeglichen und so überprüft, ob die Inhalte der Grammatik entsprechen. Dies ist wichtig, um die Datenstuktur zu testen und etwaige Fehler und Schwächen des Datenmodells zu erkennen und auszuschließen. 
 
 <p>Das Commandline-Tool xmllint wird wie folgt verwendet:</p>
 <div class="exampleInner"><pre>xmllint -valid &lt;Pfad zur XML Datei&gt;</pre> </div> 
+<p>Im W3C Validator kann die XML Datei und die dazugehörige Document Type Definition direkt in das Textfeld eingegeben werden oder per Dateipfad das XML-Datei  mit der beinhaltender DTD ausgewählt werden.</p>
 
-<p>Wenn Fehler auftreten gibt das Programm diese aus. Bei einer erfolgreichen Validierung wird die XML Datei ohne Formatierung ausgegeben. Falls es Warnungen gibt, gibt das Programm diese vor dem Inhalt der zu prüfenden XML Datei aus.</p> 
+<p>Wenn Fehler auftreten gibt das Programm xmllint diese aus. Bei einer erfolgreichen Validierung wird die XML Datei ohne Formatierung ausgegeben. Falls es Warnungen gibt, gibt das Programm diese vor dem Inhalt, der zu prüfenden XML Datei aus.</p> 
 
 <p>Beispiel für einen "parser error":</p>  
 
@@ -734,9 +750,9 @@ datenbank.xml:11: parser error : Start tag expected, '&lt;' not found
 <p>Kriterien für die Tests waren:</p>
 <ul>
 <li>Testdaten werden so entworfen, wie sie auch in einer realen Anwendung vorkommen können.</li>
-<li>Die Ergebnisse der Tests müssen gründlich Dokumentiert werden.</li>
-<li>Es muss die Ursache der Fehler sowie die Lösung dieser Dokumentiert werden.</li>
-<li>Fehler, die sich aufgrund von Schwächen von XML nicht beheben lassen müssen detailliert beschrieben werden und es muss ein Workaround dazu gefunden werden.</li>
+<li>Die Ergebnisse der Tests müssen gründlich dokumentiert werden.</li>
+<li>Es muss die Ursache der Fehler, sowie die passende Lösung de dokumentiert werden.</li>
+<li>Fehler, die sich aufgrund von Schwächen von XML nicht beheben lassen, müssen detailliert beschrieben werden und es muss ein Workaround dazu gefunden werden.</li>
 </ul>
 
 <p>Folgende Testfälle wurden durchgeführt:</p>
@@ -749,7 +765,7 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 </pre></div>
 	Validierer hatte nichts zu meckern.
 <p><b>2.Beschreibung:</b></p>
-<p>Verschiedenste Arten von Namen wurde in dem Adressblock ausprobiert. Doppelnamen, sowie Namen mit Sonderzeichen wie ö,ä und ü. Folgende Kunden wurden angelegt:</p> 
+<p>Verschiedensten Arten von Namen wurde in dem Adressblock ausprobiert. Doppelnamen, sowie Namen mit Sonderzeichen wie ö,ä und ü. Folgende Kunden wurden angelegt:</p> 
 <h4>Ergebnis</h4>
 <div class="exampleInner">
   <pre>
@@ -759,7 +775,7 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 	&lt;name&gt;Lily Aldrin&lt;/name&gt;
 	&lt;name&gt;Ted Mosby&lt;/name&gt;
 </pre></div>
-	<p>Validierer hatte nichts zu meckern.</p>
+	<p>Validierer hatte nichts zu meckern, da das Encoding auf ISO-8859-1 gesetzt worden ist.</p>
 <h4>3.Beschreibung:</h4>
 <p>Elemente wie Telefon wurden mehr als einmal angelegt und der Inhalt des Elements Telefon wurde in unterschiedlichen Formationen implementiert, da es doch im alltäglichen Leben üblich ist, dass ein Kunde mehr als eine Telefonnummer besitzt (meist ist dies eine Festnetznummer und eine zusätzliche Mobiltelefonnummer).</p>
 <h4>Ergebnis</h4>
@@ -824,6 +840,7 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 <p><strong>6. Weitere Änderungen</strong>
 <p>Aufgrund unseres neuen Datenmodells mussten einige Anpassungen gemacht werden.</p>
 <p>Folgende Änderungen wurden durchgeführt:</p>
+<p><b>Ergebnis</b></p>
 <table border="1" frame="border" summary="Link Usage Patterns">
 <thead>
 <tr>
@@ -851,57 +868,68 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 </tbody>
 </table>
 
-<p><b>Ergebnis</b></p>
 </div>
 <hr />
 <div class="div2">
 <h2><a name="references" id="references"/>7 XML Path Language</h2>
-<p>XPath ist eine vom W3C-Konsortium entwickelte Anfragesprache um Teile von XML-Dokumenten zu adressieren und auszuwerten (Angelehnt an Wikipedia, abgerufen am 01.01.2015). Sie arbeitet auf dem DOM eines Xml-Dokuments und ermöglicht eine Navigation,eine Wahl von Knotenmengen und Auswertungsoperationen.</p>
+<p>XPath ist eine vom W3C-Konsortium entwickelte Anfragesprache um Teile von XML-Dokumenten zu adressieren und auszuwerten (Angelehnt an Wikipedia, abgerufen am 01.01.2015). Sie arbeitet auf dem DOM eines XML-Dokuments und ermöglicht: eine Navigation, eine Wahl von Knotenmengen und Auswertungsoperationen.</p>
 <h3><a name="refnorm" id="refnorm"/>7.1 Einarbeitung</h3>
-<p>Mit Hilfe von XPath-Ausrücken können Teilmengen eines XML-Dokuments bestimmt werden. Dadurch werden Asdrücke evaluiert und das Ergebnis der Evaluierung ist ein Wert mit Typ node-set, string, boolean oder number. Um eine Knotenmenge zu spezifizieren, gibt man einen Weg von einem anderen Knoten aus an( meistens der Wurzel). Sie sind untergliedert in mit "/" getrennte Schritte. Ein Schritt setzt sich zusammen aus:</p>
+<p>Mit Hilfe von XPath-Ausrücken können Teilmengen eines XML-Dokuments bestimmt werden. Dadurch werden Ausdrücke evaluiert und das Ergebnis der Evaluierung ist ein Wert mit Typ node-set, string, boolean oder number. Um eine Knotenmenge zu spezifizieren, gibt man einen Weg von einem anderen Knoten aus an (meistens der Wurzel). Sie sind untergliedert in mit "/" getrennten Schritte. Ein Schritt setzt sich zusammen aus:</p>
 <p>Achse: :Knotentest[Prädikat]</p>
-<p>Um sich etwas in die XML Path Language einzuarbeiten, wurde mit Hilfe des Notepad++ XML Tool "XPath Expression Evaluation" einige Abfragen durchgeführt.</p>
+<p>Um sich etwas in die XML Path Language einzuarbeiten, wurde mit Hilfe des Notepad++ XML Tools "XPath Expression Evaluation" einige Abfragen durchgeführt. Die meisten XSLT-Views wurden mit dem selben Gedanken beziehungsweise dem selben Ziel wie die unten aufgezeigten XPath-Ausdrücke erzeugt.</p>
 <p><b>Bespiele:</b></p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/geraeteListe/child::*</i> konnten alle bisher abgegeben Geräte angezeigt werden (<a href="#anzahlgeraete">siehe Abbildung 4 </a>).</p>
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/geraeteListe/child::*</i> konnten alle bisher abgegeben Geräte angezeigt werden (<a href="#anzahlgeraete">siehe Abbildung 4 </a>). Es werden hier nun alle fünf Geräte, die wir bis dahin erhalten haben, angezeigt.</p>
   <figure> 
     <img src="img/anzahlgeraete.png" alt="AnzahlderGeräte" name="anzahlgeraete" id="anzahlgeraete"/>
     <figcaption><span>Abbildung 4: <abbr title="AnzahlderGeräte">Liste der bisher abgegebenen Geräte</abbr></span></figcaption>
   </figure> 
 </p>
-<p></p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/kundenListe/child::*/adresse/plz</i> konnten alle Postleitzahlen unserer Kunden angegeben werden (<a href="#plzverstreuungunsererkunden">siehe Abbildung 5</a>).</p>
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/kundenListe//name</i> konnten alle Kundennamen angezeigt werden (<a href="#anzahlkunde">siehe Abbildung 5 </a>). Es werden hier nun alle fünf Kunden, die wir bis dahin versorgt hatten, angezeigt.</p>
   <figure> 
-    <img src="img/plzverstreuungunsererkunden.png" alt="plzverstreuungunsererkunden" name="plzverstreuungunsererkunden" id="plzverstreuungunsererkunden" />
-    <figcaption><span>Abbildung 5: <abbr title="plzverstreuungunsererkunden">Liste der Postleitzahlen unserer Kunden</abbr></span></figcaption>
+    <img src="img/anzahlkunde.png" alt="Anzahlderkunden" name="anzahlkunde" id="anzahlkunde" style="width:100%"/>
+    <figcaption><span>Abbildung 5: <abbr title="Anzahlderkunden">Liste der bisher bedienten Kunden</abbr></span></figcaption>
   </figure> 
 </p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten</i> konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden (<a href="#oeffnungszeitendesrecyclinghofsnord">siehe Abbildung 6</a>).</p>
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/herstellerListe//hersteller</i> konnten alle Hersteller mit ihrer eindeutigen ID angezeigt werden (<a href="#anzahlhersteller">siehe Abbildung 6 </a>). Es werden hier nun alle fünf Hersteller, die wir bis dahin vermerkt hatten, angezeigt.</p>
+  <figure> 
+    <img src="img/anzahlhersteller.png" alt="Anzahlderhersteller" name="anzahlhersteller" id="anzahlhersteller" style="width:95%"/>
+    <figcaption><span>Abbildung 6: <abbr title="Anzahlderhersteller">Liste der bisher vermerkten Hersteller</abbr></span></figcaption>
+  </figure> 
+</p>
+<p></p>
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/kundenListe/child::*/adresse/plz</i> konnten alle Postleitzahlen unserer Kunden angegeben werden (<a href="#plzverstreuungunsererkunden">siehe Abbildung 7</a>). </p>
+  <figure> 
+    <img src="img/plzverstreuungunsererkunden.png" alt="plzverstreuungunsererkunden" name="plzverstreuungunsererkunden" id="plzverstreuungunsererkunden" style="width:90%"/>
+    <figcaption><span>Abbildung 7: <abbr title="plzverstreuungunsererkunden">Liste der Postleitzahlen unserer Kunden</abbr></span></figcaption>
+  </figure> 
+</p>
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten</i> konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden (<a href="#oeffnungszeitendesrecyclinghofsnord">siehe Abbildung 8</a>).</p>
   <figure> 
     <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:75%" name="oeffnungszeitendesrecyclinghofsnord" id="oeffnungszeitendesrecyclinghofsnord" />
-    <figcaption><span>Abbildung 6: <abbr title="oeffnungszeitendesrecyclinghofsnord">Anzeige der Öffnungszeiten des Recyclinghofs Nord</abbr></span></figcaption>
+    <figcaption><span>Abbildung 8: <abbr title="oeffnungszeitendesrecyclinghofsnord">Anzeige der Öffnungszeiten des Recyclinghofs Nord</abbr></span></figcaption>
   </figure> 
 </p>
 <h3><a name="xpathdocumentorder" id="xpathdocumentorder"></a>7.2 Document Order</h3>
-<p>Die Document Order beschreibt eine Ordnung über alle Knoten eines DOM-Dokuments. Die Wurzelelement ist das erste Element der Ordnung. Die Elementknoten kommen vor ihren Kindern. Kinder werden nach der Folge der XML-Quelle geordnet. Attributordnungen sind implementierungsabhängig. Eine Document Order ist immer dann sehr vom Vorteil, wenn ein XML Dokument immer mehr an Größe erreicht. Momentan ist unsere Datenbank noch recht übersichtlich nur im Laufe der Zeit und auch durch Erweiterungen kann es hilfreich sein eine Übersicht aller Knoten in diesem Dokument zu erhalten. Auf der Website: http://xmlgrid.net/ wurde aus unserer Datenbank eine Baumstruktur aller Knoten erstellt. Diese Baumstruktur kann jederzeit erweitert werden. </p>
-<p>Es folgt eine Baumstruktur, die die erste Ebene unserer Datenbank beschreibt. Zu Sehen ist das Rootelement "datenbank" und ihre darauffolgenden Kinder: geraeteListe, herstellerListe, kundenliste und recyclinghofListe. Auch der Validierer dieser Website erkannte hier ein well-formed XML (<a href="#document-order1">siehe Abbildung 7</a>).</p>
+<p>Die Document Order beschreibt eine Ordnung über alle Knoten eines DOM-Dokuments. Das Wurzelelement ist das erste Element der Ordnung. Die Elementknoten kommen vor ihren Kindern. Kinder werden nach der Folge der XML-Quelle geordnet. Attributordnungen sind implementierungsabhängig. Eine Document Order ist immer dann sehr vom Vorteil, wenn ein XML Dokument immer mehr an Größe erreicht. Momentan ist die Datenbank des Projektteams noch recht übersichtlich aber im Laufe der Zeit und auch durch Erweiterungen kann es hilfreich sein, eine Übersicht aller Knoten in diesem Dokument zu erhalten. Auf der Website: http://xmlgrid.net/ wurde aus unserer Datenbank eine Baumstruktur aller Knoten erstellt. Diese Baumstruktur kann jederzeit erweitert werden. </p>
+<p>Es folgt eine Baumstruktur, die die erste Ebene unserer Datenbank beschreibt. Zu Sehen ist das Rootelement "datenbank" und ihre darauffolgenden Kinder: geraeteListe, herstellerListe, kundenliste und recyclinghofListe. Auch der Validierer dieser Website erkannte hier ein well-formed XML (<a href="#document-order1">siehe Abbildung 9</a>).</p>
   <figure> 
     <img src="img/document-order1.png" alt="Documentorder1" name="document-order1" id="document-order1" />
-    <figcaption><span>Abbildung 7: <abbr title="document-order1">Wurzelelement und die erste Ebene ihrer Kinder</abbr></span></figcaption>
+    <figcaption><span>Abbildung 9: <abbr title="document-order1">Wurzelelement und die erste Ebene ihrer Kinder</abbr></span></figcaption>
   </figure> 
- <p>In der nächsten Abbildung (<a href="#document-order2">siehe Abbildung 8</a>) sind die weiteren Kinder der geraeteliste zu erkennen. Die eingetragenen Geräte werden hier in einer übersichtlichen Ansicht dargestellt. Zusätzlich sind auch kleine Angaben wie die Summe der Geräte(5) angegeben. Hier sind alle Attribute und Elemente eines Geräts in Spaltenansicht angezeigt. Auch die einzelnen Bestandteile sind aufgelistet.</p>
+ <p>In der nächsten Abbildung (<a href="#document-order2">siehe Abbildung 10</a>) sind die weiteren Kinder der geraeteliste zu erkennen. Die eingetragenen Geräte werden hier in einer übersichtlichen Ansicht dargestellt. Zusätzlich sind auch kleine Angaben wie die Summe der Geräte(5) angegeben. Hier sind alle Attribute und Elemente eines Geräts in Spaltenansicht angezeigt. Auch die einzelnen Bestandteile sind aufgelistet.</p>
   <figure> 
-    <img src="img/document-order2.png" alt="Documentorder2" name="document-order2" id="document-order2" />
-    <figcaption><span>Abbildung 8: <abbr title="document-order2">Kinder der Geräteliste</abbr></span></figcaption>
+    <img src="img/document-order2.png" alt="Documentorder2" name="document-order2" id="document-order2" style="width:95%" />
+    <figcaption><span>Abbildung 10: <abbr title="document-order2">Kinder der Geräteliste</abbr></span></figcaption>
   </figure> 
-<p>In der folgenden Abbildung (<a href="#document-order3">siehe Abbildung 9</a>) sind nun die Kundenliste und die Herstellerliste als Baumstruktur abgebildet. Die Kinderelemente der Adresse werden ebenfalls in der Baumstruktur abgebildet.</p>
+<p>In der folgenden Abbildung (<a href="#document-order3">siehe Abbildung 11</a>) sind nun die Kundenliste und die Herstellerliste als Baumstruktur abgebildet. Die Kinderelemente der Adresse werden ebenfalls in der Baumstruktur abgebildet.</p>
   <figure> 
     <img src="img/document-order3.png" alt="Documentorder3" name="document-order3" id="document-order3"/>
-    <figcaption><span>Abbildung 9: <abbr title="document-order3">Kinder der Kunden- und Herstellerliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 11: <abbr title="document-order3">Kinder der Kunden- und Herstellerliste</abbr></span></figcaption>
   </figure> 
-<p> Die letzte Abbildung (<a href="#document-order4">siehe Abbildung 10</a>) zeigt die Übersicht der Recyclingofsliste. Die Kinderelemente Adresse, Öffnungszeiten und Spezialgebiete werden mitabgebildet.</p>
+<p> Die letzte Abbildung (<a href="#document-order4">siehe Abbildung 12</a>) zeigt die Übersicht der Recyclingofsliste. Die Kinderelemente Adresse, Öffnungszeiten und Spezialgebiete werden mitabgebildet.</p>
   <figure> 
     <img src="img/document-order4.png" alt="Documentorder4" name="document-order4" id="document-order4"/>
-    <figcaption><span>Abbildung 10: <abbr title="document-order4">Kinder der Recyclinghofsliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 12: <abbr title="document-order4">Kinder der Recyclinghofsliste</abbr></span></figcaption>
   </figure> 
 </div>
 <hr />
@@ -1122,7 +1150,7 @@ padding: 0px;
 
 <h3><a name="xslt-geraeteliste" id="xslt-geraeteliste"></a>8.2 Geräteliste</h3>
 <h4>8.2.1 Berechnung des Recyclinggrades</h4>
-<p>Anzeige aller Geräte (<a href="#geraeteliste">Abbildung  11</a>) im Bestand mit Angabe von Anteil und dem Recyclinggrad.<br />
+<p>Anzeige aller Geräte (<a href="#geraeteliste">Abbildung  13</a>) im Bestand mit Angabe von Anteil und dem Recyclinggrad.<br />
 Der Recyclinggrad wird für jedes Geräte berechnet.</p>
 <h4>8.2.2 Angaben in der Variable "geraete"</h4>
 <div class="exampleInner"><pre>
@@ -1146,11 +1174,11 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h4>8.2.4 Screenshot</h4> 
  <figure> 
     <img src="img/geraeteliste.png" alt="Geräteliste" name="geraeteliste" id="geraeteliste"/>
-    <figcaption><span>Abbildung 11: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 13: <abbr title="Geräteliste">Geräteliste</abbr></span></figcaption>
   </figure> 
 
 <h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>8.3 Herstellerübersicht</h3>
-<p>Ein Liste (<a href="#herstellerliste">Abbildung  12</a>) aller in der Datenbank vorhandene Hersteller.</p>
+<p>Ein Liste (<a href="#herstellerliste">Abbildung  14</a>) aller in der Datenbank vorhandene Hersteller.</p>
 <h4>8.3.1. XML-Fragment</h4>
 <div class="exampleInner"><pre>
 &lt;hersteller herstellerID="Samsung"&gt;
@@ -1187,12 +1215,12 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h4>8.3.3 Screenshot</h4>
   <figure> 
     <img src="img/herstellerliste.png" alt="Herstellerliste" name="herstellerliste" id="herstellerliste" />
-    <figcaption><span>Abbildung 12: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 14: <abbr title="Herstellerliste">Herstellerliste</abbr></span></figcaption>
   </figure> 
 
 <h3><a name="xslt-kundenliste" id="xslt-kundenliste"></a>8.4 Kundenliste</h3>
 <h4>8.4.1 Herausfiltern von nicht vorhandenen Daten</h4>
-<p>Eine vollständige Kundliste (<a href="#kundenliste">Abbildung  13</a>) aller im System gespeicherten Kunden.</p>
+<p>Eine vollständige Kundliste (<a href="#kundenliste">Abbildung  15</a>) aller im System gespeicherten Kunden.</p>
 <p>Dadurch das wir in unserer XML-Datei für Kunden nur eine Telefonnummer und den Namen voraussetzen, <br />
   bleiben manche Felder unausgefüllt diese werden über bestimmte Anweisungen und Abfragen nicht in dem View angezeigt.</p>
 <h4>8.4.2 Filtern mit dem if-Befehl</h4>
@@ -1213,14 +1241,14 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h4>Screenshot</h4>
   <figure> 
     <img src="img/kundenliste.png" alt="Kundenliste" name="kundenliste" id="kundenliste"/>
-    <figcaption><span>Abbildung 13: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
+    <figcaption><span>Abbildung 15: <abbr title="Geräteliste">Kundenliste</abbr></span></figcaption>
   </figure> 
 
 <h3><a name="xslt-kundenrecyclinghoffehlend" id="xslt-kundenrecyclinghofplzfehlt"></a>8.5 Übersicht Kunden-Recyclinghof fehlende Postleitzahl</h3>
 <h4>8.5.1 Anwendungsfall: Kunde kommt und möchte sein Gerät zurückgeben</h4>
 <p>Der Kunde kommt zu uns und möchte sein Gerät recycling lassen. Er möchte gerne wissen welcher Recyclinghof in seiner Nähe sein Gerät zurücknimmt</p>
 <p>Leider hat er bei seiner Registrierung seine Postleitzahl vergessen einzugeben, um jedoch einen Recyclinghof in seiner näheren Umgebung zu finden is die Postleitzahl zwingend notwendig.</p>
-<p>Der Fehler wird mit durch einen rotmarkierten Text (<a href="#plzfehlt">Abbildung  14</a>) ausgegeben.</p>
+<p>Der Fehler wird mit durch einen rotmarkierten Text (<a href="#plzfehlt">Abbildung  16</a>) ausgegeben.</p>
 <p>Unser System liefert einen Fehler und bittet die Postleitzahl nachzuliefern.</p>
 <h4>8.5.2 XML Kunde "Lily"</h4>
 <div class="exampleInner"><pre>
@@ -1284,12 +1312,12 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h4>8.5.5 Screenshot</h4>
 <figure> 
     <img src="img/plz-fehlt.png" alt="PLZ fehlt" name="plzfehlt" id="plzfehlt" />
-    <figcaption><span>Abbildung 14: <abbr title="KundeRecyclinghof">Fehler bei fehlender PLZ</abbr></span></figcaption>
+    <figcaption><span>Abbildung 16: <abbr title="KundeRecyclinghof">Fehler bei fehlender PLZ</abbr></span></figcaption>
 </figure> 
 
 <h3><a name="xslt-kundenrecyclinghofeinfach" id="xslt-kundenrecyclinghofexakt"></a>8.6 Anzeige welcher Recyclinghof passt genau zur PLZ des Kunden</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet. </p>
-<p>In diesem Fall suchen wir nach genau dem Recyclinghof der zur Adresse von der Kundin passt (<a href="#plzexakt">Abb 15</a>). Nicht schön aber für den Anfang okay.</p>
+<p>In diesem Fall suchen wir nach genau dem Recyclinghof der zur Adresse von der Kundin passt (<a href="#plzexakt">Abb 17</a>). Nicht schön aber für den Anfang okay.</p>
 <h4>8.6.1 XML</h4>
 <div class="exampleInner">
   <pre>
@@ -1362,12 +1390,12 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h4>8.6.3 Screenshot</h4>
 <figure> 
     <img src="img/recycling-einfach.png" alt="PLZ fehlt" name="plzexakt" id="plzexakt"/>
-    <figcaption><span>Abbildung 15: <abbr title="KundeRecyclinghof">Einfache Ausgabe des passenden Recyclinghofs</abbr></span></figcaption>
+    <figcaption><span>Abbildung 17: <abbr title="KundeRecyclinghof">Einfache Ausgabe des passenden Recyclinghofs</abbr></span></figcaption>
 </figure>
 
 <h3><a name="xslt-kundenrecyclinghofnahe" id="xslt-kundenrecyclinghofnahe"></a>8.7 Anzeige welcher Recyclinghof ist in der Nähe des Kunden</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
-<p>Das lösen wir in dem wir die ersten drei Zahlen der Recyclinhöfe-Postleitzahl mit der Kunden-Postleitzahl vergleichen (<a href="#plznahe">Abbildung  16</a>).</p>
+<p>Das lösen wir in dem wir die ersten drei Zahlen der Recyclinhöfe-Postleitzahl mit der Kunden-Postleitzahl vergleichen (<a href="#plznahe">Abbildung  18</a>).</p>
 <h4>XSLT-Code </h4>
 <div class="exampleInner">
   <pre>
@@ -1396,14 +1424,14 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h4>Screenshot</h4>
 <figure> 
     <img src="img/recyclinghof-substring.png" alt="Filtern mit Substring" name="plznahe" id="plznahe"/>
-    <figcaption><span>Abbildung 16: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
+    <figcaption><span>Abbildung 18: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
 </figure> 
 
 <h3><a name="xslt-probleme" id="xslt-probleme"></a>8.8 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
-<p>Die Angabe der DTD in der XML hat im Chrome Browser und Safari Probleme verursacht. Die Daten werden nicht geladen und es wird eine Sicherheitsmeldung ausgegeben (siehe Abbildung 17). Unsere Anwendung ist momentan für Firefox optimiert.</p>
+<p>Die Angabe der DTD in der XML hat im Chrome Browser und Safari Probleme verursacht. Die Daten werden nicht geladen und es wird eine Sicherheitsmeldung ausgegeben (siehe Abbildung 19). Unsere Anwendung ist momentan für Firefox optimiert.</p>
 <figure> 
     <img src="img/ChromeError.png" alt="Fehler Chrome Browser" />
-    <figcaption><span>Abbildung 17: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
+    <figcaption><span>Abbildung 19: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
 </figure> 
 
 <p>Ein weiteres Problem war die Validierung der einzelnen XML Dateien. Die Aufsplittung der Daten in einzelne XML Dateien hat bei der Validierung einen Fehler ergeben. Das Problem wurde durch eine Zentrale XML Datei mit dem Wurzelelement <i>datenbank</i> erstellt.</p>
@@ -1414,10 +1442,10 @@ Ein weiteres Problem das durch ein großes XML Dokument entstanden ist war die s
 <hr />
 <div class="div1">
 <h2><a name="erweiterungen" id="erweiterungen"/>9 Mögliche Erweiterungen und Einsatzgebiete</h2>
-<p>Da dieses Projekt nur in einem begrenztem Rahmen durchgeführt werden konnte gibt es natürlich noch mögliche Erweiterungen und Verbesserungen.</p>
-<p>Für einen umgreifenderen Einsatzbereich könnte die Anwendung statt nur Smartphones, Tablets und Handys auch andere elektronische Geräte miteinbeziehen. Es wäre dann möglich zum Beispiel auch alte Haushaltsgeräte wie Mixer, Waschmaschinen, Staubsauger etc. mit der Anwendung zu verwalten.</p>
-<p>Desweiteren könnte eine mobile Applikation in Form einer App entwickelt werden, in der der Benutzer alle seine Geräte verwalten kann und ihm Informationen zu den Bestandteilen und Recyclinggrad zur Verfügung stellt. Es würde auch leicht realisierbar sein dem Nutzer Information über die Entsorgung wie die Anzeige eines zum Gerät passenden Recyclinghofs in der näheren Umgebung mitzuteilen.</p> 
-<p>Durch weitere Aufnahme von Daten zur Herstellung der Geräte wie zum Beispiel CO2 Emmssionen, die bei der Produktion eines Stücks entstehen oder logistische Informationen wie den Vertriebsweg usw. könnte auch die Nachhaltigkeit eines Gerätes errechnet werden. Der Nutzer hat im Grunde eine Art Info-Portal in dem er sieht wie Nachhaltig sein Gerät produziert wurde und wo er es wenn es defekt ist abgeben könnte.</p> 
+<p>Da dieses Projekt nur in einem begrenztem Rahmen durchgeführt werden konnte, gibt es natürlich noch mögliche Erweiterungen und Verbesserungen.</p>
+<p>Für einen umgreifenderen Einsatzbereich könnte die Anwendung statt nur Smartphones, Tablets und Handys auch andere elektronische Geräte miteinbeziehen. Es wäre dazu auch möglich zum Beispiel auch alte Haushaltsgeräte wie Mixer, Waschmaschinen, Staubsauger etc. mit der Anwendung zu verwalten.</p>
+<p>Des Weiteren könnte eine mobile Applikation in Form einer App entwickelt werden, in der der Benutzer alle seine Geräte verwalten kann und ihm Informationen zu den Bestandteilen und dem Recyclinggrad zur Verfügung stellt. Es würde auch leicht realisierbar sein, dem Nutzer Informationen über die Entsorgung und den passenden Recyclinghof zu seinem Gerät in der näheren Umgebung mitzuteilen.</p> 
+<p>Durch weitere Aufnahme von Daten zur Herstellung der Geräte, wie zum Beispiel CO2 Emmssionen, die bei der Produktion eines Stücks entstehen oder logistische Informationen, wie den Vertriebsweg usw. könnte auch die Nachhaltigkeit eines Gerätes errechnet werden. Der Nutzer hat im Grunde eine Art Info-Portal, in dem er sieht wie Nachhaltig sein Gerät produziert wurde und wo er es, wenn es defekt oder veraltet ist abgeben könnte.</p> 
 <p>Die Aufnahme der folgenden Daten wären durchaus denkbar:</p>
 <p>
 <ul>
@@ -1427,7 +1455,7 @@ Ein weiteres Problem das durch ein großes XML Dokument entstanden ist war die s
   <li>Weitere Herstellerinformationen wie Unternehmensgröße, Umsatz usw.</li>
 </ul>
 </p>
-<p>Auch einfache Features würden der aktuellen Applikation einen Mehrwert bieten. Das hinzufügen einer Suche, oder das Darstellen einer Karte wo sich der nächstgelegene Recyclinghof befindet wären durchaus sinnvolle Erweiterungen.</p>
+<p>Auch einfache Features würden der aktuellen Applikation einen Mehrwert bieten. Das Hinzufügen einer Suche, oder das Darstellen einer Karte, in der sich der nächstgelegene Recyclinghof befindet wären durchaus sinnvolle Erweiterungen. Eine Schnittestelle hierzu wäre Google Maps mit einzubeziehen.</p>
 </div> 
 <hr />
 <div class="div1">
@@ -1438,6 +1466,7 @@ Ein weiteres Problem das durch ein großes XML Dokument entstanden ist war die s
 <li>Sublime 2</li>
 <li>Firefox</li>
 <li>GitHub</li>
+<li>Notpad++</li>
 <li>xmllint</li>
 </ul>
 </p>
@@ -1451,11 +1480,11 @@ Ein weiteres Problem das durch ein großes XML Dokument entstanden ist war die s
 <hr />
 <div class="div1">
 <h2><a name="fazit" id="fazit"/>11 Fazit</h2>
-<p>Nach anfänglichen Startschwierigkeiten mit der Materie "Datenmodellierung in XML" konnten wir uns schnell für das Thema begeistern und einarbeiten. Durch die Projektarbeit haben wir viel zum Thema XML gelernt, wenn wir auch nur an der Oberfläche kratzen konnten.</p>
+<p>Nach anfänglichen Startschwierigkeiten mit der Materie "Datenmodellierung in XML" konnten wir uns schnell für das Thema begeistern und einarbeiten. Durch die Projektarbeit haben wir viel zum Thema XML gelernt, wenn wir auch nur an der Oberfläche kratzen konnten. Wir konnten uns eine strukturierte Beschreibung von Daten mittels der Auszeichnungssprache XML und deren Einsatz sehr gut anarbeiten. Wir haben ein sehr gutes Verständnis der Modellierung von Daten mittels XML und ddazu assoziierten Technologien erreicht. Werkzeuge zur Modellierung und Nutzung von XML-basierten Datenstrukturen haben wir ebenfalls kennengerlernt und angewendet. </p>
 <p>
-Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine vernünftgen Views entwickeln lassen und so musste wir zu einem sehr späten Zeitpunkt im Projekt nochmals unser Datenmodell überdenken und ändern.
+Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine vernünftgen Views entwickeln lassen und so mussten wir zu einem sehr späten Zeitpunkt im Projekt nochmals unser Datenmodell überdenken und ändern.
 </p>
-<p>Leider musste wir auch feststellen, dass XSLT 1.0 sehr eingeschränkt arbeitet, so hätten wir gerne eine komplexere Webseite mit mehreren Menüpunkten aus unserer XML-Datenbank erzeugt und komplexere Abfragen entwickelt.</p>
+<p>Leider mussten wir auch feststellen, dass XSLT 1.0 sehr eingeschränkt arbeitet, so hätten wir gerne eine komplexere Webseite mit mehreren Menüpunkten aus unserer XML-Datenbank erzeugt und komplexere Abfragen entwickelt.</p>
 <p>
 Außerdem konnten wir auf Grund unserer Gruppengröße das Thema JSON nicht mehr bearbeiten. Allerdings fanden wir eine Gruppengröße von drei Personen sehr angenehm, da wir keinen großen Reibungsverlust bei der Kommunikation hatten. 
 </p>
@@ -1463,8 +1492,8 @@ Außerdem konnten wir auf Grund unserer Gruppengröße das Thema JSON nicht mehr
 <hr />
 <div class="div1">
 <h2><a name="aufgabenverteilung" id="aufgabenverteilung"/>12 Aufgabenverteilung</h2>
-<p>Grundsätzlich hat im Projekt "Recycling" jeder von allem etwas gemacht. Jeder war im Entstehungsprozess und der Entwicklung beteiligt. Bei einer Gruppengröße von 3 Personen ist uns eigentlich nichts anderes übrig geblieben um die Anforderungen des Projekts zu erfüllen. </p>
-<p>Jeder war auch umfassend an der Dokumentation beteiligt.</p>
+<p>Grundsätzlich hat im Projekt "Recycling" alle Teammitglieder in allen Bereichen seine Kenntnisse vertieft und weiter ausgeprägt. Jeder war im Entstehungsprozess und an der Entwicklung beteiligt.  Bei einer Gruppengröße von 3 Personen ist uns eigentlich nichts anderes übrig geblieben, um die Anforderungen des Projekts zu erfüllen. </p>
+<p>Jeder war auch umfassend an der Dokumentation des Projekts beteiligt.</p>
 </div>
 
 
