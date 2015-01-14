@@ -2,12 +2,15 @@
 
 <!-- Geräte Liste -->
 <!ELEMENT geraeteListe (geraet*)>
+<!ATTLIST geraeteListe geraeteListeID NMTOKEN #REQUIRED>
 <!ELEMENT geraet (bestandteile+)>
 <!ATTLIST geraet geraetID NMTOKEN #REQUIRED>
-<!ATTLIST geraet gereatBezeichnung CDATA #REQUIRED>
+<!ATTLIST geraet geraetBezeichnung CDATA #REQUIRED>
 <!ATTLIST geraet zustand (neuwertig | gut | defekt) #REQUIRED>
 <!ATTLIST geraet verschmutzungsgrad (gereinigt | akzeptabel | verschmutzt) #REQUIRED>
 <!ATTLIST geraet geraetekategorie CDATA #REQUIRED>
+<!ATTLIST geraet hersteller CDATA #REQUIRED>
+
 
 <!-- Hersteller muss mindenstens eine Adresse besitzen, kann aber auch mehrere haben. -->
 <!ELEMENT herstellerListe (hersteller*)>
@@ -16,7 +19,7 @@
 
 <!-- Recyclinghof -->
 <!ELEMENT recyclinghofListe (recyclinghof*)>
-<!ELEMENT recyclinghof (adresse , oeffnungszeiten+)>
+<!ELEMENT recyclinghof (adresse, oeffnungszeiten+,spezialgebiet+)>
 <!ELEMENT oeffnungszeiten (#PCDATA)>
 <!ELEMENT spezialgebiet (#PCDATA)>
 <!ATTLIST recyclinghof recyclinghofID CDATA #REQUIRED>
@@ -25,8 +28,7 @@
 <!ELEMENT kundenListe (kunde*)>
 <!ELEMENT kunde (adresse?)>
 <!ATTLIST kunde kundenID CDATA #REQUIRED>
-<!ATTLIST kunde geraet CDATA #REQUIRED>
-<!ATTLIST kunde geraetekategorie CDATA #REQUIRED>
+<!ATTLIST kunde geraeteListe NMTOKEN #REQUIRED>
 
 <!-- Adresse kann mehrere Telefonnummern beinhalten, muss aber mindestens eine besitzen. -->
 <!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)>
@@ -39,9 +41,11 @@
 <!-- Liste der Bestandteile -->
 <!-- Bestanteilname nicht festgelegt, um Möglichkeiten flexibel zu gestalten -->
 <!ELEMENT bestandteile (bestandteil+)>
-
-<!-- Ein konkretes Bestandteil -->
-<!ELEMENT bestandteil (#PCDATA)>
 <!ATTLIST bestandteil name CDATA #REQUIRED>
 <!ATTLIST bestandteil anteil CDATA #REQUIRED>
 <!ATTLIST bestandteil recyclinggrad CDATA #REQUIRED>
+
+
+<!-- Ein konkretes Bestandteil -->
+<!ELEMENT bestandteil (#PCDATA)>
+

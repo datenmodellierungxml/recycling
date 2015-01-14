@@ -4,9 +4,9 @@
 
 <datenbank>
 <!--Liste der Geräte-->
-<geraeteListe>
+<geraeteListe geraeteListeID="liste1">
 <!-- Gerät iPhone aktzeptabel-->
-<geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
+<geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="neuwertig" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone" hersteller="Apple">
 <bestandteile>
 			<bestandteil name="Glas" anteil="60" recyclinggrad="100" />
 			<bestandteil name="Kunststoff" anteil="10" recyclinggrad="50" />
@@ -15,7 +15,7 @@
 </geraet>
 
 <!-- Gerät iPhone nicht verschmutzt-->
-<geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="defekt" verschmutzungsgrad="verschmutzt" geraetekategorie="Smartphone">
+<geraet geraetID="AiP5" geraetBezeichnung="iPhone 5" zustand="defekt" verschmutzungsgrad="verschmutzt" geraetekategorie="Smartphone" hersteller="Apple">
 <bestandteile>
 			<bestandteil name="Glas" anteil="60" recyclinggrad="100"/>
 			<bestandteil name="Kunststoff" anteil="10" recyclinggrad="50" />
@@ -24,7 +24,7 @@
 </geraet>
 
 <!-- Geräte Samsung Galaxy S3-->
-<geraet geraetID="SGS3" geraetBezeichnung="Samsung Galaxy S3" zustand="gut" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone">
+<geraet geraetID="SGS3" geraetBezeichnung="Samsung Galaxy S3" zustand="gut" verschmutzungsgrad="akzeptabel" geraetekategorie="Smartphone" hersteller="Samsung">
 <bestandteile>
 			<bestandteil name="Glas" anteil="50" recyclinggrad="100"/>
 			<bestandteil name="Kunststoff" anteil="30" recyclinggrad="80" />
@@ -33,7 +33,7 @@
 		</geraet>
 		
 <!-- Nokia 3110-->
-<geraet geraetID="N3110" geraetBezeichnung="Nokia 3110" zustand="defekt" verschmutzungsgrad="gereinigt" geraetekategorie="Handy">
+<geraet geraetID="N3110" geraetBezeichnung="Nokia 3110" zustand="defekt" verschmutzungsgrad="gereinigt" geraetekategorie="Handy" hersteller="Nokia">
 <bestandteile>
 			<bestandteil name="Glas" anteil="10" recyclinggrad="100"/>
 			<bestandteil name="Kunststoff" anteil="80" recyclinggrad="80" />
@@ -41,7 +41,7 @@
 		</bestandteile>
 </geraet>
 
-<geraet geraetID="LenovoYogaPad2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="aktzeptabel" geraetekategorie="Tablet">
+<geraet geraetID="LenovoYogaPad2" geraetBezeichnung="Lenovo Yoga Pad 2" zustand="gut" verschmutzungsgrad="akzeptabel" geraetekategorie="Tablet" hersteller="Lenovo">
 <bestandteile>
 			<bestandteil name="Glas" anteil="30" recyclinggrad="100"/>
 			<bestandteil name="Kunststoff" anteil="50" recyclinggrad="80" />
@@ -87,7 +87,6 @@
 			<plz>65824</plz>
 			<ort>Ratingen</ort>
 			<telefon>+49(0)2102 / 7008777</telefon>
-			<telefon>+49(0)2102 / 7008743</telefon>
 		</adresse>
 	</hersteller>
 	<hersteller herstellerID="Sony">
@@ -103,14 +102,14 @@
 
 <!--Liste der Kunden-->
 <kundenListe>
-	<kunde kundenID="11112014_01" geraet="iPhone" geraetekategorie="Smartphone">
+	<kunde kundenID="11112014_01" geraeteListe="liste1">
 		   <adresse>    
 				 <name>Björn Tim Meßthaler</name>
 				 <telefon>09156556</telefon>
 				 <telefon>+494164684</telefon>
 		   </adresse>
 	</kunde>
-	<kunde kundenID="MM125355" geraet="Samsung" geraetekategorie="Smartphone">
+	<kunde kundenID="MM125355" geraeteListe="liste1">
 		<adresse>
 			<name>Max Mustermann</name>
 			<strasse>Musterstr. 1</strasse>
@@ -119,7 +118,7 @@
 			<telefon>0911 / 12 53 55</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="4641653" geraet="Nokia" geraetekategorie="Handy">
+	<kunde kundenID="4641653" geraeteListe="liste1">
 		<adresse>
 			<name>Robin Scherbatsky</name>
 			<strasse>Klappenweg 45</strasse>
@@ -129,13 +128,13 @@
 			<telefon>016046848647</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="546586" geraet="Lenovo Yoga Pad 2" geraetekategorie="Tablet">
+	<kunde kundenID="546586" geraeteListe="liste1">
 		<adresse>
 			<name>Lily Aldrin</name>
 			<telefon>+49 911 54365415</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="23654" geraet="iPhone 6Plus" geraetekategorie="Smartphone">
+	<kunde kundenID="23654" geraeteListe="liste1">
 		<adresse>
 			<name>Ted Mosby</name>
 			<strasse>Mosbacherstraße 45</strasse>
