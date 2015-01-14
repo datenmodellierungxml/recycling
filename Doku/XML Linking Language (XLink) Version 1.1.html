@@ -183,7 +183,7 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 <hr />
 <div class="div1">
 <h2><a name="concepts" id="concepts"></a>2 Geschäftsprozessmodell</h2>
-<p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell (<a href="#epkhandyrecyclingde">siehe Abb. 1</a>) modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts.</p> 
+<p>Zur Darstellung des Vorgehens bei unserer Onlineanwendung "Handyrecycling.de" wurde ein EPK-Modell (<a href="#epkhandyrecyclingde">siehe Abbildung  1</a>) modelliert. Es beschreibt den Prozess des Handyrecycling-Projekts.</p> 
 <p>Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird folgend der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
 <p>
 <figure>
@@ -795,7 +795,7 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>5.Öffnungszeiten</strong></p>
+<p><strong>5. Öffnungszeiten</strong></p>
 <p><strong>Beschreibung:</strong></p>
 <p>Das Element Öffnungszeiten wurde ebenfalls noch einmal überarbeitet und geändert, um XPath Abfragen beziehungsweise der Umgang mit den Views für einzelne Öffnungszeiten an einem bestimmten Tag zu vereinfachen.</p>
 <p><b>Ergebnis</b></p>
@@ -821,8 +821,35 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 </tr>
 </tbody>
 </table>
-<p>2. <p>
-<p><b>Beschreibung</b></p>
+<p><strong>6. Weitere Änderungen</strong>
+<p>Aufgrund unseres neuen Datenmodells mussten einige Anpassungen gemacht werden.</p>
+<p>Folgende Änderungen wurden durchgeführt:</p>
+<table border="1" frame="border" summary="Link Usage Patterns">
+<thead>
+<tr>
+<th>Vorher</th>
+<th>Nachher</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Attribut war noch nicht angegeben.</td>
+    <td>&lt;!ATTLIST geraet hersteller CDATA #REQUIRED&gt;</td>
+  </tr>
+    <tr>
+    <td>Eine ID für die Geräteliste war vorher noch nicht vergeben.</td>
+    <td>&lt;!ATTLIST geraeteListe geraeteListeID NMTOKEN #REQUIRED&gt;</td>
+  </tr>
+    <tr>
+    <td><p>Die Attribute "geraet" und "geraetekategorie" wurde entfernt und durch "geraeteListe" ersetzt.</p>&lt;kunde kundenID="4641653" geraet="AI5" geraetekategorie="Smartphone"&gt;</td>
+    <td>&lt;kunde kundenID="4641653" geraeteListe="liste1"&gt;</td>
+  </tr>
+    <tr>
+    <td>Spezialgebiet war vorher noch nicht vorhanden.</td>
+    <td>&lt;!ELEMENT spezialgebiet (#PCDATA)&gt;</td>
+  </tr>
+</tbody>
+</table>
 
 <p><b>Ergebnis</b></p>
 </div>
@@ -835,20 +862,20 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 <p>Achse: :Knotentest[Prädikat]</p>
 <p>Um sich etwas in die XML Path Language einzuarbeiten, wurde mit Hilfe des Notepad++ XML Tool "XPath Expression Evaluation" einige Abfragen durchgeführt.</p>
 <p><b>Bespiele:</b></p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/geraeteListe/child::*</i> konnten alle bisher abgegeben Geräte angezeigt werden (<a href="#anzahlgeraete">siehe Abb.4 </a>).</p>
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/geraeteListe/child::*</i> konnten alle bisher abgegeben Geräte angezeigt werden (<a href="#anzahlgeraete">siehe Abbildung 4 </a>).</p>
   <figure> 
     <img src="img/anzahlgeraete.png" alt="AnzahlderGeräte" name="anzahlgeraete" id="anzahlgeraete"/>
     <figcaption><span>Abbildung 4: <abbr title="AnzahlderGeräte">Liste der bisher abgegebenen Geräte</abbr></span></figcaption>
   </figure> 
 </p>
 <p></p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/kundenListe/child::*/adresse/plz</i> konnten alle Postleitzahlen unserer Kunden angegeben werden (<a href="#plzverstreuungunsererkunden">siehe Abb.5</a>).</p>
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/kundenListe/child::*/adresse/plz</i> konnten alle Postleitzahlen unserer Kunden angegeben werden (<a href="#plzverstreuungunsererkunden">siehe Abbildung 5</a>).</p>
   <figure> 
     <img src="img/plzverstreuungunsererkunden.png" alt="plzverstreuungunsererkunden" name="plzverstreuungunsererkunden" id="plzverstreuungunsererkunden" />
     <figcaption><span>Abbildung 5: <abbr title="plzverstreuungunsererkunden">Liste der Postleitzahlen unserer Kunden</abbr></span></figcaption>
   </figure> 
 </p>
-<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten</i> konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden (<a href="#oeffnungszeitendesrecyclinghofsnord">siehe Abb.6</a>).</p>
+<p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten</i> konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden (<a href="#oeffnungszeitendesrecyclinghofsnord">siehe Abbildung 6</a>).</p>
   <figure> 
     <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:75%" name="oeffnungszeitendesrecyclinghofsnord" id="oeffnungszeitendesrecyclinghofsnord" />
     <figcaption><span>Abbildung 6: <abbr title="oeffnungszeitendesrecyclinghofsnord">Anzeige der Öffnungszeiten des Recyclinghofs Nord</abbr></span></figcaption>
@@ -856,22 +883,22 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 </p>
 <h3><a name="xpathdocumentorder" id="xpathdocumentorder"></a>7.2 Document Order</h3>
 <p>Die Document Order beschreibt eine Ordnung über alle Knoten eines DOM-Dokuments. Die Wurzelelement ist das erste Element der Ordnung. Die Elementknoten kommen vor ihren Kindern. Kinder werden nach der Folge der XML-Quelle geordnet. Attributordnungen sind implementierungsabhängig. Eine Document Order ist immer dann sehr vom Vorteil, wenn ein XML Dokument immer mehr an Größe erreicht. Momentan ist unsere Datenbank noch recht übersichtlich nur im Laufe der Zeit und auch durch Erweiterungen kann es hilfreich sein eine Übersicht aller Knoten in diesem Dokument zu erhalten. Auf der Website: http://xmlgrid.net/ wurde aus unserer Datenbank eine Baumstruktur aller Knoten erstellt. Diese Baumstruktur kann jederzeit erweitert werden. </p>
-<p>Es folgt eine Baumstruktur, die die erste Ebene unserer Datenbank beschreibt. Zu Sehen ist das Rootelement "datenbank" und ihre darauffolgenden Kinder: geraeteListe, herstellerListe, kundenliste und recyclinghofListe. Auch der Validierer dieser Website erkannte hier ein well-formed XML (<a href="#document-order1">siehe Abb.7</a>).</p>
+<p>Es folgt eine Baumstruktur, die die erste Ebene unserer Datenbank beschreibt. Zu Sehen ist das Rootelement "datenbank" und ihre darauffolgenden Kinder: geraeteListe, herstellerListe, kundenliste und recyclinghofListe. Auch der Validierer dieser Website erkannte hier ein well-formed XML (<a href="#document-order1">siehe Abbildung 7</a>).</p>
   <figure> 
     <img src="img/document-order1.png" alt="Documentorder1" name="document-order1" id="document-order1" />
     <figcaption><span>Abbildung 7: <abbr title="document-order1">Wurzelelement und die erste Ebene ihrer Kinder</abbr></span></figcaption>
   </figure> 
- <p>In der nächsten Abbildung (<a href="#document-order2">siehe Abb.8</a>) sind die weiteren Kinder der geraeteliste zu erkennen. Die eingetragenen Geräte werden hier in einer übersichtlichen Ansicht dargestellt. Zusätzlich sind auch kleine Angaben wie die Summe der Geräte(5) angegeben. Hier sind alle Attribute und Elemente eines Geräts in Spaltenansicht angezeigt. Auch die einzelnen Bestandteile sind aufgelistet.</p>
+ <p>In der nächsten Abbildung (<a href="#document-order2">siehe Abbildung 8</a>) sind die weiteren Kinder der geraeteliste zu erkennen. Die eingetragenen Geräte werden hier in einer übersichtlichen Ansicht dargestellt. Zusätzlich sind auch kleine Angaben wie die Summe der Geräte(5) angegeben. Hier sind alle Attribute und Elemente eines Geräts in Spaltenansicht angezeigt. Auch die einzelnen Bestandteile sind aufgelistet.</p>
   <figure> 
     <img src="img/document-order2.png" alt="Documentorder2" name="document-order2" id="document-order2" />
     <figcaption><span>Abbildung 8: <abbr title="document-order2">Kinder der Geräteliste</abbr></span></figcaption>
   </figure> 
-<p>In der folgenden Abbildung (<a href="#document-order3">siehe Abb.9</a>) sind nun die Kundenliste und die Herstellerliste als Baumstruktur abgebildet. Die Kinderelemente der Adresse werden ebenfalls in der Baumstruktur abgebildet.</p>
+<p>In der folgenden Abbildung (<a href="#document-order3">siehe Abbildung 9</a>) sind nun die Kundenliste und die Herstellerliste als Baumstruktur abgebildet. Die Kinderelemente der Adresse werden ebenfalls in der Baumstruktur abgebildet.</p>
   <figure> 
     <img src="img/document-order3.png" alt="Documentorder3" name="document-order3" id="document-order3"/>
     <figcaption><span>Abbildung 9: <abbr title="document-order3">Kinder der Kunden- und Herstellerliste</abbr></span></figcaption>
   </figure> 
-<p> Die letzte Abbildung (<a href="#document-order4">siehe Abb.10</a>) zeigt die Übersicht der Recyclingofsliste. Die Kinderelemente Adresse, Öffnungszeiten und Spezialgebiete werden mitabgebildet.</p>
+<p> Die letzte Abbildung (<a href="#document-order4">siehe Abbildung 10</a>) zeigt die Übersicht der Recyclingofsliste. Die Kinderelemente Adresse, Öffnungszeiten und Spezialgebiete werden mitabgebildet.</p>
   <figure> 
     <img src="img/document-order4.png" alt="Documentorder4" name="document-order4" id="document-order4"/>
     <figcaption><span>Abbildung 10: <abbr title="document-order4">Kinder der Recyclinghofsliste</abbr></span></figcaption>
@@ -1095,7 +1122,7 @@ padding: 0px;
 
 <h3><a name="xslt-geraeteliste" id="xslt-geraeteliste"></a>8.2 Geräteliste</h3>
 <h4>8.2.1 Berechnung des Recyclinggrades</h4>
-<p>Anzeige aller Geräte (<a href="#geraeteliste">Abb. 11</a>) im Bestand mit Angabe von Anteil und dem Recyclinggrad.<br />
+<p>Anzeige aller Geräte (<a href="#geraeteliste">Abbildung  11</a>) im Bestand mit Angabe von Anteil und dem Recyclinggrad.<br />
 Der Recyclinggrad wird für jedes Geräte berechnet.</p>
 <h4>8.2.2 Angaben in der Variable "geraete"</h4>
 <div class="exampleInner"><pre>
@@ -1123,7 +1150,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
   </figure> 
 
 <h3><a name="xslt-herstelleruebersicht" id="xslt-herstelleruebersicht"></a>8.3 Herstellerübersicht</h3>
-<p>Ein Liste (<a href="#herstellerliste">Abb. 12</a>) aller in der Datenbank vorhandene Hersteller.</p>
+<p>Ein Liste (<a href="#herstellerliste">Abbildung  12</a>) aller in der Datenbank vorhandene Hersteller.</p>
 <h4>8.3.1. XML-Fragment</h4>
 <div class="exampleInner"><pre>
 &lt;hersteller herstellerID="Samsung"&gt;
@@ -1165,7 +1192,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 
 <h3><a name="xslt-kundenliste" id="xslt-kundenliste"></a>8.4 Kundenliste</h3>
 <h4>8.4.1 Herausfiltern von nicht vorhandenen Daten</h4>
-<p>Eine vollständige Kundliste (<a href="#kundenliste">Abb. 13</a>) aller im System gespeicherten Kunden.</p>
+<p>Eine vollständige Kundliste (<a href="#kundenliste">Abbildung  13</a>) aller im System gespeicherten Kunden.</p>
 <p>Dadurch das wir in unserer XML-Datei für Kunden nur eine Telefonnummer und den Namen voraussetzen, <br />
   bleiben manche Felder unausgefüllt diese werden über bestimmte Anweisungen und Abfragen nicht in dem View angezeigt.</p>
 <h4>8.4.2 Filtern mit dem if-Befehl</h4>
@@ -1193,7 +1220,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <h4>8.5.1 Anwendungsfall: Kunde kommt und möchte sein Gerät zurückgeben</h4>
 <p>Der Kunde kommt zu uns und möchte sein Gerät recycling lassen. Er möchte gerne wissen welcher Recyclinghof in seiner Nähe sein Gerät zurücknimmt</p>
 <p>Leider hat er bei seiner Registrierung seine Postleitzahl vergessen einzugeben, um jedoch einen Recyclinghof in seiner näheren Umgebung zu finden is die Postleitzahl zwingend notwendig.</p>
-<p>Der Fehler wird mit durch einen rotmarkierten Text (<a href="#plzfehlt">Abb. 14</a>) ausgegeben.</p>
+<p>Der Fehler wird mit durch einen rotmarkierten Text (<a href="#plzfehlt">Abbildung  14</a>) ausgegeben.</p>
 <p>Unser System liefert einen Fehler und bittet die Postleitzahl nachzuliefern.</p>
 <h4>8.5.2 XML Kunde "Lily"</h4>
 <div class="exampleInner"><pre>
@@ -1340,7 +1367,7 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 
 <h3><a name="xslt-kundenrecyclinghofnahe" id="xslt-kundenrecyclinghofnahe"></a>8.7 Anzeige welcher Recyclinghof ist in der Nähe des Kunden</h3>
 <p>Nachdem die Postleitzahl eingefügt wurde, können wir nun anhand der PLZ ermitteln welcher Recyclinghof sich in der Nähe des Kunde befindet.</p>
-<p>Das lösen wir in dem wir die ersten drei Zahlen der Recyclinhöfe-Postleitzahl mit der Kunden-Postleitzahl vergleichen (<a href="#plznahe">Abb. 16</a>).</p>
+<p>Das lösen wir in dem wir die ersten drei Zahlen der Recyclinhöfe-Postleitzahl mit der Kunden-Postleitzahl vergleichen (<a href="#plznahe">Abbildung  16</a>).</p>
 <h4>XSLT-Code </h4>
 <div class="exampleInner">
   <pre>
@@ -1373,10 +1400,16 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 </figure> 
 
 <h3><a name="xslt-probleme" id="xslt-probleme"></a>8.8 Probleme und Herausforderungen bei der Entwicklung der Views</h3>
+<p>Die Angabe der DTD in der XML hat im Chrome Browser und Safari Probleme verursacht. Die Daten werden nicht geladen und es wird eine Sicherheitsmeldung ausgegeben (siehe Abbildung 17). Unsere Anwendung ist momentan für Firefox optimiert.</p>
 <figure> 
     <img src="img/ChromeError.png" alt="Fehler Chrome Browser" />
     <figcaption><span>Abbildung 17: <abbr title="ChromeFehler">Fehler beim Chrome Browser</abbr></span></figcaption>
 </figure> 
+
+<p>Ein weiteres Problem war die Validierung der einzelnen XML Dateien. Die Aufsplittung der Daten in einzelne XML Dateien hat bei der Validierung einen Fehler ergeben. Das Problem wurde durch eine Zentrale XML Datei mit dem Wurzelelement <i>datenbank</i> erstellt.</p>
+<p>
+Ein weiteres Problem das durch ein großes XML Dokument entstanden ist war die selektierun der XSL Stylesheets für die jeweilige View. Leider war es uns nicht möglich dieses Problem zu lösen. Ein möglicher Ansatz für die Lösung des Problems wäre eine Synchronisierung auf Dateiebene. </p>
+
 </div> 
 <hr />
 <div class="div1">
@@ -1402,9 +1435,10 @@ div count(bestandteile/bestandteil), '###,###,##0.00')"/&gt; %&lt;/strong&gt;
 <p>Folgende Tools haben wir zur Umsetzung des Projekts verwendet:
 <ul>
 <li>Dreamweaver</li>
-<li>Sublime</li>
+<li>Sublime 2</li>
 <li>Firefox</li>
 <li>GitHub</li>
+<li>xmllint</li>
 </ul>
 </p>
 <p>Folgende Tools haben wir zur Dokumentation und Präsentation des Projekts verwendet:
