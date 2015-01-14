@@ -15,8 +15,17 @@
 </head>
 <body>
 <div id="container">
-<div id="head"></div>
-
+<div id="head">
+<ul>
+<li><a href="../index.html">Startseite</a></li>
+<li><a href="../geraeteliste/datenbank.xml">Geräteliste</a></li>
+<li><a href="../herstellerliste/datenbank.xml">Herstellerliste</a></li>
+<li><a href="../kundenliste/datenbank.xml">Kundeliste</a></li>
+<li><a href="../plzfehlt/datenbank.xml">PLZ fehlt</a></li>
+<li><a href="../recyclinghofexakt/datenbank.xml">Recyclinghof exakt</a></li>
+<li><a href="../recyclinghofnahe/datenbank.xml">Recyclinhof in der Nähe</a></li>
+</ul>
+</div>
 <div id="content">
 <div id="links">
 	<h1>Kunde</h1>
@@ -45,8 +54,6 @@
         <li><xsl:value-of select="text()"/></li>
      </xsl:for-each>
      </ul>
-     <!--<p>Möchte sein Gerät <strong><xsl:value-of select="$lily/@geraet"/></strong> zurückgeben.</p>
-     <p>Es handelt sich hierbei um ein <strong><xsl:value-of select="$lily/@geraetekategorie"/></strong>.</p>-->
 </div>
 	
 <div id="rechts">

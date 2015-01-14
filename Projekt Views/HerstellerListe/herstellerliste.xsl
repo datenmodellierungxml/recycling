@@ -13,8 +13,17 @@
 </head>
 <body>
 <div id="container">
-	<div id="head"></div>
-   
+<div id="head">
+<ul>
+<li><a href="../index.html">Startseite</a></li>
+<li><a href="../geraeteliste/datenbank.xml">Geräteliste</a></li>
+<li><a href="../herstellerliste/datenbank.xml">Herstellerliste</a></li>
+<li><a href="../kundenliste/datenbank.xml">Kundeliste</a></li>
+<li><a href="../plzfehlt/datenbank.xml">PLZ fehlt</a></li>
+<li><a href="../recyclinghofexakt/datenbank.xml">Recyclinghof exakt</a></li>
+<li><a href="../recyclinghofnahe/datenbank.xml">Recyclinhof in der Nähe</a></li>
+</ul>
+</div>
 <div id="content">
 
 <div id="links">
