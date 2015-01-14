@@ -113,7 +113,7 @@
 		<adresse>
 			<name>Max Mustermann</name>
 			<strasse>Musterstr. 1</strasse>
-			<plz>12345 MusterstraÃ?e</plz>
+			<plz>12345</plz>
 			<ort>Musterstadt</ort>
 			<telefon>0911 / 12 53 55</telefon>
 		</adresse>
@@ -128,9 +128,12 @@
 			<telefon>016046848647</telefon>
 		</adresse>
 	</kunde>
-	<kunde kundenID="546586" geraeteListe="liste1">
+	<kunde kundenID="11112014_35" geraeteListe="liste1">
 		<adresse>
 			<name>Lily Aldrin</name>
+			<strasse>Mosbacherstraße 45</strasse>
+			<plz>90411</plz>
+			<ort>Nürnberg</ort>
 			<telefon>+49 911 54365415</telefon>
 		</adresse>
 	</kunde>
