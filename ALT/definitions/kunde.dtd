@@ -1,8 +1,0 @@
-<!-- Angabe der Kundenadresse ist optional, kundenID jedoch Pflicht. -->
-<!ENTITY % adresse SYSTEM "adresse.dtd">
-%adresse;
-
-<!ELEMENT kundenListe (kunde*) >
-
-<!ELEMENT kunde (adresse?) > 
-<!ATTLIST kunde kundenID CDATA #REQUIRED >

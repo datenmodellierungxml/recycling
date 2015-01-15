@@ -1,7 +1,0 @@
-<!-- Adresse kann mehrere Telefonnummern beinhalten, muss aber mindestens eine besitzen. --> 
-<!ELEMENT adresse (name, strasse, plz, ort, telefon+) >
-<!ELEMENT name (#PCDATA)>
-<!ELEMENT strasse (#PCDATA)>
-<!ELEMENT plz (#PCDATA)>
-<!ELEMENT ort (#PCDATA)>
-<!ELEMENT telefon (#PCDATA)>

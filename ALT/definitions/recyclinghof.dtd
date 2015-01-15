@@ -1,8 +1,0 @@
-<!ENTITY % adresse SYSTEM "adresse.dtd">
-%adresse;
-
-<!ELEMENT recyclinghofListe (recyclinghof*)>
-
-<!ELEMENT recyclinghof (adresse, oeffnungszeiten+) >
-<!ATTLIST recyclinghof recyclinghofID CDATA #REQUIRED >
-<!ELEMENT oeffnungszeiten (#PCDATA)>

@@ -1,7 +1,0 @@
-<!ENTITY % adresse SYSTEM "adresse.dtd">
-%adresse;
-
-<!ELEMENT herstellerListe (hersteller*)>
-<!ELEMENT hersteller (adresse+) > 
-<!ATTLIST hersteller herstellerID CDATA #REQUIRED > 
-
