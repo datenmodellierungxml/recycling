@@ -102,16 +102,15 @@ div.exampleHeader { font-weight: bold;
 </head>
 <body>
 <div class="head">
-<p><a href="http://www.w3.org/"><img src="./XML Linking Language (XLink) Version 1.1_files/w3c_home" alt="W3C" height="48" width="72"></a></p>
 <h1><a name="title" id="title"></a>Projektdokumentation zum Thema Smartphone-Recycling</h1>
 <h2><a name="w3c-doctype" id="w3c-doctype"></a>Datenmodellierung mit XML</h2>
 <dl>
 <dt>This version:</dt>
-<dd><a href="http://www.w3.org/TR/2010/REC-xlink11-20100506/">http://www.w3.org/TR/2010/REC-xlink11-20100506/</a></dd>
+<dd>-</dd>
 <dt>Latest version:</dt>
-<dd><a href="./XML Linking Language (XLink) Version 1.1_files/XML Linking Language (XLink) Version 1.1.html">http://www.w3.org/TR/xlink11/</a></dd>
+<dd>-</dd>
 <dt>Previous versions:</dt>
-<dd><a href="http://www.w3.org/TR/2010/PR-xlink11-20100225/">http://www.w3.org/TR/2010/PR-xlink11-20100225/</a> <a href="http://www.w3.org/TR/2008/WD-xlink11-20080331/">http://www.w3.org/TR/2008/WD-xlink11-20080331/</a></dd>
+<dd>-</dd>
 <dt>Editors:</dt>
 <div style="height:60px;"></div>
 <dd>Jennifer Steinbinder, 2262360</dd>
@@ -119,12 +118,10 @@ div.exampleHeader { font-weight: bold;
 <dd>Tobias Linke, 2432648</dd>
 <div style="height:60px;"></div>
 <dd>Josef Eiter, 2318404</dd>
+<dt><br/>
+<dd>Nürnberg, 16. Januar 2014</dd>
+<dt>
 </dl>
-<p>Please refer to the <a href="http://www.w3.org/XML/2010/xlink-11-errata.html"><strong>errata</strong></a> for this document, which may include normative corrections.</p>
-<p>See also <a href="http://www.w3.org/2003/03/Translations/byTechnology?technology=xlink11"><strong>translations</strong></a>.</p>
-<p>This document is also available in these non-normative formats: <a href="http://www.w3.org/TR/xlink11/REC-xlink11-20100506.xml">XML</a>.</p>
-<p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>&nbsp;©&nbsp;2010&nbsp;<a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.org/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>),
-All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p>
 </div>
 <hr>
 <div>
@@ -172,6 +169,9 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 10  <a href="#tools">Verwendetet Tools</a><br>
 11 <a href="#fazit">Fazit</a><br>
 12 <a href="#aufgabenverteilung">Aufgabenverteilung</a><br>
+A <a href="#appendix">Anhang</a></br>
+A.1 <a href="#appendix">Präsentation</a></br>
+A.2 <a href="#appendix">Quellcode</a></br>
 </div>
 <hr>
 <h2><a name="intro" id="intro"></a>1 Einleitung</h2>
@@ -188,7 +188,7 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 <p>Der Kunde möchte sein Gerät recycling. Zuerst wird ihm eine Auswahl des Gerätetyps angezeigt: Smartphone, Tablet, Handy oder sonstige elektrische Geräte. Folglich muss er den Verschmutzungsgrad angeben. Dazu kann der Kunde unter folgenden Zuständen auswählen: gereinigt, akzeptabel und verschmutzt. Falls das Gerät verschmutzt ist, wird ihm eine kostenpflichtige Säuberung angeboten. Wird diese verneint, wird ihm in einer Anzeige mitgeteilt, dass sein Gerät leider nicht recycelt werden kann. Bei einem gesäuberten Gerät kann nun unser Recyclingprozess weitergeführt werden. Nun wird der Zustand des Geräts geprüft. Bei einem neuwertigen Gerät wird daraufhin der Hersteller des Geräts identifiziert. Angrenzend entscheidet der Kunde, ob er sein Gerät selbst an den Hersteller verschickt oder Handyrecycling.de kostenpflichtíg das Gerät an den Hersteller versendet. Ist jedoch das Gerät stark gebraucht, entscheidet der Kunde, ob er unseren Service, dass das Gerät von uns aus  zum Recyclinghof versendet wird, in Anspruch nimmt oder er selber das Gerät recyclen möchte. Entscheidet er sich für das Letztere wird ihm mit Hilfe seiner Adressdaten der näheste Recyclinghof angezeigt.</p>
 <p>
 <figure>
-  <img src="img/epkhandyrecyclingde.png" style="width:70%" alt="Epkhandyrecyclingde" name ="epkhandyrecyclingde" id="epkhandyrecyclingde"/>
+  <img src="img/epkhandyrecyclingde.png" style="width:80%" alt="Epkhandyrecyclingde" name ="epkhandyrecyclingde" id="epkhandyrecyclingde"/>
   <figcaption><span>Abbildung 1: <abbr title="epkhandyrecyclingde">EPK Modell Geschäftsprozess</abbr></span></figcaption>
 </figure>
 </p>
@@ -202,7 +202,7 @@ All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#
 <p>Das Datenmodell wurde komplett überarbeitet und es wurde mit einigen Elementen erweitert (siehe Abschnitt <a href="#dmneu">3.2 Neues Datenmodell</a>).</p> 
 <p>
 <figure>
-  <img src="img/recycling_alt.png" style="width:80%"/>
+  <img src="img/recycling_alt.png" style="width:90%"/>
  <figcaption><span>Abbildung 2: <abbr title="Initiales Datenmodell">Initiales Datenmodell</abbr></span></figcaption>
 </figure>
 </p>
@@ -215,7 +215,7 @@ Das Datemodell in Abbildung 3 enthält nun Elemente die unsere Geräte, Herstell
 <p>Das Erweitern des Elements Bestandteile um die Attribute Anteil und Recyclinggrad ermöglicht es zu einem bestimmten Gerät die Zusammensetzung von Bestandteile anzugeben. Der Recyclinggrad gibt an zu wie viel Prozent das jeweilige Bestandteil recyclebar ist.</p> 
 <p>
 <figure>
-  <img src="img/recycling.png" style="width:80%"/>
+  <img src="img/recycling.png" style="width:85%"/>
  <figcaption><span>Abbildung 3: <abbr title="Initiales Datenmodell">Neues Datenmodell</abbr></span></figcaption>
 </figure>
 </p>
@@ -905,7 +905,7 @@ Das Einsetzen von Sonderzeichen in die KundenID wurde geprüft.</p>
 </p>
 <p>Mit Hilfe des XPath-Ausdrucks: <i>/datenbank/recyclinghofListe/recyclinghof[@=recyclinghofID="HofNord"]/oeffnungszeiten</i> konnten die Öffnungszeiten des Recyclinghofs Nord angezeigt werden (<a href="#oeffnungszeitendesrecyclinghofsnord">siehe Abbildung 8</a>).</p>
   <figure> 
-    <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:75%" name="oeffnungszeitendesrecyclinghofsnord" id="oeffnungszeitendesrecyclinghofsnord" />
+    <img src="img/oeffnungszeitendesrecyclinghofsnord.png" alt="oeffnungszeitendesrecyclinghofsnord" style="width:85%" name="oeffnungszeitendesrecyclinghofsnord" id="oeffnungszeitendesrecyclinghofsnord" />
     <figcaption><span>Abbildung 8: <abbr title="oeffnungszeitendesrecyclinghofsnord">Anzeige der Öffnungszeiten des Recyclinghofs Nord</abbr></span></figcaption>
   </figure> 
 </p>
@@ -1482,9 +1482,9 @@ Ein weiteres Problem das durch ein großes XML Dokument entstanden ist war die s
 <h2><a name="fazit" id="fazit"/>11 Fazit</h2>
 <p>Nach anfänglichen Startschwierigkeiten mit der Materie "Datenmodellierung in XML" konnten wir uns schnell für das Thema begeistern und einarbeiten. Durch die Projektarbeit haben wir viel zum Thema XML gelernt, wenn wir auch nur an der Oberfläche kratzen konnten. Wir konnten uns eine strukturierte Beschreibung von Daten mittels der Auszeichnungssprache XML und deren Einsatz sehr gut anarbeiten. Wir haben ein sehr gutes Verständnis der Modellierung von Daten mittels XML und ddazu assoziierten Technologien erreicht. Werkzeuge zur Modellierung und Nutzung von XML-basierten Datenstrukturen haben wir ebenfalls kennengerlernt und angewendet. </p>
 <p>
-Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine vernünftgen Views entwickeln lassen und so mussten wir zu einem sehr späten Zeitpunkt im Projekt nochmals unser Datenmodell überdenken und ändern.
+Wir stellten fest, das sich aus einem theoretischen Datenmodell noch lange keine vernünftgen Views entwickeln lassen und so mussten wir zu einem sehr späten Zeitpunkt im Projekt nochmals unser Datenmodell überdenken und ändern. Jedoch sind XML und XSLT gute und schnelle Wege Daten zu visualisieren auch wenn die Fehlersuche sich mit wenig Erfahrung als eher schwierig. 
 </p>
-<p>Leider mussten wir auch feststellen, dass XSLT 1.0 sehr eingeschränkt arbeitet, so hätten wir gerne eine komplexere Webseite mit mehreren Menüpunkten aus unserer XML-Datenbank erzeugt und komplexere Abfragen entwickelt.</p>
+<p>Leider mussten wir auch feststellen, dass XSLT 1.0 sehr eingeschränkt arbeitet, so hätten wir gerne eine komplexere Webseite mit mehreren Menüpunkten aus unserer XML-Datenbank erzeugt und komplexere Abfragen entwickelt. Auch die XML Dokumente werden bei größeren Datenmengen schnell unübersichtlich.</p>
 <p>
 Außerdem konnten wir auf Grund unserer Gruppengröße das Thema JSON nicht mehr bearbeiten. Allerdings fanden wir eine Gruppengröße von drei Personen sehr angenehm, da wir keinen großen Reibungsverlust bei der Kommunikation hatten. 
 </p>
@@ -1492,575 +1492,14 @@ Außerdem konnten wir auf Grund unserer Gruppengröße das Thema JSON nicht mehr
 <hr />
 <div class="div1">
 <h2><a name="aufgabenverteilung" id="aufgabenverteilung"/>12 Aufgabenverteilung</h2>
-<p>Grundsätzlich hat im Projekt "Recycling" alle Teammitglieder in allen Bereichen seine Kenntnisse vertieft und weiter ausgeprägt. Jeder war im Entstehungsprozess und an der Entwicklung beteiligt.  Bei einer Gruppengröße von 3 Personen ist uns eigentlich nichts anderes übrig geblieben, um die Anforderungen des Projekts zu erfüllen. </p>
+<p>Grundsätzlich hat im Projekt "Recycling" alle Teammitglieder in allen Bereichen seine Kenntnisse vertieft und weiter ausgeprägt. Jeder war im Entstehungsprozess und an der Entwicklung beteiligt. Bei einer Gruppengröße von 3 Personen ist uns eigentlich nichts anderes übrig geblieben, um die Anforderungen des Projekts zu erfüllen. Zudem wurde durch das gleichmäßige Verteilen von Aufgaben der Lerneffekt verstärkt, da jeder bei jedem Themengebiet mitgewirkt hat.</p>
 <p>Jeder war auch umfassend an der Dokumentation des Projekts beteiligt.</p>
 </div>
 
 
-<!--<div class="div1">
-<h2><a name="references" id="references"></a>A Reference</h2>
-<div class="div2">
-<h3><a name="refnorm" id="refnorm"></a>A.1 Normative References</h3>
-<dl>
-<dt class="label"><a name="rfc3023" id="rfc3023"></a>RFC&nbsp;3023</dt>
-<dd><a href="http://www.ietf.org/rfc/rfc3023.txt"><cite>RFC 3023: XML Media Types</cite></a>. Makoto, M., St. Laurent, S. and D. Kohn, editors. Internet Engineering Task Force, 2001. (See http://www.ietf.org/rfc/rfc3023.txt.)</dd>
-<dt class="label"><a name="rfc3986" id="rfc3986"></a>RFC&nbsp;3986</dt>
-<dd><a href="http://www.ietf.org/rfc/rfc3986.txt"><cite>RFC 3986: Uniform Resource Identifier (URI): Generic Syntax</cite></a>. Berners-Lee, T., Fielding, R., and Masinter, L, editors. Internet Engineering Task Force, 2005. (See http://www.ietf.org/rfc/rfc3986.txt.)</dd>
-<dt class="label"><a name="rfc3987" id="rfc3987"></a>RFC&nbsp;3987</dt>
-<dd><a href="http://www.ietf.org/rfc/rfc3987.txt"><cite>RFC 3987: Internationalized Resource Identifiers (IRIs)</cite></a>. Internet Engineering Task Force, 2005. (See http://www.ietf.org/rfc/rfc3987.txt.)</dd>
-<dt class="label"><a name="leiri" id="leiri"></a>Legacy extended IRIs</dt>
-<dd><a href="http://www.w3.org/TR/leiri"><cite>Legacy extended IRIs for XML resource identification</cite></a>. Henry S. Thompson, Richard Tobin, and Norman Walsh, editors. World Wide Web Consortium, 2008. (See http://www.w3.org/TR/leiri.)</dd>
-<dt class="label"><a name="XML" id="XML"></a>XML</dt>
-<dd><a href="http://www.w3.org/TR/REC-xml/"><cite>Extensible Markup Language (XML) 1.0 (Fifth Edition).</cite></a> Tim Bray, Jean Paoli, C.M. Sperberg-McQueen, et. al., editors. World Wide Web Consortium, 2008. (See http://www.w3.org/TR/REC-xml/.)</dd>
-<dt class="label"><a name="rfc2119" id="rfc2119"></a>RFC&nbsp;2119</dt>
-<dd><a href="http://www.ietf.org/rfc/rfc2119.txt"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner, editor. Internet Engineering Task Force, 1997. (See http://www.ietf.org/rfc/rfc2119.txt.)</dd>
-<dt class="label"><a name="xbase" id="xbase"></a>XML Base</dt>
-<dd><a href="http://www.w3.org/TR/xmlbase/"><cite>XML Base (Second Edition)</cite></a>. Jonathan Marsh and Richard Tobin, editors. World Wide Web Consortium, 2009. (See http://www.w3.org/TR/xmlbase/.)</dd>
-<dt class="label"><a name="xname" id="xname"></a>XML Names</dt>
-<dd><a href="http://www.w3.org/TR/REC-xml-names/"><cite>Namespaces in XML 1.0 (Third Edition)</cite></a>. Tim Bray, Dave Hollander, Andrew Layman, et. al. editors. World Wide Web Consortium, 2009. (See http://www.w3.org/TR/REC-xml-names/.)</dd>
-<dt class="label"><a name="xpointer-framework" id="xpointer-framework"></a>XPointer Framework</dt>
-<dd><a href="http://www.w3.org/TR/xptr-framework/"><cite>XPointer Framework</cite></a> Grosso, Paul, Eve Maler, Jonathan Marsh, and Norman Walsh, editors. World Wide Web Consortium, 2003. (See http://www.w3.org/TR/xptr-framework/.)</dd>
-<dt class="label"><a name="xpointer-element" id="xpointer-element"></a>XPointer element() Scheme</dt>
-<dd><a href="http://www.w3.org/TR/xptr-element/"><cite>XPointer element() Scheme</cite></a> Grosso, Paul, Eve Maler, Jonathan Marsh, and Norman Walsh, editors. World Wide Web Consortium, 2003. (See http://www.w3.org/TR/xptr-element/.)</dd>
-<dt class="label"><a name="CharMod" id="CharMod"></a>CharMod Fundamentals</dt>
-<dd><a href="http://www.w3.org/TR/charmod/"><cite>Character Model for the World Wide Web 1.0: Fundamentals</cite></a> Dürst, Martin J., François Yergeau, Richard Ishida, <em>et. al.</em>, editors. World Wide Web Consortium, 2005. (See http://www.w3.org/TR/charmod/.)</dd>
-</dl>
-</div>
-<div class="div2">
-<h3><a name="refinform" id="refinform"></a>A.2 Non-Normative References</h3>
-<dl>
-<dt class="label"><a name="xlink10-ext" id="xlink10-ext"></a>Extending XLink 1.0</dt>
-<dd><a href="http://www.w3.org/TR/xlink10-ext"><cite>Extending XLink 1.0</cite></a>, Norman Walsh, Editor. World Wide Web Consortium, 27&nbsp;Jan&nbsp;2005. (See http://www.w3.org/TR/xlink10-ext.)</dd>
-<dt class="label"><a name="xlink10" id="xlink10"></a>XML Linking Language (XLink) Version 1.0</dt>
-<dd><a href="http://www.w3.org/TR/xlink/"><cite>XML Linking Language (XLink) Version 1.0</cite></a>, Steven DeRose, David Orchard, and Eve Maler, Editors. World Wide Web Consortium, 27&nbsp;Jun&nbsp;2001. (See http://www.w3.org/TR/xlink/.)</dd>
-<dt class="label"><a name="dexter" id="dexter"></a>Dexter</dt>
-<dd>"The Dexter Hypertext Reference Model." Halasz, Frank. 1994. In Communications of the Association for Computing Machinery 37 (2), February 1994: 30-39.</dd>
-<dt class="label"><a name="fress" id="fress"></a>FRESS</dt>
-<dd>Steven J. DeRose and Andries van Dam. 1999. "Document structure in the FRESS Hypertext System." Markup Languages 1 (1) Winter. Cambridge: MIT Press: 7-32.</dd>
-<dt class="label"><a name="html" id="html"></a>HTML</dt>
-<dd><a href="http://www.w3.org/TR/1999/REC-html401-19991224/"><cite>HTML 4.01 Specification</cite></a>. World Wide Web Consortium, 1999. (See http://www.w3.org/TR/1999/REC-html401-19991224/.)</dd>
-<dt class="label"><a name="intermedia" id="intermedia"></a>Intermedia</dt>
-<dd>"Intermedia: The Concept and the Construction of a Seamless Information Environment." Yankelovich, Nicole, Bernard J. Haan, Norman K. Meyrowitz, and Steven M. Drucker. 1988. IEEE Computer 21 (January, 1988): 81-96.</dd>
-<dt class="label"><a name="iso10744" id="iso10744"></a>ISO/IEC 10744</dt>
-<dd><a href="http://www.y12.doe.gov/sgml/wg8/document/1920.htm"><cite>ISO/IEC 10744-1992 (E). Information technology-Hypermedia/Time-based Structuring Language (HyTime).</cite></a> [Geneva]: International Organization for Standardization, 1992. <a href="http://www.y12.doe.gov/sgml/wg8/document/1920.htm"><cite>Extended Facilities Annex.</cite></a> ISO (International Organization for Standardization). [Geneva]: International Organization for Standardization, 1996. (See
-http://www.y12.doe.gov/sgml/wg8/document/1920.htm.)</dd>
-<dt class="label"><a name="microcosm" id="microcosm"></a>MicroCosm</dt>
-<dd><cite>Rethinking Hypermedia: The Microcosm Approach.</cite> Hall, Wendy, Hugh Davis, and Gerard Hutchings. 1996. Boston: Kluwer Academic Publishers. ISBN 0-7923-9679-0.</dd>
-<dt class="label"><a name="ohs" id="ohs"></a>OHS</dt>
-<dd>"The Role of XML in Open Hypermedia Systems." van Ossenbruggen, Jacco, Anton Eliëns and Lloyd Rutledge. Position paper for the 4th Workshop on Open Hypermedia Systems, ACM Hypertext '98.</dd>
-<dt class="label"><a name="rdf" id="rdf"></a>RDF</dt>
-<dd><a href="http://www.w3.org/TR/rdf-primer/"><cite>RDF Primer</cite></a>. Manola, Frank and Eric Miller, editors. World Wide Web Consortium, 2004. (See http://www.w3.org/TR/rdf-primer/.)</dd>
-<dt class="label"><a name="tei" id="tei"></a>TEI</dt>
-<dd><cite>Guidelines for Electronic Text Encoding and Interchange</cite>. C. M. Sperberg-McQueen and Lou Burnard, editors. Association for Computers and the Humanities (ACH), Association for Computational Linguistics (ACL), and Association for Literary and Linguistic Computing (ALLC). Chicago, Oxford: Text Encoding Initiative, 1994.</dd>
-<dt class="label"><a name="infoset" id="infoset"></a>XIS</dt>
-<dd><a href="http://www.w3.org/TR/xml-infoset/"><cite>XML Information Set</cite></a>. John Cowan and Richard Tobin, editors. World Wide Web Consortium, 2004. (See http://www.w3.org/TR/xml-infoset/.)</dd>
-<dt class="label"><a name="xinclude" id="xinclude"></a>XInclude</dt>
-<dd><a href="http://www.w3.org/TR/xinclude/"><cite>XML Inclusions (XInclude) Version 1.0 (Second Edition)</cite></a>. Jonathan Marsh, David Orchard, and Daniel Veillard, editors. World Wide Web Consortium, 2006. (See http://www.w3.org/TR/xinclude/.)</dd>
-<dt class="label"><a name="xlreq" id="xlreq"></a>XLREQ</dt>
-<dd><a href="http://www.w3.org/TR/1999/NOTE-xlink-req-19990224/"><cite>XML XLink Requirements Version 1.0</cite></a>. Steven DeRose, editor. World Wide Web Consortium, 1999. (See http://www.w3.org/TR/1999/NOTE-xlink-req-19990224/.)</dd>
-<dt class="label"><a name="xptr" id="xptr"></a>XPTR</dt>
-<dd><a href="http://www.w3.org/TR/xptr/"><cite>XML Pointer Language (XPointer)</cite></a>. Ron Daniel, Steve DeRose, Eve Maler, <em>et. al.</em> editors. World Wide Web Consortium, 2002. (See http://www.w3.org/TR/xptr/.)</dd>
-<dt class="label"><a name="xmlschema-1" id="xmlschema-1"></a>XML Schema Part 1: Structures</dt>
-<dd><a href="http://www.w3.org/TR/xmlschema-1/"><cite>XML Schema Part 1: Structures</cite></a>. David Beech, Noah Mendelsohn, Murray Maloney, and Henry S. Thompson, Editors. World Wide Web Consortium, 2004.</dd>
-<dt class="label"><a name="relax-ng" id="relax-ng"></a>RELAX NG</dt>
-<dd><a href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=52348"><cite>ISO/IEC 19757-2:2008 Information technology -- Document Schema Definition Language (DSDL) -- Part 2: Regular-grammar-based validation -- RELAX NG</cite></a>. International Organization for Standardization, 2008.</dd>
-<dt class="label"><a name="css" id="css"></a>CSS</dt>
-<dd><a href="http://www.w3.org/TR/CSS2"><cite>Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification</cite></a>. Bert Bos, Tantek Çelik, Ian Hickson, et. al., editors. World Wide Web Consortium, 2009. (See http://www.w3.org/TR/CSS2.)</dd>
-<dt class="label"><a name="ruby" id="ruby"></a>Ruby Annotation</dt>
-<dd><a href="http://www.w3.org/TR/ruby/"><cite>Ruby Annotation</cite></a>. Michel Suignard, Tex Texin, Marcin Sawicki, <em>et. al.</em>, Editors. World Wide Web Consortium, 2001. (See http://www.w3.org/TR/ruby/.)</dd>
-</dl>
-</div>
-</div>-->
-<!--<div class="div1">
-<h2><a name="sample-dtd-appx" id="sample-dtd-appx"></a>B Sample DTD (Non-Normative)</h2>
-<p>The following DTD makes invalid (for purposes of argument) all XLink constructs for which this specification does not specify behavior. It is provided only as a convenience for application developers; it has no normative status.</p>
-<p>The following assumptions hold for this DTD:</p>
-<ul>
-<li>
-<p>Only constructs that have XLink-defined meaning are allowed.</p>
-</li>
-<li>
-<p>No "foreign" vocabularies are mixed in, since DTDs do not work well with namespaces.</p>
-</li>
-<li>
-<p>The use of <b>ANY</b> means there is typically content provided in the element that is used by XLink in some way.</p>
-</li>
-<li>
-<p>The use of the <code>(title*)</code> construct means that any non-title content provided has no XLink-defined use.</p>
-</li>
-<li>
-<p>Elements are named after the XLink element types they represent.</p>
-</li>
-</ul>
-<p>Other assumptions and conditions appear as comments in the DTD.</p>
-<div class="exampleInner">
-<pre>&lt;!ENTITY % showActuate
-  "xlink:show      (new
-                   |replace
-                   |embed
-                   |other
-                   |none)          #IMPLIED
-   xlink:actuate   (onLoad
-                   |onRequest
-                   |other
-                   |none)          #IMPLIED"&gt;
-
-&lt;!ENTITY % simpleAttrs
-  'xlink:type      (simple)        "simple"
-   xlink:href      CDATA           #IMPLIED
-   xlink:role      CDATA           #IMPLIED
-   xlink:arcrole   CDATA           #IMPLIED
-   xlink:title     CDATA           #IMPLIED
-   %showActuate;'&gt;
-
-&lt;!ELEMENT simple ANY&gt;
-&lt;!ATTLIST simple
-   xmlns:xlink     CDATA           #FIXED "http://www.w3.org/1999/xlink"
-   %simpleAttrs;&gt;
-
-&lt;!ENTITY % extendedContent.extras ""&gt;
-
-&lt;!ENTITY % extendedModel
-  "(title|resource|locator|arc %extendedContent.extras;)*"&gt;
-
-&lt;!ENTITY % extendedAttrs
-  'xlink:type      (extended)      #FIXED "extended"
-   xlink:role      CDATA           #IMPLIED
-   xlink:title     CDATA           #IMPLIED'&gt;
-
-&lt;!ELEMENT extended (%extendedModel;)&gt;
-&lt;!ATTLIST extended
-   xmlns:xlink     CDATA           #FIXED "http://www.w3.org/1999/xlink"
-   %extendedAttrs;&gt;
-
-&lt;!ENTITY % titleAttrs
-  'xlink:type      (title)         #FIXED "title"
-   xml:lang        CDATA           #IMPLIED'&gt;
-
-&lt;!ELEMENT title ANY&gt;
-&lt;!-- xml:lang is not required, but provides much of the motivation
-      for title elements in addition to attributes, and so is provided
-      here for convenience --&gt;
-&lt;!ATTLIST title
-   %titleAttrs;&gt;
-
-&lt;!ENTITY % resourceAttrs
-  'xlink:type      (resource)      #FIXED "resource"
-   xlink:role      CDATA           #IMPLIED
-   xlink:title     CDATA           #IMPLIED
-   xlink:label     NMTOKEN         #IMPLIED'&gt;
-
-&lt;!ELEMENT resource ANY&gt;
-&lt;!ATTLIST resource
-   %resourceAttrs;&gt;
-
-&lt;!ENTITY % locatorAttrs
-  'xlink:type      (locator)       #FIXED "locator"
-   xlink:href      CDATA           #REQUIRED
-   xlink:role      CDATA           #IMPLIED
-   xlink:title     CDATA           #IMPLIED
-   xlink:label     NMTOKEN         #IMPLIED'&gt;
-
-&lt;!ELEMENT locator (title*)&gt;
-&lt;!-- label is not required, but locators have no particular XLink 
-     function if they are not labeled --&gt;
-&lt;!ATTLIST locator
-   %locatorAttrs;&gt;
-
-&lt;!ENTITY % arcAttrs
-  'xlink:type      (arc)           #FIXED "arc"
-   xlink:arcrole   CDATA           #IMPLIED
-   xlink:title     CDATA           #IMPLIED
-   xlink:from      NMTOKEN         #IMPLIED
-   xlink:to        NMTOKEN         #IMPLIED
-   %showActuate;'&gt;
-
-&lt;!ELEMENT arc (title*)&gt;
-&lt;!-- from and to have default behavior when values are missing --&gt;
-&lt;!ATTLIST arc
-   %arcAttrs;&gt;
-</pre></div>
-</div>
 <div class="div1">
-<h2><a name="sample-xsd-appx" id="sample-xsd-appx"></a>C Sample XML Schema (Non-Normative)</h2>
-<p>The following XML Schema document, per <a href="http://www.w3.org/TR/xlink11/#xmlschema-1">[XML Schema Part 1: Structures]</a>, provides XLink-1.1-specific declarations and definitions for use in defining linking elements which conform to this specification.</p>
-<p>A permanent copy of this schema document is available at <a href="http://www.w3.org/XML/2008/06/xlink.xsd">http://www.w3.org/XML/2008/06/xlink.xsd</a>. Another copy is available at <a href="http://www.w3.org/1999/xlink.xsd">http://www.w3.org/1999/xlink.xsd</a>. At the time of publication these two copies are identical, but the version at <code>.../1999/xlink.xsd</code> may change in the future to reflect subsequent editions or versions of XLink or of XML Schema.</p>
-<div class="exampleInner">
-<pre>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/1999/xlink" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
- 
- &lt;xs:annotation&gt;
-  &lt;xs:documentation&gt;This schema document provides attribute declarations and
-attribute group, complex type and simple type definitions which can be used in
-the construction of user schemas to define the structure of particular linking
-constructs, e.g.
-&lt;![CDATA[
-&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:xl="http://www.w3.org/1999/xlink"&gt;
-
- &lt;xs:import namespace="http://www.w3.org/1999/xlink"
-            location="http://www.w3.org/1999/xlink.xsd"&gt;
-
- &lt;xs:element name="mySimple"&gt;
-  &lt;xs:complexType&gt;
-   ...
-   &lt;xs:attributeGroup ref="xl:simpleAttrs"/&gt;
-   ...
-  &lt;/xs:complexType&gt;
- &lt;/xs:element&gt;
- ...
-&lt;/xs:schema&gt;]]&gt;&lt;/xs:documentation&gt;
- &lt;/xs:annotation&gt;
-
- &lt;xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/&gt;
-
- &lt;xs:attribute name="type" type="xlink:typeType"/&gt;
-
- &lt;xs:simpleType name="typeType"&gt;
-  &lt;xs:restriction base="xs:token"&gt;
-   &lt;xs:enumeration value="simple"/&gt;
-   &lt;xs:enumeration value="extended"/&gt;
-   &lt;xs:enumeration value="title"/&gt;
-   &lt;xs:enumeration value="resource"/&gt;
-   &lt;xs:enumeration value="locator"/&gt;
-   &lt;xs:enumeration value="arc"/&gt;
-  &lt;/xs:restriction&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="href" type="xlink:hrefType"/&gt;
-
- &lt;xs:simpleType name="hrefType"&gt;
-  &lt;xs:restriction base="xs:anyURI"/&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="role" type="xlink:roleType"/&gt;
-
- &lt;xs:simpleType name="roleType"&gt;
-  &lt;xs:restriction base="xs:anyURI"&gt;
-   &lt;xs:minLength value="1"/&gt;
-  &lt;/xs:restriction&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="arcrole" type="xlink:arcroleType"/&gt;
-
- &lt;xs:simpleType name="arcroleType"&gt;
-  &lt;xs:restriction base="xs:anyURI"&gt;
-   &lt;xs:minLength value="1"/&gt;
-  &lt;/xs:restriction&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="title" type="xlink:titleAttrType"/&gt;
-
- &lt;xs:simpleType name="titleAttrType"&gt;
-  &lt;xs:restriction base="xs:string"/&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="show" type="xlink:showType"/&gt;
-
- &lt;xs:simpleType name="showType"&gt;
-  &lt;xs:restriction base="xs:token"&gt;
-   &lt;xs:enumeration value="new"/&gt;
-   &lt;xs:enumeration value="replace"/&gt;
-   &lt;xs:enumeration value="embed"/&gt;
-   &lt;xs:enumeration value="other"/&gt;
-   &lt;xs:enumeration value="none"/&gt;
-  &lt;/xs:restriction&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="actuate" type="xlink:actuateType"/&gt;
-
- &lt;xs:simpleType name="actuateType"&gt;
-  &lt;xs:restriction base="xs:token"&gt;
-   &lt;xs:enumeration value="onLoad"/&gt;
-   &lt;xs:enumeration value="onRequest"/&gt;
-   &lt;xs:enumeration value="other"/&gt;
-   &lt;xs:enumeration value="none"/&gt;
-  &lt;/xs:restriction&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="label" type="xlink:labelType"/&gt;
-
- &lt;xs:simpleType name="labelType"&gt;
-  &lt;xs:restriction base="xs:NCName"/&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="from" type="xlink:fromType"/&gt;
-
- &lt;xs:simpleType name="fromType"&gt;
-  &lt;xs:restriction base="xs:NCName"/&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attribute name="to" type="xlink:toType"/&gt;
-
- &lt;xs:simpleType name="toType"&gt;
-  &lt;xs:restriction base="xs:NCName"/&gt;
- &lt;/xs:simpleType&gt;
-
- &lt;xs:attributeGroup name="simpleAttrs"&gt;
-  &lt;xs:attribute ref="xlink:type" fixed="simple"/&gt;
-  &lt;xs:attribute ref="xlink:href"/&gt;
-  &lt;xs:attribute ref="xlink:role"/&gt;
-  &lt;xs:attribute ref="xlink:arcrole"/&gt;
-  &lt;xs:attribute ref="xlink:title"/&gt;
-  &lt;xs:attribute ref="xlink:show"/&gt;
-  &lt;xs:attribute ref="xlink:actuate"/&gt;
- &lt;/xs:attributeGroup&gt;
-
- &lt;xs:group name="simpleModel"&gt;
-  &lt;xs:sequence&gt;
-   &lt;xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/&gt;
-  &lt;/xs:sequence&gt;
- &lt;/xs:group&gt;
-
- &lt;xs:complexType mixed="true" name="simple"&gt;
-  &lt;xs:annotation&gt;
-   &lt;xs:documentation&gt;
-    Intended for use as the type of user-declared elements to make them
-    simple links.
-   &lt;/xs:documentation&gt;
-  &lt;/xs:annotation&gt;
-  &lt;xs:group ref="xlink:simpleModel"/&gt;
-  &lt;xs:attributeGroup ref="xlink:simpleAttrs"/&gt;
- &lt;/xs:complexType&gt;
-
- &lt;xs:attributeGroup name="extendedAttrs"&gt;
-  &lt;xs:attribute ref="xlink:type" fixed="extended" use="required"/&gt;
-  &lt;xs:attribute ref="xlink:role"/&gt;
-  &lt;xs:attribute ref="xlink:title"/&gt;
- &lt;/xs:attributeGroup&gt;
-
- &lt;xs:group name="extendedModel"&gt;
-   &lt;xs:choice&gt;
-    &lt;xs:element ref="xlink:title"/&gt;
-    &lt;xs:element ref="xlink:resource"/&gt;
-    &lt;xs:element ref="xlink:locator"/&gt;
-    &lt;xs:element ref="xlink:arc"/&gt;
-  &lt;/xs:choice&gt;
- &lt;/xs:group&gt;
-
- &lt;xs:complexType name="extended"&gt;
-  &lt;xs:annotation&gt;
-   &lt;xs:documentation&gt;
-    Intended for use as the type of user-declared elements to make them
-    extended links.
-    Note that the elements referenced in the content model are all abstract.
-    The intention is that by simply declaring elements with these as their
-    substitutionGroup, all the right things will happen.
-   &lt;/xs:documentation&gt;
-  &lt;/xs:annotation&gt;
-  &lt;xs:group ref="xlink:extendedModel" minOccurs="0" maxOccurs="unbounded"/&gt;
-  &lt;xs:attributeGroup ref="xlink:extendedAttrs"/&gt;
- &lt;/xs:complexType&gt;
-
- &lt;xs:element name="title" type="xlink:titleEltType" abstract="true"/&gt;
-
- &lt;xs:attributeGroup name="titleAttrs"&gt;
-  &lt;xs:attribute ref="xlink:type" fixed="title" use="required"/&gt;
-  &lt;xs:attribute ref="xml:lang"&gt;
-   &lt;xs:annotation&gt;
-    &lt;xs:documentation&gt;
-     xml:lang is not required, but provides much of the
-     motivation for title elements in addition to attributes, and so
-     is provided here for convenience.
-    &lt;/xs:documentation&gt;
-   &lt;/xs:annotation&gt;
-  &lt;/xs:attribute&gt;
- &lt;/xs:attributeGroup&gt;
-
- &lt;xs:group name="titleModel"&gt;
-  &lt;xs:sequence&gt;
-   &lt;xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/&gt;
-  &lt;/xs:sequence&gt;
- &lt;/xs:group&gt;
-
- &lt;xs:complexType mixed="true" name="titleEltType"&gt;
-  &lt;xs:group ref="xlink:titleModel"/&gt;
-  &lt;xs:attributeGroup ref="xlink:titleAttrs"/&gt;
- &lt;/xs:complexType&gt;
-
- &lt;xs:element name="resource" type="xlink:resourceType" abstract="true"/&gt;
-
- &lt;xs:attributeGroup name="resourceAttrs"&gt;
-  &lt;xs:attribute ref="xlink:type" fixed="resource" use="required"/&gt;
-  &lt;xs:attribute ref="xlink:role"/&gt;
-  &lt;xs:attribute ref="xlink:title"/&gt;
-  &lt;xs:attribute ref="xlink:label"/&gt;
- &lt;/xs:attributeGroup&gt;
-
- &lt;xs:group name="resourceModel"&gt;
-  &lt;xs:sequence&gt;
-   &lt;xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/&gt;
-  &lt;/xs:sequence&gt;
- &lt;/xs:group&gt;
-
- &lt;xs:complexType mixed="true" name="resourceType"&gt;
-  &lt;xs:group ref="xlink:resourceModel"/&gt;
-  &lt;xs:attributeGroup ref="xlink:resourceAttrs"/&gt;
- &lt;/xs:complexType&gt;
-
- &lt;xs:element name="locator" type="xlink:locatorType" abstract="true"/&gt;
-
- &lt;xs:attributeGroup name="locatorAttrs"&gt;
-  &lt;xs:attribute ref="xlink:type" fixed="locator" use="required"/&gt;
-  &lt;xs:attribute ref="xlink:href" use="required"/&gt;
-  &lt;xs:attribute ref="xlink:role"/&gt;
-  &lt;xs:attribute ref="xlink:title"/&gt;
-  &lt;xs:attribute ref="xlink:label"&gt;
-   &lt;xs:annotation&gt;
-    &lt;xs:documentation&gt;
-     label is not required, but locators have no particular
-     XLink function if they are not labeled.
-    &lt;/xs:documentation&gt;
-   &lt;/xs:annotation&gt;
-  &lt;/xs:attribute&gt;
- &lt;/xs:attributeGroup&gt;
-
- &lt;xs:group name="locatorModel"&gt;
-  &lt;xs:sequence&gt;
-   &lt;xs:element ref="xlink:title" minOccurs="0" maxOccurs="unbounded"/&gt;
-  &lt;/xs:sequence&gt;
- &lt;/xs:group&gt;
-
- &lt;xs:complexType name="locatorType"&gt;
-  &lt;xs:group ref="xlink:locatorModel"/&gt;
-  &lt;xs:attributeGroup ref="xlink:locatorAttrs"/&gt;
- &lt;/xs:complexType&gt;
-
- &lt;xs:element name="arc" type="xlink:arcType" abstract="true"/&gt;
-
- &lt;xs:attributeGroup name="arcAttrs"&gt;
-  &lt;xs:attribute ref="xlink:type" fixed="arc" use="required"/&gt;
-  &lt;xs:attribute ref="xlink:arcrole"/&gt;
-  &lt;xs:attribute ref="xlink:title"/&gt;
-  &lt;xs:attribute ref="xlink:show"/&gt;
-  &lt;xs:attribute ref="xlink:actuate"/&gt;
-  &lt;xs:attribute ref="xlink:from"/&gt;
-  &lt;xs:attribute ref="xlink:to"&gt;
-   &lt;xs:annotation&gt;
-    &lt;xs:documentation&gt;
-     from and to have default behavior when values are missing
-    &lt;/xs:documentation&gt;
-   &lt;/xs:annotation&gt;
-  &lt;/xs:attribute&gt;
- &lt;/xs:attributeGroup&gt;
-
- &lt;xs:group name="arcModel"&gt;
-  &lt;xs:sequence&gt;
-   &lt;xs:element ref="xlink:title" minOccurs="0" maxOccurs="unbounded"/&gt;
-  &lt;/xs:sequence&gt;
- &lt;/xs:group&gt;
-
- &lt;xs:complexType name="arcType"&gt;
-  &lt;xs:group ref="xlink:arcModel"/&gt;
-  &lt;xs:attributeGroup ref="xlink:arcAttrs"/&gt;
- &lt;/xs:complexType&gt;
-
-&lt;/xs:schema&gt;
-</pre></div>
-<p>Note: The Working Group acknowledges the work of the <a href="http://www.xbrl.org/">XBRL Consortium</a> in producing a W3C XML Schema for XLink 1.0, which was useful input into the design of the schema document for XLink 1.1.</p>
-</div>
-<div class="div1">
-<h2><a name="sample-rng-appx" id="sample-rng-appx"></a>D Sample RELAX NG Grammar (Non-Normative)</h2>
-<p>The following <a href="http://www.w3.org/TR/xlink11/#relax-ng">[RELAX NG]</a> Grammars (expressed in the compact syntax) validate XLink 1.1. They are provided only as a convenience for application developers; they have no normative status.</p>
-<p><code>xlink11-simple.rnc</code>:</p>
-<div class="exampleInner">
-<pre>namespace xlink = "http://www.w3.org/1999/xlink"
-
-start = anyElement
-anyElement = simple | foreignElement
-foreignElement = element * - xlink:* { foreign.att*, (anyElement | text)* }
-
-simple.type = attribute xlink:type {"simple"}
-href.att = attribute xlink:href {xsd:anyURI}
-role.att = attribute xlink:role {xsd:anyURI}
-arcrole.att = attribute xlink:arcrole {xsd:anyURI}
-title.att = attribute xlink:title {text}
-show.att = attribute xlink:show {"new"|"replace"|"embed"|"other"|"none"}
-actuate.att = attribute xlink:actuate {"onLoad"|"onRequest"|"other"|"none"}
-foreign.att = attribute * - xlink:*  {text}
-
-simple = element * {
-                (simple.type | href.att | (simple.type, href.att)),
-                foreign.att*, role.att?, arcrole.att?, title.att?,
-                show.att?, actuate.att?,
-                (anyElement | text)*
-                }
-</pre></div>
-<p>nk<code>xli11.rnc</code>:</p>
-<div class="exampleInner">
-<pre>namespace xlink = "http://www.w3.org/1999/xlink"
-
-include "xlink11-simple.rnc" {
-        anyElement = simple | extended | foreignElement
-        }
-
-label.att = attribute xlink:label {xsd:NCName}
-from.att = attribute xlink:from {xsd:NCName}
-to.att = attribute xlink:to {xsd:NCName}
-
-extended = element * {
-                attribute xlink:type {"extended"},
-                foreign.att*, role.att?, title.att?,
-                (title | resource | locator | arc | anyElement | text)*
-                }
-
-title = element * {
-                attribute xlink:type {"title"}, foreign.att*,
-                (anyElement | text)*
-                }
-
-resource = element * {
-                attribute xlink:type {"resource"}, foreign.att*,
-                role.att?, title.att?, label.att?,
-                (anyElement | text)*
-                }
-
-locator = element * {
-                attribute xlink:type {"locator"}, foreign.att*,
-                href.att, role.att?, title.att?, label.att?,
-                (title | anyElement | text)*
-                }
-
-arc = element * {
-                attribute xlink:type {"arc"}, foreign.att*,
-                arcrole.att?, title.att?, from.att?, to.att?,
-                show.att?, actuate.att?,
-                (title | anyElement | text)*
-                }
-
-</pre></div>
-</div>
-<div class="div1">
-<h2><a name="changes" id="changes"></a>E Changes from XLink 1.0 (Non-Normative)</h2>
-<p>This specification implements the changes described in <a href="http://www.w3.org/TR/xlink11/#xlink10-ext">[Extending XLink 1.0]</a>. These changes make XLink more useful in the places where it is already being used and make it practical in a variety of similar vocabularies. It differs from <a href="http://www.w3.org/TR/xlink11/#xlink10">[XML Linking Language (XLink) Version 1.0]</a> in the following ways:</p>
-<ol class="enumar">
-<li>
-<p>The <code>xlink:type</code> attribute is no longer required for simple links. In the absence of any <code>xlink:type</code> attribute, an XLink is treated as a simple link.</p>
-</li>
-<li>
-<p>Where <a href="http://www.w3.org/TR/xlink11/#xlink10">[XML Linking Language (XLink) Version 1.0]</a> referred to URIs, this specification refers to IRIs. This allows a broader range of values for for those properties that are identified with a resource identifier.</p>
-</li>
-<li>
-<p>This specification includes non-normative sample XML Schema and RELAX NG grammars to complement the existing, non-normative sample DTD.</p>
-</li>
-</ol>
-<p>In addition, a few editorial changes have also been made.</p>
-<ol class="enumar">
-<li>
-<p>Some bibliographic references have been updated to point to more recent specifications.</p>
-</li>
-<li>
-<p>The conformance language has been rewritten to support a new, simple conformance level for applications that only expect to process simple links.</p>
-</li>
-<li>
-<p>Several of the examples have been changed to highlight the presence of non-normative grammars other than the DTD.</p>
-</li>
-<li>
-<p>The text describing the interpretation of the locator attribute (<code>xlink:href</code>) has been moved into a separate specification (<a href="http://www.w3.org/TR/xlink11/#leiri">[Legacy extended IRIs]</a>) so that it may more easily be reused. The locator attribute is now described with reference to that specification.</p>
-</li>
-</ol>
-</div>
-</div>-->
-
-
-<div id="window-resizer-tooltip" style="display: block;"><a href="http://www.w3.org/TR/xlink11/#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1920</span> x <span class="tooltipHeight" id="winHeight">1080</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1920</span> x <span class="tooltipHeight" id="vpHeight">964</span></div></body></html>
+<h2><a name="appendix" id="appendix"></a>A Anhang</h2>
+<h3>A.1 Präsentation</h3>
+<p>Die Datei Präsentation.pdf befindet sich im Verzeichnis <i>Präsentation</i>.</p>
+<h3>A.2 Quelltext</h3>
+<p>Der Quellcode unseres Projekts befindet sich im Verzeichnis <i>Quelltext</i>.</p>
