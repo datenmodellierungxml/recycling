@@ -15,20 +15,20 @@
 <!-- Hersteller muss mindenstens eine Adresse besitzen, kann aber auch mehrere haben. -->
 <!ELEMENT herstellerListe (hersteller*)>
 <!ELEMENT hersteller (adresse+)>
-<!ATTLIST hersteller herstellerID CDATA #REQUIRED>
+<!ATTLIST hersteller herstellerID NMTOKEN #REQUIRED>
 
 <!-- Recyclinghof -->
 <!ELEMENT recyclinghofListe (recyclinghof*)>
 <!ELEMENT recyclinghof (adresse, oeffnungszeiten+,spezialgebiet+)>
 <!ELEMENT oeffnungszeiten (#PCDATA)>
 <!ELEMENT spezialgebiet (#PCDATA)>
-<!ATTLIST recyclinghof recyclinghofID CDATA #REQUIRED>
+<!ATTLIST recyclinghof recyclinghofID NMTOKEN #REQUIRED>
 
 <!-- Angabe der Kundenadresse ist optional, kundenID jedoch Pflicht. -->
 <!ELEMENT kundenListe (kunde*)>
 <!ELEMENT kunde (adresse?)>
-<!ATTLIST kunde kundenID CDATA #REQUIRED>
-<!ATTLIST kunde geraeteListe NMTOKEN #REQUIRED>
+<!ATTLIST kunde kundenID NMTOKEN #REQUIRED>
+<!ATTLIST kunde geraeteListe CDATA #REQUIRED>
 
 <!-- Adresse kann mehrere Telefonnummern beinhalten, muss aber mindestens eine besitzen. -->
 <!ELEMENT adresse (name+ , strasse? , plz? , ort? , telefon+)>
